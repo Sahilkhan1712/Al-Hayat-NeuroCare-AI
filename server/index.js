@@ -1,9 +1,17 @@
 import express from 'express';
+import { connectDB } from './config/db.js';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import nodemailer from 'nodemailer';
 import fs from 'fs';
 import path from 'path';
+import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
+import crypto from 'crypto';
+import rateLimit from 'express-rate-limit';
+import User from './models/User.js';
+import Otp from './models/Otp.js';
+
 
 dotenv.config();
 
@@ -33,315 +41,287 @@ if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
   }
 }
 
-// In-Memory Real Clinical Database for Al_Hayat NeuroCare AI
-const usersDatabase = [
-  {
-    id: 'usr_sahil_1',
-    name: 'Mohd Sahil',
-    email: 'sahil@alhayat.ai',
-    phone: '+91 98765 43210',
-    password: 'neuro123',
-    age: '24',
-    gender: 'Male',
-    role: 'Patient / Consultant',
-    registeredAt: '2026-10-30T20:00:00.000Z'
-  },
-  {
-    id: 'usr_demo_2',
-    name: 'Dr. Clinical Evaluator',
-    email: 'demo@alhayat.ai',
-    phone: '+91 98111 22233',
-    password: 'demo123',
-    age: '35',
-    gender: 'Male',
-    role: 'Doctor / Neurologist',
-    registeredAt: '2026-10-30T21:00:00.000Z'
-  }
-];
 
-// OTP Store: email -> { code, expiresAt, purpose }
-const otpStore = new Map();
+// SECURE AUTH V2 — MongoDB, hashed OTP, bcrypt and JWT
+const otpLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  limit: 5,
+  standardHeaders: 'draft-7',
+  legacyHeaders: false
+});
 
-function generateOTP() {
-  return Math.floor(100000 + Math.random() * 900000).toString();
+const authLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  limit: 10,
+  standardHeaders: 'draft-7',
+  legacyHeaders: false
+});
+
+const normalizeEmail = value => String(value || '').trim().toLowerCase();
+const hashOtp = value => crypto.createHash('sha256').update(value).digest('hex');
+
+function createToken(user) {
+  if (!process.env.JWT_SECRET) throw new Error('JWT_SECRET is not configured');
+  return jwt.sign(
+    { sub: user._id.toString(), email: user.email, role: user.role },
+    process.env.JWT_SECRET,
+    { expiresIn: '1d' }
+  );
 }
 
-// ==========================================
-// AUTHENTICATION & OTP ENDPOINTS
-// ==========================================
+function publicUser(user) {
+  return {
+    id: user._id.toString(),
+    name: user.name,
+    email: user.email,
+    phone: user.phone || '',
+    age: user.age || '',
+    gender: user.gender || '',
+    role: user.role,
+    avatar: user.avatar || ''
+  };
+}
 
-// 1. Send OTP (to Email / Gmail or Phone)
-app.post('/api/auth/send-otp', async (req, res) => {
-  const { email, phone, purpose = 'register' } = req.body;
+// Send a real email OTP. Never return or log the OTP.
+app.post('/api/auth/send-otp', otpLimiter, async (req, res) => {
+  try {
+    const email = normalizeEmail(req.body.email);
+    const purpose = req.body.purpose || 'register';
 
-  if (!email && !phone) {
-    return res.status(400).json({ success: false, message: 'Email or Mobile number is required' });
-  }
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      return res.status(400).json({ success: false, message: 'Enter a valid email address.' });
+    }
+    if (!['register', 'reset'].includes(purpose)) {
+      return res.status(400).json({ success: false, message: 'Invalid OTP purpose.' });
+    }
+    if (!mailTransporter) {
+      return res.status(503).json({ success: false, message: 'Email service is not configured.' });
+    }
 
-  const key = (email || phone).toLowerCase().trim();
-  const code = generateOTP();
-  const expiresAt = Date.now() + 5 * 60 * 1000; // 5 minutes validity
+    const existing = await User.findOne({ email });
+    if (purpose === 'register' && existing) {
+      return res.status(409).json({ success: false, message: 'Account already exists. Please sign in.' });
+    }
+    if (purpose === 'reset' && !existing) {
+      return res.status(404).json({ success: false, message: 'No account found with this email.' });
+    }
 
-  otpStore.set(key, { code, expiresAt, purpose });
-  console.log(`[Al_Hayat NeuroCare AI OTP] Generated OTP for ${key} [${purpose}]: ${code}`);
+    const code = crypto.randomInt(100000, 1000000).toString();
+    await Otp.deleteMany({ identifier: email, purpose });
 
-  let emailDelivered = false;
+    await Otp.create({
+      identifier: email,
+      codeHash: hashOtp(code),
+      purpose,
+      expiresAt: new Date(Date.now() + 5 * 60 * 1000),
+      attempts: 0,
+      verified: false
+    });
 
-  // Attempt real email dispatch if SMTP transporter is configured
-  if (mailTransporter && email) {
     try {
       await mailTransporter.sendMail({
         from: `"Al_Hayat NeuroCare AI" <${process.env.EMAIL_USER}>`,
         to: email,
-        subject: `Al_Hayat NeuroCare AI — Verification Code: ${code}`,
-        html: `
-          <div style="font-family: Arial, sans-serif; background: #030712; color: #f8fafc; padding: 25px; border-radius: 12px; max-width: 500px; margin: auto; border: 1px solid #06b6d4;">
-            <div style="text-align: center; margin-bottom: 20px;">
-              <h2 style="color: #06b6d4; margin: 0; font-size: 24px;">Al_Hayat NeuroCare AI</h2>
-              <p style="color: #94a3b8; font-size: 13px; margin: 4px 0 0 0;">Clinical 3D Neuroanatomy & Brain Health Platform</p>
-            </div>
-            <hr style="border: 0; border-top: 1px solid #1e293b; margin: 15px 0;" />
-            <p style="font-size: 14px; color: #e2e8f0;">Hello,</p>
-            <p style="font-size: 14px; color: #cbd5e1;">Your one-time security verification code for <strong>${purpose === 'register' ? 'Registration' : 'Password Reset'}</strong> is:</p>
-            <div style="background: #0f172a; border: 2px dashed #06b6d4; padding: 16px; font-size: 32px; font-weight: bold; letter-spacing: 8px; text-align: center; color: #38bdf8; border-radius: 8px; margin: 20px 0;">
-              ${code}
-            </div>
-            <p style="font-size: 12px; color: #64748b;">This code is valid for <strong>5 minutes</strong>. Do not share this code with anyone.</p>
-            <p style="font-size: 11px; color: #475569; margin-top: 25px; text-align: center;">© 2026 Al_Hayat NeuroCare AI • Department of Clinical Neurosciences</p>
-          </div>
-        `
+        subject: 'Al_Hayat NeuroCare AI — Verification Code',
+        html: `<div style="font-family:Arial;background:#030712;color:#f8fafc;padding:25px;border-radius:12px"><h2 style="color:#06b6d4">Al_Hayat NeuroCare AI</h2><p>Your ${purpose === 'register' ? 'registration' : 'password reset'} verification code is:</p><div style="font-size:32px;letter-spacing:8px;color:#38bdf8;font-weight:bold">${code}</div><p>This code expires in 5 minutes. Do not share it.</p></div>`
       });
-      emailDelivered = true;
-      console.log(`[Al_Hayat NeuroCare AI] Real email successfully sent to ${email}`);
-    } catch (err) {
-      console.warn(`[Al_Hayat NeuroCare AI] Real email dispatch failed: ${err.message}`);
+    } catch (mailError) {
+      await Otp.deleteMany({ identifier: email, purpose });
+      console.error('OTP EMAIL ERROR:', {
+        message: mailError.message,
+        code: mailError.code,
+        command: mailError.command,
+        responseCode: mailError.responseCode
+      });
+      return res.status(502).json({ success: false, message: 'Could not send email. Please try again.' });
     }
-  }
 
-  return res.json({
-    success: true,
-    message: emailDelivered
-      ? `Real verification code sent to your Gmail inbox: ${key}`
-      : `Verification code generated for ${key}. (Demo OTP: ${code})`,
-    otp: code,
-    emailDelivered: emailDelivered,
-    expiresInSeconds: 300
-  });
+    return res.json({
+      success: true,
+      message: `Verification code sent to ${email}.`,
+      expiresInSeconds: 300
+    });
+  } catch (error) {
+    console.error('Send OTP error:', error.message);
+    return res.status(500).json({ success: false, message: 'Unable to send verification code.' });
+  }
 });
 
-// 2. Verify OTP
-app.post('/api/auth/verify-otp', (req, res) => {
-  const { email, phone, otp } = req.body;
-  const key = (email || phone || '').toLowerCase().trim();
-  const record = otpStore.get(key);
+// Verify OTP. Verification is tied to email and purpose.
+app.post('/api/auth/verify-otp', otpLimiter, async (req, res) => {
+  try {
+    const email = normalizeEmail(req.body.email);
+    const otp = String(req.body.otp || '').trim();
+    const purpose = req.body.purpose || 'register';
 
-  if (!record) {
-    return res.status(400).json({ success: false, message: 'No active OTP found. Please request a new OTP.' });
-  }
-
-  if (Date.now() > record.expiresAt) {
-    otpStore.delete(key);
-    return res.status(400).json({ success: false, message: 'OTP has expired. Please request a new code.' });
-  }
-
-  if (record.code !== (otp || '').trim()) {
-    return res.status(400).json({ success: false, message: 'Invalid OTP code. Please check and try again.' });
-  }
-
-  return res.json({ success: true, message: 'OTP verified successfully.' });
-});
-
-// 3. Register New Account (with verified OTP)
-app.post('/api/auth/register', (req, res) => {
-  const { name, email, phone, password, age = '24', gender = 'Male', role = 'patient', otp } = req.body;
-
-  if (!name || !email || !password) {
-    return res.status(400).json({ success: false, message: 'Name, email, and password are required.' });
-  }
-
-  const normalizedEmail = email.toLowerCase().trim();
-
-  // If OTP provided, verify it
-  if (otp) {
-    const record = otpStore.get(normalizedEmail) || (phone ? otpStore.get(phone.trim()) : null);
-    if (!record || record.code !== otp.trim()) {
-      return res.status(400).json({ success: false, message: 'Invalid or missing verification OTP.' });
+    if (!email || !/^\d{6}$/.test(otp) || !['register', 'reset'].includes(purpose)) {
+      return res.status(400).json({ success: false, message: 'Enter the 6-digit code.' });
     }
-    otpStore.delete(normalizedEmail);
+
+    const record = await Otp.findOne({ identifier: email, purpose }).sort({ createdAt: -1 });
+    if (!record || record.expiresAt <= new Date()) {
+      return res.status(400).json({ success: false, message: 'Code expired or not found. Request a new code.' });
+    }
+    if (record.verified) {
+      return res.json({ success: true, message: 'Email already verified.' });
+    }
+    if (record.attempts >= 5) {
+      await Otp.deleteOne({ _id: record._id });
+      return res.status(429).json({ success: false, message: 'Too many incorrect attempts. Request a new code.' });
+    }
+
+    if (record.codeHash !== hashOtp(otp)) {
+      record.attempts += 1;
+      await record.save();
+      return res.status(400).json({ success: false, message: 'Incorrect verification code.' });
+    }
+
+    record.verified = true;
+    await record.save();
+    return res.json({ success: true, message: 'Email verified successfully.' });
+  } catch (error) {
+    console.error('Verify OTP error:', error.message);
+    return res.status(500).json({ success: false, message: 'Unable to verify code.' });
   }
-
-  // Check if user exists
-  const existingUser = usersDatabase.find(u => u.email.toLowerCase() === normalizedEmail);
-  if (existingUser) {
-    return res.status(400).json({ success: false, message: 'An account with this email already exists. Please Sign In.' });
-  }
-
-  const newUser = {
-    id: `usr_${Date.now()}`,
-    name: name.trim(),
-    email: normalizedEmail,
-    phone: phone ? phone.trim() : '',
-    password: password.trim(),
-    age: age.toString(),
-    gender: gender || 'Male',
-    role: role === 'doctor' ? 'Clinical Neurologist' : 'Patient',
-    registeredAt: new Date().toISOString()
-  };
-
-  usersDatabase.push(newUser);
-  console.log(`[Al_Hayat NeuroCare AI] New user registered: ${newUser.name} (${newUser.email})`);
-
-  return res.json({
-    success: true,
-    message: 'Registration successful! Welcome to Al_Hayat NeuroCare AI.',
-    user: {
-      id: newUser.id,
-      name: newUser.name,
-      email: newUser.email,
-      phone: newUser.phone,
-      age: newUser.age,
-      gender: newUser.gender,
-      role: newUser.role
-    },
-    token: `alh_jwt_${Date.now()}`
-  });
 });
 
-// 4. Sign In (Login)
-app.post('/api/auth/login', (req, res) => {
-  const { email, password } = req.body;
+// Register only after verified email OTP.
+app.post('/api/auth/register', authLimiter, async (req, res) => {
+  try {
+    const { name, phone, password, age, gender } = req.body;
+    const email = normalizeEmail(req.body.email);
 
-  if (!email || !password) {
-    return res.status(400).json({ success: false, message: 'Email/Mobile and password are required.' });
+    if (!name?.trim() || !email || !password || String(password).length < 8) {
+      return res.status(400).json({ success: false, message: 'Name, valid email and password (minimum 8 characters) are required.' });
+    }
+
+    const verification = await Otp.findOne({
+      identifier: email,
+      purpose: 'register',
+      verified: true,
+      expiresAt: { $gt: new Date() }
+    });
+
+    if (!verification) {
+      return res.status(403).json({ success: false, message: 'Please verify your email OTP before registering.' });
+    }
+
+    const passwordHash = await bcrypt.hash(password, 12);
+    const user = await User.create({
+      name: name.trim(),
+      email,
+      phone: phone?.trim() || undefined,
+      passwordHash,
+      age: age ? String(age) : '',
+      gender: gender || '',
+      role: 'Patient'
+    });
+
+    await Otp.deleteMany({ identifier: email, purpose: 'register' });
+
+    return res.status(201).json({
+      success: true,
+      message: 'Registration successful.',
+      user: publicUser(user),
+      token: createToken(user)
+    });
+  } catch (error) {
+    if (error.code === 11000) {
+      return res.status(409).json({ success: false, message: 'An account with this email or phone already exists.' });
+    }
+    console.error('Registration error:', error.message);
+    return res.status(500).json({ success: false, message: 'Registration failed. Please try again.' });
   }
-
-  const query = email.toLowerCase().trim();
-  let user = usersDatabase.find(u => u.email.toLowerCase() === query || (u.phone && u.phone === query));
-
-  if (!user) {
-    // Dynamically register so any email and password combination can log in smoothly
-    const rawUsername = query.split('@')[0] || 'User';
-    const cleanName = rawUsername.replace(/[._-]/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
-    user = {
-      id: `usr_${Date.now()}`,
-      name: cleanName || 'Mohd Sahil',
-      email: query.includes('@') ? query : `${query}@gmail.com`,
-      phone: query.includes('@') ? '+91 98765 43210' : query,
-      password: password.trim(),
-      age: '24',
-      gender: 'Male',
-      role: 'Patient / Consultant'
-    };
-    usersDatabase.push(user);
-  }
-
-  console.log(`[Al_Hayat NeuroCare AI] User signed in: ${user.name} (${user.email})`);
-
-  return res.json({
-    success: true,
-    message: 'Login successful.',
-    user: {
-      id: user.id,
-      name: user.name,
-      email: user.email,
-      phone: user.phone,
-      age: user.age,
-      gender: user.gender,
-      role: user.role
-    },
-    token: `alh_jwt_${Date.now()}`
-  });
 });
 
-// 5. Forgot Password (Reset with OTP)
-app.post('/api/auth/forgot-password', (req, res) => {
-  const { email, otp, newPassword } = req.body;
+// Login only for existing accounts with matching password.
+app.post('/api/auth/login', authLimiter, async (req, res) => {
+  try {
+    const email = normalizeEmail(req.body.email);
+    const password = String(req.body.password || '');
 
-  if (!email || !otp || !newPassword) {
-    return res.status(400).json({ success: false, message: 'Email, OTP, and new password are required.' });
+    if (!email || !password) {
+      return res.status(400).json({ success: false, message: 'Email and password are required.' });
+    }
+
+    const user = await User.findOne({ email }).select('+passwordHash');
+    if (!user || !user.passwordHash || !(await bcrypt.compare(password, user.passwordHash))) {
+      return res.status(401).json({ success: false, message: 'Invalid email or password.' });
+    }
+
+    return res.json({
+      success: true,
+      message: 'Login successful.',
+      user: publicUser(user),
+      token: createToken(user)
+    });
+  } catch (error) {
+    console.error('Login error:', error.message);
+    return res.status(500).json({ success: false, message: 'Login failed. Please try again.' });
   }
-
-  const normalizedEmail = email.toLowerCase().trim();
-  const record = otpStore.get(normalizedEmail);
-
-  if (!record || record.code !== otp.trim()) {
-    return res.status(400).json({ success: false, message: 'Invalid OTP or expired reset request.' });
-  }
-
-  const user = usersDatabase.find(u => u.email.toLowerCase() === normalizedEmail);
-  if (!user) {
-    return res.status(404).json({ success: false, message: 'No registered user found with this email.' });
-  }
-
-  user.password = newPassword.trim();
-  otpStore.delete(normalizedEmail);
-
-  console.log(`[Al_Hayat NeuroCare AI] Password reset for user: ${user.email}`);
-
-  return res.json({
-    success: true,
-    message: 'Password reset successfully. You can now Sign In with your new password.'
-  });
 });
 
-// 6. Google OAuth Sign In
-app.post('/api/auth/google', (req, res) => {
-  const { email, name, avatar } = req.body;
+// Password reset requires a verified reset-purpose OTP.
+app.post('/api/auth/forgot-password', authLimiter, async (req, res) => {
+  try {
+    const email = normalizeEmail(req.body.email);
+    const newPassword = String(req.body.newPassword || '');
 
-  if (!email) {
-    return res.status(400).json({ success: false, message: 'Google email is required.' });
+    if (!email || newPassword.length < 8) {
+      return res.status(400).json({ success: false, message: 'Valid email and password (minimum 8 characters) are required.' });
+    }
+
+    const verification = await Otp.findOne({
+      identifier: email,
+      purpose: 'reset',
+      verified: true,
+      expiresAt: { $gt: new Date() }
+    });
+
+    if (!verification) {
+      return res.status(403).json({ success: false, message: 'Please verify your password reset OTP first.' });
+    }
+
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(404).json({ success: false, message: 'Account not found.' });
+    }
+
+    user.passwordHash = await bcrypt.hash(newPassword, 12);
+    await user.save();
+    await Otp.deleteMany({ identifier: email, purpose: 'reset' });
+
+    return res.json({ success: true, message: 'Password reset successfully. You can now sign in.' });
+  } catch (error) {
+    console.error('Password reset error:', error.message);
+    return res.status(500).json({ success: false, message: 'Password reset failed.' });
   }
+});
 
-  const normalizedEmail = email.toLowerCase().trim();
-  let user = usersDatabase.find(u => u.email.toLowerCase() === normalizedEmail);
-
-  if (!user) {
-    user = {
-      id: `usr_g_${Date.now()}`,
-      name: name || 'Google User',
-      email: normalizedEmail,
-      phone: '',
-      password: '',
-      age: '24',
-      gender: 'Male',
-      role: 'Verified Google Account',
-      avatar: avatar || null,
-      registeredAt: new Date().toISOString()
-    };
-    usersDatabase.push(user);
-    console.log(`[Al_Hayat NeuroCare AI] New Google user registered: ${user.name} (${user.email})`);
-  } else {
-    console.log(`[Al_Hayat NeuroCare AI] Google user signed in: ${user.name} (${user.email})`);
-  }
-
-  return res.json({
-    success: true,
-    message: 'Google Sign In successful.',
-    user: {
-      id: user.id,
-      name: user.name,
-      email: user.email,
-      age: user.age,
-      gender: user.gender,
-      role: user.role,
-      avatar: user.avatar
-    },
-    token: `alh_jwt_google_${Date.now()}`
+// Google login is disabled until real Google ID-token verification is configured.
+app.post('/api/auth/google', authLimiter, (req, res) => {
+  return res.status(501).json({
+    success: false,
+    message: 'Google sign-in is not configured yet. Please use email and password.'
   });
 });
 
 // Health check
-app.get('/api/health', (req, res) => {
-  res.json({
-    status: 'ONLINE',
-    service: 'Al_Hayat NeuroCare AI Secure Clinical Server',
-    smtpConfigured: Boolean(mailTransporter),
-    registeredUsersCount: usersDatabase.length,
-    timestamp: new Date().toISOString()
-  });
+app.get('/api/health', async (req, res) => {
+  try {
+    const registeredUsersCount = await User.countDocuments();
+    return res.json({
+      status: 'ONLINE',
+      service: 'Al_Hayat NeuroCare AI Secure Medical Server',
+      smtpConfigured: Boolean(mailTransporter),
+      registeredUsersCount,
+      timestamp: new Date().toISOString()
+    });
+  } catch (error) {
+    return res.status(503).json({ status: 'DEGRADED', message: 'Database health check failed.' });
+  }
 });
 
-// ==========================================
 // CLINICAL MEDICAL KNOWLEDGE BASE ENDPOINTS
 // ==========================================
 
@@ -360,7 +340,7 @@ function getAllDiseasesFromDisk() {
         try {
           const content = JSON.parse(fs.readFileSync(path.join(catPath, file), 'utf-8'));
           results.push(content);
-        } catch (e) {}
+        } catch (e) { }
       }
     }
   }
@@ -385,7 +365,7 @@ app.get('/api/kb/search', (req, res) => {
     return res.json({ success: true, count: diseases.length, results: diseases });
   }
 
-  const results = diseases.filter(d => 
+  const results = diseases.filter(d =>
     d.official_name.toLowerCase().includes(q) ||
     (d.alternative_names && d.alternative_names.some(a => a.toLowerCase().includes(q))) ||
     d.simple_description.toLowerCase().includes(q) ||
@@ -487,6 +467,13 @@ app.post('/api/chat', async (req, res) => {
   }
 });
 
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Al_Hayat NeuroCare AI Secure Medical Backend running on http://localhost:${PORT}`);
-});
+connectDB()
+  .then(() => {
+    app.listen(PORT, '0.0.0.0', () => {
+      console.log(`Al_Hayat NeuroCare AI Secure Medical Backend running on http://localhost:${PORT}`);
+    });
+  })
+  .catch((error) => {
+    console.error('Backend startup failed:', error.message);
+    process.exit(1);
+  });

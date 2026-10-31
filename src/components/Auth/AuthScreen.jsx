@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
   Brain,
   Shield,
@@ -7,12 +7,14 @@ import {
   User,
   Phone,
   ArrowRight,
-  Sparkles,
   Eye,
   EyeOff,
   CheckCircle2,
   KeyRound,
-  AlertCircle
+  AlertCircle,
+  Stethoscope,
+  Zap,
+  Sparkles
 } from 'lucide-react';
 import { sound } from '../../utils/audio';
 import { authService } from '../../services/authService';
@@ -29,140 +31,154 @@ export default function AuthScreen({ onLoginSuccess }) {
   const [loginEmail, setLoginEmail] = useState('');
   const [loginPassword, setLoginPassword] = useState('');
 
-  // Register State (NO OTP NEEDED)
-  const [regName, setRegName] = useState('Mohd Sahil');
-  const [regEmail, setRegEmail] = useState('sahil@alhayat.ai');
-  const [regPhone, setRegPhone] = useState('+91 98765 43210');
-  const [regPassword, setRegPassword] = useState('neuro123');
-  const [regAge, setRegAge] = useState('24');
+  // Registration State
+  const [regName, setRegName] = useState('');
+  const [regEmail, setRegEmail] = useState('');
+  const [regPhone, setRegPhone] = useState('');
+  const [regPassword, setRegPassword] = useState('');
+  const [regAge, setRegAge] = useState('25');
   const [regGender, setRegGender] = useState('Male');
-  const [regRole, setRegRole] = useState('patient');
+  const [regRole, setRegRole] = useState('doctor');
+  const [regOtp, setRegOtp] = useState('');
+  const [otpSent, setOtpSent] = useState(false);
+  const [otpVerified, setOtpVerified] = useState(false);
 
   // Forgot Password State
   const [forgotEmail, setForgotEmail] = useState('');
   const [newPassword, setNewPassword] = useState('');
 
-  // Saved Google Account (remembered)
-  const [savedGoogleEmail, setSavedGoogleEmail] = useState(() => {
+  // 1. Instant Doctor Access (1-Click Demo)
+  const handleQuickDoctorAccess = () => {
+    sound.playSelect();
+    const doctor = authService.quickDoctorAccess();
+    onLoginSuccess(doctor);
+  };
+
+  // 2. Google Sign In
+  const handleGoogleSignIn = async () => {
+    sound.playClick();
+    setLoading(true);
+    setErrorMessage(null);
     try {
-      const saved = localStorage.getItem('alhayat_saved_google_account');
-      return saved ? JSON.parse(saved).email : null;
-    } catch (e) {
-      return null;
+      const res = await authService.googleSignIn();
+      if (res.success && res.user) {
+        sound.playSelect();
+        onLoginSuccess(res.user);
+      } else {
+        setErrorMessage(res.message || 'Google sign-in failed.');
+      }
+    } catch (err) {
+      setErrorMessage(err.message || 'Google sign-in error.');
+    } finally {
+      setLoading(false);
     }
-  });
+  };
 
-  // Ensure fields are fresh and empty on mount (no browser auto-fill overwrite)
-  useEffect(() => {
-    setLoginEmail('');
-    setLoginPassword('');
-    const timer = setTimeout(() => {
-      setLoginEmail('');
-      setLoginPassword('');
-    }, 150);
-    return () => clearTimeout(timer);
-  }, []);
+  // 3. Send registration OTP
+  const handleSendRegistrationOtp = async () => {
+    if (!regEmail.trim()) {
+      setErrorMessage('Please enter your email address first.');
+      return;
+    }
+    setLoading(true);
+    setErrorMessage(null);
+    setStatusMessage(null);
+    try {
+      const res = await authService.sendOtp(regEmail.trim(), 'register');
+      setOtpSent(true);
+      setOtpVerified(false);
+      setRegOtp('');
+      setStatusMessage(res.message || 'Verification code sent.');
+    } catch (err) {
+      setErrorMessage(err.message || 'Could not send verification code.');
+    } finally {
+      setLoading(false);
+    }
+  };
 
-  // Handle Direct Register Submit (NO OTP)
+  // 4. Verify registration OTP
+  const handleVerifyRegistrationOtp = async () => {
+    if (!/^\d{6}$/.test(regOtp.trim())) {
+      setErrorMessage('Please enter a valid 6-digit verification code.');
+      return;
+    }
+    setLoading(true);
+    setErrorMessage(null);
+    setStatusMessage(null);
+    try {
+      const res = await authService.verifyOtp(regEmail.trim(), regOtp.trim(), 'register');
+      setOtpVerified(true);
+      setStatusMessage(res.message || 'Email verified successfully.');
+    } catch (err) {
+      setErrorMessage(err.message || 'Invalid code. Use 123456.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // 5. Create Account & Enter Platform
   const handleRegisterSubmit = async (e) => {
     e.preventDefault();
     if (!regName.trim() || !regEmail.trim() || !regPassword.trim()) {
-      setErrorMessage('Please fill in your name, email, and password.');
+      setErrorMessage('Please fill in Name, Email, and Password.');
+      return;
+    }
+    if (regPassword.length < 4) {
+      setErrorMessage('Password must be at least 4 characters.');
       return;
     }
 
     setLoading(true);
     setErrorMessage(null);
-    sound.playClick();
-
     try {
       const res = await authService.register({
-        name: regName,
-        email: regEmail,
-        phone: regPhone,
+        name: regName.trim(),
+        email: regEmail.trim(),
+        phone: regPhone.trim(),
         password: regPassword,
         age: regAge,
         gender: regGender,
         role: regRole
       });
-
-      setLoading(false);
-      if (res.success) {
+      if (res.success && res.user) {
         sound.playSelect();
         onLoginSuccess(res.user);
       } else {
         setErrorMessage(res.message || 'Registration failed.');
       }
     } catch (err) {
+      setErrorMessage(err.message || 'Registration failed.');
+    } finally {
       setLoading(false);
-      setErrorMessage(err.message || 'Registration error.');
     }
   };
 
-  // Handle Sign In Submit (Any User & Password Accepted)
+  // 6. Sign In Submit
   const handleSignInSubmit = async (e) => {
     e.preventDefault();
     if (!loginEmail.trim() || !loginPassword.trim()) {
-      setErrorMessage('Please enter your Gmail and password.');
+      setErrorMessage('Please enter both Email and Password.');
       return;
     }
+
     setLoading(true);
     setErrorMessage(null);
-    sound.playClick();
-
-    const cleanEmail = loginEmail.toLowerCase().trim();
-    const rawUser = cleanEmail.split('@')[0] || 'User';
-    const cleanName = rawUser.replace(/[._-]/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
-
     try {
-      const res = await authService.login(loginEmail, loginPassword);
-      setLoading(false);
-      sound.playSelect();
-      if (res && res.success && res.user) {
+      const res = await authService.login(loginEmail.trim(), loginPassword);
+      if (res.success && res.user) {
+        sound.playSelect();
         onLoginSuccess(res.user);
       } else {
-        onLoginSuccess({
-          id: `usr_${Date.now()}`,
-          name: cleanName || 'Mohd Sahil',
-          email: cleanEmail.includes('@') ? cleanEmail : `${cleanEmail}@gmail.com`,
-          role: 'Patient / Consultant',
-          age: '24',
-          gender: 'Male'
-        });
+        setErrorMessage(res.message || 'Invalid email or password.');
       }
     } catch (err) {
+      setErrorMessage(err.message || 'Login failed. Please verify credentials.');
+    } finally {
       setLoading(false);
-      sound.playSelect();
-      onLoginSuccess({
-        id: `usr_${Date.now()}`,
-        name: cleanName || 'Mohd Sahil',
-        email: cleanEmail.includes('@') ? cleanEmail : `${cleanEmail}@gmail.com`,
-        role: 'Patient / Consultant',
-        age: '24',
-        gender: 'Male'
-      });
     }
   };
 
-  // Handle Google OAuth Sign In
-  const handleGoogleSignIn = async () => {
-    sound.playClick();
-    setLoading(true);
-    setErrorMessage(null);
-
-    const res = await authService.googleSignIn();
-    setLoading(false);
-
-    if (res.success) {
-      sound.playSelect();
-      setSavedGoogleEmail(res.user.email);
-      onLoginSuccess(res.user);
-    } else {
-      setErrorMessage('Google Authentication failed.');
-    }
-  };
-
-  // Handle Direct Reset Password Submit
+  // 7. Password Reset Submit
   const handleResetPasswordSubmit = async (e) => {
     e.preventDefault();
     if (!forgotEmail.trim() || !newPassword.trim()) {
@@ -173,17 +189,21 @@ export default function AuthScreen({ onLoginSuccess }) {
     setErrorMessage(null);
     sound.playClick();
 
-    const res = await authService.resetPassword(forgotEmail, 'bypass', newPassword);
-    setLoading(false);
-
-    if (res.success) {
-      sound.playSelect();
-      setStatusMessage('Password reset successfully! You can now sign in.');
-      setAuthMode('signin');
-      setLoginEmail(forgotEmail);
-      setLoginPassword(newPassword);
-    } else {
-      setErrorMessage(res.message || 'Password reset failed.');
+    try {
+      const res = await authService.resetPassword(forgotEmail.trim(), 'bypass', newPassword);
+      setLoading(false);
+      if (res.success) {
+        sound.playSelect();
+        setStatusMessage('Password reset successfully! You can now sign in.');
+        setAuthMode('signin');
+        setLoginEmail(forgotEmail.trim());
+        setLoginPassword(newPassword);
+      } else {
+        setErrorMessage(res.message || 'Password reset failed.');
+      }
+    } catch (err) {
+      setErrorMessage(err.message || 'Password reset failed.');
+      setLoading(false);
     }
   };
 
@@ -197,14 +217,14 @@ export default function AuthScreen({ onLoginSuccess }) {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a15_1px,transparent_1px),linear-gradient(to_bottom,#0f172a15_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
       </div>
 
-      {/* Main Authentication Card */}
-      <div className="relative z-10 w-full max-w-lg mx-auto flex flex-col items-center space-y-6">
-        {/* BRAND LOGO & TITLE (ENGLISH ONLY) */}
-        <div className="text-center space-y-3">
+      {/* Main Container */}
+      <div className="relative z-10 w-full max-w-lg mx-auto flex flex-col items-center space-y-5">
+        {/* BRAND LOGO & TITLE */}
+        <div className="text-center space-y-2.5">
           <div className="inline-flex relative">
-            <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-cyan-500 via-blue-600 to-indigo-600 p-[2px] shadow-[0_0_35px_rgba(6,182,212,0.5)]">
+            <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-tr from-cyan-500 via-blue-600 to-indigo-600 p-[2px] shadow-[0_0_35px_rgba(6,182,212,0.5)]">
               <div className="w-full h-full bg-[#040816] rounded-2xl flex items-center justify-center">
-                <Brain className="w-9 h-9 text-cyan-400 animate-pulse" />
+                <Brain className="w-8 h-8 sm:w-9 sm:h-9 text-cyan-400 animate-pulse" />
               </div>
             </div>
             <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-emerald-400 border-2 border-slate-950 flex items-center justify-center">
@@ -216,22 +236,46 @@ export default function AuthScreen({ onLoginSuccess }) {
             <h1 className="text-2xl sm:text-3xl font-black font-mono tracking-wider text-white">
               Al_Hayat <span className="text-cyan-400">NeuroCare AI</span>
             </h1>
-            <p className="text-xs sm:text-sm font-mono text-cyan-300 font-medium mt-1">
+            <p className="text-xs sm:text-sm font-mono text-cyan-300 font-medium mt-0.5">
               Clinical 3D Neuroanatomy & Deep Learning Diagnostic Suite
             </p>
             <div className="flex items-center justify-center gap-2 mt-2">
-              <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-cyan-950 border border-cyan-500/40 text-cyan-300">
+              <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-cyan-950/80 border border-cyan-500/40 text-cyan-300">
                 B.Tech AI & ML Capstone
               </span>
-              <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-purple-950 border border-purple-500/40 text-purple-300">
-                ISO 9001:2026 Certified
+              <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-purple-950/80 border border-purple-500/40 text-purple-300">
+                Verified Medical Suite
               </span>
             </div>
           </div>
         </div>
 
         {/* AUTH BOX */}
-        <div className="w-full glass-panel-glow bg-[#080e21]/90 border border-cyan-500/30 rounded-3xl p-6 sm:p-8 shadow-2xl backdrop-blur-2xl space-y-5">
+        <div className="w-full glass-panel-glow bg-[#080e21]/95 border border-cyan-500/30 rounded-3xl p-5 sm:p-7 shadow-2xl backdrop-blur-2xl space-y-4">
+          
+          {/* QUICK DEMO ACCESS BUTTON (GLOWING TOP HERO) */}
+          <button
+            type="button"
+            onClick={handleQuickDoctorAccess}
+            className="w-full py-2.5 px-3.5 rounded-2xl bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-purple-500/20 hover:from-cyan-500/30 hover:to-purple-500/30 border border-cyan-400/50 hover:border-cyan-300 transition-all flex items-center justify-between group shadow-[0_0_15px_rgba(6,182,212,0.2)] cursor-pointer"
+          >
+            <div className="flex items-center gap-2.5 text-left">
+              <div className="w-8 h-8 rounded-xl bg-cyan-500/20 flex items-center justify-center text-cyan-400">
+                <Stethoscope className="w-4 h-4" />
+              </div>
+              <div>
+                <div className="text-xs font-bold text-white flex items-center gap-1.5 font-mono">
+                  <span>⚡ Quick Doctor Access</span>
+                  <span className="text-[10px] px-1.5 py-0.2 rounded bg-cyan-500/30 text-cyan-300">1-Click</span>
+                </div>
+                <div className="text-[10px] text-cyan-300/80 font-mono">
+                  Enter directly as Dr. Sahil Khan, MD (Neurology)
+                </div>
+              </div>
+            </div>
+            <ArrowRight className="w-4 h-4 text-cyan-400 group-hover:translate-x-1 transition-transform" />
+          </button>
+
           {/* TAB SWITCHER: SIGN IN / REGISTER */}
           {authMode !== 'forgot_password' && (
             <div className="grid grid-cols-2 p-1 rounded-2xl bg-slate-950/80 border border-slate-800 text-xs font-mono">
@@ -243,7 +287,7 @@ export default function AuthScreen({ onLoginSuccess }) {
                   setErrorMessage(null);
                   setStatusMessage(null);
                 }}
-                className={`py-2.5 rounded-xl font-bold transition-all flex items-center justify-center gap-1.5 ${
+                className={`py-2 rounded-xl font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer ${
                   authMode === 'signin'
                     ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg'
                     : 'text-slate-400 hover:text-white'
@@ -261,7 +305,7 @@ export default function AuthScreen({ onLoginSuccess }) {
                   setErrorMessage(null);
                   setStatusMessage(null);
                 }}
-                className={`py-2.5 rounded-xl font-bold transition-all flex items-center justify-center gap-1.5 ${
+                className={`py-2 rounded-xl font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer ${
                   authMode === 'register'
                     ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg'
                     : 'text-slate-400 hover:text-white'
@@ -275,14 +319,14 @@ export default function AuthScreen({ onLoginSuccess }) {
 
           {/* STATUS OR ERROR NOTIFICATIONS */}
           {statusMessage && (
-            <div className="p-3 rounded-xl bg-emerald-950/40 border border-emerald-500/40 text-emerald-300 text-xs font-mono flex items-start gap-2">
+            <div className="p-3 rounded-xl bg-emerald-950/50 border border-emerald-500/50 text-emerald-300 text-xs font-mono flex items-start gap-2">
               <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
               <span>{statusMessage}</span>
             </div>
           )}
 
           {errorMessage && (
-            <div className="p-3 rounded-xl bg-red-950/40 border border-red-500/40 text-red-300 text-xs font-mono flex items-start gap-2">
+            <div className="p-3 rounded-xl bg-red-950/50 border border-red-500/50 text-red-300 text-xs font-mono flex items-start gap-2">
               <AlertCircle className="w-4 h-4 text-red-400 flex-shrink-0 mt-0.5" />
               <span>{errorMessage}</span>
             </div>
@@ -295,7 +339,7 @@ export default function AuthScreen({ onLoginSuccess }) {
                 type="button"
                 disabled={loading}
                 onClick={handleGoogleSignIn}
-                className="w-full py-3 px-4 rounded-xl bg-white hover:bg-slate-100 disabled:opacity-60 text-slate-900 font-bold text-xs sm:text-sm font-sans flex items-center justify-center gap-3 transition-all shadow-md group"
+                className="w-full py-2.5 px-4 rounded-xl bg-white hover:bg-slate-100 disabled:opacity-60 text-slate-900 font-bold text-xs sm:text-sm font-sans flex items-center justify-center gap-3 transition-all shadow-md group cursor-pointer"
               >
                 <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24">
                   <path
@@ -321,7 +365,7 @@ export default function AuthScreen({ onLoginSuccess }) {
               <div className="relative flex items-center justify-center">
                 <div className="border-t border-slate-800 w-full" />
                 <span className="bg-[#080e21] px-3 text-[10px] font-mono text-slate-500 uppercase whitespace-nowrap">
-                  or continue with credentials
+                  or email and password
                 </span>
                 <div className="border-t border-slate-800 w-full" />
               </div>
@@ -330,32 +374,25 @@ export default function AuthScreen({ onLoginSuccess }) {
 
           {/* 1. SIGN IN FORM */}
           {authMode === 'signin' && (
-            <form onSubmit={handleSignInSubmit} autoComplete="off" className="space-y-4">
-              {/* Browser Autofill Decoy */}
-              <input type="text" name="chrome_decoy_user" style={{ display: 'none' }} tabIndex={-1} aria-hidden="true" autoComplete="off" />
-              <input type="password" name="chrome_decoy_pass" style={{ display: 'none' }} tabIndex={-1} aria-hidden="true" autoComplete="off" />
-
-              <div className="space-y-1.5">
+            <form onSubmit={handleSignInSubmit} className="space-y-3.5">
+              <div className="space-y-1">
                 <label className="text-[11px] font-mono text-slate-400 block font-semibold">
-                  Enter your Gmail / Email
+                  Email Address
                 </label>
                 <div className="relative">
                   <Mail className="w-4 h-4 text-slate-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
                   <input
-                    type="text"
-                    name="alhayat_user_email_input"
-                    id="alhayat_user_email_input"
-                    autoComplete="new-password"
+                    type="email"
                     required
                     value={loginEmail}
                     onChange={(e) => setLoginEmail(e.target.value)}
-                    placeholder="Enter your Gmail"
+                    placeholder="e.g. sahil@alhayat.ai or your email"
                     className="w-full glass-input pl-10 pr-4 py-2.5 rounded-xl text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400"
                   />
                 </div>
               </div>
 
-              <div className="space-y-1.5">
+              <div className="space-y-1">
                 <div className="flex items-center justify-between">
                   <label className="text-[11px] font-mono text-slate-400 block font-semibold">
                     Password
@@ -378,13 +415,10 @@ export default function AuthScreen({ onLoginSuccess }) {
                   <Lock className="w-4 h-4 text-slate-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
                   <input
                     type={showPassword ? 'text' : 'password'}
-                    name="alhayat_user_secret_code"
-                    id="alhayat_user_secret_code"
-                    autoComplete="new-password"
                     required
                     value={loginPassword}
                     onChange={(e) => setLoginPassword(e.target.value)}
-                    placeholder="Enter your password"
+                    placeholder="Enter password"
                     className="w-full glass-input pl-10 pr-10 py-2.5 rounded-xl text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400"
                   />
                   <button
@@ -408,9 +442,9 @@ export default function AuthScreen({ onLoginSuccess }) {
             </form>
           )}
 
-          {/* 2. REGISTER FORM (DIRECT REGISTRATION - NO OTP) */}
+          {/* 2. REGISTER FORM */}
           {authMode === 'register' && (
-            <form onSubmit={handleRegisterSubmit} className="space-y-3.5">
+            <form onSubmit={handleRegisterSubmit} className="space-y-3">
               <div className="space-y-1">
                 <label className="text-[11px] font-mono text-slate-400 block font-semibold">
                   Full Name
@@ -423,12 +457,12 @@ export default function AuthScreen({ onLoginSuccess }) {
                     value={regName}
                     onChange={(e) => setRegName(e.target.value)}
                     placeholder="e.g. Mohd Sahil"
-                    className="w-full glass-input pl-10 pr-4 py-2.5 rounded-xl text-xs text-white placeholder-slate-600 focus:outline-none focus:border-cyan-400"
+                    className="w-full glass-input pl-10 pr-4 py-2 rounded-xl text-xs text-white placeholder-slate-600 focus:outline-none focus:border-cyan-400"
                   />
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                 <div className="space-y-1">
                   <label className="text-[11px] font-mono text-slate-400 block font-semibold">
                     Email Address
@@ -445,7 +479,7 @@ export default function AuthScreen({ onLoginSuccess }) {
 
                 <div className="space-y-1">
                   <label className="text-[11px] font-mono text-slate-400 block font-semibold">
-                    Mobile Number
+                    Phone (Optional)
                   </label>
                   <input
                     type="tel"
@@ -465,7 +499,7 @@ export default function AuthScreen({ onLoginSuccess }) {
                     type="number"
                     value={regAge}
                     onChange={(e) => setRegAge(e.target.value)}
-                    className="w-full glass-input px-2.5 py-2 rounded-xl text-xs text-white text-center"
+                    className="w-full glass-input px-2.5 py-1.5 rounded-xl text-xs text-white text-center focus:outline-none focus:border-cyan-400"
                   />
                 </div>
 
@@ -474,7 +508,7 @@ export default function AuthScreen({ onLoginSuccess }) {
                   <select
                     value={regGender}
                     onChange={(e) => setRegGender(e.target.value)}
-                    className="w-full glass-input px-2 py-2 rounded-xl text-xs text-white bg-slate-900"
+                    className="w-full glass-input px-2 py-1.5 rounded-xl text-xs text-white bg-slate-900 focus:outline-none focus:border-cyan-400"
                   >
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
@@ -483,14 +517,14 @@ export default function AuthScreen({ onLoginSuccess }) {
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-[10px] font-mono text-slate-400 block">Profile</label>
+                  <label className="text-[10px] font-mono text-slate-400 block">Role</label>
                   <select
                     value={regRole}
                     onChange={(e) => setRegRole(e.target.value)}
-                    className="w-full glass-input px-1.5 py-2 rounded-xl text-xs text-white bg-slate-900"
+                    className="w-full glass-input px-1.5 py-1.5 rounded-xl text-xs text-white bg-slate-900 focus:outline-none focus:border-cyan-400"
                   >
-                    <option value="patient">Patient</option>
                     <option value="doctor">Doctor</option>
+                    <option value="patient">Patient</option>
                   </select>
                 </div>
               </div>
@@ -506,17 +540,68 @@ export default function AuthScreen({ onLoginSuccess }) {
                     required
                     value={regPassword}
                     onChange={(e) => setRegPassword(e.target.value)}
-                    placeholder="Create a strong password"
-                    className="w-full glass-input pl-10 pr-10 py-2.5 rounded-xl text-xs text-white placeholder-slate-600 focus:outline-none focus:border-cyan-400"
+                    placeholder="Create a password (min 4 characters)"
+                    className="w-full glass-input pl-10 pr-10 py-2 rounded-xl text-xs text-white placeholder-slate-600 focus:outline-none focus:border-cyan-400"
                   />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-300 cursor-pointer"
+                  >
+                    {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                  </button>
                 </div>
               </div>
 
-              {/* DIRECT REGISTER BUTTON (NO OTP NEEDED) */}
+              {/* Optional Email Verification Preview */}
+              <div className="p-2.5 rounded-xl bg-slate-950/60 border border-slate-800 text-[11px] font-mono space-y-1.5">
+                <div className="flex items-center justify-between text-slate-400">
+                  <span className="flex items-center gap-1">
+                    <Shield className="w-3 h-3 text-cyan-400" />
+                    <span>Email Verification (Optional):</span>
+                  </span>
+                  {!otpSent ? (
+                    <button
+                      type="button"
+                      onClick={handleSendRegistrationOtp}
+                      disabled={loading || !regEmail.trim()}
+                      className="text-cyan-400 hover:text-cyan-300 underline disabled:opacity-50 cursor-pointer"
+                    >
+                      Send OTP
+                    </button>
+                  ) : otpVerified ? (
+                    <span className="text-emerald-400 font-bold">Verified ✓</span>
+                  ) : (
+                    <span className="text-amber-400">Code Sent</span>
+                  )}
+                </div>
+
+                {otpSent && !otpVerified && (
+                  <div className="flex gap-2 pt-1">
+                    <input
+                      type="text"
+                      maxLength={6}
+                      value={regOtp}
+                      onChange={(e) => setRegOtp(e.target.value.replace(/\D/g, '').slice(0, 6))}
+                      placeholder="Enter 6-digit OTP"
+                      className="flex-1 glass-input px-2.5 py-1 text-xs text-white"
+                    />
+                    <button
+                      type="button"
+                      onClick={handleVerifyRegistrationOtp}
+                      className="px-3 py-1 rounded bg-cyan-600 hover:bg-cyan-500 text-white text-xs font-bold"
+                    >
+                      Verify
+                    </button>
+                  </div>
+                )}
+              </div>
+
+              {/* REGISTER SUBMIT (ALWAYS ACTIVE WHEN FORM VALID) */}
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 text-black font-extrabold text-xs sm:text-sm font-mono transition-all flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(16,185,129,0.35)]"
+                className="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 text-black font-extrabold text-xs sm:text-sm font-mono transition-all flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(16,185,129,0.35)] cursor-pointer"
               >
                 <span>{loading ? 'Creating Account...' : 'Create Account & Enter Platform'}</span>
                 <ArrowRight className="w-4 h-4" />
@@ -524,9 +609,9 @@ export default function AuthScreen({ onLoginSuccess }) {
             </form>
           )}
 
-          {/* 3. FORGOT PASSWORD (DIRECT RESET) */}
+          {/* 3. FORGOT PASSWORD */}
           {authMode === 'forgot_password' && (
-            <form onSubmit={handleResetPasswordSubmit} className="space-y-4">
+            <form onSubmit={handleResetPasswordSubmit} className="space-y-3.5">
               <div className="flex items-center justify-between pb-2 border-b border-slate-800">
                 <div className="flex items-center gap-2 text-cyan-300 font-mono text-xs font-bold">
                   <KeyRound className="w-4 h-4 text-cyan-400" />
@@ -535,15 +620,15 @@ export default function AuthScreen({ onLoginSuccess }) {
                 <button
                   type="button"
                   onClick={() => setAuthMode('signin')}
-                  className="text-[11px] font-mono text-slate-400 hover:text-white"
+                  className="text-[11px] font-mono text-slate-400 hover:text-white cursor-pointer"
                 >
                   Back to Sign In
                 </button>
               </div>
 
-              <div className="space-y-1.5">
+              <div className="space-y-1">
                 <label className="text-[11px] font-mono text-slate-400 block font-semibold">
-                  Registered Email Address
+                  Email Address
                 </label>
                 <input
                   type="email"
@@ -555,7 +640,7 @@ export default function AuthScreen({ onLoginSuccess }) {
                 />
               </div>
 
-              <div className="space-y-1.5">
+              <div className="space-y-1">
                 <label className="text-[11px] font-mono text-slate-400 block font-semibold">
                   New Password
                 </label>
@@ -564,7 +649,7 @@ export default function AuthScreen({ onLoginSuccess }) {
                   required
                   value={newPassword}
                   onChange={(e) => setNewPassword(e.target.value)}
-                  placeholder="Minimum 6 characters"
+                  placeholder="Enter new password"
                   className="w-full glass-input px-3.5 py-2.5 rounded-xl text-xs text-white placeholder-slate-600 focus:outline-none focus:border-cyan-400"
                 />
               </div>
@@ -572,7 +657,7 @@ export default function AuthScreen({ onLoginSuccess }) {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 text-white font-extrabold text-xs sm:text-sm font-mono transition-all flex items-center justify-center gap-2 shadow-lg"
+                className="w-full py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 text-white font-extrabold text-xs sm:text-sm font-mono transition-all flex items-center justify-center gap-2 shadow-lg cursor-pointer"
               >
                 <span>Save New Password & Sign In</span>
                 <ArrowRight className="w-4 h-4" />
@@ -581,11 +666,11 @@ export default function AuthScreen({ onLoginSuccess }) {
           )}
         </div>
 
-        {/* SECURITY FOOTER (ENGLISH ONLY) */}
+        {/* SECURITY FOOTER */}
         <div className="text-center space-y-1 text-slate-500 font-mono text-[11px]">
           <div className="flex items-center justify-center gap-2 text-slate-400">
             <Shield className="w-3.5 h-3.5 text-emerald-400" />
-            <span>256-Bit SSL Encrypted • HIPAA & ISO-27001 Clinical Protocol</span>
+            <span>256-Bit SSL Encrypted • Clinical Decision Support Protocol</span>
           </div>
           <p>© 2026 Al_Hayat NeuroCare AI • Final Year B.Tech CSE AI & ML Project</p>
         </div>

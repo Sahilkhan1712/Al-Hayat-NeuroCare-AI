@@ -551,7 +551,7 @@ export default function BrainViewer({
   }, [autoRotate, rotateSpeed, scannerActive, onSelectNode]);
 
   return (
-    <div className="relative w-full h-full min-h-[550px] lg:min-h-[720px] rounded-2xl overflow-hidden glass-panel select-none">
+    <div className="relative w-full h-full min-h-[420px] sm:min-h-[550px] lg:min-h-[720px] rounded-2xl overflow-hidden glass-panel select-none">
       {/* 3D Canvas Mount */}
       <div ref={mountRef} className="w-full h-full" />
 
@@ -582,14 +582,14 @@ export default function BrainViewer({
       )}
 
       {/* Holographic HUD Top Header */}
-      <div className="absolute top-4 left-4 right-4 flex flex-wrap items-center justify-between gap-3 pointer-events-none z-10">
-        <div className="flex items-center gap-3">
-          <div className="glass-panel px-3.5 py-1.5 rounded-xl flex items-center gap-2 border-cyan-500/30">
-            <span className="relative flex h-2.5 w-2.5">
+      <div className="absolute top-2.5 left-2.5 right-2.5 sm:top-4 sm:left-4 sm:right-4 flex flex-wrap items-center justify-between gap-2 pointer-events-none z-10">
+        <div className="flex items-center gap-2 sm:gap-3">
+          <div className="glass-panel px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-xl flex items-center gap-1.5 sm:gap-2 border-cyan-500/30">
+            <span className="relative flex h-2 w-2 sm:h-2.5 sm:w-2.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-cyan-500"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 sm:h-2.5 sm:w-2.5 bg-cyan-500"></span>
             </span>
-            <span className="text-xs font-mono font-semibold tracking-wider text-cyan-300">
+            <span className="text-[10px] sm:text-xs font-mono font-semibold tracking-wider text-cyan-300">
               3D BRAIN ANATOMY ENGINE
             </span>
           </div>
@@ -601,48 +601,48 @@ export default function BrainViewer({
         </div>
 
         {/* View Camera Presets Bar */}
-        <div className="pointer-events-auto flex items-center gap-1.5 glass-panel p-1 rounded-xl bg-slate-900/80 border-slate-700/60 shadow-xl">
+        <div className="pointer-events-auto flex items-center gap-1 sm:gap-1.5 glass-panel p-1 rounded-xl bg-slate-900/80 border-slate-700/60 shadow-xl overflow-x-auto max-w-full scrollbar-none">
           <button
             onClick={() => setCameraView('anterior')}
-            className="px-2.5 py-1 text-[11px] font-mono rounded-lg hover:bg-cyan-500/20 hover:text-cyan-300 transition-all text-slate-300"
+            className="px-2 py-0.5 sm:px-2.5 sm:py-1 text-[10px] sm:text-[11px] font-mono rounded-lg hover:bg-cyan-500/20 hover:text-cyan-300 transition-all text-slate-300 flex-shrink-0"
             title="Frontal Anterior View"
           >
             Anterior
           </button>
           <button
             onClick={() => setCameraView('superior')}
-            className="px-2.5 py-1 text-[11px] font-mono rounded-lg hover:bg-cyan-500/20 hover:text-cyan-300 transition-all text-slate-300"
+            className="px-2 py-0.5 sm:px-2.5 sm:py-1 text-[10px] sm:text-[11px] font-mono rounded-lg hover:bg-cyan-500/20 hover:text-cyan-300 transition-all text-slate-300 flex-shrink-0"
             title="Superior Top-Down View"
           >
             Superior
           </button>
           <button
             onClick={() => setCameraView('leftSagittal')}
-            className="px-2.5 py-1 text-[11px] font-mono rounded-lg hover:bg-cyan-500/20 hover:text-cyan-300 transition-all text-slate-300"
+            className="px-2 py-0.5 sm:px-2.5 sm:py-1 text-[10px] sm:text-[11px] font-mono rounded-lg hover:bg-cyan-500/20 hover:text-cyan-300 transition-all text-slate-300 flex-shrink-0"
             title="Left Lateral Sagittal View"
           >
             Sagittal (L)
           </button>
           <button
             onClick={() => setCameraView('rightSagittal')}
-            className="px-2.5 py-1 text-[11px] font-mono rounded-lg hover:bg-cyan-500/20 hover:text-cyan-300 transition-all text-slate-300"
+            className="px-2 py-0.5 sm:px-2.5 sm:py-1 text-[10px] sm:text-[11px] font-mono rounded-lg hover:bg-cyan-500/20 hover:text-cyan-300 transition-all text-slate-300 flex-shrink-0"
             title="Right Lateral Sagittal View"
           >
             Sagittal (R)
           </button>
           <button
             onClick={() => setCameraView('posterior')}
-            className="px-2.5 py-1 text-[11px] font-mono rounded-lg hover:bg-cyan-500/20 hover:text-cyan-300 transition-all text-slate-300"
+            className="hidden sm:inline-block px-2.5 py-1 text-[11px] font-mono rounded-lg hover:bg-cyan-500/20 hover:text-cyan-300 transition-all text-slate-300 flex-shrink-0"
             title="Posterior Occipital View"
           >
             Posterior
           </button>
           <button
             onClick={handleResetCamera}
-            className="p-1.5 text-xs rounded-lg hover:bg-cyan-500/20 text-cyan-400 hover:text-cyan-200 transition-all"
+            className="p-1 sm:p-1.5 text-xs rounded-lg hover:bg-cyan-500/20 text-cyan-400 hover:text-cyan-200 transition-all flex-shrink-0"
             title="Reset to Isometric Perspective"
           >
-            <RefreshCw className="w-3.5 h-3.5" />
+            <RefreshCw className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
           </button>
         </div>
       </div>
@@ -717,15 +717,15 @@ export default function BrainViewer({
       )}
 
       {/* Bottom Floating Control Bar */}
-      <div className="absolute bottom-4 left-4 right-4 flex flex-wrap items-center justify-between gap-3 pointer-events-none z-10">
+      <div className="absolute bottom-2.5 left-2.5 right-2.5 sm:bottom-4 sm:left-4 sm:right-4 flex flex-wrap items-center justify-between gap-2 pointer-events-none z-10">
         {/* Left: Shading Modes */}
-        <div className="pointer-events-auto flex items-center gap-1 glass-panel p-1 rounded-xl bg-slate-900/80 border-slate-700/60 shadow-xl">
+        <div className="pointer-events-auto flex items-center gap-1 glass-panel p-1 rounded-xl bg-slate-900/80 border-slate-700/60 shadow-xl overflow-x-auto max-w-full scrollbar-none">
           <button
             onClick={() => {
               sound.playClick();
               setShadingMode('anatomical');
             }}
-            className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-all flex items-center gap-1.5 ${
+            className={`px-2 py-1 sm:px-3 sm:py-1.5 text-[11px] sm:text-xs font-medium rounded-lg transition-all flex items-center gap-1 sm:gap-1.5 flex-shrink-0 ${
               shadingMode === 'anatomical'
                 ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg'
                 : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800'
@@ -739,7 +739,7 @@ export default function BrainViewer({
               sound.playClick();
               setShadingMode('xray');
             }}
-            className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-all flex items-center gap-1.5 ${
+            className={`px-2 py-1 sm:px-3 sm:py-1.5 text-[11px] sm:text-xs font-medium rounded-lg transition-all flex items-center gap-1 sm:gap-1.5 flex-shrink-0 ${
               shadingMode === 'xray'
                 ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg'
                 : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800'
@@ -753,7 +753,7 @@ export default function BrainViewer({
               sound.playClick();
               setShadingMode('neural');
             }}
-            className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-all flex items-center gap-1.5 ${
+            className={`px-2 py-1 sm:px-3 sm:py-1.5 text-[11px] sm:text-xs font-medium rounded-lg transition-all flex items-center gap-1 sm:gap-1.5 flex-shrink-0 ${
               shadingMode === 'neural'
                 ? 'bg-gradient-to-r from-pink-500 to-purple-600 text-white shadow-lg'
                 : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800'
@@ -767,7 +767,7 @@ export default function BrainViewer({
               sound.playClick();
               setShadingMode('pathology');
             }}
-            className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-all flex items-center gap-1.5 ${
+            className={`px-2 py-1 sm:px-3 sm:py-1.5 text-[11px] sm:text-xs font-medium rounded-lg transition-all flex items-center gap-1 sm:gap-1.5 flex-shrink-0 ${
               shadingMode === 'pathology'
                 ? 'bg-gradient-to-r from-red-500 to-rose-600 text-white shadow-lg'
                 : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800'

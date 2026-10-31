@@ -461,13 +461,28 @@ export default function AINeurologistChat({
   const [activeReportModal, setActiveReportModal] = useState(null);
   const [isSpeaking, setIsSpeaking] = useState(false);
   const messagesEndRef = useRef(null);
+  const chatContainerRef = useRef(null);
+  const isFirstRender = useRef(true);
 
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  const scrollToBottom = (behavior = 'smooth') => {
+    if (chatContainerRef.current) {
+      chatContainerRef.current.scrollTo({
+        top: chatContainerRef.current.scrollHeight,
+        behavior
+      });
+    }
   };
 
   useEffect(() => {
-    scrollToBottom();
+    // Prevent browser window from scrolling down on initial component mount
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      if (chatContainerRef.current) {
+        chatContainerRef.current.scrollTop = 0;
+      }
+      return;
+    }
+    scrollToBottom('smooth');
   }, [messages, isTyping]);
 
   // Step 1: Confirm Demographics
@@ -774,7 +789,7 @@ export default function AINeurologistChat({
   };
 
   return (
-    <div className="glass-panel p-4 sm:p-5 rounded-3xl border-cyan-500/30 flex flex-col h-[650px] lg:h-[720px] shadow-2xl relative bg-[#060b18]/90">
+    <div className="glass-panel p-3 sm:p-5 rounded-2xl sm:rounded-3xl border-cyan-500/30 flex flex-col h-[560px] sm:h-[650px] lg:h-[720px] shadow-2xl relative bg-[#060b18]/90">
       {/* Header */}
       <div className="flex items-center justify-between pb-3 border-b border-slate-800 flex-wrap gap-2">
         <div className="flex items-center gap-3">
@@ -825,7 +840,7 @@ export default function AINeurologistChat({
       </div>
 
       {/* Chat Messages Body */}
-      <div className="flex-1 overflow-y-auto p-2 sm:p-3 space-y-4 my-2 scrollbar-thin">
+      <div ref={chatContainerRef} className="flex-1 overflow-y-auto p-2 sm:p-3 space-y-4 my-2 scrollbar-thin">
         {messages.map((msg) => (
           <div
             key={msg.id}
@@ -1171,13 +1186,13 @@ export default function AINeurologistChat({
           value={inputVal}
           onChange={(e) => setInputVal(e.target.value)}
           placeholder={isPatientConfirmed ? "Doctor ke sawal ka jawab dein ya lakshan likhein..." : "Apna naam aur umar confirm karein..."}
-          className="flex-1 glass-input px-4 py-3 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400"
+          className="flex-1 glass-input px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400"
         />
 
         <button
           type="submit"
           disabled={!inputVal.trim() || isTyping}
-          className="px-4 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 disabled:opacity-40 text-white rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 shadow-lg"
+          className="px-3.5 sm:px-4 py-2.5 sm:py-3 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 disabled:opacity-40 text-white rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 shadow-lg flex-shrink-0"
         >
           <Send className="w-4 h-4" />
           <span className="hidden sm:inline">Send</span>

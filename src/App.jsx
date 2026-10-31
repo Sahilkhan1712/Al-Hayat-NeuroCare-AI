@@ -51,6 +51,15 @@ export default function App() {
   const [emergencyAlert, setEmergencyAlert] = useState(null);
   const [full3DMode, setFull3DMode] = useState(false);
 
+  // Ensure the page always starts at the header (top: 0) on initial load and tab changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, []);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, [activeTab, currentUser]);
+
   const handleLoginSuccess = (user) => {
     setCurrentUser(user);
     try {
@@ -139,33 +148,63 @@ export default function App() {
       />
 
       {/* Main Container */}
-      <main className="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8 space-y-6">
+      <main className="flex-1 max-w-7xl w-full mx-auto p-2 sm:p-6 lg:p-8 space-y-3 sm:space-y-6">
         {/* TAB 1: 3D HUMAN BRAIN & AI DOCTOR (SIMPLIFIED FLAGSHIP HERO) */}
         {activeTab === '3d_brain' && (
-          <div className="space-y-4">
-            {/* Lobe Filter Strip */}
-            <div className="glass-panel px-4 py-3 rounded-2xl flex flex-wrap items-center justify-between gap-3 border-cyan-500/20">
-              <div className="flex items-center gap-2">
-                <Brain className="w-5 h-5 text-cyan-400" />
-                <span className="text-xs font-mono font-bold text-white uppercase tracking-wider">
-                  Anatomical Lobes:
-                </span>
+          <div className="space-y-3 sm:space-y-4">
+            {/* Lobe Filter Strip - Sleek Horizontal Scroller on Mobile, Flex on Desktop */}
+            <div className="glass-panel px-3 sm:px-4 py-2.5 sm:py-3 rounded-2xl border-cyan-500/20">
+              <div className="flex items-center justify-between gap-2 mb-2 sm:mb-0 sm:hidden">
+                <div className="flex items-center gap-1.5">
+                  <Brain className="w-4 h-4 text-cyan-400" />
+                  <span className="text-[11px] font-mono font-bold text-white uppercase tracking-wider">
+                    Anatomical Lobes:
+                  </span>
+                </div>
+                <div className="flex items-center gap-1">
+                  {(activeFilter !== 'all' || selectedNode || highlightedNodes.length > 0) && (
+                    <button
+                      onClick={handleClearFilters}
+                      className="px-2 py-0.5 rounded-lg bg-red-950/60 text-red-400 text-[10px] font-mono flex items-center gap-1"
+                      title="Reset Filters"
+                    >
+                      <RotateCcw className="w-3 h-3" />
+                      <span>Reset</span>
+                    </button>
+                  )}
+                  <button
+                    onClick={() => {
+                      sound.playClick();
+                      setFull3DMode(!full3DMode);
+                    }}
+                    className="px-2 py-0.5 text-[10px] font-mono rounded-lg bg-slate-800 text-slate-300 border border-slate-700 flex items-center gap-1"
+                  >
+                    {full3DMode ? <Minimize2 className="w-3 h-3" /> : <Maximize2 className="w-3 h-3" />}
+                    <span>{full3DMode ? 'Split' : 'Full 3D'}</span>
+                  </button>
+                </div>
               </div>
 
-              {/* Lobe Filter Buttons */}
-              <div className="flex flex-wrap items-center gap-1.5">
+              <div className="flex items-center gap-1.5 overflow-x-auto scrollbar-none pb-0.5 sm:pb-0 sm:flex-wrap">
+                <div className="hidden sm:flex items-center gap-2 mr-1 flex-shrink-0">
+                  <Brain className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400" />
+                  <span className="text-xs font-mono font-bold text-white uppercase tracking-wider">
+                    Lobes:
+                  </span>
+                </div>
+
                 <button
                   onClick={() => {
                     sound.playClick();
                     setActiveFilter('all');
                   }}
-                  className={`px-3 py-1 text-xs font-mono rounded-lg transition-all ${
+                  className={`px-2.5 sm:px-3 py-1 text-[11px] sm:text-xs font-mono rounded-lg transition-all flex-shrink-0 ${
                     activeFilter === 'all'
                       ? 'bg-cyan-500 text-black font-bold shadow-[0_0_12px_rgba(6,182,212,0.6)]'
                       : 'bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-700'
                   }`}
                 >
-                  All (65 Meshes)
+                  All (65)
                 </button>
 
                 {Object.values(LOBE_PALETTES).map((lobe) => (
@@ -175,7 +214,7 @@ export default function App() {
                       sound.playClick();
                       setActiveFilter(lobe.id);
                     }}
-                    className={`px-2.5 py-1 text-xs font-mono rounded-lg transition-all flex items-center gap-1.5 border ${
+                    className={`px-2 sm:px-2.5 py-1 text-[11px] sm:text-xs font-mono rounded-lg transition-all flex items-center gap-1.5 border flex-shrink-0 ${
                       activeFilter === lobe.id
                         ? 'border-white font-bold text-white shadow-lg'
                         : 'border-slate-800 bg-slate-900/60 text-slate-400 hover:text-white'
@@ -186,7 +225,7 @@ export default function App() {
                     }}
                   >
                     <span
-                      className="w-2 h-2 rounded-full"
+                      className="w-2 h-2 rounded-full flex-shrink-0"
                       style={{ backgroundColor: lobe.color }}
                     />
                     <span>{lobe.name.split(' ')[0]}</span>
@@ -196,7 +235,7 @@ export default function App() {
                 {(activeFilter !== 'all' || selectedNode || highlightedNodes.length > 0) && (
                   <button
                     onClick={handleClearFilters}
-                    className="p-1.5 rounded-lg bg-red-950/40 hover:bg-red-900/50 text-red-400 text-xs transition-colors flex items-center gap-1"
+                    className="hidden sm:flex p-1.5 rounded-lg bg-red-950/40 hover:bg-red-900/50 text-red-400 text-xs transition-colors items-center gap-1 flex-shrink-0"
                     title="Reset Lobe Filters & Highlights"
                   >
                     <RotateCcw className="w-3.5 h-3.5" />
@@ -204,13 +243,13 @@ export default function App() {
                   </button>
                 )}
 
-                {/* Toggle Full 3D vs Split Doctor View */}
+                {/* Toggle Full 3D vs Split Doctor View (Desktop) */}
                 <button
                   onClick={() => {
                     sound.playClick();
                     setFull3DMode(!full3DMode);
                   }}
-                  className="px-2.5 py-1 text-xs font-mono rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 flex items-center gap-1"
+                  className="hidden sm:flex px-2.5 py-1 text-xs font-mono rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 items-center gap-1 flex-shrink-0"
                   title="Toggle Full 3D View"
                 >
                   {full3DMode ? <Minimize2 className="w-3.5 h-3.5" /> : <Maximize2 className="w-3.5 h-3.5" />}

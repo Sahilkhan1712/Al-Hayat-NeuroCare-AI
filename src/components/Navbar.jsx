@@ -59,30 +59,32 @@ export default function Navbar({
 
   return (
     <header className="sticky top-0 z-40 w-full glass-panel border-b border-cyan-500/20 bg-[#040711]/95 backdrop-blur-xl">
-      {/* Red Flag Emergency Top Ribbon */}
-      <div className="bg-red-950/70 border-b border-red-500/30 px-4 py-1 text-[11px] font-mono flex items-center justify-between text-red-200">
-        <div className="flex items-center gap-2 truncate">
+      {/* Red Flag Emergency Top Ribbon - Responsive & Clean */}
+      <div className="bg-red-950/80 border-b border-red-500/30 px-3 sm:px-4 py-1 text-[10px] sm:text-[11px] font-mono flex items-center justify-between text-red-200">
+        <div className="flex items-center gap-1.5 sm:gap-2 truncate mr-2">
           <span className="w-2 h-2 rounded-full bg-red-400 animate-ping flex-shrink-0" />
-          <span className="truncate">EMERGENCY: Sudden face droop, arm weakness, or speech loss? Call 112 / 911 immediately.</span>
+          <span className="truncate hidden sm:inline">EMERGENCY: Sudden face droop, arm weakness, or speech loss? Call 112 / 911 immediately.</span>
+          <span className="truncate sm:hidden font-bold">EMERGENCY: FAST Stroke Alert (112 / 911)</span>
         </div>
         <button
           onClick={onTriggerEmergency}
-          className="text-red-300 hover:text-white underline font-bold flex items-center gap-1 cursor-pointer flex-shrink-0 ml-2"
+          className="text-red-300 hover:text-white underline font-bold flex items-center gap-1 cursor-pointer flex-shrink-0"
         >
-          <span>FAST Stroke Checklist</span>
+          <span className="hidden sm:inline">FAST Stroke Checklist</span>
+          <span className="sm:hidden text-[10px]">Checklist</span>
           <span>→</span>
         </button>
       </div>
 
-      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-2 sm:gap-4">
+      <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 h-14 sm:h-16 flex items-center justify-between gap-1.5 sm:gap-4">
         {/* Brand with Clean, Unclipped Dual-Hemisphere Brain Logo */}
         <div
           onClick={() => onSelectTab('3d_brain')}
-          className="cursor-pointer flex items-center gap-2.5 flex-shrink-0 group select-none"
+          className="cursor-pointer flex items-center gap-1.5 sm:gap-2.5 flex-shrink-0 group select-none"
         >
           {/* High-Tech Glowing Dual-Hemisphere Brain Logo Icon */}
-          <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-[#0c1a3d] via-[#071129] to-[#040817] p-1 border border-cyan-500/50 shadow-[0_0_15px_rgba(6,182,212,0.4)] group-hover:shadow-[0_0_20px_rgba(6,182,212,0.7)] group-hover:border-cyan-400 transition-all flex items-center justify-center flex-shrink-0">
-            <svg viewBox="0 0 64 64" className="w-7 h-7 drop-shadow-[0_0_6px_rgba(6,182,212,0.8)]">
+          <div className="relative w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-[#0c1a3d] via-[#071129] to-[#040817] p-1 border border-cyan-500/50 shadow-[0_0_15px_rgba(6,182,212,0.4)] group-hover:shadow-[0_0_20px_rgba(6,182,212,0.7)] group-hover:border-cyan-400 transition-all flex items-center justify-center flex-shrink-0">
+            <svg viewBox="0 0 64 64" className="w-5 h-5 sm:w-7 sm:h-7 drop-shadow-[0_0_6px_rgba(6,182,212,0.8)]">
               {/* Left Hemisphere (Biological Cerebral Cortex) */}
               <path
                 d="M 30,10 C 22,10 14,16 14,24 C 14,28 16,31 18,34 C 15,37 14,42 16,46 C 18,50 23,54 30,54 Z"
@@ -123,25 +125,26 @@ export default function Navbar({
             </svg>
 
             {/* Glowing Live AI Pulse Indicator */}
-            <span className="absolute -top-1 -right-1 flex h-2.5 w-2.5">
+            <span className="absolute -top-1 -right-1 flex h-2 w-2 sm:h-2.5 sm:w-2.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-cyan-500 border-2 border-slate-900" />
+              <span className="relative inline-flex rounded-full h-2 w-2 sm:h-2.5 sm:w-2.5 bg-cyan-500 border border-slate-900" />
             </span>
           </div>
 
           {/* Clean, Non-colliding Typography */}
           <div className="flex flex-col justify-center whitespace-nowrap">
-            <div className="flex items-center gap-1.5 leading-tight">
-              <span className="text-base sm:text-lg font-black tracking-tight text-white font-sans">
+            <div className="flex items-center gap-1 sm:gap-1.5 leading-tight">
+              <span className="text-xs sm:text-base lg:text-lg font-black tracking-tight text-white font-sans">
                 Al_Hayat
               </span>
-              <span className="text-base sm:text-lg font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-400 font-sans">
+              <span className="text-xs sm:text-base lg:text-lg font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-400 font-sans">
                 NeuroCare AI
               </span>
             </div>
-            <span className="text-[10px] font-mono text-cyan-300/90 flex items-center gap-1 font-semibold leading-tight mt-0.5">
+            <span className="text-[8.5px] sm:text-[10px] font-mono text-cyan-300/90 flex items-center gap-1 font-semibold leading-tight mt-0.5">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block" />
-              <span>Hospital & 3D Anatomy</span>
+              <span className="hidden xs:inline">Hospital & 3D Anatomy</span>
+              <span className="xs:hidden">Hospital & 3D</span>
             </span>
           </div>
         </div>
@@ -177,122 +180,150 @@ export default function Navbar({
         </nav>
 
         {/* Right Tools: Voice Welcome + Language + Audio + User Profile Dropdown */}
-        <div className="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
+        <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
           {/* Welcome Voice Trigger Button */}
           <button
             onClick={handlePlayWelcomeVoice}
-            className="px-2.5 py-1.5 rounded-xl bg-gradient-to-r from-pink-950/60 to-purple-950/60 border border-pink-500/40 hover:border-pink-400 text-pink-300 text-xs font-mono flex items-center gap-1.5 shadow transition-all cursor-pointer"
+            className="p-1.5 sm:px-2.5 sm:py-1.5 rounded-xl bg-gradient-to-r from-pink-950/60 to-purple-950/60 border border-pink-500/40 hover:border-pink-400 text-pink-300 text-xs font-mono flex items-center gap-1 sm:gap-1.5 shadow transition-all cursor-pointer flex-shrink-0"
             title="Awaaz sunein: Aapka NeuroCare AI mein swagat hai"
           >
-            <Volume2 className="w-3.5 h-3.5 text-pink-400 animate-pulse" />
-            <span className="hidden sm:inline">Voice Welcome</span>
+            <Volume2 className="w-3.5 h-3.5 text-pink-400 animate-pulse flex-shrink-0" />
+            <span className="hidden md:inline">Voice Welcome</span>
           </button>
 
           {/* Multilingual Selector */}
           <div className="relative">
             <button
               onClick={() => setLangDropdownOpen(!langDropdownOpen)}
-              className="px-2.5 py-1.5 rounded-xl glass-panel bg-slate-900 border-slate-700 hover:border-cyan-500/40 text-xs font-mono text-slate-200 flex items-center gap-1.5 transition-all cursor-pointer"
+              className="p-1.5 sm:px-2.5 sm:py-1.5 rounded-xl glass-panel bg-slate-900 border-slate-700 hover:border-cyan-500/40 text-xs font-mono text-slate-200 flex items-center gap-1 sm:gap-1.5 transition-all cursor-pointer flex-shrink-0"
               title="Select Language"
             >
-              <Globe className="w-3.5 h-3.5 text-cyan-400" />
+              <Globe className="w-3.5 h-3.5 text-cyan-400 flex-shrink-0 hidden xs:inline" />
               <span>{currentLang.flag}</span>
-              <span className="hidden sm:inline font-bold">{currentLang.name}</span>
+              <span className="hidden md:inline font-bold">{currentLang.name}</span>
             </button>
 
             {langDropdownOpen && (
-              <div className="absolute right-0 mt-2 w-48 rounded-2xl glass-panel-glow bg-[#0a101f] border border-cyan-500/40 shadow-2xl py-2 z-50 animate-in zoom-in-95">
-                <div className="px-3 py-1 text-[10px] font-mono uppercase text-slate-400 border-b border-slate-800">
-                  Select Language / भाषा
+              <>
+                <div
+                  className="fixed inset-0 z-40"
+                  onClick={() => setLangDropdownOpen(false)}
+                />
+                <div className="absolute right-0 mt-2 w-48 rounded-2xl glass-panel-glow bg-[#0a101f] border border-cyan-500/40 shadow-2xl py-2 z-50 animate-in zoom-in-95">
+                  <div className="px-3 py-1 text-[10px] font-mono uppercase text-slate-400 border-b border-slate-800">
+                    Select Language / भाषा
+                  </div>
+                  <div className="max-h-60 overflow-y-auto scrollbar-thin py-1">
+                    {SUPPORTED_LANGUAGES.map((lang) => (
+                      <button
+                        key={lang.code}
+                        onClick={() => {
+                          sound.playClick();
+                          onSelectLanguage(lang.code);
+                          setLangDropdownOpen(false);
+                        }}
+                        className={`w-full text-left px-3 py-1.5 text-xs flex items-center justify-between hover:bg-slate-800 transition-colors ${
+                          selectedLanguage === lang.code ? 'text-cyan-400 font-bold bg-cyan-950/40' : 'text-slate-300'
+                        }`}
+                      >
+                        <span className="flex items-center gap-2">
+                          <span>{lang.flag}</span>
+                          <span>{lang.name}</span>
+                        </span>
+                        <span className="text-[10px] text-slate-500 font-mono">{lang.native}</span>
+                      </button>
+                    ))}
+                  </div>
                 </div>
-                <div className="max-h-60 overflow-y-auto scrollbar-thin py-1">
-                  {SUPPORTED_LANGUAGES.map((lang) => (
-                    <button
-                      key={lang.code}
-                      onClick={() => {
-                        sound.playClick();
-                        onSelectLanguage(lang.code);
-                        setLangDropdownOpen(false);
-                      }}
-                      className={`w-full text-left px-3 py-1.5 text-xs flex items-center justify-between hover:bg-slate-800 transition-colors ${
-                        selectedLanguage === lang.code ? 'text-cyan-400 font-bold bg-cyan-950/40' : 'text-slate-300'
-                      }`}
-                    >
-                      <span className="flex items-center gap-2">
-                        <span>{lang.flag}</span>
-                        <span>{lang.name}</span>
-                      </span>
-                      <span className="text-[10px] text-slate-500 font-mono">{lang.native}</span>
-                    </button>
-                  ))}
-                </div>
-              </div>
+              </>
             )}
           </div>
 
           {/* Audio Mute */}
           <button
             onClick={toggleMute}
-            className={`p-2 rounded-xl border text-xs transition-all cursor-pointer ${
+            className={`p-1.5 sm:p-2 rounded-xl border text-xs transition-all cursor-pointer flex-shrink-0 ${
               muted
                 ? 'bg-slate-900 text-slate-500 border-slate-800'
                 : 'bg-cyan-950/30 text-cyan-300 border-cyan-500/30 shadow-[0_0_10px_rgba(6,182,212,0.2)]'
             }`}
             title={muted ? 'Unmute Audio FX' : 'Mute Medical Audio FX'}
           >
-            {muted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
+            {muted ? <VolumeX className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> : <Volume2 className="w-3.5 h-3.5 sm:w-4 sm:h-4" />}
           </button>
 
-          {/* User Profile with Interactive Dropdown (Clicking Mohd Sahil opens Logout menu) */}
+          {/* User Profile with Interactive Dropdown (Always visible on mobile & desktop) */}
           {currentUser && (
-            <div className="relative pl-1">
+            <div className="relative flex-shrink-0">
               <button
                 onClick={() => {
                   sound.playClick();
                   setUserMenuOpen(!userMenuOpen);
                 }}
-                className="flex items-center gap-2 text-xs font-mono text-slate-200 bg-slate-900/90 hover:bg-slate-800 px-3 py-1.5 rounded-xl border border-slate-700/80 hover:border-cyan-500/60 shadow-sm transition-all cursor-pointer"
+                className="flex items-center gap-1 sm:gap-2 text-xs font-mono text-slate-200 bg-slate-900/95 hover:bg-slate-800 px-2 py-1 sm:px-3 sm:py-1.5 rounded-xl border border-cyan-500/40 hover:border-cyan-400 shadow-[0_0_10px_rgba(6,182,212,0.2)] transition-all cursor-pointer flex-shrink-0"
                 title="Click for Profile & Logout"
               >
-                <div className="w-5 h-5 rounded-lg bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-white text-[10px] font-bold">
+                <div className="w-5 h-5 rounded-lg bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-white text-[10px] font-bold flex-shrink-0">
                   {(currentUser.name || 'M')[0].toUpperCase()}
                 </div>
-                <span className="font-semibold text-white tracking-tight">{currentUser.name || 'Mohd Sahil'}</span>
-                <ChevronDown className={`w-3.5 h-3.5 text-cyan-400 transition-transform duration-200 ${userMenuOpen ? 'rotate-180' : ''}`} />
+                <span className="font-semibold text-white tracking-tight max-w-[58px] xs:max-w-[85px] sm:max-w-none truncate text-[11px] sm:text-xs">
+                  {currentUser.name || 'Mohd Sahil'}
+                </span>
+                <ChevronDown className={`w-3 h-3 sm:w-3.5 sm:h-3.5 text-cyan-400 transition-transform duration-200 flex-shrink-0 ${userMenuOpen ? 'rotate-180' : ''}`} />
               </button>
 
               {/* Profile Dropdown Menu */}
               {userMenuOpen && (
-                <div className="absolute right-0 mt-2 w-56 rounded-2xl glass-panel-glow bg-[#0a101f]/95 border border-cyan-500/40 shadow-2xl p-2 z-50 animate-in zoom-in-95 backdrop-blur-xl">
-                  {/* User Profile Header */}
-                  <div className="px-3 py-2 border-b border-slate-800/80">
-                    <div className="text-xs font-bold text-white flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                      <span>{currentUser.name || 'Mohd Sahil'}</span>
+                <>
+                  <div
+                    className="fixed inset-0 z-40"
+                    onClick={() => setUserMenuOpen(false)}
+                  />
+                  <div className="absolute right-0 mt-2 w-56 max-w-[calc(100vw-1rem)] rounded-2xl glass-panel-glow bg-[#0a101f]/95 border border-cyan-500/40 shadow-2xl p-2 z-50 animate-in zoom-in-95 backdrop-blur-xl">
+                    {/* User Profile Header */}
+                    <div className="px-3 py-2 border-b border-slate-800/80">
+                      <div className="text-xs font-bold text-white flex items-center gap-1.5">
+                        <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse flex-shrink-0" />
+                        <span className="truncate">{currentUser.name || 'Mohd Sahil'}</span>
+                      </div>
+                      <div className="text-[10px] font-mono text-cyan-400 mt-0.5">
+                        UHID: ALH-2026-9842
+                      </div>
+                      <div className="text-[9.5px] font-mono text-slate-400 mt-0.5 truncate">
+                        {currentUser.email || 'mohd.sahil@alhayat.ai'}
+                      </div>
                     </div>
-                    <div className="text-[10px] font-mono text-cyan-400 mt-0.5">
-                      UHID: ALH-2026-9842
-                    </div>
-                    <div className="text-[9.5px] font-mono text-slate-400 mt-0.5">
-                      {currentUser.email || 'mohd.sahil@alhayat.ai'}
-                    </div>
-                  </div>
 
-                  {/* Logout Action */}
-                  <div className="pt-1.5">
-                    <button
-                      onClick={() => {
-                        sound.playSelect();
-                        setUserMenuOpen(false);
-                        onLogout();
-                      }}
-                      className="w-full text-left px-3 py-2 rounded-xl text-xs font-mono font-bold text-red-400 hover:text-white hover:bg-red-600/90 border border-transparent hover:border-red-500 flex items-center gap-2 transition-all cursor-pointer shadow-xs"
-                    >
-                      <LogOut className="w-4 h-4" />
-                      <span>Logout (लॉगआउट)</span>
-                    </button>
+                    {/* Quick Sound toggle inside menu on mobile */}
+                    <div className="py-1 border-b border-slate-800/60 sm:hidden">
+                      <button
+                        onClick={() => toggleMute()}
+                        className="w-full text-left px-3 py-1.5 rounded-lg text-xs font-mono text-slate-300 hover:text-white hover:bg-slate-800 flex items-center justify-between"
+                      >
+                        <span className="flex items-center gap-2">
+                          {muted ? <VolumeX className="w-3.5 h-3.5 text-slate-400" /> : <Volume2 className="w-3.5 h-3.5 text-cyan-400" />}
+                          <span>Sound FX</span>
+                        </span>
+                        <span className="text-[10px] font-bold text-cyan-400">{muted ? 'Muted' : 'On'}</span>
+                      </button>
+                    </div>
+
+                    {/* Logout Action */}
+                    <div className="pt-1.5">
+                      <button
+                        onClick={() => {
+                          sound.playSelect();
+                          setUserMenuOpen(false);
+                          onLogout();
+                        }}
+                        className="w-full text-left px-3 py-2 rounded-xl text-xs font-mono font-bold text-red-400 hover:text-white hover:bg-red-600/90 border border-transparent hover:border-red-500 flex items-center gap-2 transition-all cursor-pointer shadow-xs"
+                      >
+                        <LogOut className="w-4 h-4" />
+                        <span>Logout (लॉगआउट)</span>
+                      </button>
+                    </div>
                   </div>
-                </div>
+                </>
               )}
             </div>
           )}

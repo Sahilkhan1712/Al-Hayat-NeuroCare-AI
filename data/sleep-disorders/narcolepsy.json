@@ -1,0 +1,119 @@
+{
+  "disease_id": "narcolepsy",
+  "official_name": "Narcolepsy",
+  "alternative_names": [
+    "Hypersomnia of central origin",
+    "Cataplexy syndrome",
+    "Neend ki bimari"
+  ],
+  "category": "sleep-disorders",
+  "subcategory": "Central disorders of hypersomnolence",
+  "icd11_code": "7A20",
+  "simple_description": "A chronic neurological sleep disorder where the brain cannot regulate normal sleep-wake cycles, causing overwhelming daytime sleepiness and sudden episodes of falling asleep or muscle weakness triggered by emotion.",
+  "medical_description": "A central disorder of hypersomnolence caused by the selective autoimmune destruction of approximately 70,000 hypocretin/orexin-producing neurons in the posterolateral hypothalamus. Clinically characterized by the classic pentad: excessive daytime sleepiness (EDS), cataplexy (sudden bilateral loss of muscle tone triggered by strong emotions), sleep paralysis, hypnagogic/hypnopompic hallucinations, and disrupted nocturnal sleep.",
+  "affected_system": "Hypothalamus (lateral hypothalamic hypocretin/orexin neuronal network), locus coeruleus, tuberomammillary nucleus, and REM sleep-regulating brainstem centers.",
+  "symptoms": [
+    "Excessive Daytime Sleepiness (EDS): irresistible daily sleep attacks occurring regardless of adequate nocturnal sleep, often falling asleep mid-conversation or eating",
+    "Cataplexy (in Type 1): sudden bilateral brief loss of muscle tone provoked by positive emotions (laughter, joking, surprise) without loss of consciousness (jaw slacking, knees buckling, head dropping)",
+    "Sleep paralysis: complete inability to move or speak for 1-2 minutes upon falling asleep or waking up",
+    "Hypnagogic and hypnopompic hallucinations: vivid, often terrifying dream-like sensory hallucinations when falling asleep or awakening",
+    "Fragmented nocturnal sleep with frequent awakenings"
+  ],
+  "early_warning_signs": [
+    "Unexplained extreme sleepiness during school or work leading to accidental naps, accompanied by momentary facial twitching or knee buckling during laughter"
+  ],
+  "possible_causes": [
+    "Selective autoimmune destruction of hypothalamic hypocretin (orexin) neuropeptide-producing neurons",
+    "Strong genetic predisposition: HLA-DQB1*06:02 allele present in > 95% of Type 1 narcolepsy patients"
+  ],
+  "risk_factors": [
+    "Age of onset typically in adolescence or young adulthood (peaks at age 15 and 35)",
+    "HLA-DQB1*06:02 carrier status",
+    "Environmental triggers: H1N1 influenza infection or post-infectious immune stimulation"
+  ],
+  "disease_types": [
+    "Narcolepsy Type 1 (NT1 - with cataplexy and CSF hypocretin-1 deficiency <= 110 pg/mL)",
+    "Narcolepsy Type 2 (NT2 - without cataplexy, normal hypocretin levels; isolated hypersomnia)",
+    "Secondary narcolepsy (due to hypothalamic structural lesions, tumors, or sarcoidosis)"
+  ],
+  "clinical_evaluation": "Epworth Sleepiness Scale (ESS > 10/24), detailed sleep log and actigraphy for >= 2 weeks, clinical history of emotional muscle buckling.",
+  "diagnostic_tests": [
+    "Overnight Polysomnography (PSG) followed immediately by Daytime Multiple Sleep Latency Test (MSLT) - Mandatory diagnostic standard: MSLT shows mean sleep latency <= 8 minutes and >= 2 Sleep-Onset REM Periods (SOREMPs)",
+    "CSF Hypocretin-1 (Orexin-A) measurement via Lumbar Puncture - Gold standard: levels <= 110 pg/mL (or < 1/3 of normal control mean) definitively confirms Narcolepsy Type 1"
+  ],
+  "treatment_overview": "Comprehensive approach combining scheduled 15-20 minute daytime naps, wake-promoting stimulants for daytime sleepiness, and REM-suppressing medications for cataplexy and sleep paralysis.",
+  "medication_classes": [
+    "First-line Wake-Promoting Agents: Modafinil (100-400 mg/day) or Armodafinil (non-amphetamine selective dopamine reuptake inhibitors)",
+    "Histamine H3 Receptor Inverse Agonist: Pitolisant (Wakix)",
+    "Dopamine/Norepinephrine Reuptake Inhibitor: Solriamfetol (Sunosi)",
+    "Oxybate Salts (Sodium oxybate / Calcium-magnesium-potassium-sodium oxybates - Xyrem/Xywav) - Gold standard for treating both cataplexy and fragmented nocturnal sleep",
+    "Antidepressants for Cataplexy: Venlafaxine, Fluoxetine, Clomipramine (suppresses REM intrusion)"
+  ],
+  "precautions": [
+    "DO NOT drive or operate dangerous machinery when untreated or feeling a sleep attack coming on",
+    "Schedule strictly planned 15-minute daytime naps at lunch and late afternoon"
+  ],
+  "prevention": [
+    "Strict sleep hygiene: consistent nocturnal bedtimes and wake times 7 days a week",
+    "Avoid heavy carbohydrate-rich meals during daytime which worsen sleepiness"
+  ],
+  "complications": [
+    "Severe motor vehicle collisions and workplace machinery accidents",
+    "Occupational disability, depression, and social isolation due to misconceptions of 'laziness'"
+  ],
+  "emergency_signs": [
+    "Sudden loss of tone while swimming or driving resulting in trauma or near-drowning"
+  ],
+  "doctor_specialty": "Sleep Medicine Specialist / Neurologist",
+  "faqs": [
+    {
+      "question": "What is Cataplexy in simple terms?",
+      "answer": "Cataplexy is when a strong emotion—most commonly laughing at a funny joke or feeling surprised—triggers an instant temporary loss of muscle strength, causing your knees to give way or your jaw to drop for a few seconds, while remaining completely awake and conscious."
+    }
+  ],
+  "references": [
+    {
+      "title": "ICD-11 MMS: 7A20 Narcolepsy",
+      "source": "World Health Organization",
+      "url": "https://icd.who.int/browse/2024-01/mms/en#1073860098"
+    },
+    {
+      "title": "Narcolepsy Fact Sheet",
+      "source": "NINDS / NIH",
+      "url": "https://www.ninds.nih.gov/health-information/disorders/narcolepsy"
+    }
+  ],
+  "source_url": "https://www.ninds.nih.gov/health-information/disorders/narcolepsy",
+  "multilingual": {
+    "hi": {
+      "name": "नार्कोलेप्सी (Narcolepsy / अत्यधिक नींद का विकार)",
+      "summary": "मस्तिष्क के नींद नियंत्रण केंद्र (Hypothalamus) में हाइपोक्रेटिन की कमी, जिससे दिन में कभी भी अचानक गहरी नींद के झटके आना और हंसने या भावना पर मांसपेशियों का कमजोर होना (Cataplexy) होता है।",
+      "advice": "ड्राइविंग करने से बचें। दिन में 15-20 मिनट की छोटी नैप (झपकी) लें और स्लीप स्पेशलिस्ट से वेक-प्रोमोटिंग दवाएं (Modafinil) लें।"
+    },
+    "hinglish": {
+      "name": "Narcolepsy (Achanak din me neend aana aur Cataplexy)",
+      "summary": "Dimaag me Orexin chemical kam hone se din me achanak neend ke daure aana aur hasne par ghutne mudna.",
+      "advice": "Sleep study (PSG/MSLT) karwayein aur Modafinil dawai lein. Daytime short naps bohot helpful hoti hain."
+    },
+    "ur": {
+      "name": "نارکولپسی (دن کے وقت اچانک شدید نیند)",
+      "summary": "دماغ کے نیند کے نظام میں خرابی، دن میں اچانک سو جانا اور ہنسنے یا خوشی پر پٹھوں کا ڈھیلا پڑ جانا۔",
+      "advice": "گاڑی چلانے سے گریز کریں اور نیند کے ماہر ڈاکٹر سے رجوع کریں۔"
+    }
+  },
+  "target_3d_nodes": [
+    "hypothalamus",
+    "locus-coeruleus",
+    "brainstem",
+    "thalamus"
+  ],
+  "search_keywords": [
+    "narcolepsy",
+    "din me achanak neend aana",
+    "cataplexy",
+    "sleep attacks",
+    "hasne par kamzori",
+    "sleep paralysis",
+    "modafinil"
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "disease_id": "major-depressive-disorder",
+  "official_name": "Major depressive disorder",
+  "alternative_names": [
+    "Clinical depression",
+    "Unipolar depression",
+    "Afsurdagi / Tanav"
+  ],
+  "category": "mental-health",
+  "subcategory": "Depressive disorders",
+  "icd11_code": "6A70",
+  "simple_description": "A serious medical mood disorder that causes persistent feelings of sadness, emptiness, loss of interest in activities, fatigue, and difficulty carrying on everyday life for weeks or months.",
+  "medical_description": "A common and serious mood disorder characterized by a persistent depressed mood or a profound loss of interest or pleasure in nearly all activities (anhedonia) for at least two consecutive weeks. Accompanied by significant cognitive, neurovegetative, and psychomotor symptoms including changes in appetite or weight, insomnia or hypersomnia, psychomotor agitation or retardation, severe fatigue, feelings of worthlessness or excessive guilt, diminished concentration, and recurrent suicidal ideation.",
+  "affected_system": "Subgenual anterior cingulate cortex (Brodmann area 25), dorsolateral prefrontal cortex, hippocampus, monoaminergic neurotransmitter networks (serotonin, norepinephrine, dopamine).",
+  "symptoms": [
+    "Persistent sad, empty, irritable, or hopeless mood lasting most of the day, nearly every day",
+    "Marked loss of interest or pleasure in all or almost all activities (anhedonia)",
+    "Significant unintended weight loss or gain, or decrease/increase in appetite",
+    "Insomnia (especially early morning awakening) or excessive sleeping (hypersomnia)",
+    "Profound loss of physical energy and debilitating fatigue doing minor tasks",
+    "Feelings of worthlessness, self-reproach, or inappropriate excessive guilt",
+    "Difficulty thinking, concentrating, remembering, or making simple decisions",
+    "Recurrent thoughts of death, suicidal ideation, or suicide attempts"
+  ],
+  "early_warning_signs": [
+    "Gradual withdrawal from friends, ignoring phone calls, loss of motivation for hobbies, and sleeping poorly for > 10-14 days"
+  ],
+  "possible_causes": [
+    "Monoamine deficiency and neuroplasticity failure: decreased Brain-Derived Neurotrophic Factor (BDNF) causing hippocampal synaptic shrinkage",
+    "Dysregulation of the hypothalamic-pituitary-adrenal (HPA) axis with chronic hypercortisolemia and neuroinflammation",
+    "Interaction between genetic vulnerability and severe life stress (bereavement, trauma, relationship breakdown)"
+  ],
+  "risk_factors": [
+    "Female sex (1.7 to 2 times higher lifetime prevalence)",
+    "Family history of depressive illness or bipolar disorder",
+    "Chronic debilitating medical illnesses (stroke, Parkinson's, chronic pain, cancer)",
+    "History of childhood physical, emotional, or sexual abuse"
+  ],
+  "disease_types": [
+    "Single episode major depressive disorder",
+    "Recurrent major depressive disorder",
+    "Depression with psychotic features (delusions of ruin, guilt, or auditory hallucinations)",
+    "Peripartum depression (postpartum depression)",
+    "Seasonal affective disorder (SAD)"
+  ],
+  "clinical_evaluation": "Standardized clinical psychiatric assessment (Patient Health Questionnaire-9 - PHQ-9 score >= 10 indicates moderate-to-severe depression; Columbia-Suicide Severity Rating Scale - C-SSRS for suicide risk). Physical examination and lab tests to exclude hypothyroidism, Vitamin B12/D deficiency, and anemia.",
+  "diagnostic_tests": [
+    "Serum TSH (Thyroid Stimulating Hormone) - Rule out secondary hypothyroidism",
+    "Serum Vitamin B12, Vitamin D, and Complete Blood Count (CBC)",
+    "Screen for bipolar disorder (MDQ scale) before prescribing antidepressants to avoid triggering mania"
+  ],
+  "treatment_overview": "Comprehensive evidence-based stepped-care model: Mild to moderate: Cognitive Behavioral Therapy (CBT) or Interpersonal Psychotherapy (IPT). Moderate to severe: Combination of psychotherapy plus antidepressant medication (SSRIs/SNRIs). Treatment-resistant depression: Ketamine/Esketamine nasal spray, Electroconvulsive Therapy (ECT - gold standard for severe life-threatening psychotic depression), or Repetitive Transcranial Magnetic Stimulation (rTMS).",
+  "medication_classes": [
+    "First-line SSRIs: Escitalopram (10-20 mg), Sertraline (50-200 mg), Fluoxetine (20-60 mg)",
+    "First-line SNRIs: Venlafaxine XR (75-225 mg), Duloxetine (30-60 mg - excellent for comorbid neuropathic pain)",
+    "Atypical Antidepressants: Bupropion (NDRI - energizing, no sexual side effects or weight gain), Mirtazapine (NaSSA - promotes sleep and appetite)",
+    "NMDA Receptor Antagonist: Intranasal Esketamine (Spravato) for treatment-resistant depression"
+  ],
+  "precautions": [
+    "BLACK BOX WARNING: Close monitoring of adolescents and young adults (< 25 years) during the first 2-4 weeks of starting antidepressants for any emergence of suicidal ideation",
+    "Antidepressants require 2 to 6 weeks of continuous daily use to demonstrate clinical efficacy; do not stop abruptly"
+  ],
+  "prevention": [
+    "Regular cardiovascular exercise (proven antidepressant effect equivalent to monotherapy in mild depression)",
+    "Maintenance psychotherapy to prevent recurrent depressive episodes",
+    "Strong social support systems and healthy sleep-wake rhythms"
+  ],
+  "complications": [
+    "Suicide and self-harm (15% lifetime mortality in untreated severe depression)",
+    "Complete occupational and social disability",
+    "Cardiovascular morbidity and increased risk of dementia"
+  ],
+  "emergency_signs": [
+    "🚨 CRITICAL CRISIS: Active suicidal thoughts, plans, or suicide attempts. Immediately reach out to 24x7 crisis lifelines: Tele-MANAS (14416 / 1800-891-4416 in India), Kiran (1800-599-0019), 988 Suicide & Crisis Lifeline (US/International), or call 112 / 911."
+  ],
+  "doctor_specialty": "Psychiatrist / Clinical Psychologist",
+  "faqs": [
+    {
+      "question": "Is depression just a personal weakness or bad mood?",
+      "answer": "No. Major depression is a genuine, biologically grounded medical illness involving alterations in brain circuitry, neurotransmitters, and neuroplasticity. It cannot be overcome simply by 'trying harder' or 'snapping out of it', but it responds very well to medical treatment."
+    }
+  ],
+  "references": [
+    {
+      "title": "ICD-11 MMS: 6A70 Single episode depressive disorder",
+      "source": "World Health Organization",
+      "url": "https://icd.who.int/browse/2024-01/mms/en#1073860098"
+    },
+    {
+      "title": "Depression Information",
+      "source": "National Institute of Mental Health (NIMH)",
+      "url": "https://www.nimh.nih.gov/health/topics/depression"
+    }
+  ],
+  "source_url": "https://www.nimh.nih.gov/health/topics/depression",
+  "multilingual": {
+    "hi": {
+      "name": "मेजर डिप्रेशिव डिसऑर्डर / डिप्रेशन (Major Depression)",
+      "summary": "लगातार उदासी, किसी भी काम में मन न लगना (उदासीनता), अत्यधिक थकान, नींद न आना और जीवन के प्रति निराशा महसूस होना जो 2 सप्ताह से अधिक रहे।",
+      "advice": "यह कमजोरी नहीं बल्कि एक चिकित्सीय बीमारी है। मनोचिकित्सक से परामर्श लें। यदि मन में खुद को नुकसान पहुंचाने के विचार आएं तो तुरंत टेली-मानस (14416) या 112 पर बात करें।"
+    },
+    "hinglish": {
+      "name": "Major Depression (Depression / Gehra Tanav)",
+      "summary": "Lagatar 2 hafte se zyada udasi, kamzori, rona aana, kisi kaam me dil na lagna aur jeene ki umeed khatam lagna.",
+      "advice": "Psychiatrist se consult karein. Crisis helpline Tele-MANAS: 14416 par turant 24 ghante free baat kar sakte hain."
+    },
+    "ur": {
+      "name": "شدید ڈپریشن / افسردگی (Depression)",
+      "summary": "مسلسل اداسی، مایوسی، کسی کام میں دل نہ لگنا اور زندگی سے بیزاری۔",
+      "advice": "یہ قابل علاج بیماری ہے۔ فوراً ماہر نفسیات سے رجوع کریں۔ مدد کے لیے ہیلپ لائن 14416 پر رابطہ کریں۔"
+    }
+  },
+  "target_3d_nodes": [
+    "subgenual-cingulate-cortex",
+    "hippocampus",
+    "dorsolateral-prefrontal-cortex",
+    "amygdala"
+  ],
+  "search_keywords": [
+    "depression",
+    "udasi",
+    "depression symptoms",
+    "anhedonia",
+    "loss of interest",
+    "feeling hopeless",
+    "suicidal thoughts",
+    "tanav"
+  ]
+}

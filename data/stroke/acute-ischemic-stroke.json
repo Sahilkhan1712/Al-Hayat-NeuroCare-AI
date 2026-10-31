@@ -1,0 +1,143 @@
+{
+  "disease_id": "acute-ischemic-stroke",
+  "official_name": "Acute ischemic stroke",
+  "alternative_names": [
+    "Cerebral infarction",
+    "Brain attack",
+    "Falij",
+    "Lakwa"
+  ],
+  "category": "stroke",
+  "subcategory": "Cerebrovascular diseases",
+  "icd11_code": "8B11",
+  "simple_description": "A life-threatening medical emergency where a blood clot blocks blood flow and oxygen to a part of the brain, causing sudden facial drooping, arm weakness, or difficulty speaking.",
+  "medical_description": "An acute neurological deficit resulting from focal cerebral, spinal, or retinal infarction caused by thrombotic or embolic occlusion of a cerebral artery, persisting for >= 24 hours or until death, or with neuroimaging evidence of acute infarction.",
+  "affected_system": "Cerebral arterial circulation (Middle, Anterior, Posterior cerebral arteries or vertebrobasilar territory) and cortical/subcortical neurons.",
+  "symptoms": [
+    "Sudden numbness or weakness of the face, arm, or leg, especially on one side of the body (hemiparesis)",
+    "Sudden confusion, difficulty speaking, or understanding speech (aphasia / dysarthria)",
+    "Sudden vision impairment in one or both eyes (hemianopia / amaurosis fugax)",
+    "Sudden trouble walking, loss of balance, or coordination (ataxia)",
+    "Sudden severe headache with no known cause"
+  ],
+  "early_warning_signs": [
+    "Transient Ischemic Attack (TIA): brief warning episodes of weakness or speech slurring resolving within minutes"
+  ],
+  "possible_causes": [
+    "Large artery atherosclerosis with acute in-situ thrombosis",
+    "Cardioembolism (e.g. from Atrial Fibrillation, prosthetic valve, or dilated cardiomyopathy)",
+    "Small vessel occlusive disease (lacunar infarction)",
+    "Arterial dissection (carotid or vertebral artery)"
+  ],
+  "risk_factors": [
+    "Hypertension (single most important modifiable risk factor)",
+    "Diabetes mellitus and dyslipidemia",
+    "Atrial fibrillation and cardiovascular disease",
+    "Cigarette smoking and physical inactivity",
+    "Older age (> 55 years) and family history of stroke"
+  ],
+  "disease_types": [
+    "Large vessel atherothrombotic stroke (TOAST 1)",
+    "Cardioembolic stroke (TOAST 2)",
+    "Small vessel lacunar stroke (TOAST 3)",
+    "Stroke of other determined etiology (TOAST 4)",
+    "Cryptogenic stroke (TOAST 5)"
+  ],
+  "clinical_evaluation": "Emergent FAST triage (Face, Arm, Speech, Time), National Institutes of Health Stroke Scale (NIHSS) scoring, capillary blood glucose (to exclude hypoglycemia mimic), emergent non-contrast CT.",
+  "diagnostic_tests": [
+    "Immediate Non-contrast Brain CT - Mandatory within 20 minutes of arrival to distinguish ischemic stroke from intracerebral hemorrhage",
+    "Brain MRI with DWI (Diffusion-Weighted Imaging) - Gold standard for identifying acute hyperacute infarction within minutes",
+    "CTA or MRA of head and neck - Identify large vessel occlusion (LVO) eligible for mechanical thrombectomy",
+    "12-Lead ECG and telemetry - Screen for atrial fibrillation",
+    "Transthoracic / Transesophageal Echocardiogram - Identify cardiac sources of emboli"
+  ],
+  "treatment_overview": "TIME-CRITICAL EMERGENCY PROTOCOL: Intravenous thrombolysis (Alteplase / Tenecteplase) within 4.5 hours of symptom onset ('last known well'). Mechanical endovascular thrombectomy for large vessel occlusions within 6 to 24 hours. Subsequent secondary prevention with antiplatelets, statins, and antihypertensives.",
+  "medication_classes": [
+    "Hyperacute thrombolytic: IV Tenecteplase (0.25 mg/kg) or Alteplase (0.9 mg/kg)",
+    "Antiplatelet therapy: Aspirin (160-300 mg) started within 24-48h (after excluding hemorrhage)",
+    "Dual antiplatelet therapy (DAPT: Aspirin + Clopidogrel) for minor stroke (NIHSS <= 3) for 21 days",
+    "High-intensity statins: Atorvastatin (80 mg) or Rosuvastatin (40 mg)",
+    "Anticoagulation (DOACs: Apixaban, Dabigatran) for atrial fibrillation"
+  ],
+  "precautions": [
+    "DO NOT administer aspirin or blood thinners at home before a hospital CT scan has ruled out brain bleeding!",
+    "DO NOT lower high blood pressure acutely at home unless directed by stroke physician (permissive hypertension maintains penumbra perfusion)"
+  ],
+  "prevention": [
+    "Aggressive blood pressure control (< 130/80 mmHg)",
+    "Strict glycemic control in diabetes and smoking cessation",
+    "Oral anticoagulation for diagnosed atrial fibrillation"
+  ],
+  "complications": [
+    "Hemorrhagic transformation of ischemic infarct",
+    "Malignant cerebral edema and brain herniation",
+    "Post-stroke aspiration pneumonia, deep vein thrombosis, depression"
+  ],
+  "emergency_signs": [
+    "🚨 CRITICAL EMERGENCY: Call 112 / 911 immediately upon noticing ANY of: Face drooping, Arm weakness, Slurred speech (FAST)"
+  ],
+  "doctor_specialty": "Vascular Neurologist / Neuro-interventionalist / Emergency Medicine",
+  "faqs": [
+    {
+      "question": "What does FAST mean in stroke?",
+      "answer": "F: Face drooping (one side smile drops), A: Arm weakness (arm drifts downward when raised), S: Speech difficulty (slurred or confused words), T: Time to call emergency (112 / 911) immediately without waiting!"
+    },
+    {
+      "question": "Why is time so critical in stroke?",
+      "answer": "In ischemic stroke, approximately 1.9 million brain neurons die every single minute of delay. Thrombolysis is only safe and effective within the first 4.5 hours."
+    }
+  ],
+  "references": [
+    {
+      "title": "ICD-11 MMS: 8B11 Ischemic stroke",
+      "source": "World Health Organization",
+      "url": "https://icd.who.int/browse/2024-01/mms/en#1073860098"
+    },
+    {
+      "title": "Stroke Information Page",
+      "source": "NINDS / NIH",
+      "url": "https://www.ninds.nih.gov/health-information/disorders/stroke"
+    },
+    {
+      "title": "Guidelines for the Early Management of Patients With Acute Ischemic Stroke",
+      "source": "American Heart Association / American Stroke Association",
+      "url": "https://www.ahajournals.org/doi/10.1161/STR.0000000000000211"
+    }
+  ],
+  "source_url": "https://www.ninds.nih.gov/health-information/disorders/stroke",
+  "multilingual": {
+    "hi": {
+      "name": "एक्यूट इस्केमिक स्ट्रोक / लकवा (Acute Ischemic Stroke)",
+      "summary": "मस्तिष्क की नस में खून का थक्का जमने से रक्त प्रवाह रुक जाना। चेहरा टेढ़ा होना, एक तरफ हाथ में कमजोरी और बोली लड़खड़ाना इसके मुख्य लक्षण हैं।",
+      "advice": "🚨 तत्काल आपातकाल! तुरंत 112 / 108 पर कॉल करें और मरीज को तुरंत स्ट्रोक-रेडी अस्पताल ले जाएं। घर पर कोई दवा न दें।"
+    },
+    "hinglish": {
+      "name": "Acute Ischemic Stroke (Lakwa / Paralysis / Brain Attack)",
+      "summary": "Dimaag ki blood vessel block hone se sudden achanak haath-pair kamzor hona, chehra tedha hona aur bolne me dikkat aana.",
+      "advice": "🚨 EMERGENCY: Har minute me 19 lakh neurons marte hain. Turant 112 par call karein aur 4.5 ghante ke andar CT scan karwayein."
+    },
+    "ur": {
+      "name": "فالج / دماغی شریان کا بند ہونا (Ischemic Stroke)",
+      "summary": "دماغ کی نالی میں لوتھڑا بننے سے خون کی سپلائی رک جانا، چہرے کا ٹیڑھا ہونا اور جسم کے ایک حصے کی کمزوری۔",
+      "advice": "فوری ایمرجنسی! بلا تاخیر 112 پر کال کریں اور ہسپتال لے جائیں۔"
+    }
+  },
+  "target_3d_nodes": [
+    "middle-cerebral-artery",
+    "left-precentral-gyrus",
+    "right-precentral-gyrus",
+    "internal-capsule",
+    "broca-area"
+  ],
+  "search_keywords": [
+    "stroke",
+    "lakwa",
+    "falij",
+    "paralysis",
+    "face drooping",
+    "arm weakness",
+    "sudden speech loss",
+    "ischemic stroke",
+    "fast checklist"
+  ]
+}

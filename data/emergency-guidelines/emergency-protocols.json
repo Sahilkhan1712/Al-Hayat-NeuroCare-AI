@@ -1,0 +1,73 @@
+{
+  "acute_stroke_fast": {
+    "title": "Acute Stroke FAST Emergency Protocol",
+    "urgency": "CRITICAL EMERGENCY (Time Window: <= 4.5 Hours)",
+    "action": "Immediate emergency dispatch: Call 112 (India) / 911 (US) / 999 (UK)",
+    "criteria": [
+      "F - Face Drooping: One side of the face is numb or droops when smiling",
+      "A - Arm Weakness: One arm drifts downward when both arms are raised",
+      "S - Speech Difficulty: Slurred words, unable to speak, or difficulty understanding",
+      "T - Time to Call 112: Note the 'last known well' time and call immediately"
+    ],
+    "clinical_guidance": "Do NOT give aspirin, water, or food at home. Permissive hypertension is maintained to preserve brain penumbra. Transfer directly to a primary stroke center capable of 24x7 non-contrast CT, IV thrombolysis, and mechanical thrombectomy."
+  },
+  "thunderclap_headache": {
+    "title": "Sudden Severe Thunderclap Headache Protocol",
+    "urgency": "CRITICAL EMERGENCY - Rule out Subarachnoid Hemorrhage",
+    "action": "Immediate Emergency Department evaluation",
+    "criteria": [
+      "Headache reaching 10/10 maximum peak severity within < 1 minute ('worst headache of life')",
+      "Neck stiffness (inability to touch chin to chest)",
+      "Accompanying vomiting, confusion, or transient loss of consciousness"
+    ],
+    "clinical_guidance": "Immediate Non-contrast Brain CT. If CT is normal and headache began > 6 hours prior, Lumbar Puncture is mandatory to check for xanthochromia. Ruptured berry aneurysm has 50% mortality if rebleeding occurs."
+  },
+  "status_epilepticus": {
+    "title": "Prolonged Seizure / Status Epilepticus Protocol",
+    "urgency": "CRITICAL EMERGENCY (Time Window: >= 5 Minutes)",
+    "action": "Call 112 / 911 immediately; Neuro-ICU response",
+    "criteria": [
+      "Any continuous convulsive seizure lasting >= 5 minutes",
+      "Two or more discrete seizures without regaining baseline consciousness in between"
+    ],
+    "clinical_guidance": "Protect airway, turn patient to recovery position. Do NOT insert anything into mouth. Administer rescue benzodiazepine (IV Lorazepam 4 mg or IM Midazolam 10 mg). Escalation to second-line IV Levetiracetam/Fosphenytoin if seizure continues past 10 minutes."
+  },
+  "bacterial_meningitis": {
+    "title": "Acute Bacterial Meningitis Triage Protocol",
+    "urgency": "CRITICAL EMERGENCY (Empiric Antibiotics within 30-60 mins)",
+    "action": "Immediate Emergency Department isolation and treatment",
+    "criteria": [
+      "Triad of: High Fever + Nuchal Rigidity (stiff neck) + Altered Mental Status",
+      "Purpuric or petechial non-blanching skin rash (meningococcal disease)"
+    ],
+    "clinical_guidance": "Do NOT delay antibiotics for lumbar puncture or neuroimaging. Draw blood cultures and immediately administer IV Ceftriaxone 2 g + Vancomycin + Dexamethasone 10 mg."
+  },
+  "mental_health_crisis": {
+    "title": "Mental Health Crisis & Suicide Prevention Protocol",
+    "urgency": "IMMEDIATE SAFETY CRISIS INTERVENTION",
+    "action": "Connect immediately to 24x7 verified crisis counselors",
+    "helplines": [
+      {
+        "name": "Tele-MANAS (Govt of India)",
+        "number": "14416 / 1800-891-4416",
+        "details": "Toll-free 24x7 mental health service in 20+ Indian languages"
+      },
+      {
+        "name": "KIRAN Mental Health Helpline",
+        "number": "1800-599-0019",
+        "details": "Ministry of Social Justice, 24x7 psychological support"
+      },
+      {
+        "name": "988 Suicide & Crisis Lifeline",
+        "number": "988",
+        "details": "Free, confidential 24x7 support in US/Canada"
+      },
+      {
+        "name": "National Emergency Police/Ambulance",
+        "number": "112 / 911 / 999",
+        "details": "Immediate physical emergency rescue"
+      }
+    ],
+    "clinical_guidance": "Do NOT attempt to diagnose psychiatric conditions from chat messages. Express calm empathy, validate distress, ask directly if the person is safe right now, remove immediate means of harm, and facilitate immediate warm handover to professional crisis counselors or a trusted family member."
+  }
+}

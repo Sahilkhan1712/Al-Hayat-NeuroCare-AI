@@ -1,0 +1,109 @@
+{
+  "disease_id": "focal-seizure",
+  "official_name": "Focal seizure",
+  "alternative_names": [
+    "Partial seizure",
+    "Focal onset aware / impaired awareness seizure",
+    "Aadhe shareer ka jhatka"
+  ],
+  "category": "epilepsy",
+  "subcategory": "Epileptic disorders",
+  "icd11_code": "8A62",
+  "simple_description": "A seizure that starts in one specific area or network of one side of the brain, causing localized muscle jerking, unusual sensory feelings, or altered awareness.",
+  "medical_description": "A seizure whose onset is conceptualized as being originating within networks limited to one cerebral hemisphere. Classified by the ILAE into Focal Aware Seizures (awareness intact) and Focal Impaired Awareness Seizures (consciousness blunted or lost during the event), with motor or non-motor onset, and potential progression to bilateral tonic-clonic.",
+  "affected_system": "Focal cortical networks (temporal lobe 60%, frontal lobe 20%, parietal, or occipital).",
+  "symptoms": [
+    "Focal motor twitching or jerking of one hand, arm, or corner of mouth (Jacksonian march)",
+    "Sensory sensations: sudden burning, tingling, flashing lights, or buzzing sounds",
+    "Autonomic / Psychic sensations: sudden rising epigastric sensation ('rollercoaster feeling in stomach'), intense déjà vu, or unexplained fear",
+    "Automatisms: repetitive involuntary smacking of lips, chewing, swallowing, or fumbling with clothes",
+    "Blunted responsiveness or staring blankly for 30-120 seconds"
+  ],
+  "early_warning_signs": [
+    "Focal aura (rising stomach sensation, sudden metallic taste, or strong déjà vu)"
+  ],
+  "possible_causes": [
+    "Mesial temporal sclerosis, focal cortical dysplasia, cavernous hemangioma, post-stroke glial scar"
+  ],
+  "risk_factors": [
+    "History of complicated febrile seizures in infancy, head trauma, stroke, CNS infection"
+  ],
+  "disease_types": [
+    "Focal aware seizure (simple partial)",
+    "Focal impaired awareness seizure (complex partial)",
+    "Focal to bilateral tonic-clonic"
+  ],
+  "clinical_evaluation": "Detailed description of initial semiology, routine and prolonged video-EEG monitoring.",
+  "diagnostic_tests": [
+    "High-resolution 3T Epilepsy Protocol Brain MRI (thin 1 mm coronal T2 and FLAIR through the hippocampi) - Detects hippocampal sclerosis and subtle cortical dysplasias",
+    "Prolonged Video-EEG Monitoring - Localizes focal interictal epileptiform discharges (spikes and sharp waves)"
+  ],
+  "treatment_overview": "Pharmacological monotherapy with sodium channel blocking antiepileptics. For drug-resistant focal epilepsy (failure of 2 appropriate AED trials), evaluate for curative epilepsy surgery (anterior temporal lobectomy, laser interstitial thermal therapy, or responsive neurostimulation).",
+  "medication_classes": [
+    "First-line Focal AEDs: Carbamazepine, Oxcarbazepine, Lamotrigine, Levetiracetam, Lacosamide",
+    "Second-line / Add-on: Brivaracetam, Topiramate, Zonisamide"
+  ],
+  "precautions": [
+    "Avoid abrupt cessation of antiepileptic therapy; adhere strictly to driving laws"
+  ],
+  "prevention": [
+    "Consistent sleep schedules and avoidance of excessive alcohol"
+  ],
+  "complications": [
+    "Secondary generalization into bilateral convulsive seizures, SUDEP"
+  ],
+  "emergency_signs": [
+    "Seizure activity persisting > 5 minutes or progressing to bilateral convulsive status epilepticus"
+  ],
+  "doctor_specialty": "Epileptologist / Comprehensive Epilepsy Center",
+  "faqs": [
+    {
+      "question": "Can a person stay awake during a seizure?",
+      "answer": "Yes. In a 'Focal Aware Seizure', the person remains completely conscious, experiencing twitching in one hand, strange smells, or intense déjà vu without passing out."
+    }
+  ],
+  "references": [
+    {
+      "title": "ICD-11 MMS: 8A62 Focal onset seizures",
+      "source": "World Health Organization",
+      "url": "https://icd.who.int/browse/2024-01/mms/en#1073860098"
+    },
+    {
+      "title": "Focal Seizures Overview",
+      "source": "Epilepsy Foundation / ILAE",
+      "url": "https://www.epilepsy.com/what-is-epilepsy/seizure-types/focal-onset-seizures"
+    }
+  ],
+  "source_url": "https://www.epilepsy.com/what-is-epilepsy/seizure-types/focal-onset-seizures",
+  "multilingual": {
+    "hi": {
+      "name": "फोकल सीज़र / आंशिक दौरा (Focal Seizure)",
+      "summary": "मस्तिष्क के एक हिस्से से शुरू होने वाला दौरा जिसमें एक हाथ का फड़कना, मुंह चलाना (लिप स्मैकिंग), अजीब गंध या पेट में अजीब सनसनी महसूस होती है।",
+      "advice": "दौरे का समय नोट करें। न्यूरोलॉजिस्ट से एमआरआई एपिलेप्सी प्रोटोकॉल और ईईजी करवाएं।"
+    },
+    "hinglish": {
+      "name": "Focal Seizure (Dimaag ke ek hisse ka daura)",
+      "summary": "Ek haath me jhatke aana, achanak déjà vu ya pet me ajeeb sensation aana. Hosh pura ya aadha reh sakta hai.",
+      "advice": "Oxcarbazepine ya Levetiracetam dawai regular lein aur 3T MRI karwayein."
+    },
+    "ur": {
+      "name": "فوکل سیزر (محدود دورہ)",
+      "summary": "دماغ کے کسی ایک حصے سے شروع ہونے والا دورہ جس میں ہاتھ کی کپکپاہٹ یا عجیب احساسات شامل ہیں۔",
+      "advice": "نیورولوجسٹ سے باقاعدہ ای ای جی اور ایم آر آئی کروائیں۔"
+    }
+  },
+  "target_3d_nodes": [
+    "temporal-lobe",
+    "hippocampus",
+    "frontal-lobe",
+    "motor-cortex"
+  ],
+  "search_keywords": [
+    "focal seizure",
+    "partial seizure",
+    "deja vu seizure",
+    "lip smacking",
+    "hand twitching fit",
+    "epilepsy protocol mri"
+  ]
+}

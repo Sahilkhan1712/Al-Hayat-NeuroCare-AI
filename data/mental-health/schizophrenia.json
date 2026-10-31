@@ -1,0 +1,118 @@
+{
+  "disease_id": "schizophrenia",
+  "official_name": "Schizophrenia",
+  "alternative_names": [
+    "Psychotic disorder",
+    "Dementia praecox",
+    "Zeheni bemari"
+  ],
+  "category": "mental-health",
+  "subcategory": "Schizophrenia or other primary psychotic disorders",
+  "icd11_code": "6A20",
+  "simple_description": "A severe chronic brain disorder characterized by disruptions in thinking, perception, and emotional responsiveness, causing people to hear voices or believe things that are not real (hallucinations and delusions).",
+  "medical_description": "A severe neurodevelopmental psychiatric disorder characterized by significant impairments in reality testing and alterations in behavior. Defined by positive symptoms (persistent delusions, hallucinations, disorganized thinking/speech, grossly disorganized behavior) and negative symptoms (blunted affect, avolition, alogia, asociality) persisting for at least 1 month, leading to social/occupational decline.",
+  "affected_system": "Mesolimbic dopamine pathway (hyperactivity causing positive symptoms) and mesocortical dopamine pathway (hypofunction causing negative/cognitive symptoms), prefrontal cortex, temporal lobes.",
+  "symptoms": [
+    "Auditory hallucinations: hearing voices running a commentary or conversing with each other when nobody is there",
+    "Delusions: firmly held false beliefs resistant to counter-argument (e.g. persecutory delusions: believing one is spied upon or poisoned)",
+    "Disorganized thinking and speech (derailment, loose associations, neologisms)",
+    "Negative symptoms: emotional flatness (blunted affect), lack of motivation (avolition), severe social withdrawal",
+    "Cognitive deficits: impaired working memory and executive attention"
+  ],
+  "early_warning_signs": [
+    "Prodromal phase: gradual drop in academic/work performance, social withdrawal, suspiciousness, and odd perceptual experiences in late adolescence"
+  ],
+  "possible_causes": [
+    "Complex polygenic architecture (heritability ~80%, involving dopamine D2 receptors, C4 complement gene, NMDA receptor hypofunction)",
+    "Obstetric complications, maternal immune activation, cannabis use in adolescence"
+  ],
+  "risk_factors": [
+    "First-degree relative with schizophrenia (10-fold increased risk)",
+    "Heavy adolescent cannabis abuse",
+    "Urban upbringing, advanced paternal age"
+  ],
+  "disease_types": [
+    "First-episode schizophrenia",
+    "Multiple-episode schizophrenia",
+    "Schizophrenia with persistent psychotic symptoms"
+  ],
+  "clinical_evaluation": "Positive and Negative Syndrome Scale (PANSS), thorough medical workup to exclude secondary psychosis (autoimmune anti-NMDA receptor encephalitis, Wilson's disease, temporal lobe epilepsy, substance-induced psychosis).",
+  "diagnostic_tests": [
+    "Clinical psychiatric diagnostic interview",
+    "Brain MRI - Demonstrates cortical thinning, lateral ventricular enlargement (ventriculomegaly), and reduced grey matter volume",
+    "Screening blood panel: toxicology screen, TSH, autoimmune encephalitis panel (anti-NMDA antibodies if acute bizarre onset in young female)"
+  ],
+  "treatment_overview": "Comprehensive lifelong bio-psycho-social management. Antipsychotic medications are the foundational biological therapy (D2 dopamine receptor antagonism). Second-generation atypical antipsychotics are preferred due to lower extrapyramidal side effects. Clozapine is the gold-standard therapy for treatment-resistant schizophrenia (requires strict CBC monitoring for agranulocytosis). Cognitive Remediation, Assertive Community Treatment (ACT), and family psychoeducation.",
+  "medication_classes": [
+    "Second-Generation Antipsychotics: Risperidone, Olanzapine, Aripiprazole, Paliperidone (available as long-acting injectables - LAI for adherence)",
+    "Gold-Standard Treatment-Resistant Antipsychotic: Clozapine (mandatory weekly/monthly absolute neutrophil count monitoring)",
+    "Long-Acting Injectable (LAI) Formulations: Paliperidone palmitate (monthly or 3-monthly depot), Aripiprazole depot"
+  ],
+  "precautions": [
+    "NEVER stop antipsychotics abruptly without psychiatric guidance (relapse rate without medication is > 70% within 1 year)",
+    "Regular monitoring of metabolic parameters (weight, lipids, HbA1c)"
+  ],
+  "prevention": [
+    "Avoid recreational cannabis in vulnerable teenagers with family history of psychosis",
+    "Early intervention services (EIS) during first-episode psychosis drastically improve long-term prognosis"
+  ],
+  "complications": [
+    "Substance misuse, severe self-neglect, suicide (~5-10% lifetime mortality, often early in disease course)"
+  ],
+  "emergency_signs": [
+    "🚨 CRISIS: Severe acute agitation, command auditory hallucinations instructing harm, or catatonia. Emergency hospital admission via 112 / 911 or Tele-MANAS (14416)."
+  ],
+  "doctor_specialty": "Psychiatrist / Early Psychosis Intervention Team",
+  "faqs": [
+    {
+      "question": "Is schizophrenia a 'split personality'?",
+      "answer": "No. That is a common myth. Schizophrenia does not mean multiple personalities. It means a 'split from reality' where the brain struggles to distinguish real sensory inputs from internal thoughts."
+    }
+  ],
+  "references": [
+    {
+      "title": "ICD-11 MMS: 6A20 Schizophrenia",
+      "source": "World Health Organization",
+      "url": "https://icd.who.int/browse/2024-01/mms/en#1073860098"
+    },
+    {
+      "title": "Schizophrenia Information",
+      "source": "NIMH / NIH",
+      "url": "https://www.nimh.nih.gov/health/topics/schizophrenia"
+    }
+  ],
+  "source_url": "https://www.nimh.nih.gov/health/topics/schizophrenia",
+  "multilingual": {
+    "hi": {
+      "name": "सिज़ोफ्रेनिया / मनोविदलता (Schizophrenia)",
+      "summary": "एक गंभीर मानसिक बीमारी जिसमें मरीज को कानों में ऐसी आवाजें सुनाई देती हैं जो असल में नहीं होतीं (आभास) और वहम या शक होने लगता है कि कोई उसे नुकसान पहुंचा रहा है।",
+      "advice": "यह कोई भूत-प्रेत या जादू नहीं बल्कि दिमाग का रासायनिक विकार है। तुरंत मनोचिकित्सक से एंटीसाइकोटिक दवा शुरू करवाएं।"
+    },
+    "hinglish": {
+      "name": "Schizophrenia (Aawazein sunai dena aur veham hona)",
+      "summary": "Kaan me aisi aawazein aana jo baaki logo ko nahi aati, ajeeb veham hona aur logo se kat jana. Antipsychotic dawai se theek hota hai.",
+      "advice": "Dawai regular lein aur psychiatrist se milen. Andhavishwas me waqt barbad na karein."
+    },
+    "ur": {
+      "name": "شیزوفرینیا (ذہنی توازن کی خرابی)",
+      "summary": "دماغی بیماری جس میں مریض کو غیبی آوازیں سنائی دیتی ہیں، شک اور فہم کی خرابی پیدا ہوتی ہے۔",
+      "advice": "یہ جادو نہیں بلکہ دماغی بیماری ہے۔ فوراً ماہر نفسیات سے علاج کروائیں۔"
+    }
+  },
+  "target_3d_nodes": [
+    "mesolimbic-pathway",
+    "prefrontal-cortex",
+    "thalamus",
+    "temporal-lobe"
+  ],
+  "search_keywords": [
+    "schizophrenia",
+    "aawazein aana",
+    "hearing voices",
+    "delusions",
+    "hallucinations",
+    "paranoia",
+    "psychosis",
+    "veham"
+  ]
+}

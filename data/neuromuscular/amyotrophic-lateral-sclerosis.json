@@ -1,0 +1,125 @@
+{
+  "disease_id": "amyotrophic-lateral-sclerosis",
+  "official_name": "Amyotrophic lateral sclerosis",
+  "alternative_names": [
+    "ALS",
+    "Motor neuron disease (MND)",
+    "Lou Gehrig's disease"
+  ],
+  "category": "neuromuscular",
+  "subcategory": "Motor neuron diseases",
+  "icd11_code": "8B60.0",
+  "simple_description": "A progressive, fatal neurodegenerative disease that attacks both upper and lower motor nerve cells controlling voluntary muscles, leading to muscle wasting, weakness, and loss of ability to walk, speak, swallow, and breathe.",
+  "medical_description": "A rapidly progressive, fatal neurodegenerative disorder characterized by the simultaneous degeneration of both upper motor neurons (corticospinal and corticobulbar tracts) and lower motor neurons (anterior horns of the spinal cord and motor cranial nerve nuclei). Leads to combined signs of spasticity and hyperreflexia alongside progressive muscular atrophy, profound weakness, and fasciculations.",
+  "affected_system": "Primary motor cortex, corticospinal tract, spinal anterior horn cells, brainstem motor nuclei (hypoglossal, vagal, trigeminal).",
+  "symptoms": [
+    "Asymmetric progressive muscle weakness and wasting (atrophy) starting in a hand (clumsiness, dropping keys) or foot (foot drop)",
+    "Visible muscle twitching under the skin (fasciculations) and severe muscle cramps",
+    "Bulbar symptoms: progressive slurring of speech (dysarthria), nasal voice, and difficulty swallowing (dysphagia)",
+    "Hyperreflexia (brisk deep tendon reflexes) and extensor plantar responses (positive Babinski sign)",
+    "Pseudobulbar affect: uncontrollable, involuntary bouts of crying or laughing incongruent with mood",
+    "Normal sensation, normal bladder/bowel sphincter control, and normal eye movements (spared until end stage)",
+    "Late stage: progressive respiratory insufficiency (orthopnea, morning headaches, dyspnea on exertion)"
+  ],
+  "early_warning_signs": [
+    "Subtle weakness in one hand (difficulty turning a key, buttoning a shirt) or unexplained frequent tripping over toes"
+  ],
+  "possible_causes": [
+    "TDP-43 proteinopathy: pathological cytoplasmic accumulation and aggregation of hyperphosphorylated TDP-43 (in > 97% of ALS cases)",
+    "Genetic mutations (10-15% familial ALS): C9orf72 hexanucleotide repeat expansion (most common), SOD1, TARDBP, FUS",
+    "Glutamate excitotoxicity (failure of astroglial EAAT2 reuptake) and oxidative stress"
+  ],
+  "risk_factors": [
+    "Age (peak onset 55 to 75 years)",
+    "Male sex (1.5 times more frequent in men)",
+    "Family history of ALS or frontotemporal dementia (FTD)",
+    "Military service and heavy physical labor (statistical associations under active study)"
+  ],
+  "disease_types": [
+    "Spinal-onset ALS (~70% of cases: limb weakness)",
+    "Bulbar-onset ALS (~25-30% of cases: speech and swallowing difficulties first; faster progression)",
+    "Familial ALS (10-15%) vs Sporadic ALS (85-90%)",
+    "ALS with Frontotemporal Dementia (ALS-FTD, ~15%)"
+  ],
+  "clinical_evaluation": "Gold Coast / Revised El Escorial Criteria: requiring simultaneous objective upper motor neuron (UMN) and lower motor neuron (LMN) signs in multiple anatomical regions, progressive course, and exclusion of mimics.",
+  "diagnostic_tests": [
+    "Electromyography (EMG) and Nerve Conduction Studies (NCS) - Essential test: shows widespread active denervation (fibrillation potentials, positive sharp waves, fasciculation potentials) and chronic reinnervation across multiple body segments",
+    "3T Brain and Total Spine MRI - Rules out cervical compressive myelopathy, radiculopathy, or structural brainstem lesions; may show corticospinal tract T2/FLAIR hyperintensity ('motor band sign')",
+    "Blood panel: Serum creatine kinase (mildly elevated), serum neurofilament light chain (NfL - valuable biomarker of rapid axonal loss)",
+    "Pulmonary function tests (Forced Vital Capacity - FVC, and sniff nasal inspiratory pressure - SNIP)"
+  ],
+  "treatment_overview": "Comprehensive multidisciplinary ALS clinic care extending survival and quality of life. Disease-modifying medications (Riluzole, Edaravone). Proactive respiratory support with early Non-Invasive Ventilation (NIV / BiPAP) when FVC drops < 80% (extends survival longer than any drug). Nutritional support with Percutaneous Endoscopic Gastrostomy (PEG) feeding tube before severe weight loss occurs.",
+  "medication_classes": [
+    "Glutamate Release Inhibitor: Riluzole (50 mg twice daily - prolongs median survival by 2-3 months)",
+    "Free Radical Scavenger: Edaravone (IV or oral suspension - slows functional motor decline)",
+    "Symptomatic management: Dextromethorphan + Quinidine (Nuedexta) for pseudobulbar crying/laughing, Baclofen/Tizanidine for spasticity, Glycopyrrolate/Scopolamine or salivary gland botulinum toxin for drooling (sialorrhea)"
+  ],
+  "precautions": [
+    "DO NOT administer high-flow oxygen without ventilation support in advanced ALS (causes dangerous hypercapnic respiratory arrest due to loss of hypoxic respiratory drive)",
+    "Avoid aspiration: modify food textures to soft purees and thicken liquids early"
+  ],
+  "prevention": [
+    "No established primary prevention; genetic testing and counseling for families carrying C9orf72 or SOD1 mutations (Tofersen antisense oligonucleotide therapy approved for SOD1-ALS)"
+  ],
+  "complications": [
+    "Respiratory failure due to diaphragmatic paralysis (primary cause of death)",
+    "Aspiration pneumonia and severe malnutrition",
+    "Deep vein thrombosis and pressure injuries from immobility"
+  ],
+  "emergency_signs": [
+    "Severe respiratory distress, inability to breathe lying flat (orthopnea), acute choking episodes"
+  ],
+  "doctor_specialty": "Neuromuscular Neurologist / Multidisciplinary ALS Center",
+  "faqs": [
+    {
+      "question": "Is ALS the same as Multiple Sclerosis (MS)?",
+      "answer": "No. MS is an autoimmune disease of the nerve insulation (myelin) that causes sensory loss, vision changes, and relapses, and is generally manageable for decades. ALS is a motor neuron degeneration that specifically affects voluntary muscle strength without affecting sensation or vision."
+    }
+  ],
+  "references": [
+    {
+      "title": "ICD-11 MMS: 8B60.0 Motor neuron disease (ALS)",
+      "source": "World Health Organization",
+      "url": "https://icd.who.int/browse/2024-01/mms/en#1073860098"
+    },
+    {
+      "title": "Amyotrophic Lateral Sclerosis (ALS) Fact Sheet",
+      "source": "NINDS / NIH",
+      "url": "https://www.ninds.nih.gov/health-information/disorders/amyotrophic-lateral-sclerosis-als"
+    }
+  ],
+  "source_url": "https://www.ninds.nih.gov/health-information/disorders/amyotrophic-lateral-sclerosis-als",
+  "multilingual": {
+    "hi": {
+      "name": "एएलएस / मोटर न्यूरॉन डिजीज (Amyotrophic Lateral Sclerosis)",
+      "summary": "मांसपेशियों को नियंत्रित करने वाली नसों (Motor Neurons) की गंभीर बीमारी, जिससे हाथ-पैरों में कमजोरी, बोलने और निगलने में कठिनाई और सांस लेने में परेशानी होती है।",
+      "advice": "शुरुआती दौर में ही न्यूरोमस्कुलर स्पेशलिस्ट से मिलें। समय पर BiPAP वेंटिलेशन और फिजियोथेरेपी बहुत मददगार होती है।"
+    },
+    "hinglish": {
+      "name": "ALS (Motor Neuron Disease / Lou Gehrig's)",
+      "summary": "Motor neurons degenerate hone se voluntary muscles kamzor aur patli ho jati hain. Sensation aur dimaag bilkul normal rehta hai.",
+      "advice": "Multidisciplinary clinic me Riluzole dawai, breathing exercises aur BiPAP support lein."
+    },
+    "ur": {
+      "name": "موٹر نیوران ڈیزیز / اے ایل ایس (ALS)",
+      "summary": "حرکتی اعصاب کی کمزوری جس سے پٹھے کمزور ہو جاتے ہیں، بولنے، نگلنے اور سانس لینے میں دشواری پیش آتی ہے۔",
+      "advice": "نیورولوجسٹ اور جدید سانس کی معاونت (BiPAP) کا بروقت استعمال ضروری ہے۔"
+    }
+  },
+  "target_3d_nodes": [
+    "precentral-gyrus",
+    "motor-cortex",
+    "corticospinal-tract",
+    "brainstem-motor-nuclei"
+  ],
+  "search_keywords": [
+    "als",
+    "motor neuron disease",
+    "mnd",
+    "lou gehrig",
+    "muscle wasting",
+    "fasciculations",
+    "muscle twitching weakness",
+    "difficulty swallowing and speaking"
+  ]
+}

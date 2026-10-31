@@ -1,0 +1,109 @@
+{
+  "disease_id": "transient-ischemic-attack",
+  "official_name": "Transient ischemic attack",
+  "alternative_names": [
+    "TIA",
+    "Mini-stroke",
+    "Chhota lakwa"
+  ],
+  "category": "stroke",
+  "subcategory": "Cerebrovascular diseases",
+  "icd11_code": "8B20",
+  "simple_description": "A temporary blockage of blood flow to the brain that causes stroke-like symptoms (weakness, numbness, slurred speech) that resolve completely within minutes to hours, but acts as a major warning sign of an impending full stroke.",
+  "medical_description": "A transient episode of neurological dysfunction caused by focal brain, spinal cord, or retinal ischemia, without acute infarction on neuroimaging (tissue-based definition). Typically lasts < 1 hour, with full clinical resolution.",
+  "affected_system": "Cerebral and retinal microvasculature, carotids, and vertebrobasilar territory.",
+  "symptoms": [
+    "Sudden temporary weakness or numbness in face, arm, or leg (typically unilateral)",
+    "Temporary difficulty speaking or slurring words (transient dysarthria / dysphasia)",
+    "Sudden temporary loss of vision in one eye ('amaurosis fugax' / dark curtain falling over eye)",
+    "Temporary loss of balance or coordination"
+  ],
+  "early_warning_signs": [
+    "Brief transient episodes of hand weakness or word slurring lasting 5 to 15 minutes"
+  ],
+  "possible_causes": [
+    "Micro-emboli originating from carotid atheroma or cardiac source",
+    "Small vessel lipohyalinosis"
+  ],
+  "risk_factors": [
+    "Hypertension, diabetes, smoking, atrial fibrillation, carotid stenosis"
+  ],
+  "disease_types": [
+    "Carotid territory TIA",
+    "Vertebrobasilar territory TIA"
+  ],
+  "clinical_evaluation": "ABCD2 Score: Age >= 60 (1), BP >= 140/90 (1), Clinical features (unilateral weakness 2, speech only 1), Duration (>= 60 min 2, 10-59 min 1), Diabetes (1). Score >= 4 indicates high short-term stroke risk requiring urgent hospitalization.",
+  "diagnostic_tests": [
+    "Emergency Brain MRI with DWI - To confirm absence of acute infarction",
+    "Carotid Duplex Ultrasound / CTA neck - Evaluate for severe carotid stenosis requiring urgent carotid endarterectomy",
+    "Continuous ECG monitoring for atrial fibrillation"
+  ],
+  "treatment_overview": "URGENT SECONDARY STROKE PREVENTION: Immediate Dual Antiplatelet Therapy (DAPT: Aspirin + Clopidogrel for 21 days for high-risk TIA ABCD2 >= 4), high-intensity statin, blood pressure optimization. Carotid endarterectomy within 7-14 days if symptomatic 70-99% carotid stenosis.",
+  "medication_classes": [
+    "Dual Antiplatelet: Aspirin (300 mg load, then 75-100 mg) + Clopidogrel (300 mg load, then 75 mg) for 21 days",
+    "Statin: Atorvastatin 80 mg daily",
+    "Anticoagulation: Apixaban / Dabigatran if atrial fibrillation identified"
+  ],
+  "precautions": [
+    "NEVER ignore symptoms just because they vanished; 1 in 5 patients suffer a massive stroke within 90 days of an untreated TIA"
+  ],
+  "prevention": [
+    "Aggressive blood pressure control (< 130/80 mmHg), smoking cessation, Mediterranean diet"
+  ],
+  "complications": [
+    "Subsequent completed ischemic stroke with permanent disability (highest risk within first 48 hours)"
+  ],
+  "emergency_signs": [
+    "🚨 EMERGENCY: Even if symptoms have already resolved, call 112 / 911 or visit emergency immediately for rapid TIA workup."
+  ],
+  "doctor_specialty": "Vascular Neurologist / Stroke Specialist",
+  "faqs": [
+    {
+      "question": "If my weakness went away after 10 minutes, do I still need to go to the hospital?",
+      "answer": "YES! A TIA is a critical medical emergency. Up to 10% of people have a major, permanent stroke within 48 hours of a TIA. Urgent evaluation can prevent a full stroke."
+    }
+  ],
+  "references": [
+    {
+      "title": "ICD-11 MMS: 8B20 Transient ischemic attack",
+      "source": "World Health Organization",
+      "url": "https://icd.who.int/browse/2024-01/mms/en#1073860098"
+    },
+    {
+      "title": "TIA (Transient Ischemic Attack)",
+      "source": "American Stroke Association",
+      "url": "https://www.stroke.org/en/about-stroke/types-of-stroke/tia-transient-ischemic-attack"
+    }
+  ],
+  "source_url": "https://www.stroke.org/en/about-stroke/types-of-stroke/tia-transient-ischemic-attack",
+  "multilingual": {
+    "hi": {
+      "name": "ट्रांजिएंट इस्केमिक अटैक / मिनी स्ट्रोक (TIA)",
+      "summary": "मस्तिष्क में कुछ मिनटों के लिए खून की सप्लाई रुकना जिससे चेहरे या हाथ में कमजोरी आती है और फिर खुद ठीक हो जाती है। यह बड़े स्ट्रोक की गंभीर पूर्व-चेतावनी है।",
+      "advice": "लक्षण ठीक होने के बाद भी तुरंत 112 बुलाएं या इमरजेंसी जाएं। यह आने वाले बड़े लकवे की चेतावनी है।"
+    },
+    "hinglish": {
+      "name": "Transient Ischemic Attack (Mini Stroke)",
+      "summary": "Kuch minutes ke liye haath sunn hona ya bolne me dikkat aana fir khud theek ho jana. Yeh massive stroke ka warning sign hai.",
+      "advice": "Theek hone ke baad bhi turant hospital jakar Carotid scan aur MRI karwayein."
+    },
+    "ur": {
+      "name": "عارضی فالج (منی سٹروک / TIA)",
+      "summary": "چند منٹوں کے لیے خون کی سپلائی کا رکنا اور علامات کا خود بخود غائب ہو جانا، جو بڑے فالج کا پیش خیمہ ہو سکتا ہے۔",
+      "advice": "علامات ٹھیک ہونے کے باوجود فوری ہسپتال رجوع کریں۔"
+    }
+  },
+  "target_3d_nodes": [
+    "internal-carotid-artery",
+    "middle-cerebral-artery",
+    "motor-cortex"
+  ],
+  "search_keywords": [
+    "tia",
+    "mini stroke",
+    "chhota lakwa",
+    "temporary weakness",
+    "transient ischemic attack",
+    "brief speech slurring"
+  ]
+}

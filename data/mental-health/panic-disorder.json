@@ -1,0 +1,124 @@
+{
+  "disease_id": "panic-disorder",
+  "official_name": "Panic disorder",
+  "alternative_names": [
+    "Episodic paroxysmal anxiety",
+    "Panic attack syndrome",
+    "Achanak dil ghabrana"
+  ],
+  "category": "mental-health",
+  "subcategory": "Anxiety and fear-related disorders",
+  "icd11_code": "6B01",
+  "simple_description": "A condition characterized by recurrent, unexpected panic attacks—sudden surges of overwhelming fear and physical distress (racing heart, chest tightness, suffocation) peaking within minutes, often with a fear of dying or having a heart attack.",
+  "medical_description": "An anxiety disorder characterized by recurrent unexpected panic attacks that are not restricted to particular stimuli or situations. A panic attack is an abrupt surge of intense fear or intense discomfort that reaches a peak within a few minutes, during which symptoms such as palpitations, chest pain, choking sensations, dizziness, depersonalization/derealization, and fear of impending doom or dying occur. Followed by persistent concern (>= 1 month) about having further attacks or their consequences.",
+  "affected_system": "Brainstem autonomic control centers (locus coeruleus noradrenergic hyperactivation, parabrachial nucleus) and limbic fear circuitry (amygdala).",
+  "symptoms": [
+    "Sudden abrupt surge of intense terror reaching a peak within 10 minutes",
+    "Pounding heart, racing pulse (tachycardia), or forceful palpitations",
+    "Chest pain, tightness, or pressure (frequently mimicking an acute heart attack / angina)",
+    "Shortness of breath, feeling smothered, or hyperventilation sensations",
+    "Trembling, shaking, sweating, chills, or sudden hot flushes",
+    "Dizziness, lightheadedness, unsteadiness, or feeling faint",
+    "Feelings of unreality (derealization) or being detached from oneself (depersonalization)",
+    "Overwhelming fear of losing control, 'going crazy', or dying on the spot"
+  ],
+  "early_warning_signs": [
+    "Sudden unprovoked surge of adrenaline and pounding heart in routine situations (driving, shopping, or relaxing at home)"
+  ],
+  "possible_causes": [
+    "Hypersensitivity of the brainstem 'suffocation false alarm' system (Klein's hypothesis) and hypersensitive central chemoreceptors (CO2 sensitivity)",
+    "Abrupt paroxysmal discharge of norepinephrine from the locus coeruleus",
+    "Catastrophic cognitive misinterpretation of benign bodily sensations (e.g. interpreting a normal skipped heartbeat as an imminent fatal cardiac arrest)"
+  ],
+  "risk_factors": [
+    "Female sex (twice as common in women)",
+    "Adverse childhood experiences and history of separation anxiety",
+    "Family history of panic disorder",
+    "Heavy smoking, caffeine overuse, or illicit stimulants"
+  ],
+  "disease_types": [
+    "Panic disorder without agoraphobia",
+    "Panic disorder with agoraphobia (avoidance of places where escape might be difficult, such as crowded markets, buses, or elevators)"
+  ],
+  "clinical_evaluation": "Structured psychiatric clinical interview. Essential medical evaluation: 12-lead ECG, cardiac enzymes if high risk, TSH, to safely exclude cardiac ischemia, supraventricular tachycardia (SVT), or endocrine causes.",
+  "diagnostic_tests": [
+    "12-Lead Electrocardiogram (ECG) - Critical to rule out cardiac arrhythmias (e.g. Paroxysmal SVT, Wolff-Parkinson-White, Long QT)",
+    "Echocardiogram or 24-hour Holter monitoring if palpitations are recurrent",
+    "Serum TSH, Free T4, and capillary blood glucose"
+  ],
+  "treatment_overview": "Highly treatable condition: First-line psychotherapy is Panic-Focused Cognitive Behavioral Therapy (CBT - interoceptive exposure exercises where patients safely experience dizziness and rapid breathing to break catastrophic fears). First-line pharmacotherapy: SSRIs or SNRIs taken daily to prevent future attacks.",
+  "medication_classes": [
+    "First-line Maintenance SSRIs: Sertraline (50-150 mg), Escitalopram (10-20 mg), Fluoxetine",
+    "First-line SNRIs: Venlafaxine XR (75-225 mg)",
+    "Autonomic blunter for acute physical surges: Propranolol (10-20 mg)",
+    "Time-limited acute bridging: Clonazepam / Lorazepam (strictly short-term for 2-3 weeks only while SSRI takes effect)"
+  ],
+  "precautions": [
+    "DO NOT breathe into a paper bag during hyperventilation (outdated practice that can cause dangerous hypoxia if patient is having asthma or pulmonary embolism instead)",
+    "Avoid running to emergency rooms repeatedly once cardiac evaluation has confirmed a structurally normal heart"
+  ],
+  "prevention": [
+    "Practice slow belly (diaphragmatic) breathing: inhale 4 seconds through nose, hold 4 seconds, exhale 6 seconds through mouth",
+    "Cut out energy drinks, strong coffee, and nicotine"
+  ],
+  "complications": [
+    "Development of severe agoraphobia (becoming homebound)",
+    "Frequent emergency room visits and unnecessary repeated cardiac catheterizations",
+    "Secondary depression and substance misuse"
+  ],
+  "emergency_signs": [
+    "First-time chest pain accompanied by radiation to left jaw/arm, diaphoresis, or in patients > 40 with cardiac risk factors (requires emergency 112 / 911 evaluation to rule out acute myocardial infarction before assuming panic attack)"
+  ],
+  "doctor_specialty": "Psychiatrist / Clinical Psychologist",
+  "faqs": [
+    {
+      "question": "Can a panic attack kill you or stop your heart?",
+      "answer": "No. Although a panic attack feels terrifying and like you are having a fatal heart attack or suffocating, the physical surge of adrenaline cannot stop a healthy heart. Attacks peak within 10 minutes and subside as adrenaline naturally breaks down."
+    }
+  ],
+  "references": [
+    {
+      "title": "ICD-11 MMS: 6B01 Panic disorder",
+      "source": "World Health Organization",
+      "url": "https://icd.who.int/browse/2024-01/mms/en#1073860098"
+    },
+    {
+      "title": "Panic Disorder: When Fear Overwhelms",
+      "source": "NIMH / NIH",
+      "url": "https://www.nimh.nih.gov/health/publications/panic-disorder-when-fear-overwhelms"
+    }
+  ],
+  "source_url": "https://www.nimh.nih.gov/health/publications/panic-disorder-when-fear-overwhelms",
+  "multilingual": {
+    "hi": {
+      "name": "पैनिक डिसऑर्डर / पैनिक अटैक (Panic Disorder)",
+      "summary": "अचानक दिल की धड़कन बहुत तेज होना, सीने में भारीपन, सांस फूलना, हाथ-पैर कांपना और ऐसा लगना कि जान जा रही है या हार्ट अटैक आ रहा है, जो 10 मिनट में अपने चरम पर पहुंच जाता है।",
+      "advice": "गहरी और धीमी सांस लें (पेट से सांस लें)। यह पैनिक अटैक है, हार्ट अटैक नहीं। एक बार ईसीजी कराने के बाद मनोचिकित्सक से सीबीटी और दवा का इलाज करवाएं।"
+    },
+    "hinglish": {
+      "name": "Panic Attack (Achanak dil tez dhadakna aur maut ka darr)",
+      "summary": "Bina kisi wajah achanak 10 minute me dil ki dhadkan tez hona, paseena aana, saans ghutna aur lagna ki dil ka daura pad gaya.",
+      "advice": "Slow breathing karein, paani piyein aur yaad rakhein panic attack se jaan nahi jaati. Psychiatrist se SSRI medicine lein."
+    },
+    "ur": {
+      "name": "پینک ڈس آرڈر (گھبراہٹ کا شدید دورہ)",
+      "summary": "اچانک دل کا تیز دھڑکنا، سینے میں گھٹن، سانس کا رکنا اور موت کا شدید خوف۔",
+      "advice": "آہستہ آہستہ گہرے سانس لیں اور ماہر نفسیات سے علاج حاصل کریں۔"
+    }
+  },
+  "target_3d_nodes": [
+    "amygdala",
+    "locus-coeruleus",
+    "hypothalamus",
+    "insula"
+  ],
+  "search_keywords": [
+    "panic attack",
+    "panic disorder",
+    "dil tez dhadakna",
+    "saans ghutna",
+    "sudden fear of dying",
+    "chest tightness panic",
+    "ghabrahat ka daura"
+  ]
+}

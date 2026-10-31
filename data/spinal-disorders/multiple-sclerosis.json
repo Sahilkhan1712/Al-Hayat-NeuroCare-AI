@@ -1,0 +1,136 @@
+{
+  "disease_id": "multiple-sclerosis",
+  "official_name": "Multiple sclerosis",
+  "alternative_names": [
+    "MS",
+    "Disseminated sclerosis",
+    "Demyelinating CNS disease"
+  ],
+  "category": "spinal-disorders",
+  "subcategory": "Central nervous system demyelinating diseases",
+  "icd11_code": "8A40",
+  "simple_description": "A chronic autoimmune disease where the immune system mistakenly attacks the protective myelin sheath covering nerve fibers in the brain, optic nerves, and spinal cord, causing vision loss, weakness, and numbness.",
+  "medical_description": "A chronic, inflammatory, immune-mediated demyelinating and neurodegenerative disease of the central nervous system. Characterized pathologically by multifocal perivenular demyelinating plaques, axonal transection, and reactive astrocytic gliosis disseminated in space and time throughout the brain, optic nerves, and spinal cord.",
+  "affected_system": "Central nervous system myelin sheaths, oligodendrocytes, optic nerves, spinal cord white matter columns, and periventricular white matter.",
+  "symptoms": [
+    "Optic neuritis: sudden or subacute painful unilateral vision loss with impaired color vision (dyschromatopsia)",
+    "Sensory symptoms: numbness, tingling (paresthesia), burning, or band-like tightness around torso ('MS hug')",
+    "Lhermitte's sign: an electric-shock sensation running down the spine and into the limbs upon neck flexion",
+    "Uhthoff's phenomenon: transient worsening of neurological symptoms when body temperature rises (hot shower, fever, exercise)",
+    "Motor weakness and spasticity: stiffness and heavy legs making walking difficult",
+    "Cerebellar ataxia: intention tremor, balance unsteadiness, scanning speech, and nystagmus (Charcot's triad)",
+    "Overwhelming chronic fatigue and neurogenic bladder dysfunction (urgency, incontinence, retention)"
+  ],
+  "early_warning_signs": [
+    "Clinically Isolated Syndrome (CIS): a single monophasic neurological episode (e.g. optic neuritis or transverse myelitis) lasting > 24 hours"
+  ],
+  "possible_causes": [
+    "Autoreactive CD4+ and CD8+ T lymphocytes and B cells crossing the blood-brain barrier and attacking myelin basic protein and oligodendrocytes",
+    "Epstein-Barr Virus (EBV) infection (virtually 100% seropositive prior to MS development; molecular mimicry)",
+    "Genetic susceptibility (HLA-DRB1*15:01 haplotype)"
+  ],
+  "risk_factors": [
+    "Female sex (3 times higher incidence in women)",
+    "Age of onset typically 20 to 45 years",
+    "Low Vitamin D levels and low sunlight exposure (latitudinal gradient: higher in northern temperate climates)",
+    "Cigarette smoking and childhood obesity"
+  ],
+  "disease_types": [
+    "Relapsing-Remitting MS (RRMS - 85% at onset: distinct attacks with full or partial recovery)",
+    "Secondary Progressive MS (SPMS - gradual progression of disability following initial relapsing-remitting course)",
+    "Primary Progressive MS (PPMS - ~15%: continuous worsening from onset without distinct relapses)"
+  ],
+  "clinical_evaluation": "Revised 2017 McDonald Criteria: requires objective demonstration of dissemination in space (DIS) and dissemination in time (DIT) of CNS lesions.",
+  "diagnostic_tests": [
+    "3T Brain and Total Spine MRI with Gadolinium contrast - Gold standard: demonstrates hyperintense T2/FLAIR lesions in characteristic periventricular (Dawson's fingers), juxtacortical/cortical, infratentorial, and spinal cord locations; active lesions show ring or nodular gadolinium enhancement",
+    "Lumbar Puncture (CSF analysis) - Demonstration of CSF-specific Oligoclonal Bands (OCBs >= 2 bands not present in serum) and elevated IgG index",
+    "Visual Evoked Potentials (VEP) - Delayed P100 wave latency indicating demyelination of the optic nerve"
+  ],
+  "treatment_overview": "Three-pillar management: 1. Acute Relapse Treatment: High-dose intravenous Methylprednisolone (1000 mg daily for 3-5 days). 2. Disease-Modifying Therapies (DMTs): Initiated early to prevent relapses and long-term disability accumulation. 3. Symptomatic management (Baclofen for spasticity, Modafinil/Amantadine for fatigue).",
+  "medication_classes": [
+    "High-Efficacy DMTs: Anti-CD20 Monoclonal Antibodies (Ocrelizumab, Ofatumumab), Natalizumab (alpha4-integrin blocker; requires JC virus monitoring to prevent PML), Alemtuzumab",
+    "Oral DMTs: S1P Receptor Modulators (Fingolimod, Siponimod), Cladribine, Dimethyl fumarate, Teriflunomide",
+    "Platform Injectable DMTs: Interferon-beta (1a and 1b), Glatiramer acetate",
+    "Acute relapse: IV Methylprednisolone (1 g/day x 3-5 days) or Plasma Exchange (PLEX) for steroid-refractory relapses"
+  ],
+  "precautions": [
+    "Patients on Natalizumab must have regular JC virus antibody index testing to prevent progressive multifocal leukoencephalopathy (PML)",
+    "Avoid hot baths or overheating which temporarily worsens symptoms (Uhthoff's phenomenon)"
+  ],
+  "prevention": [
+    "Maintain adequate serum Vitamin D3 levels (> 40-50 ng/mL)",
+    "Strict cessation of smoking (smoking accelerates transition to secondary progressive MS)",
+    "Early initiation of high-efficacy DMT halts disability progression"
+  ],
+  "complications": [
+    "Permanent paraparesis or quadriparesis requiring wheelchair mobility",
+    "Neurogenic bladder leading to recurrent urosepsis",
+    "Cognitive impairment (processing speed deficits in 40-60%) and severe clinical depression"
+  ],
+  "emergency_signs": [
+    "Rapidly ascending spinal cord deficit causing acute paraplegia or loss of bowel/bladder sensation (acute myelitis requiring immediate high-dose IV steroids)"
+  ],
+  "doctor_specialty": "Neuro-immunologist / Multiple Sclerosis Specialist",
+  "faqs": [
+    {
+      "question": "Does having Multiple Sclerosis mean I will end up in a wheelchair?",
+      "answer": "Not anymore. With modern early high-efficacy disease-modifying therapies (DMTs), the majority of MS patients diagnosed today lead active, independent, ambulatory lives for decades."
+    },
+    {
+      "question": "What is the 'MS hug'?",
+      "answer": "The MS hug is a tight, girdle-like squeezing sensation around the chest or abdomen, caused by inflammatory demyelination in the thoracic spinal cord sensory pathways."
+    }
+  ],
+  "references": [
+    {
+      "title": "ICD-11 MMS: 8A40 Multiple sclerosis",
+      "source": "World Health Organization",
+      "url": "https://icd.who.int/browse/2024-01/mms/en#1073860098"
+    },
+    {
+      "title": "Multiple Sclerosis Information Page",
+      "source": "NINDS / NIH",
+      "url": "https://www.ninds.nih.gov/health-information/disorders/multiple-sclerosis"
+    },
+    {
+      "title": "Diagnosis of multiple sclerosis: 2017 revisions of the McDonald criteria",
+      "source": "The Lancet Neurology",
+      "url": "https://www.thelancet.com/journals/laneur/article/PIIS1474-4422(17)30470-2/fulltext"
+    }
+  ],
+  "source_url": "https://www.ninds.nih.gov/health-information/disorders/multiple-sclerosis",
+  "multilingual": {
+    "hi": {
+      "name": "मल्टीपल स्केलेरोसिस (Multiple Sclerosis / एमएस)",
+      "summary": "शरीर की रोग प्रतिरोधक प्रणाली (इम्यून सिस्टम) द्वारा मस्तिष्क और रीढ़ की हड्डी की नसों की परत (माइलिन) को नुकसान पहुंचाना। आंखों से धुंधला दिखना, झनझनाहट और चलने में कमजोरी इसके लक्षण हैं।",
+      "advice": "शुरुआती दौर में ही न्यूरोलॉजिस्ट से रोग-संशोधक दवाएं (DMT) शुरू करवाएं। गर्म पानी से नहाने या अधिक गर्मी से बचें।"
+    },
+    "hinglish": {
+      "name": "Multiple Sclerosis (Nerve Myelin damage bimari)",
+      "summary": "Immune system dimaag aur spinal cord ke myelin ko attack karta hai jisse aakh ki roshni kam hona, jhanjhanahat aur chalne me ladkhadahat hoti hai.",
+      "advice": "Early diagnosis aur DMT injections/tablets disability ko rokte hain. MRI Brain aur Spine karwayein."
+    },
+    "ur": {
+      "name": "ملٹیپل سکلیروسیس (اعصابی جھلی کی سوزش)",
+      "summary": "مدافعتی نظام کا دماغ اور ریڑھ کی ہڈی کے اعصاب کی حفاظتی تہہ پر حملہ، بینائی کی خرابی اور پٹھوں کی کمزوری۔",
+      "advice": "فوری طور پر نیورولوجسٹ سے جدید ادویات (DMT) کا آغاز کروائیں۔"
+    }
+  },
+  "target_3d_nodes": [
+    "corpus-callosum",
+    "periventricular-white-matter",
+    "optic-nerve",
+    "cervical-spinal-cord",
+    "brainstem"
+  ],
+  "search_keywords": [
+    "multiple sclerosis",
+    "ms",
+    "demyelination",
+    "optic neuritis",
+    "aakh me dard aur dhundhla dikhna",
+    "lhermitte sign",
+    "ms hug",
+    "spasticity"
+  ]
+}

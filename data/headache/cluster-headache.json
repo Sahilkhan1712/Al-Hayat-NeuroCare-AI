@@ -1,0 +1,121 @@
+{
+  "disease_id": "cluster-headache",
+  "official_name": "Cluster headache",
+  "alternative_names": [
+    "Trigeminal autonomic cephalalgia (TAC)",
+    "Histamine headache",
+    "Suicide headache"
+  ],
+  "category": "headache",
+  "subcategory": "Trigeminal autonomic cephalalgias",
+  "icd11_code": "8A82.0",
+  "simple_description": "An excruciatingly severe, piercing headache strictly around or behind one eye, lasting 15 to 180 minutes, accompanied by eye redness, tearing, and a blocked nose on the same side, recurring in clusters.",
+  "medical_description": "A severe strictly unilateral primary neurovascular headache classified among the trigeminal autonomic cephalalgias. Attacks last 15-180 minutes and occur from once every other day up to 8 times per day, accompanied by prominent ipsilateral cranial parasympathetic autonomic symptoms and physical restlessness or agitation.",
+  "affected_system": "Hypothalamus (circadian pacemaker), trigeminovascular system, and cranial parasympathetic autonomic pathways (sphenopalatine ganglion).",
+  "symptoms": [
+    "Excruciating, drilling, burning or piercing pain centered in or around one eye (orbital/supraorbital)",
+    "Strictly unilateral (always on the same side during a cluster period)",
+    "Ipsilateral eye tearing (lacrimation) and redness (conjunctival injection)",
+    "Ipsilateral nasal congestion or clear runny nose (rhinorrhea)",
+    "Eyelid drooping (ptosis) and pupil constriction (miosis) on the painful side",
+    "Marked physical restlessness, pacing the room or rocking (unlike migraine where patients lie still)"
+  ],
+  "early_warning_signs": [
+    "Mild discomfort, fullness, or shadowy ache around the eye starting 10-15 minutes prior"
+  ],
+  "possible_causes": [
+    "Hypothalamic activation triggering the trigeminal-autonomic reflex",
+    "Disruption of circadian biologic clock rhythmicity"
+  ],
+  "risk_factors": [
+    "Male sex (3 to 4 times more prevalent in men)",
+    "Heavy cigarette smoking and alcohol consumption (alcohol almost invariably triggers an attack during a cluster bout)",
+    "Age 20 to 50 years"
+  ],
+  "disease_types": [
+    "Episodic cluster headache (bouts lasting 2 weeks to 3 months separated by remissions of >= 3 months)",
+    "Chronic cluster headache (attacks continuing for > 1 year without remission or with remissions < 3 months)"
+  ],
+  "clinical_evaluation": "Strict diagnostic criteria based on attack duration, frequency, autonomic features, and observed motor agitation. Physical exam during attack shows Horner-like signs.",
+  "diagnostic_tests": [
+    "High-resolution 3T Brain MRI with pituitary and cavernous sinus protocol - Mandatory in all patients to exclude secondary structural lesions (pituitary adenoma, carotid dissection, cavernous sinus pathology)"
+  ],
+  "treatment_overview": "Dual strategy: Rapid abortive therapy with 100% high-flow normobaric oxygen or subcutaneous sumatriptan. Transitional bridging (oral corticosteroids or greater occipital nerve block) plus maintenance preventive therapy with Verapamil.",
+  "medication_classes": [
+    "Acute abortive: 100% Normobaric Oxygen (12-15 L/min via non-rebreather mask for 15-20 min)",
+    "Subcutaneous Sumatriptan (6 mg) or Intranasal Zolmitriptan (5-10 mg)",
+    "Preventive first-line: Verapamil (high dose, monitored with serial ECG for PR interval)",
+    "Lithium carbonate, Topiramate, Galcanezumab (CGRP antibody approved for episodic cluster)"
+  ],
+  "precautions": [
+    "Strict abstinence from alcohol during active cluster periods",
+    "Avoid daytime naps which frequently provoke attacks",
+    "Do not give oral analgesics or opioids (they take 45+ minutes to absorb and are completely ineffective for cluster attacks)"
+  ],
+  "prevention": [
+    "Daily maintenance verapamil under cardiologist/neurologist supervision",
+    "Greater occipital nerve (GON) block with steroid and local anesthetic for rapid temporary suppression"
+  ],
+  "complications": [
+    "Severe psychological distress, depression, and high risk of suicide during bouts due to intolerable pain intensity"
+  ],
+  "emergency_signs": [
+    "First presentation of severe orbital pain without prior history (must rule out acute glaucoma or carotid artery dissection)",
+    "Sudden thunderclap onset or persistent Horner's syndrome outside of attacks"
+  ],
+  "doctor_specialty": "Neurologist / Headache Subspecialist",
+  "faqs": [
+    {
+      "question": "Why is pure oxygen used?",
+      "answer": "Inhaling 100% oxygen at 12 to 15 liters per minute via a non-rebreather mask causes cerebral vasoconstriction and dampens trigeminal-parasympathetic activity, terminating an attack within 10 to 15 minutes without medication side effects."
+    },
+    {
+      "question": "Can regular painkillers help?",
+      "answer": "No. Standard oral painkillers (like paracetamol or ibuprofen) are too slow to absorb and lack efficacy for the intense neuro-autonomic mechanisms of cluster headache."
+    }
+  ],
+  "references": [
+    {
+      "title": "ICD-11 MMS: 8A82.0 Cluster headache",
+      "source": "World Health Organization",
+      "url": "https://icd.who.int/browse/2024-01/mms/en#1073860098"
+    },
+    {
+      "title": "Cluster Headache Overview",
+      "source": "NINDS / MedlinePlus",
+      "url": "https://www.ninds.nih.gov/health-information/disorders/headache"
+    }
+  ],
+  "source_url": "https://www.ninds.nih.gov/health-information/disorders/headache",
+  "multilingual": {
+    "hi": {
+      "name": "क्लस्टर सिरदर्द (Cluster headache)",
+      "summary": "एक आंख के पीछे होने वाला असहनीय, तेज जलन या ड्रिलिंग जैसा दर्द जिसके साथ उसी आंख से पानी, लाली और नाक बंद हो जाती है।",
+      "advice": "अटैक के समय 100% शुद्ध ऑक्सीजन मास्क द्वारा लेना सबसे असरदार उपाय है। तुरंत न्यूरोलॉजिस्ट से मिलें।"
+    },
+    "hinglish": {
+      "name": "Cluster Headache (Aankh ke peeche tez aag jaisa dard)",
+      "summary": "Ek aakh ke peeche aag jaisa dard hona jisme aakh laal ho jaye aur paani nikle, 15-180 minute tak rehta hai.",
+      "advice": "Normal painkiller kaam nahi karti. High-flow oxygen aur Verapamil therapy ke liye doctor se sampark karein."
+    },
+    "ur": {
+      "name": "کلسٹر سر درد (آنکھ کے پیچھے شدید درد)",
+      "summary": "ایک آنکھ کے گرد انتہائی شدید درد جس کے ساتھ آنکھ کا سرخ ہونا، پانی آنا اور ناک بند ہونا شامل ہے۔",
+      "advice": "خالص آکسیجن کا استعمال اور نیورولوجسٹ کا مشورہ لازمی ہے۔"
+    }
+  },
+  "target_3d_nodes": [
+    "hypothalamus",
+    "left-middle-temporal-gyrus",
+    "right-middle-temporal-gyrus",
+    "trigeminal-nerve"
+  ],
+  "search_keywords": [
+    "cluster headache",
+    "aankh ke peeche dard",
+    "eye pain and tearing",
+    "suicide headache",
+    "histamine headache",
+    "one eye piercing pain"
+  ]
+}

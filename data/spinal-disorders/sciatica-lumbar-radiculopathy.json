@@ -1,0 +1,124 @@
+{
+  "disease_id": "sciatica-lumbar-radiculopathy",
+  "official_name": "Sciatica / Lumbar radiculopathy",
+  "alternative_names": [
+    "Lumbar disc herniation",
+    "Sciatic nerve compression",
+    "Raq-un-Nasa"
+  ],
+  "category": "spinal-disorders",
+  "subcategory": "Spinal nerve root disorders",
+  "icd11_code": "FA84.1",
+  "simple_description": "Sharp, burning, or shooting pain that radiates from the lower back through the buttock and down the back of the leg, caused by a pinched lumbar nerve root.",
+  "medical_description": "A clinical syndrome characterized by pain radiating along the dermatomal distribution of the sciatic nerve (lumbar and sacral nerve roots L4, L5, or S1), extending past the knee into the calf and foot, typically accompanied by paresthesia, sensory deficits, motor weakness (foot drop), or diminished tendon reflexes.",
+  "affected_system": "Lumbosacral nerve roots (L4, L5, S1) and the sciatic nerve trunk.",
+  "symptoms": [
+    "Unilateral sharp, electric, burning, or stabbing pain shooting from lower back/buttock down the back or side of the thigh, calf, and into the foot",
+    "Pain typically worse than lower back pain itself",
+    "Aggravated by coughing, sneezing, bending forward, or prolonged sitting",
+    "Numbness, tingling, or 'pins and needles' in the dermatomal distribution (L5 top of foot, S1 sole of foot)",
+    "Motor weakness: difficulty walking on heels (L5 foot drop) or difficulty walking on toes (S1 weakness)",
+    "Depressed or absent Achilles tendon reflex (S1 radiculopathy)"
+  ],
+  "early_warning_signs": [
+    "Localized low back ache transitioning over days into pain traveling down into the gluteal region"
+  ],
+  "possible_causes": [
+    "Lumbar intervertebral disc herniation (protrusion or extrusion compressing nerve root at L4-L5 or L5-S1 - 90% of cases)",
+    "Lumbar spinal stenosis and facet joint arthropathy",
+    "Spondylolisthesis (vertebral slippage)",
+    "Piriformis syndrome (compression of sciatic nerve by piriformis muscle)"
+  ],
+  "risk_factors": [
+    "Age 30 to 50 years",
+    "Sedentary desk lifestyle with poor posture or occupations involving heavy lifting/twisting",
+    "Obesity and smoking (accelerates disc degeneration)",
+    "Diabetes mellitus"
+  ],
+  "disease_types": [
+    "Acute sciatica (< 6 weeks)",
+    "Chronic lumbar radiculopathy (> 12 weeks)",
+    "Cauda Equina Syndrome (SURGICAL EMERGENCY: massive central disc herniation compressing multiple lumbosacral roots)"
+  ],
+  "clinical_evaluation": "Straight Leg Raise (Lasègue's sign): radiating pain below the knee between 30 and 70 degrees elevation has high sensitivity; Crossed Straight Leg Raise has high specificity. Assessment of myotomes, dermatomes, and reflexes.",
+  "diagnostic_tests": [
+    "High-field 3T Lumbar Spine MRI - Diagnostic gold standard: delineates disc herniation size, nerve root impingement, and spinal canal stenosis",
+    "Electromyography (EMG) and Nerve Conduction Studies (NCS) - Confirms active denervation and chronicity after 3-4 weeks"
+  ],
+  "treatment_overview": "Conservative therapy resolves > 80% within 6 to 8 weeks: short relative rest (avoid prolonged bed rest), active physiotherapy, NSAIDs, neuropathic analgesia. Fluoroscopically guided epidural steroid injection for persistent severe pain. Surgical lumbar microdiscectomy indicated for progressive motor deficit (foot drop) or failure of conservative care > 6-12 weeks.",
+  "medication_classes": [
+    "First-line anti-inflammatory: NSAIDs (Naproxen, Ibuprofen, Etoricoxib) for short courses",
+    "Neuropathic pain modulators: Pregabalin (75-300 mg/day) or Gabapentin (300-1800 mg/day)",
+    "Muscle relaxants (Thiocolchicoside, Baclofen) for acute spasm",
+    "Fluoroscopic transforaminal epidural steroid injection (Dexamethasone/Triamcinolone)"
+  ],
+  "precautions": [
+    "AVOID prolonged strict bed rest (> 2 days); early gentle ambulation and core mobility promote faster healing",
+    "Avoid heavy deadlifting, slouching in soft couches, or sudden twisting while bent"
+  ],
+  "prevention": [
+    "Core muscle strengthening (McKenna / McGill Big 3 exercises)",
+    "Proper ergonomic lumbar support and correct lifting mechanics (bend knees, not waist)",
+    "Maintain healthy body weight"
+  ],
+  "complications": [
+    "Permanent motor deficit (chronic foot drop requiring ankle-foot orthosis)",
+    "Chronic neuropathic lumbar radicular pain syndrome",
+    "Cauda equina syndrome"
+  ],
+  "emergency_signs": [
+    "🚨 CRITICAL SURGICAL EMERGENCY (Cauda Equina Syndrome): Call 112 / 911 or go to emergency immediately if you develop: 1. Numbness in groin, buttocks, or genitals ('saddle anesthesia'), 2. Loss of control over bladder or bowel (incontinence or inability to urinate), 3. Rapidly worsening weakness in both legs."
+  ],
+  "doctor_specialty": "Spine Neurologist / Neurosurgeon / Physical Medicine and Rehabilitation",
+  "faqs": [
+    {
+      "question": "What is Cauda Equina Syndrome and why is it an emergency?",
+      "answer": "It happens when a large disc herniation crushes the cluster of nerve roots at the base of the spinal cord. It causes numbness between the legs (saddle area) and loss of bladder/bowel control. Emergency spine surgery is required within 24 to 48 hours to prevent permanent paralysis and lifelong incontinence."
+    }
+  ],
+  "references": [
+    {
+      "title": "ICD-11 MMS: FA84.1 Radiculopathy of lumbar region",
+      "source": "World Health Organization",
+      "url": "https://icd.who.int/browse/2024-01/mms/en#1073860098"
+    },
+    {
+      "title": "Sciatica Information",
+      "source": "MedlinePlus / NINDS",
+      "url": "https://medlineplus.gov/sciatica.html"
+    }
+  ],
+  "source_url": "https://medlineplus.gov/sciatica.html",
+  "multilingual": {
+    "hi": {
+      "name": "साइटिका / कमर से पैर में जाने वाला दर्द (Sciatica / Lumbar Radiculopathy)",
+      "summary": "कमर की नस (Sciatic nerve) दबने से कूल्हे से लेकर जांघ और पैर के पंजे तक करंट जैसा तेज दर्द, झनझनाहट या पैर में कमजोरी होना।",
+      "advice": "लगातार बिस्तर पर लेटे न रहें, हल्की चाल रखें और फिजियोथेरेपी करें। यदि पेशाब रुक जाए या सुन्नपन आए तो तुरंत इमरजेंसी जाएं।"
+    },
+    "hinglish": {
+      "name": "Sciatica (Kamar se pair me shooting pain)",
+      "summary": "Kamar me L4-L5 disc dabne se buttock se lekar poore pair ke talve tak aag jaisa dard aur sunn-pan hona.",
+      "advice": "Bed rest na karein, MRI Lumbar Spine karwayein. Saddle numbness ya urine rukne par turant emergency surgery lagti hai."
+    },
+    "ur": {
+      "name": "عرق النسا (سائیٹیکا / کمر سے پاؤں کا درد)",
+      "summary": "کمر کے مہرے کے ہلنے سے اعصاب کا دب جانا اور کولہے سے لے کر پاؤں تک شدید درد اور سن پن۔",
+      "advice": "زیادہ دیر بستر پر نہ رہیں، ہلکی واک اور فزیوتھراپی کریں۔ پیشاب میں رکاوٹ کی صورت میں فوری ایمرجنسی رجوع کریں۔"
+    }
+  },
+  "target_3d_nodes": [
+    "lumbar-spine",
+    "cauda-equina",
+    "sciatic-nerve",
+    "somatosensory-cortex"
+  ],
+  "search_keywords": [
+    "sciatica",
+    "kamar se pair me dard",
+    "shooting pain down leg",
+    "pinched nerve back",
+    "disc slip",
+    "lumbar radiculopathy",
+    "foot drop"
+  ]
+}

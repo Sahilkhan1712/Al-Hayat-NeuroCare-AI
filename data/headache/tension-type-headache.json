@@ -1,0 +1,118 @@
+{
+  "disease_id": "tension-type-headache",
+  "official_name": "Tension-type headache",
+  "alternative_names": [
+    "Stress headache",
+    "Band-like headache",
+    "Muscle contraction headache"
+  ],
+  "category": "headache",
+  "subcategory": "Primary headache disorders",
+  "icd11_code": "8A81",
+  "simple_description": "The most common type of headache, feeling like a constant dull ache or tight band pressing around both sides of the head, usually caused by stress, posture, or muscle tension.",
+  "medical_description": "A primary headache disorder characterized by bilateral, pressing or tightening (non-pulsating) pain of mild to moderate intensity. It is not aggravated by routine physical activity, and lacks nausea, with at most one of photophobia or phonophobia present.",
+  "affected_system": "Pericranial myofascial tissues, peripheral nociceptive afferents, and central pain processing mechanisms.",
+  "symptoms": [
+    "Dull, aching, non-throbbing pain across forehead, temples, or back of head",
+    "Sensation of a tight rubber band or vice gripping the skull",
+    "Bilateral distribution (both sides of the head)",
+    "Tenderness in neck, shoulder, and scalp muscles upon palpation",
+    "Mild to moderate intensity that does not prevent daily tasks",
+    "Absence of nausea or vomiting"
+  ],
+  "early_warning_signs": [
+    "Gradual tightening in the neck and shoulders after prolonged desk work or stress"
+  ],
+  "possible_causes": [
+    "Heightened pericranial myofascial nociception",
+    "Sensitization of central nociceptive neurons in chronic forms",
+    "Sustained muscle contraction, poor posture, and emotional strain"
+  ],
+  "risk_factors": [
+    "Mental or emotional stress and anxiety",
+    "Prolonged computer or mobile screen use with poor ergonomic posture",
+    "Sleep deprivation and eye strain",
+    "Dehydration and missed meals"
+  ],
+  "disease_types": [
+    "Infrequent episodic tension-type headache (< 1 day/month)",
+    "Frequent episodic tension-type headache (1-14 days/month)",
+    "Chronic tension-type headache (>= 15 days/month for > 3 months)"
+  ],
+  "clinical_evaluation": "Clinical diagnosis based on ICHD-3 criteria. Neurological examination is completely normal aside from pericranial muscle tenderness on manual palpation.",
+  "diagnostic_tests": [
+    "Neuroimaging (CT/MRI) is typically NOT indicated unless red flags or abnormal neurological signs exist"
+  ],
+  "treatment_overview": "Simple analgesics (Paracetamol, Ibuprofen, Naproxen) for episodic attacks. For chronic tension headache, low-dose Amitriptyline is the primary evidence-based prophylaxis, combined with physical therapy and stress management.",
+  "medication_classes": [
+    "Acute: Paracetamol (Acetaminophen), NSAIDs (Ibuprofen, Naproxen, Aspirin)",
+    "Chronic prophylaxis: Tricyclic antidepressants (Amitriptyline 10-50 mg nocte), Mirtazapine"
+  ],
+  "precautions": [
+    "Avoid taking simple analgesics on more than 14 days per month to prevent Medication-Overuse Headache",
+    "Do not use opioids or combination sedatives"
+  ],
+  "prevention": [
+    "Maintain ergonomic desk setup with monitor at eye level",
+    "Practice progressive relaxation exercises and neck stretches",
+    "Ensure regular 7-8 hours sleep and adequate hydration"
+  ],
+  "complications": [
+    "Chronification leading to chronic tension-type headache and analgesic overuse"
+  ],
+  "emergency_signs": [
+    "Headache that is sudden and explosive (thunderclap)",
+    "Associated with new neurological deficits, stiff neck, or fever"
+  ],
+  "doctor_specialty": "General Physician / Neurologist",
+  "faqs": [
+    {
+      "question": "How can I tell Tension headache from Migraine?",
+      "answer": "Tension headache feels like a tight dull band on *both* sides of the head and is not worsened by walking. Migraine is usually on *one* side, throbs with your heartbeat, and causes nausea or extreme light sensitivity."
+    }
+  ],
+  "references": [
+    {
+      "title": "ICD-11 MMS: 8A81 Tension-type headache",
+      "source": "World Health Organization",
+      "url": "https://icd.who.int/browse/2024-01/mms/en#1073860098"
+    },
+    {
+      "title": "Tension Headache",
+      "source": "NHS UK",
+      "url": "https://www.nhs.uk/conditions/tension-headaches/"
+    }
+  ],
+  "source_url": "https://www.nhs.uk/conditions/tension-headaches/",
+  "multilingual": {
+    "hi": {
+      "name": "टेंशन सिरदर्द (Tension-type headache)",
+      "summary": "सिर के दोनों तरफ पट्टी बंधे होने जैसा भारी दबाव और धीमा दर्द जो तनाव, गर्दन में खिंचाव या नींद की कमी से होता है।",
+      "advice": "गर्दन की स्ट्रेचिंग करें, स्क्रीन से ब्रेक लें, पानी पिएं और तनाव कम करने के उपाय अपनाएं।"
+    },
+    "hinglish": {
+      "name": "Tension Headache (Sar me tight patti bandha jaisa dard)",
+      "summary": "Dono taraf bhari dabav mehsoos hona, ulti nahi aati, stress ya computer screen se badhta hai.",
+      "advice": "Rest karein, posture theek karein aur paracetamol le sakte hain."
+    },
+    "ur": {
+      "name": "ٹینشن سر درد (دباؤ والا سر درد)",
+      "summary": "سر کے دونوں طرف پٹی بندھے ہونے جیسا دباؤ اور کھچاؤ جو تھکن اور ذہنی دباؤ سے پیدا ہوتا ہے۔",
+      "advice": "آرام کریں اور گردن کے پٹھوں کی ورزش کریں۔"
+    }
+  },
+  "target_3d_nodes": [
+    "frontal-lobe",
+    "parietal-lobe",
+    "occipital-lobe"
+  ],
+  "search_keywords": [
+    "tension headache",
+    "band like pain",
+    "heavy head",
+    "dono taraf dard",
+    "sar me dabav",
+    "stress headache",
+    "tight head"
+  ]
+}

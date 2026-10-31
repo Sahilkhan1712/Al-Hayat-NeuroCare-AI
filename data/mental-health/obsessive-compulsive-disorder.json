@@ -1,0 +1,114 @@
+{
+  "disease_id": "obsessive-compulsive-disorder",
+  "official_name": "Obsessive-compulsive disorder",
+  "alternative_names": [
+    "OCD",
+    "Obsessive neurosis",
+    "Baar-baar hath dhone ki bimari"
+  ],
+  "category": "mental-health",
+  "subcategory": "Obsessive-compulsive and related disorders",
+  "icd11_code": "6B20",
+  "simple_description": "A chronic mental health condition where a person experiences uncontrollable, recurring thoughts (obsessions) and feels compelled to repeat specific behaviors or routines (compulsions) over and over to relieve anxiety.",
+  "medical_description": "A condition characterized by the persistent presence of obsessions, compulsions, or commonly both. Obsessions are repetitive, unwanted, intrusive thoughts, urges, or images that cause marked distress. Compulsions are repetitive behaviors or mental acts that the person feels driven to perform according to rigid rules to prevent anxiety or a dreaded event, consuming > 1 hour per day and impairing functioning.",
+  "affected_system": "Cortico-striato-thalamo-cortical (CSTC) neurocircuitry, orbitofrontal cortex, caudate nucleus, and serotonergic pathways.",
+  "symptoms": [
+    "Contamination obsessions: intense fear of germs, dirt, or toxins leading to excessive hand washing (until raw) or hours of cleaning",
+    "Doubt obsessions: intrusive doubts leading to compulsive checking (door locks, gas stove, electrical appliances checked dozens of times)",
+    "Symmetry and ordering compulsions: needing items arranged in exact alignment or symmetry",
+    "Unwanted taboo intrusive thoughts (aggressive, sexual, or religious blasphemy) causing immense personal distress",
+    "Mental compulsions: silently repeating words, counting in patterns, or praying repetitively to neutralize distress"
+  ],
+  "early_warning_signs": [
+    "Gradually escalating rituals that start taking more than 30 minutes a day, causing lateness and anxiety"
+  ],
+  "possible_causes": [
+    "Hyperactivity of the orbitofrontal-striatal circuit (brain's error-detection system gets stuck 'on')",
+    "Serotonin and glutamate dysregulation",
+    "Pediatric Autoimmune Neuropsychiatric Disorders Associated with Streptococcal Infections (PANDAS)"
+  ],
+  "risk_factors": [
+    "Family history of OCD or tic disorders",
+    "Childhood trauma or perfectionistic rigid upbringing"
+  ],
+  "disease_types": [
+    "Contamination/Cleaning",
+    "Doubt/Checking",
+    "Symmetry/Ordering",
+    "Intrusive Taboo Thoughts (Pure-O)"
+  ],
+  "clinical_evaluation": "Yale-Brown Obsessive Compulsive Scale (Y-BOCS: score 16-23 moderate, 24-31 severe, 32-40 extreme). Medical history to rule out Tourette syndrome or neurological basal ganglia lesions.",
+  "diagnostic_tests": [
+    "Clinical psychiatric diagnostic evaluation"
+  ],
+  "treatment_overview": "Gold-standard dual therapy: 1. Specialized Psychotherapy: Exposure and Response Prevention (ERP - a specific CBT modality where patient faces the fear without doing the ritual). 2. High-dose Pharmacotherapy: SSRIs (often required at higher doses than used for depression, e.g. Fluoxetine 60-80 mg, Sertraline 200 mg). Clomipramine (tricyclic with strong serotonergic action) for refractory cases.",
+  "medication_classes": [
+    "First-line High-Dose SSRIs: Fluoxetine (40-80 mg), Sertraline (150-200 mg), Fluvoxamine (150-300 mg), Paroxetine",
+    "Potent Serotonergic Tricyclic: Clomipramine (100-250 mg)",
+    "Augmentation Atypical Antipsychotics: Low-dose Aripiprazole or Risperidone for refractory cases"
+  ],
+  "precautions": [
+    "Family members must avoid participating in reassurance rituals (reassurance temporarily relieves anxiety but reinforces the OCD cycle long-term)"
+  ],
+  "prevention": [
+    "Early CBT and ERP intervention in children with emerging rituals prevents chronic CSTC circuit reinforcement"
+  ],
+  "complications": [
+    "Severe skin breakdown from chemical cleaning agents",
+    "Complete social isolation and inability to leave home"
+  ],
+  "emergency_signs": [
+    "Severe demoralization and active suicidal ideation from exhausting intrusive thoughts"
+  ],
+  "doctor_specialty": "Psychiatrist / Specialized CBT Psychologist",
+  "faqs": [
+    {
+      "question": "Is OCD just about being neat and organized?",
+      "answer": "No. Liking neatness is personality. Real OCD is an agonizing, exhausting condition where terrifying intrusive thoughts cause severe panic that can only be temporarily silenced by performing repetitive rituals."
+    }
+  ],
+  "references": [
+    {
+      "title": "ICD-11 MMS: 6B20 Obsessive-compulsive disorder",
+      "source": "World Health Organization",
+      "url": "https://icd.who.int/browse/2024-01/mms/en#1073860098"
+    },
+    {
+      "title": "Obsessive-Compulsive Disorder",
+      "source": "NIMH / NIH",
+      "url": "https://www.nimh.nih.gov/health/topics/obsessive-compulsive-disorder-ocd"
+    }
+  ],
+  "source_url": "https://www.nimh.nih.gov/health/topics/obsessive-compulsive-disorder-ocd",
+  "multilingual": {
+    "hi": {
+      "name": "ऑब्सेसिव-कंपल्सिव डिसऑर्डर (OCD / बार-बार हाथ धोने या ताला चेक करने की बीमारी)",
+      "summary": "दिमाग में बार-बार अवांछित विचार (वहम) आना और घबराहट शांत करने के लिए बार-बार हाथ धोना, ताले चेक करना या चीजों को गिनना।",
+      "advice": "यह वहम नहीं बल्कि न्यूरोलॉजिकल बीमारी है। सीबीटी की ईआरपी (Exposure and Response Prevention) थेरेपी और दवाओं से यह ठीक होती है।"
+    },
+    "hinglish": {
+      "name": "OCD (Obsessive Compulsive Disorder / Baar-baar check karna)",
+      "summary": "Dimaag me gande vichar ya darr aana aur baar-baar hath dhona, lock check karna ya safai karna.",
+      "advice": "ERP therapy aur SSRI dawai bohot effective hoti hain. Specialist psychiatrist se consult karein."
+    },
+    "ur": {
+      "name": "او سی ڈی (وسوسے اور بار بار دہرانے کی بیماری)",
+      "summary": "بار بار ناپسندیدہ خیالات کا آنا اور تسلی کے لیے بار بار ہاتھ دھونا یا تالے چیک کرنا۔",
+      "advice": "یہ ایک قابل علاج بیماری ہے۔ ماہر نفسیات سے تھراپی اور ادویات حاصل کریں۔"
+    }
+  },
+  "target_3d_nodes": [
+    "orbitofrontal-cortex",
+    "caudate-nucleus",
+    "anterior-cingulate-cortex",
+    "thalamus"
+  ],
+  "search_keywords": [
+    "ocd",
+    "baar baar hath dhona",
+    "obsessive compulsive disorder",
+    "checking lock repeatedly",
+    "contamination fear",
+    "intrusive thoughts"
+  ]
+}

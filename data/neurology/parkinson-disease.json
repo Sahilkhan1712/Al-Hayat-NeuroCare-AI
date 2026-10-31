@@ -1,0 +1,136 @@
+{
+  "disease_id": "parkinson-disease",
+  "official_name": "Parkinson disease",
+  "alternative_names": [
+    "Idiopathic Parkinsonism",
+    "Paralysis agitans",
+    "Kampavata"
+  ],
+  "category": "neurology",
+  "subcategory": "Movement disorders",
+  "icd11_code": "8A00.0",
+  "simple_description": "A progressive brain disorder that causes unintended or uncontrollable movements, such as shaking in the hands (tremor), slowness of movement (bradykinesia), and stiffness (rigidity).",
+  "medical_description": "A chronic, progressive neurodegenerative movement disorder characterized by the profound loss of pigmented dopaminergic neurons in the substantia nigra pars compacta and the presence of intracellular Lewy bodies containing aggregated alpha-synuclein. Diagnosed clinically by the presence of bradykinesia combined with rest tremor, muscular rigidity, or both.",
+  "affected_system": "Basal ganglia dopaminergic nigrostriatal pathway, substantia nigra pars compacta, striatum (caudate and putamen).",
+  "symptoms": [
+    "Resting tremor: rhythmic 4-6 Hz 'pill-rolling' tremor starting unilaterally in one hand or foot, decreasing with intentional movement",
+    "Bradykinesia: progressive slowness of movement, small handwriting (micrographia), reduced arm swing while walking",
+    "Muscular rigidity: 'lead-pipe' or 'cogwheel' resistance to passive joint movement",
+    "Postural instability: balance impairment, shuffling gait, festination, and freezing of gait (FOG)",
+    "Non-motor symptoms: loss of smell (anosmia), REM sleep behavior disorder, severe constipation, depression, mask-like facial expression (hypomimia)"
+  ],
+  "early_warning_signs": [
+    "Early prodromal signs years before motor onset: acting out vivid dreams in sleep (RBD), chronic constipation, loss of smell, unilateral slight hand shake"
+  ],
+  "possible_causes": [
+    "Misfolding and pathological aggregation of alpha-synuclein protein into Lewy bodies",
+    "Selective degeneration of dopaminergic neurons in the substantia nigra pars compacta",
+    "Mitochondrial dysfunction and oxidative stress (genetic mutations in SNCA, LRRK2, PRKN, PINK1, GBA)"
+  ],
+  "risk_factors": [
+    "Advancing age (most important factor; typical onset > 60 years)",
+    "Male sex (1.5 to 2 times higher risk)",
+    "Environmental pesticide exposure (e.g. Paraquat, Rotenone) and rural living",
+    "Family history of Parkinson's disease"
+  ],
+  "disease_types": [
+    "Idiopathic Parkinson's disease (IPD - 85% of cases)",
+    "Early-onset Parkinson's disease (onset < 50 years, often genetic)",
+    "Atypical Parkinsonian syndromes (PSP, MSA, CBD - poor response to levodopa)"
+  ],
+  "clinical_evaluation": "Movement Disorder Society (MDS) clinical diagnostic criteria. Examination assesses finger tapping, hand movements, pronation-supination, leg agility, rigidity, resting/postural tremor, and pull test for postural stability.",
+  "diagnostic_tests": [
+    "Dopamine Transporter SPECT / PET Scan (DaTscan) - Shows significant reduction in striatal dopamine transporter uptake, differentiating Parkinsonism from essential tremor",
+    "High-field 3T Brain MRI - Typically normal in idiopathic PD; essential to rule out multi-infarct state, normal pressure hydrocephalus, or atypical parkinsonism ('hummingbird sign' in PSP or 'hot cross bun sign' in MSA)",
+    "Levodopa Challenge Test - Robust motor improvement confirms dopaminergic responsiveness"
+  ],
+  "treatment_overview": "Symptomatic pharmacological dopamine replacement is the mainstay. Levodopa combined with a dopa-decarboxylase inhibitor (Carbidopa) remains the gold standard. For advanced disease with motor fluctuations, Deep Brain Stimulation (DBS) of the subthalamic nucleus (STN) or globus pallidus internus (GPi) provides profound relief.",
+  "medication_classes": [
+    "Dopamine Precursor: Levodopa + Carbidopa (Sinemet / Syndopa)",
+    "Dopamine Receptor Agonists: Pramipexole, Ropinirole, Rotigotine transdermal patch",
+    "MAO-B Inhibitors: Rasagiline, Selegiline, Safinamide",
+    "COMT Inhibitors: Entacapone, Opicapone (extends levodopa bioavailability)",
+    "NMDA Receptor Antagonist: Amantadine (useful for levodopa-induced dyskinesias)"
+  ],
+  "precautions": [
+    "Avoid high-protein meals at the exact same time as Levodopa doses (neutral amino acids compete for intestinal absorption and blood-brain barrier transport)",
+    "DO NOT stop Levodopa abruptly (risk of Parkinsonism-Hyperpyrexia Syndrome, mimicking neuroleptic malignant syndrome)"
+  ],
+  "prevention": [
+    "Regular vigorous physical exercise and neuro-rehabilitation (aerobic exercise, Tai Chi, boxing drills show neuroprotective benefits)",
+    "Avoid exposure to industrial pesticides and well water without filtration"
+  ],
+  "complications": [
+    "Motor fluctuations ('wearing-off' phenomenon and 'on-off' fluctuations)",
+    "Levodopa-induced peak-dose choreiform dyskinesias",
+    "Parkinson's disease dementia (PDD) in advanced stages (after > 10-15 years)",
+    "Orthostatic hypotension, swallowing difficulty (dysphagia), and aspiration pneumonia"
+  ],
+  "emergency_signs": [
+    "Acute severe stiffness with high fever and altered mental state (Parkinsonism-Hyperpyrexia crisis)",
+    "Sudden severe falls or inability to swallow medications"
+  ],
+  "doctor_specialty": "Movement Disorder Neurologist",
+  "faqs": [
+    {
+      "question": "Does Parkinson's always start with hand shaking?",
+      "answer": "No. Approximately 20-30% of patients have the 'akinetic-rigid' form, where slowness of movement and muscle stiffness are prominent without an obvious resting tremor."
+    },
+    {
+      "question": "Can exercise slow down Parkinson's?",
+      "answer": "Yes! Rigorous clinical research shows that regular cardiovascular and balance exercises (such as brisk walking, cycling, and dance) stimulate brain-derived neurotrophic factor (BDNF) and help maintain mobility."
+    }
+  ],
+  "references": [
+    {
+      "title": "ICD-11 MMS: 8A00.0 Parkinson disease",
+      "source": "World Health Organization",
+      "url": "https://icd.who.int/browse/2024-01/mms/en#1073860098"
+    },
+    {
+      "title": "Parkinson's Disease Information Page",
+      "source": "NINDS / NIH",
+      "url": "https://www.ninds.nih.gov/health-information/disorders/parkinsons-disease"
+    },
+    {
+      "title": "MDS Clinical Diagnostic Criteria for Parkinson's Disease",
+      "source": "International Parkinson and Movement Disorder Society",
+      "url": "https://www.movementdisorders.org/MDS/Resources/Movement-Disorders-Journal/Special-Issues/Clinical-Diagnostic-Criteria-for-Parkinsons-Disease.htm"
+    }
+  ],
+  "source_url": "https://www.ninds.nih.gov/health-information/disorders/parkinsons-disease",
+  "multilingual": {
+    "hi": {
+      "name": "पार्किंसंस रोग (Parkinson's Disease)",
+      "summary": "मस्तिष्क में डोपामाइन की कमी से होने वाली बीमारी जिससे हाथ में कंपन (कंपकंपी), चलने में धीमापन, मांसपेशियों में जकड़न और संतुलन में कमी आती है।",
+      "advice": "दवा का नियमित समय पर सेवन करें और रोजाना फिजियोथेरेपी व बैलेंस एक्सरसाइज करें। प्रोटीन युक्त भोजन दवा के साथ न लें।"
+    },
+    "hinglish": {
+      "name": "Parkinson's Disease (Haath kampna aur chalne me dheemapan)",
+      "summary": "Dimaag ke Substantia Nigra me Dopamine chemical kam hone se haath kampna, body akadna aur chote-chote kadam chalna.",
+      "advice": "Levodopa medicine time par lein aur rozana exercise/walking karein. Movement disorder doctor se consult karein."
+    },
+    "ur": {
+      "name": "پارکنسنز کی بیماری (رعشہ)",
+      "summary": "دماغ میں ڈوپامائن کی کمی کی وجہ سے ہاتھوں کا کانپنا، پٹھوں کا اکڑاؤ اور حرکات میں سستی۔",
+      "advice": "باقاعدگی سے ادویات کا استعمال کریں اور فزیوتھراپی جاری رکھیں۔"
+    }
+  },
+  "target_3d_nodes": [
+    "substantia-nigra",
+    "caudate-nucleus",
+    "putamen",
+    "globus-pallidus",
+    "subthalamic-nucleus"
+  ],
+  "search_keywords": [
+    "parkinsons",
+    "haath kaapna",
+    "tremor in hand",
+    "slowness of movement",
+    "bradykinesia",
+    "pill rolling tremor",
+    "kampan",
+    "shaking palsy"
+  ]
+}

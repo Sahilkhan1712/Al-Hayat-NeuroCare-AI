@@ -1,0 +1,124 @@
+{
+  "disease_id": "subarachnoid-hemorrhage",
+  "official_name": "Subarachnoid hemorrhage",
+  "alternative_names": [
+    "Aneurysmal SAH",
+    "Thunderclap intracranial bleed",
+    "Ruptured brain aneurysm"
+  ],
+  "category": "stroke",
+  "subcategory": "Cerebrovascular diseases",
+  "icd11_code": "8B01",
+  "simple_description": "A critical, life-threatening emergency where a ruptured blood vessel causes bleeding into the space surrounding the brain, presenting as an instantaneous, explosive 'worst headache of life'.",
+  "medical_description": "Extravasation of arterial blood into the subarachnoid space between the arachnoid and pia mater, most commonly (85%) caused by the rupture of an intracranial saccular (berry) aneurysm on the circle of Willis. Characterized by sudden peak headache intensity in seconds (thunderclap headache), meningism, and neurological collapse.",
+  "affected_system": "Subarachnoid cisterns, circle of Willis arterial vasculature, and intracranial pressure dynamics.",
+  "symptoms": [
+    "Instantaneous, explosive thunderclap headache reaching 10/10 maximum severity in seconds ('bomb exploding in the head')",
+    "Neck stiffness and pain (nuchal rigidity / meningismus)",
+    "Photophobia and excruciating eye pain",
+    "Transient or prolonged loss of consciousness at ictus",
+    "Sudden projectile nausea and vomiting",
+    "Seizures or focal neurological deficits (e.g. oculomotor third nerve palsy with blown pupil)"
+  ],
+  "early_warning_signs": [
+    "Sentinel headache: a minor warning leak headache occurring days to weeks prior to major rupture"
+  ],
+  "possible_causes": [
+    "Rupture of intracranial saccular berry aneurysm (85%)",
+    "Arteriovenous malformation (AVM) rupture",
+    "Non-aneurysmal perimesencephalic hemorrhage",
+    "Cranial trauma"
+  ],
+  "risk_factors": [
+    "Chronic arterial hypertension and heavy cigarette smoking",
+    "Excessive alcohol consumption",
+    "Polycystic kidney disease (ADPKD) or family history of intracranial aneurysms",
+    "Connective tissue disorders (Marfan syndrome, Ehlers-Danlos syndrome type IV)"
+  ],
+  "disease_types": [
+    "Aneurysmal subarachnoid hemorrhage",
+    "Non-aneurysmal perimesencephalic subarachnoid hemorrhage",
+    "Traumatic subarachnoid hemorrhage"
+  ],
+  "clinical_evaluation": "Hunt and Hess clinical grading scale, World Federation of Neurosurgical Societies (WFNS) score, urgent non-contrast head CT.",
+  "diagnostic_tests": [
+    "Emergent Non-contrast Head CT - 98-100% sensitivity if performed within 6 hours of headache onset",
+    "Lumbar Puncture (LP) - MANDATORY if CT is negative or equivocal and thunderclap headache occurred > 6 hours prior; shows elevated opening pressure and xanthochromia (spectrophotometry)",
+    "Digital Subtraction Angiography (DSA) / CTA - Gold standard to pinpoint the exact aneurysm location and architecture for urgent repair"
+  ],
+  "treatment_overview": "CRITICAL EMERGENCY ADMISSION TO NEURO-ICU: Airway stabilization, strict blood pressure control (SBP < 140 mmHg prior to aneurysm securing), urgent surgical clipping or endovascular coiling within 24 hours to prevent rebleeding. Nimodipine (60 mg every 4 hours for 21 days) to prevent delayed cerebral ischemia from vasospasm.",
+  "medication_classes": [
+    "Vasospasm prophylaxis: Nimodipine (oral calcium channel blocker, 60 mg q4h x 21 days)",
+    "Antihypertensives (IV Labetalol, Nicardipine) to titrate BP before obliteration",
+    "Analgesia and anti-emetics",
+    "Anticonvulsant prophylaxis (Levetiracetam) during acute phase"
+  ],
+  "precautions": [
+    "NEVER discharge a patient with sudden explosive thunderclap headache based on a normal physical exam alone without CT and LP",
+    "Avoid sedation until neurological status is established"
+  ],
+  "prevention": [
+    "Screening MRA in first-degree relatives of patients with >= 2 family members with aneurysmal SAH",
+    "Strict blood pressure management and cessation of smoking"
+  ],
+  "complications": [
+    "Early aneurysm rebleeding (70% mortality if rebleeds)",
+    "Delayed cerebral ischemia (DCI) and cerebral vasospasm (days 4 to 14)",
+    "Acute obstructive or communicating hydrocephalus (requiring external ventricular drain)",
+    "Hyponatremia (cerebral salt wasting syndrome)"
+  ],
+  "emergency_signs": [
+    "🚨 CRITICAL EMERGENCY: Any sudden explosive headache reaching peak severity in seconds requires immediate ambulance transfer (112 / 911) to emergency neurosurgery center."
+  ],
+  "doctor_specialty": "Neurosurgeon / Neurocritical Care Specialist / Vascular Neurologist",
+  "faqs": [
+    {
+      "question": "What is a thunderclap headache?",
+      "answer": "It is a headache that strikes like a sudden clap of thunder, reaching maximum unbearable pain within seconds to 1 minute. It is an absolute medical red flag for brain bleeding (subarachnoid hemorrhage) until proven otherwise."
+    }
+  ],
+  "references": [
+    {
+      "title": "ICD-11 MMS: 8B01 Subarachnoid hemorrhage",
+      "source": "World Health Organization",
+      "url": "https://icd.who.int/browse/2024-01/mms/en#1073860098"
+    },
+    {
+      "title": "Subarachnoid Hemorrhage Information",
+      "source": "NINDS / NIH",
+      "url": "https://www.ninds.nih.gov/health-information/disorders/subarachnoid-hemorrhage"
+    }
+  ],
+  "source_url": "https://www.ninds.nih.gov/health-information/disorders/subarachnoid-hemorrhage",
+  "multilingual": {
+    "hi": {
+      "name": "सबअरेकनॉइड हैमरेज (Subarachnoid hemorrhage / मस्तिष्कीय रक्तस्राव)",
+      "summary": "मस्तिष्क की नस (एन्यूरिज्म) फटने से अचानक होने वाला 'जिंदगी का सबसे भयानक सिरदर्द' (थंडरक्लैप)। साथ में गर्दन में अकड़न और बेहोशी हो सकती है।",
+      "advice": "🚨 तत्काल मेडिकल इमरजेंसी! तुरंत 112 / 108 पर कॉल करें और इमरजेंसी न्यूरोसर्जरी वार्ड जाएं।"
+    },
+    "hinglish": {
+      "name": "Subarachnoid Hemorrhage (Achanak bomb jaisa phatne wala sar dard)",
+      "summary": "Dimaag ki nas phatne se 1 second me hone wala sabse tez sar dard, gardan me akad aur ulti aana.",
+      "advice": "🚨 TURANT EMERGENCY JAYEIN! Yeh brain bleeding ka sign hai, turant CT scan aur surgery lagti hai."
+    },
+    "ur": {
+      "name": "سب اریکنوئڈ ہیمرج (دماغ میں اچانک شدید خون کا بہاؤ)",
+      "summary": "دماغ کی رگ پھٹنے کی وجہ سے چند سیکنڈ میں شدید ترین سر درد، الٹی اور گردن کا اکڑ جانا۔",
+      "advice": "انتہائی ہنگامی صورتحال! فوراً ایمرجنسی میں رابطہ کریں۔"
+    }
+  },
+  "target_3d_nodes": [
+    "circle-of-willis",
+    "basilar-artery",
+    "anterior-communicating-artery",
+    "subarachnoid-space"
+  ],
+  "search_keywords": [
+    "thunderclap headache",
+    "subarachnoid hemorrhage",
+    "bomb phatne jaisa dard",
+    "worst headache of life",
+    "aneurysm bleed",
+    "gardan me akad aur tez sar dard"
+  ]
+}

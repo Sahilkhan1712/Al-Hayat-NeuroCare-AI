@@ -1,0 +1,109 @@
+{
+  "disease_id": "adhd",
+  "official_name": "Attention deficit hyperactivity disorder",
+  "alternative_names": [
+    "ADHD",
+    "Hyperkinetic disorder",
+    "Dhyan na lagna aur chanchalta"
+  ],
+  "category": "neurodevelopmental",
+  "subcategory": "Neurodevelopmental disorders",
+  "icd11_code": "6A05",
+  "simple_description": "A neurodevelopmental condition characterized by a persistent pattern of inattention (trouble focusing), hyperactivity (excessive restlessness), and impulsivity that interferes with daily functioning.",
+  "medical_description": "A persistent pattern of inattention and/or hyperactivity-impulsivity that has a direct negative impact on academic, occupational, or social functioning. Symptoms emerge prior to age 12, persist for >= 6 months, and manifest across two or more settings (e.g. home and school/work).",
+  "affected_system": "Prefrontal cortex executive control networks, basal ganglia, and frontostriatal dopamine and norepinephrine signaling.",
+  "symptoms": [
+    "Inattention: making careless mistakes, difficulty sustaining attention on tasks, struggling to follow multi-step instructions, chronic disorganization",
+    "Forgetfulness in daily activities (losing keys, phone, forgetting appointments)",
+    "Hyperactivity: fidgeting with hands or feet, squirming in seat, feeling inwardly restless (in adults), talking excessively",
+    "Impulsivity: blurting out answers before questions are finished, difficulty waiting turns, interrupting conversations",
+    "Executive dysfunction: severe chronic procrastination and difficulty estimating time ('time blindness')"
+  ],
+  "early_warning_signs": [
+    "Consistently struggling with sustained attention and impulse control in classroom and home compared to same-age peers"
+  ],
+  "possible_causes": [
+    "High heritability (~75-80%; involving dopamine transporter SLC6A3 and receptor DRD4 genes)",
+    "Delayed maturation of prefrontal cortical thickness"
+  ],
+  "risk_factors": [
+    "Family history of ADHD, maternal smoking or alcohol during pregnancy, very low birth weight"
+  ],
+  "disease_types": [
+    "ADHD predominantly inattentive presentation",
+    "ADHD predominantly hyperactive/impulsive presentation",
+    "ADHD combined presentation"
+  ],
+  "clinical_evaluation": "Vanderbilt ADHD Diagnostic Rating Scale / Conners Scale (completed by parents and teachers), Adult ADHD Self-Report Scale (ASRS v1.1).",
+  "diagnostic_tests": [
+    "Comprehensive developmental and psychological clinical assessment"
+  ],
+  "treatment_overview": "Multimodal therapy combining behavioral interventions and pharmacotherapy. Psychostimulants (Methylphenidate, Amphetamines) are the most effective first-line medical treatment with response rates > 70-80%. Non-stimulants (Atomoxetine, Guanfacine, Clonidine) are effective alternatives.",
+  "medication_classes": [
+    "First-line Stimulants: Methylphenidate (Ritalin / Concerta extended-release), Lisdexamfetamine / Mixed Amphetamine Salts",
+    "Non-stimulants: Atomoxetine (selective norepinephrine reuptake inhibitor), Guanfacine ER (alpha-2A adrenergic agonist)"
+  ],
+  "precautions": [
+    "Monitor blood pressure, heart rate, and growth/weight regularly while on stimulant medications"
+  ],
+  "prevention": [
+    "Structured organizational routines, clear visual timers, broken-down checklists"
+  ],
+  "complications": [
+    "Academic underachievement, occupational instability, increased risk of accidental injuries, comorbid anxiety/depression"
+  ],
+  "emergency_signs": [
+    "Severe acute emotional dysregulation or impulsive dangerous behaviors"
+  ],
+  "doctor_specialty": "Child and Adolescent Psychiatrist / Developmental Pediatrician / Adult ADHD Specialist",
+  "faqs": [
+    {
+      "question": "Can adults have ADHD?",
+      "answer": "Yes. While physical hyperactivity often decreases with age, inattention, disorganization, chronic procrastination, and restlessness frequently continue into adulthood."
+    }
+  ],
+  "references": [
+    {
+      "title": "ICD-11 MMS: 6A05 Attention deficit hyperactivity disorder",
+      "source": "World Health Organization",
+      "url": "https://icd.who.int/browse/2024-01/mms/en#1073860098"
+    },
+    {
+      "title": "Attention-Deficit/Hyperactivity Disorder",
+      "source": "NIMH / NIH",
+      "url": "https://www.nimh.nih.gov/health/topics/attention-deficit-hyperactivity-disorder-adhd"
+    }
+  ],
+  "source_url": "https://www.nimh.nih.gov/health/topics/attention-deficit-hyperactivity-disorder-adhd",
+  "multilingual": {
+    "hi": {
+      "name": "एडीएचडी / ध्यान की कमी और अतिसक्रियता (ADHD)",
+      "summary": "एक जगह ध्यान केंद्रित न कर पाना, अत्यधिक चंचलता (हाथ-पैर हिलाना) और बिना सोचे-समझे उतावलेपन में काम करना।",
+      "advice": "यह आलस नहीं बल्कि मस्तिष्क के डोपामाइन पाथवे का विकार है। बिहेवियर थेरेपी और डॉक्टर द्वारा दी जाने वाली दवाओं से सुधार होता है।"
+    },
+    "hinglish": {
+      "name": "ADHD (Attention Deficit Hyperactivity Disorder)",
+      "summary": "Padhai ya kaam me dhyan na lagna, baar-baar cheezein bhoolna, restless hona aur time management me fail hona.",
+      "advice": "Specialist psychiatrist se consult karein. Methylphenidate ya Atomoxetine aur behavioral coaching bohot helpful hai."
+    },
+    "ur": {
+      "name": "اے ڈی ایچ ڈی (توجہ کی کمی اور غیر معمولی تیزی)",
+      "summary": "توجہ مرکوز کرنے میں دشواری، ضرورت سے زیادہ بے چینی اور جلد بازی کا مظاہرہ۔",
+      "advice": "یہ ایک قابل علاج کیفیت ہے۔ ماہر نفسیات سے مشورہ کریں۔"
+    }
+  },
+  "target_3d_nodes": [
+    "prefrontal-cortex",
+    "caudate-nucleus",
+    "anterior-cingulate-cortex"
+  ],
+  "search_keywords": [
+    "adhd",
+    "dhyan na lagna",
+    "hyperactivity",
+    "inattention",
+    "lack of focus",
+    "restless child",
+    "adult adhd"
+  ]
+}

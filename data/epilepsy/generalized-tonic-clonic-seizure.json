@@ -1,0 +1,122 @@
+{
+  "disease_id": "generalized-tonic-clonic-seizure",
+  "official_name": "Generalized tonic-clonic seizure",
+  "alternative_names": [
+    "Grand mal seizure",
+    "Convulsion",
+    "Mirgi ka daura"
+  ],
+  "category": "epilepsy",
+  "subcategory": "Epileptic disorders",
+  "icd11_code": "8A60",
+  "simple_description": "A major seizure involving the entire brain, causing sudden loss of consciousness, body stiffening (tonic phase), followed by violent rhythmic jerking of arms and legs (clonic phase).",
+  "medical_description": "A generalized epileptic seizure characterized by bilateral, symmetrical motor involvement without focal onset. It proceeds through an initial tonic phase (generalized sustained muscular contraction, ictal cry, cyanosis) lasting 10-20 seconds, followed by a clonic phase (synchronous rhythmic jerking) lasting 30-90 seconds, followed by postictal stupor and confusion.",
+  "affected_system": "Bilateral cerebral cortices, thalamocortical networks, and brainstem reticular activating system.",
+  "symptoms": [
+    "Sudden unexpected loss of consciousness and collapse",
+    "Tonic phase: stiffening of entire body, back arching, upward eye deviation, jaw clamping (tongue biting)",
+    "Ictal cry caused by forced exhalation through closed vocal cords",
+    "Clonic phase: violent rhythmic jerking of all four limbs, frothing at the mouth",
+    "Urinary or fecal incontinence",
+    "Postictal phase: deep flaccid coma transitioning to confusion, severe headache, muscle soreness"
+  ],
+  "early_warning_signs": [
+    "In primary generalized epilepsy: often no warning aura; in focal seizure with secondary generalization, an initial focal sensory or epigastric sensation precedes"
+  ],
+  "possible_causes": [
+    "Genetic idiopathic generalized epilepsy (channelopathies affecting GABA or sodium channels)",
+    "Structural brain lesions (stroke, trauma, brain tumor)",
+    "Infections (meningitis, encephalitis)",
+    "Metabolic/toxic disturbances (severe hyponatremia, hypoglycemia, alcohol withdrawal)"
+  ],
+  "risk_factors": [
+    "Sleep deprivation and high psychological stress",
+    "Missed doses of antiepileptic medications",
+    "Alcohol intoxication or withdrawal",
+    "Flickering strobe lights (photosensitive epilepsy)"
+  ],
+  "disease_types": [
+    "Primary generalized tonic-clonic seizure",
+    "Focal-to-bilateral tonic-clonic seizure (secondary generalization)"
+  ],
+  "clinical_evaluation": "Comprehensive eyewitness account of the event sequence, detailed neurological examination, serum electrolytes, glucose, toxicology screen.",
+  "diagnostic_tests": [
+    "Standard and Sleep-Deprived Electroencephalogram (EEG) - Evaluates generalized spike-and-wave or polyspike discharges",
+    "3T Brain MRI (Epilepsy Protocol) - High-resolution coronal T2 and FLAIR to identify mesial temporal sclerosis, focal cortical dysplasia, or cavernoma"
+  ],
+  "treatment_overview": "First-aid during seizure: Protect head, turn patient onto side (recovery position) to prevent aspiration, DO NOT put objects in mouth, DO NOT restrain. Medical maintenance with antiepileptic drugs (AEDs) to maintain seizure freedom.",
+  "medication_classes": [
+    "Broad-spectrum Antiepileptic Drugs (AEDs): Levetiracetam, Sodium Valproate (caution in females of childbearing potential), Lamotrigine, Topiramate, Brivaracetam",
+    "Emergency rescue benzodiazepines: Midazolam buccal/nasal spray, Lorazepam IV, Diazepam rectal gel"
+  ],
+  "precautions": [
+    "NEVER place a spoon, finger, or cloth in the mouth during a seizure (causes tooth fracture or airway obstruction)",
+    "Do not restrain the jerking limbs",
+    "Observe driving restrictions mandated by local law (typically 6-12 months seizure-free)"
+  ],
+  "prevention": [
+    "Strict adherence to daily prescribed antiepileptic medications without skipping doses",
+    "Maintain regular sleep hygiene and avoid alcohol bingeing"
+  ],
+  "complications": [
+    "Status epilepticus (continuous seizure > 5 minutes - medical emergency)",
+    "Sudden Unexpected Death in Epilepsy (SUDEP)",
+    "Aspiration pneumonia and head trauma"
+  ],
+  "emergency_signs": [
+    "🚨 CRITICAL EMERGENCY: Call 112 / 911 immediately if: Seizure lasts > 5 minutes, second seizure begins without waking, person does not breathe or remains unresponsive, seizure occurs in water, or significant injury occurs."
+  ],
+  "doctor_specialty": "Epileptologist / Neurologist",
+  "faqs": [
+    {
+      "question": "What should I do if someone has a seizure near me?",
+      "answer": "1. Keep calm. 2. Clear sharp objects away and cushion their head. 3. Turn them gently onto their side (recovery position) so saliva drains freely. 4. Time the seizure. 5. NEVER put anything inside their mouth. 6. Call 112 if it lasts more than 5 minutes."
+    }
+  ],
+  "references": [
+    {
+      "title": "ICD-11 MMS: 8A60 Epilepsy and seizures",
+      "source": "World Health Organization",
+      "url": "https://icd.who.int/browse/2024-01/mms/en#1073860098"
+    },
+    {
+      "title": "Epilepsies and Seizures",
+      "source": "NINDS / NIH",
+      "url": "https://www.ninds.nih.gov/health-information/disorders/epilepsy-and-seizures"
+    }
+  ],
+  "source_url": "https://www.ninds.nih.gov/health-information/disorders/epilepsy-and-seizures",
+  "multilingual": {
+    "hi": {
+      "name": "जनरलाइज्ड टॉनिक-क्लोनिक सीज़र / मिर्गी का दौरा (Grand Mal Seizure)",
+      "summary": "पूरे शरीर में अचानक अकड़न और झटके आना, मुंह से झाग निकलना और बेहोश हो जाना।",
+      "advice": "दौरे के समय मरीज को करवट दिलाएं ताकि लार बाहर निकले। मुंह में चम्मच या जूता कभी न लगाएं। 5 मिनट से ज्यादा होने पर तुरंत 112 बुलाएं।"
+    },
+    "hinglish": {
+      "name": "Mirgi ka Daura / Tonic-Clonic Seizure",
+      "summary": "Achanak behosh hokar girna, shareer akadna aur haath-pair me tez jhatke aana.",
+      "advice": "Patient ko side karwat dilayein, gale ka collar dhila karein aur muh me kuch na daalein. Turant hospital le jayein agar 5 min se lamba chale."
+    },
+    "ur": {
+      "name": "مرگی کا دورہ (Tonic-Clonic Seizure)",
+      "summary": "اچانک بے ہوش ہو جانا، جسم کا اکڑنا اور ہاتھ پاؤں میں شدید جھٹکے لگنا۔",
+      "advice": "مریض کو کروٹ کے بل لٹائیں تاکہ سانس کی نالی بند نہ ہو۔ منہ میں کوئی چیز نہ ڈالیں۔"
+    }
+  },
+  "target_3d_nodes": [
+    "thalamus",
+    "frontal-lobe",
+    "parietal-lobe",
+    "motor-cortex",
+    "hippocampus"
+  ],
+  "search_keywords": [
+    "mirgi ka daura",
+    "seizure",
+    "convulsion",
+    "grand mal",
+    "jhatke aana",
+    "epilepsy",
+    "loss of consciousness fit"
+  ]
+}

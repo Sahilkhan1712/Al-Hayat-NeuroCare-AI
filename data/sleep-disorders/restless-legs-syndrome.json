@@ -1,0 +1,116 @@
+{
+  "disease_id": "restless-legs-syndrome",
+  "official_name": "Restless legs syndrome",
+  "alternative_names": [
+    "RLS",
+    "Willis-Ekbom disease (WED)",
+    "Pair me bechaini"
+  ],
+  "category": "sleep-disorders",
+  "subcategory": "Sleep-related movement disorders",
+  "icd11_code": "7A80",
+  "simple_description": "A neurological condition causing an irresistible urge to move the legs, usually accompanied by crawling, pulling, or creeping sensations, worsening at night and relieved by movement.",
+  "medical_description": "A sensorimotor disorder characterized by an irresistible urge to move the legs, usually accompanied by uncomfortable paresthesias. Characterized by 4 essential diagnostic criteria: 1. Urge to move legs with unpleasant sensations, 2. Begins or worsens during periods of rest or inactivity, 3. Partially or totally relieved by movement (walking, stretching), and 4. Worse or exclusively occurs in the evening or night.",
+  "affected_system": "Central dopaminergic pathways (diencephalospinal tract) and central nervous system iron metabolism.",
+  "symptoms": [
+    "An irresistible urge to move the legs, described as crawling, itching, pulling, bubbling, or aching deep inside the calves or thighs",
+    "Symptoms strike when sitting still in the evening (watching TV, car rides) or lying in bed trying to sleep",
+    "Immediate temporary relief upon getting up, pacing the floor, stretching, or shaking the legs",
+    "Severe sleep-onset insomnia and chronic sleep disruption",
+    "Periodic Limb Movements of Sleep (PLMS: involuntary rhythmic foot/leg kicks during sleep in > 80% of RLS patients)"
+  ],
+  "early_warning_signs": [
+    "Uncomfortable leg restlessness appearing only when trying to relax in bed at night"
+  ],
+  "possible_causes": [
+    "Brain iron deficiency (substantia nigra iron deficiency leading to post-synaptic dopamine receptor dysfunction)",
+    "Genetic heritability (MEIS1, BTBD9, MAP2K5 genes)"
+  ],
+  "risk_factors": [
+    "Low serum ferritin / iron deficiency",
+    "Pregnancy (especially third trimester)",
+    "End-stage renal disease (uremic RLS)",
+    "Use of dopamine antagonists, antihistamines, or SSRIs"
+  ],
+  "disease_types": [
+    "Primary idiopathic RLS",
+    "Secondary RLS (iron deficiency, pregnancy, renal failure, neuropathy)"
+  ],
+  "clinical_evaluation": "International Restless Legs Syndrome Study Group (IRLSSG) 5 essential criteria.",
+  "diagnostic_tests": [
+    "Serum Ferritin and Total Iron Binding Capacity (TIBC) - MANDATORY: Target serum ferritin must be >= 75-100 ng/mL in RLS patients",
+    "Renal function tests (BUN, Creatinine) and fasting blood glucose",
+    "Overnight Polysomnography (PSG) - If periodic limb movements of sleep or sleep apnea need quantification"
+  ],
+  "treatment_overview": "First-line intervention is iron replenishment if serum ferritin is < 75 mcg/L (oral iron with Vitamin C on empty stomach, or IV Ferric Carboxymaltose if severe). First-line pharmacological management has shifted from dopamine agonists to Alpha-2-delta ligands (Pregabalin / Gabapentin) to completely avoid 'Augmentation' (a severe paradoxical worsening caused by long-term dopamine agonists).",
+  "medication_classes": [
+    "Iron Therapy: Oral Ferrous Sulfate / Bisglycinate with Vitamin C, or IV Iron infusion (Ferric Carboxymaltose)",
+    "First-line Alpha-2-Delta Ligands: Pregabalin (50-200 mg taken 2h before bed), Gabapentin enacarbil / Gabapentin",
+    "Dopamine Agonists (Pramipexole, Ropinirole, Rotigotine patch - strictly low doses; high risk of augmentation)",
+    "Low-dose opioids for severe refractory RLS"
+  ],
+  "precautions": [
+    "CAUTION with long-term Pramipexole/Ropinirole: can cause AUGMENTATION, where leg symptoms start earlier in the afternoon, spread to the arms, and become more intense",
+    "Avoid over-the-counter sedating antihistamines (Diphenhydramine) which severely aggravate RLS"
+  ],
+  "prevention": [
+    "Avoid caffeine and alcohol before bed; engage in light evening leg stretches and warm baths"
+  ],
+  "complications": [
+    "Severe chronic insomnia, depression, daytime exhaustion"
+  ],
+  "emergency_signs": [
+    "Severe refractory insomnia driving acute depressive crisis"
+  ],
+  "doctor_specialty": "Sleep Medicine Specialist / Neurologist",
+  "faqs": [
+    {
+      "question": "Why do my legs feel like bugs are crawling only at night?",
+      "answer": "Restless Legs Syndrome has a strong circadian rhythm; dopamine levels naturally drop in the evening, triggering uncomfortable sensations deep in the leg muscles that can only be relieved by moving them."
+    }
+  ],
+  "references": [
+    {
+      "title": "ICD-11 MMS: 7A80 Restless legs syndrome",
+      "source": "World Health Organization",
+      "url": "https://icd.who.int/browse/2024-01/mms/en#1073860098"
+    },
+    {
+      "title": "Restless Legs Syndrome Fact Sheet",
+      "source": "NINDS / NIH",
+      "url": "https://www.ninds.nih.gov/health-information/disorders/restless-legs-syndrome"
+    }
+  ],
+  "source_url": "https://www.ninds.nih.gov/health-information/disorders/restless-legs-syndrome",
+  "multilingual": {
+    "hi": {
+      "name": "रेस्टलेस लेग्स सिंड्रोम (Restless Legs Syndrome / पैरों में बेचैनी)",
+      "summary": "रात को बिस्तर पर लेटते ही पैरों में अजीब बेचैनी, कीड़े रेंगने जैसा अहसास और पैर हिलाने की तीव्र इच्छा होना, जो पैर हिलाने या चलने से ही शांत होती है।",
+      "advice": "सीरम फेरिटिन (आयरन) टेस्ट करवाएं। कैफीन बंद करें और शाम को पैरों की हल्की स्ट्रेचिंग करें। प्रीगाबेलिन या गैबापेंटिन दवा से बहुत आराम मिलता है।"
+    },
+    "hinglish": {
+      "name": "Restless Legs Syndrome (Raat ko pair hilane ka rog)",
+      "summary": "Raat ko bistar par pair me bechaini hona aur lagna ki pair chalaye bina aaram nahi milega. Iron ki kami se juda hota hai.",
+      "advice": "Ferritin test karwayein aur sleep doctor se Pregabalin dawai lein."
+    },
+    "ur": {
+      "name": "ریسٹ لیس لیگز سنڈروم (ٹانگوں کی بے چینی)",
+      "summary": "رات کے وقت بستر پر ٹانگوں میں بے چینی اور انہیں مسلسل حرکت دینے کی شدید خواہش۔",
+      "advice": "خون میں آئرن کا ٹیسٹ کروائیں اور ماہر نیند سے رجوع کریں۔"
+    }
+  },
+  "target_3d_nodes": [
+    "substantia-nigra",
+    "spinal-cord",
+    "somatosensory-cortex"
+  ],
+  "search_keywords": [
+    "restless legs",
+    "rls",
+    "pair me bechaini",
+    "moving legs at night",
+    "urge to move legs",
+    "willis ekbom",
+    "crawling feeling in legs"
+  ]
+}

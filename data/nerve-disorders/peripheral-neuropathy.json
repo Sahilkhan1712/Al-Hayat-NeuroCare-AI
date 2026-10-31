@@ -1,0 +1,117 @@
+{
+  "disease_id": "peripheral-neuropathy",
+  "official_name": "Peripheral neuropathy",
+  "alternative_names": [
+    "Polyneuropathy",
+    "Peripheral nerve damage",
+    "Haath-pair me sunn-pan aur jalan"
+  ],
+  "category": "nerve-disorders",
+  "subcategory": "Peripheral nerve disorders",
+  "icd11_code": "8C00",
+  "simple_description": "Damage to the peripheral nerves outside the brain and spinal cord, causing chronic burning pain, numbness, tingling, and muscle weakness, typically starting in the feet and hands.",
+  "medical_description": "A diffuse symmetrical or multifocal disorder of the peripheral nervous system affecting sensory, motor, or autonomic fibers. Characteristically presents in a length-dependent 'glove-and-stocking' distribution affecting the longest distal axons first.",
+  "affected_system": "Peripheral somatic sensory, motor, and autonomic nerve fibers and Schwann cell myelin sheaths.",
+  "symptoms": [
+    "Gradual onset of numbness, prickling, or tingling (paresthesia) starting in feet or toes and spreading upward",
+    "Burning, freezing, electric, or throbbing pain, often worsening at night",
+    "Extreme sensitivity to light touch (allodynia: even bedsheets cause pain)",
+    "Sensory ataxia: lack of coordination and falling in the dark due to loss of position sense (proprioception)",
+    "Muscle weakness, foot drop, or muscle cramping in advanced stages",
+    "Autonomic signs: dry feet, orthostatic dizziness, gastrointestinal dysmotility"
+  ],
+  "early_warning_signs": [
+    "Tingling or burning sensations on the soles of the feet after walking or at bedtime"
+  ],
+  "possible_causes": [
+    "Diabetes mellitus (diabetic polyneuropathy - #1 worldwide cause)",
+    "Vitamin B12 deficiency and chronic alcohol toxicity",
+    "Chemotherapy-induced peripheral neuropathy (CIPN: taxanes, platinums, vincristine)",
+    "Autoimmune (CIDP, Sjögren's, vasculitis), hypothyroidism, renal failure"
+  ],
+  "risk_factors": [
+    "Poorly controlled diabetes, chronic alcoholism, nutritional deficiencies, older age"
+  ],
+  "disease_types": [
+    "Distal symmetric sensorimotor polyneuropathy",
+    "Small-fiber neuropathy",
+    "Mononeuropathy multiplex"
+  ],
+  "clinical_evaluation": "10-gram Semmes-Weinstein monofilament testing, 128-Hz tuning fork vibration testing, pinprick and temperature testing, Romberg sign.",
+  "diagnostic_tests": [
+    "Nerve Conduction Studies (NCS) and Electromyography (EMG) - Distinguishes axonal from demyelinating neuropathy",
+    "Screening blood panel: HbA1c, Fasting glucose, Serum Vitamin B12, Methylmalonic acid, TSH, Serum protein electrophoresis with immunofixation (SPEP/IFE to rule out paraproteinemic neuropathy)",
+    "Skin punch biopsy with Intraepidermal Nerve Fiber Density (IENFD) - Diagnostic for small-fiber neuropathy"
+  ],
+  "treatment_overview": "Treat the underlying etiology (strict glycemic control in diabetes, Vitamin B12 replenishment, cessation of alcohol). Pharmacological management of neuropathic pain with gabapentinoids, SNRIs, or tricyclic antidepressants. Meticulous daily foot care to prevent undetected diabetic ulcers.",
+  "medication_classes": [
+    "First-line Gabapentinoids: Pregabalin (75-300 mg daily), Gabapentin (300-1800 mg daily)",
+    "First-line SNRIs: Duloxetine (60-120 mg daily - FDA approved for diabetic neuropathy)",
+    "Tricyclic Antidepressants: Amitriptyline, Nortriptyline (10-50 mg nocte)",
+    "Topical therapies: Capsaicin 8% dermal patch, Lidocaine 5% patch"
+  ],
+  "precautions": [
+    "Inspect feet daily with a mirror for cuts, blisters, or calluses; wear wide protective footwear"
+  ],
+  "prevention": [
+    "Tight blood sugar management (HbA1c < 7.0%), avoidance of heavy alcohol, B-vitamin supplementation"
+  ],
+  "complications": [
+    "Unnoticed foot ulceration leading to osteomyelitis and lower extremity amputation",
+    "Charcot neuroarthropathy"
+  ],
+  "emergency_signs": [
+    "Rapidly progressive ascending weakness spreading over days (indicative of Guillain-Barré Syndrome)"
+  ],
+  "doctor_specialty": "Neuromuscular Neurologist / Endocrinologist",
+  "faqs": [
+    {
+      "question": "Can damaged peripheral nerves heal?",
+      "answer": "Yes, peripheral nerves can regenerate slowly (about 1 mm per day) if the underlying cause (such as high blood sugar or vitamin deficiency) is corrected early before the nerve cells die completely."
+    }
+  ],
+  "references": [
+    {
+      "title": "ICD-11 MMS: 8C00 Polyneuropathy",
+      "source": "World Health Organization",
+      "url": "https://icd.who.int/browse/2024-01/mms/en#1073860098"
+    },
+    {
+      "title": "Peripheral Neuropathy Fact Sheet",
+      "source": "NINDS / NIH",
+      "url": "https://www.ninds.nih.gov/health-information/disorders/peripheral-neuropathy"
+    }
+  ],
+  "source_url": "https://www.ninds.nih.gov/health-information/disorders/peripheral-neuropathy",
+  "multilingual": {
+    "hi": {
+      "name": "पेरिफेरल न्यूरोपैथी / नसों की कमजोरी (Peripheral Neuropathy)",
+      "summary": "हाथों और पैरों की नसों में खराबी जिससे तलवों में जलन, सुई चुभने जैसी झनझनाहट, सुन्नपन और कमजोरी होती है (डायबिटीज इसका मुख्य कारण है)।",
+      "advice": "डायबिटीज को नियंत्रित रखें, विटामिन B12 चेक करवाएं और रोजाना पैरों की जांच करें। न्यूरोलॉजिस्ट से प्रीगाबेलिन या डुलॉक्सेटीन दवा लें।"
+    },
+    "hinglish": {
+      "name": "Peripheral Neuropathy (Pair ke talvo me jalan aur sunn-pan)",
+      "summary": "Sugar ya B12 ki kami se pair me aag jaisi jalan, jhanjhanahat aur chappal nikalne ka pata na chalna.",
+      "advice": "Sugar control karein, nange pair na chalein aur Pregabalin dawai lein."
+    },
+    "ur": {
+      "name": "پیریفیرل نیوروپیتھی (اعصابی کمزوری اور جلن)",
+      "summary": "ہاتھوں اور پیروں کے اعصاب کی کمزوری، جلن، سن پن اور سوئیاں چبھنے کا احساس۔",
+      "advice": "شوگر کا سخت کنٹرول رکھیں اور پاؤں کی روزانہ دیکھ بھال کریں۔"
+    }
+  },
+  "target_3d_nodes": [
+    "peripheral-nerves",
+    "somatosensory-cortex",
+    "spinal-cord"
+  ],
+  "search_keywords": [
+    "neuropathy",
+    "talvo me jalan",
+    "pair sunn hona",
+    "peripheral neuropathy",
+    "diabetic nerve pain",
+    "pins and needles feet",
+    "burning feet"
+  ]
+}

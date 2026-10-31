@@ -1,0 +1,124 @@
+{
+  "disease_id": "alzheimer-disease",
+  "official_name": "Alzheimer disease",
+  "alternative_names": [
+    "Alzheimer's dementia",
+    "Primary degenerative dementia",
+    "Bhoolne ki bimari"
+  ],
+  "category": "neurology",
+  "subcategory": "Neurodegenerative and cognitive disorders",
+  "icd11_code": "8A20",
+  "simple_description": "The most common form of dementia, causing progressive memory loss, confusion, and difficulty with thinking, problem-solving, and everyday tasks.",
+  "medical_description": "A progressive, irreversible neurodegenerative disorder characterized neuropathologically by the extracellular deposition of amyloid-beta (Abeta42) peptide into senile plaques and the intracellular accumulation of hyperphosphorylated tau protein into neurofibrillary tangles. Clinically marked by insidious onset and gradual progressive deterioration in episodic memory, executive function, orientation, visuospatial skills, and language.",
+  "affected_system": "Entorhinal cortex, hippocampus, temporal lobes, parietal-temporal association cortices, and cholinergic projection networks.",
+  "symptoms": [
+    "Progressive episodic memory impairment: forgetting recent conversations, misplacing items in unusual places, repeating questions",
+    "Disorientation to time, day, and familiar surroundings (getting lost in known neighborhoods)",
+    "Executive dysfunction: difficulty managing finances, paying bills, or following multi-step cooking recipes",
+    "Language difficulties (anomia): struggling to find common words, substituting inappropriate terms",
+    "Visuospatial deficits: difficulty judging distances, recognizing familiar faces (prosopagnosia in later stages)",
+    "Neuropsychiatric changes: apathy, withdrawal, suspicion, paranoia, wandering, sleep-wake cycle inversion"
+  ],
+  "early_warning_signs": [
+    "Mild Cognitive Impairment (MCI): measurable memory decline greater than expected for normal age, but still capable of independent daily living"
+  ],
+  "possible_causes": [
+    "Amyloid cascade hypothesis: abnormal cleavage of Amyloid Precursor Protein (APP) yielding toxic Abeta42 oligomers",
+    "Tau hyperphosphorylation leading to microtubule destabilization and neurofibrillary tangle formation",
+    "Neuroinflammation, microglial dysfunction, synaptic loss, and profound central cholinergic deficits"
+  ],
+  "risk_factors": [
+    "Age (exponential increase after age 65; affects ~30% over age 85)",
+    "Apolipoprotein E (APOE) epsilon4 allele (strongest genetic risk factor)",
+    "Midlife cardiovascular risk factors: untreated hypertension, diabetes, obesity, smoking",
+    "History of traumatic brain injury (TBI) and lower educational attainment"
+  ],
+  "disease_types": [
+    "Late-onset Alzheimer's disease (LOAD - onset >= 65 years, > 95% of cases)",
+    "Early-onset Alzheimer's disease (EOAD - onset < 65 years; often autosomal dominant mutations in APP, PSEN1, or PSEN2)",
+    "Atypical variants: Posterior Cortical Atrophy (PCA), Logopenic progressive aphasia"
+  ],
+  "clinical_evaluation": "Comprehensive cognitive battery (Mini-Mental State Examination - MMSE, Montreal Cognitive Assessment - MoCA), Clinical Dementia Rating (CDR) scale, collateral history from family member.",
+  "diagnostic_tests": [
+    "Volumetric 3T Brain MRI - Demonstrates bilateral hippocampal and medial temporal lobe atrophy (MTA scale), and parietal atrophy",
+    "Amyloid PET / Tau PET Imaging - Visualizes cortical amyloid plaque deposition in vivo",
+    "CSF Biomarkers (Lumbar Puncture) - Low Abeta42, elevated phosphorylated-tau (p-tau181) and total-tau",
+    "Blood-based Biomarkers (Plasma p-tau217) - High diagnostic accuracy for Alzheimer's pathology",
+    "Screening blood panel: Vitamin B12, TSH, Folate, RPR to exclude reversible mimics"
+  ],
+  "treatment_overview": "Comprehensive multidisciplinary approach combining symptom-modifying drugs, disease-modifying anti-amyloid monoclonal antibodies (for early MCI/mild dementia), cognitive stimulation, and caregiver support.",
+  "medication_classes": [
+    "Cholinesterase Inhibitors (Mild to Moderate): Donepezil (5-10 mg daily), Rivastigmine (oral/patch), Galantamine",
+    "NMDA Receptor Antagonist (Moderate to Severe): Memantine (10-20 mg daily) - neuroprotective against glutamate excitotoxicity",
+    "Disease-Modifying Monoclonal Antibodies: Lecanemab, Donanemab (clears amyloid plaques, requiring strict MRI surveillance for ARIA side effects)",
+    "Non-pharmacological sensory and environmental adaptations"
+  ],
+  "precautions": [
+    "AVOID medications with strong anticholinergic properties (e.g. sedating antihistamines, tricyclic antidepressants, bladder antispasmodics) which worsen confusion and accelerate cognitive decline",
+    "Ensure home safety (remove loose rugs, install stove shut-off sensors, monitor driving safety)"
+  ],
+  "prevention": [
+    "Lancet Commission 14 modifiable risk factors: manage midlife hypertension, treat hearing loss with hearing aids, maintain social engagement, regular exercise, Mediterranean-DASH diet"
+  ],
+  "complications": [
+    "Complete loss of independent activities of daily living (bathing, dressing, feeding)",
+    "Severe dysphagia, aspiration pneumonia, immobility, pressure ulcers, and sepsis"
+  ],
+  "emergency_signs": [
+    "Sudden acute deterioration over hours or days (delirium, usually triggered by urinary tract infection, pneumonia, or electrolyte disturbance, requiring emergency hospital admission)"
+  ],
+  "doctor_specialty": "Behavioral Neurologist / Geriatric Psychiatrist / Cognitive Specialist",
+  "faqs": [
+    {
+      "question": "Is normal aging the same as Alzheimer's?",
+      "answer": "No. Occasional minor forgetfulness (like forgetting where you put your keys but finding them later) is normal. Alzheimer's causes forgetting recent events entirely, getting lost in familiar places, and losing the ability to perform basic tasks."
+    }
+  ],
+  "references": [
+    {
+      "title": "ICD-11 MMS: 8A20 Alzheimer disease",
+      "source": "World Health Organization",
+      "url": "https://icd.who.int/browse/2024-01/mms/en#1073860098"
+    },
+    {
+      "title": "Alzheimer's Disease Fact Sheet",
+      "source": "National Institute on Aging (NIA) / NIH",
+      "url": "https://www.nia.nih.gov/health/alzheimers-and-dementia/alzheimers-disease-fact-sheet"
+    }
+  ],
+  "source_url": "https://www.nia.nih.gov/health/alzheimers-and-dementia/alzheimers-disease-fact-sheet",
+  "multilingual": {
+    "hi": {
+      "name": "अल्जाइमर रोग / डिमेंशिया (Alzheimer's Disease)",
+      "summary": "याददाश्त और सोचने-समझने की क्षमता का धीरे-धीरे कम होना। हाल की बातें भूलना, रास्ते भूलना और रोजमर्रा के काम करने में असमर्थ होना इसके लक्षण हैं।",
+      "advice": "मरीज के साथ धैर्य रखें, दिनचर्या को व्यवस्थित रखें और न्यूरोलॉजिस्ट से याददाश्त की दवाएं (Donepezil/Memantine) शुरू करवाएं।"
+    },
+    "hinglish": {
+      "name": "Alzheimer's Disease (Bhoolne ki bimari / Dementia)",
+      "summary": "Dimaag ke memory center (Hippocampus) me plaques jamne se nayi baatein bhoolna, raaste bhoolna aur confuse hona.",
+      "advice": "Patient ko safe environment dein, cognitive exercises karwayein aur specialist se consult karein."
+    },
+    "ur": {
+      "name": "الزائمر کی بیماری (یادداشت کی کمزوری)",
+      "summary": "یادداشت اور سوچنے سمجھنے کی صلاحیت کا بتدریج ختم ہونا۔ حالیہ واقعات کا بھول جانا۔",
+      "advice": "مریض کی دیکھ بھال میں صبر سے کام لیں اور ڈاکٹر کی تجویز کردہ ادویات باقاعدگی سے دیں۔"
+    }
+  },
+  "target_3d_nodes": [
+    "hippocampus",
+    "entorhinal-cortex",
+    "temporal-lobe",
+    "parietal-lobe",
+    "cholinergic-system"
+  ],
+  "search_keywords": [
+    "alzheimer",
+    "dementia",
+    "bhoolne ki bimari",
+    "memory loss",
+    "confusion",
+    "forgetting names and faces",
+    "cognitive decline"
+  ]
+}

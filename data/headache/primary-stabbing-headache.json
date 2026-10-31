@@ -1,0 +1,122 @@
+{
+  "disease_id": "primary-stabbing-headache",
+  "official_name": "Primary stabbing headache",
+  "alternative_names": [
+    "Ice-pick headache",
+    "Ophthalmodynia periodica",
+    "Jabs and jolts syndrome"
+  ],
+  "category": "headache",
+  "subcategory": "Other primary headache disorders",
+  "icd11_code": "8A84.0",
+  "simple_description": "Extremely brief, sharp, needle-like or ice-pick stabbing pains in the head that last only a few seconds, occurring unpredictably in one or multiple spots without nausea or autonomic symptoms.",
+  "medical_description": "Transient, sharp, lancinating jabs of head pain that occur spontaneously, lasting typically from a fraction of a second up to a few seconds, localized to the distribution of the first division of the trigeminal nerve (ophthalmic branch V1) or parietal/temporal scalp, with no autonomic symptoms and normal neuroimaging. Highly responsive to indomethacin.",
+  "affected_system": "Trigeminal nerve sensory root (V1 division), epicranial nerve endings, and thalamocortical sensory pathways.",
+  "symptoms": [
+    "Sudden, ultra-sharp, stabbing pain like a needle, nail, or ice-pick poking into the skull",
+    "Duration strictly very brief (typically 1 to 3 seconds, rarely up to 10 seconds)",
+    "Single jab or irregular volleys of stabs occurring throughout the day",
+    "Can occur in a single spot or wander to different regions of the scalp",
+    "Absence of autonomic signs (no tearing, no runny nose, no redness in eyes)",
+    "Absence of nausea, vomiting, photophobia, or phonophobia"
+  ],
+  "early_warning_signs": [
+    "None; stabs strike completely spontaneously without warning or prodrome"
+  ],
+  "possible_causes": [
+    "Focal episodic hyper-excitability of epicranial terminal sensory nerve branches (trigeminal and occipital nerve endings)",
+    "Spontaneous paroxysmal central sensory disinhibition"
+  ],
+  "risk_factors": [
+    "Co-existing history of migraine or cluster headache (stabbing headache is common in migraineurs)",
+    "Female predominance",
+    "Fatigue and emotional stress"
+  ],
+  "disease_types": [
+    "Idiopathic primary stabbing headache",
+    "Fixed-site primary stabbing headache (requiring structural imaging to rule out local pathology)"
+  ],
+  "clinical_evaluation": "Clinical diagnosis according to ICHD-3 criteria 4.7. Complete neurological examination is completely normal. Palpation of scalp may occasionally reveal localized cutaneous tenderness.",
+  "diagnostic_tests": [
+    "3T Brain MRI with cranial nerve protocol - Required if stabs occur strictly in a single fixed location to rule out structural intracranial lesion, meningioma, or vascular malformation"
+  ],
+  "treatment_overview": "Reassurance is the cornerstone because individual stabs last only seconds. If frequent or debilitating, Indomethacin is the gold-standard therapeutic agent.",
+  "medication_classes": [
+    "Indomethacin (NSAID) - Distinctively effective diagnostic and therapeutic agent",
+    "Melatonin (3 to 12 mg at bedtime) - Well-tolerated non-NSAID alternative",
+    "Gabapentin or Celecoxib for refractory cases"
+  ],
+  "precautions": [
+    "Do not confuse with trigeminal neuralgia (which affects V2/V3 lower face and is triggered by chewing/touching)",
+    "Do not confuse with migraine (which is pulsating and lasts hours with nausea)"
+  ],
+  "prevention": [
+    "Regular sleep schedule and hydration",
+    "Indomethacin prophylaxis when attack frequency is high"
+  ],
+  "complications": [
+    "High anxiety and fear of serious brain disease due to the startling sharpness of the pain"
+  ],
+  "emergency_signs": [
+    "Pain that becomes continuous rather than lasting seconds",
+    "Accompanied by facial numbness, double vision, or limb weakness",
+    "Associated with high fever or altered consciousness"
+  ],
+  "doctor_specialty": "Neurologist / Headache Specialist",
+  "faqs": [
+    {
+      "question": "Is an ice-pick headache a sign of a brain tumor?",
+      "answer": "Almost never. Primary stabbing headache is a benign primary disorder. However, if the stabbing occurs strictly in one single fixed point repeatedly, a neurologist will order an MRI to rule out any underlying structural cause."
+    },
+    {
+      "question": "How is it different from Migraine?",
+      "answer": "Ice-pick pain lasts only 1 to 3 seconds like a sudden needle poke. Migraine lasts 4 to 72 hours, is throbbing, and is accompanied by nausea and light sensitivity."
+    }
+  ],
+  "references": [
+    {
+      "title": "ICD-11 MMS: 8A84.0 Primary stabbing headache",
+      "source": "World Health Organization",
+      "url": "https://icd.who.int/browse/2024-01/mms/en#1073860098"
+    },
+    {
+      "title": "ICHD-3: 4.7 Primary stabbing headache",
+      "source": "International Headache Society",
+      "url": "https://ichd-3.org/other-primary-headache-disorders/4-7-primary-stabbing-headache/"
+    }
+  ],
+  "source_url": "https://ichd-3.org/other-primary-headache-disorders/4-7-primary-stabbing-headache/",
+  "multilingual": {
+    "hi": {
+      "name": "प्राइमरी स्टैबिंग सिरदर्द (Ice-Pick Headache)",
+      "summary": "सिर में अचानक सुई या कील चुभने जैसा बहुत तेज़ दर्द जो सिर्फ 1 से 3 सेकंड रहता है और फिर गायब हो जाता है।",
+      "advice": "घबराएं नहीं, यह दर्द कुछ सेकंड में शांत हो जाता है। यदि यह दिन में बार-बार हो तो न्यूरोलॉजिस्ट से इंडोमेथासिन दवा के लिए परामर्श लें।"
+    },
+    "hinglish": {
+      "name": "Ice-Pick Headache (Sui chubhan jaisa tez dard)",
+      "summary": "Sir me achanak sui jaisa teekha jhatka lagna jo sirf 1-3 seconds rehta hai aur bina ulti ke hota hai.",
+      "advice": "Ghabrayein nahi, yeh migraine nahi hai. Local ice pack lagayein aur neurologist se milen."
+    },
+    "ur": {
+      "name": "پرائمری سٹیبنگ سر درد (سوئی جیسی چبھن)",
+      "summary": "سر میں اچانک سوئی چبھنے جیسا شدید درد جو صرف چند سیکنڈ رہتا ہے اور خود بخود ختم ہو جاتا ہے۔",
+      "advice": "یہ عام طور پر خطرناک نہیں ہوتا، پرسکون رہیں اور ڈاکٹر سے رجوع کریں۔"
+    }
+  },
+  "target_3d_nodes": [
+    "left-middle-temporal-gyrus",
+    "right-middle-temporal-gyrus",
+    "left-postcentral-gyrus",
+    "right-postcentral-gyrus",
+    "thalamus"
+  ],
+  "search_keywords": [
+    "ice-pick headache",
+    "stabbing headache",
+    "sui chubhan",
+    "needle pain head",
+    "jabs and jolts",
+    "ek point me dard",
+    "sharp brief pain head"
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "disease_id": "generalized-anxiety-disorder",
+  "official_name": "Generalized anxiety disorder",
+  "alternative_names": [
+    "GAD",
+    "Chronic anxiety neurosis",
+    "Chinta aur ghabrahat ka rog"
+  ],
+  "category": "mental-health",
+  "subcategory": "Anxiety and fear-related disorders",
+  "icd11_code": "6B00",
+  "simple_description": "A persistent mental health condition characterized by excessive, uncontrollable worry and anxiety about everyday matters, accompanied by physical restlessness, muscle tension, and rapid heartbeat.",
+  "medical_description": "An anxiety disorder characterized by general, persistent anxiety and excessive, intrusive, disproportionate worry (apprehensive expectation) across multiple domains of everyday life (such as family, health, finances, work). The symptoms persist for at least several months and are accompanied by motor tension (restlessness, trembling, inability to relax) and autonomic hyperactivity (palpitations, sweating, dry mouth, sleep disturbance).",
+  "affected_system": "Limbic system (amygdala hyper-reactivity, prefrontal cortex hypofunction, anterior cingulate cortex) and hypothalamic-pituitary-adrenal (HPA) neuroendocrine axis.",
+  "symptoms": [
+    "Excessive, uncontrollable worry occurring on more days than not about a variety of everyday life situations",
+    "Physical restlessness, feeling keyed-up, on edge, or unable to sit still",
+    "Persistent muscle tension, aching shoulders, neck tightness, or tension headaches",
+    "Autonomic symptoms: rapid heart rate (palpitations), trembling, shortness of breath, stomach churn, frequent urination",
+    "Fatigability and difficulty concentrating or mind going blank",
+    "Sleep disturbance: difficulty falling or staying asleep, or restless unsatisfying sleep"
+  ],
+  "early_warning_signs": [
+    "Gradually escalating difficulty controlling worries about routine daily responsibilities, causing irritability and insomnia"
+  ],
+  "possible_causes": [
+    "Dysregulation of central neurotransmitter systems: gamma-aminobutyric acid (GABA-A receptor hypofunction), serotonin (5-HT), and norepinephrine",
+    "Hyperactive amygdala responses coupled with decreased top-down inhibitory control from the ventromedial prefrontal cortex",
+    "Chronic environmental stressors and genetic heritability (~30%)"
+  ],
+  "risk_factors": [
+    "Female sex (twice as prevalent in women)",
+    "Family history of anxiety or depressive disorders",
+    "Childhood adversity, trauma, or prolonged psychological stress",
+    "High neuroticism personality trait"
+  ],
+  "disease_types": [
+    "Generalized anxiety disorder without panic attacks",
+    "GAD comorbid with Major Depressive Disorder (very common clinical presentation)"
+  ],
+  "clinical_evaluation": "Comprehensive psychiatric clinical interview utilizing validated scales (Generalized Anxiety Disorder 7-item scale - GAD-7 score >= 10 indicates moderate-to-severe anxiety). Physical exam and blood tests to exclude medical mimics (hyperthyroidism, pheochromocytoma, caffeine toxicity).",
+  "diagnostic_tests": [
+    "Serum Thyroid Stimulating Hormone (TSH) and Free T4 - Mandatory to rule out hyperthyroidism",
+    "Complete blood count, serum electrolytes, fasting blood glucose",
+    "12-Lead ECG - Evaluates palpitations and rules out cardiac arrhythmias before psychotropic prescribing"
+  ],
+  "treatment_overview": "Evidence-based dual approach: First-line psychotherapy: Cognitive Behavioral Therapy (CBT - focused on cognitive restructuring and exposure). First-line pharmacotherapy: Selective Serotonin Reuptake Inhibitors (SSRIs) or Serotonin-Norepinephrine Reuptake Inhibitors (SNRIs). Short-term rescue with beta-blockers (Propranolol) for autonomic somatic symptoms. Non-benzodiazepine anxiolytics (Buspirone).",
+  "medication_classes": [
+    "First-line SSRIs: Escitalopram (10-20 mg daily), Sertraline (50-200 mg daily), Paroxetine",
+    "First-line SNRIs: Venlafaxine XR (75-225 mg daily), Duloxetine",
+    "Somatic Autonomic Blocker: Propranolol (10-40 mg as needed for physical tremors/palpitations)",
+    "5-HT1A Partial Agonist: Buspirone (15-60 mg/day; non-sedating, no dependency risk)",
+    "Gabapentinoid: Pregabalin (approved in Europe/UK for GAD)"
+  ],
+  "precautions": [
+    "AVOID long-term continuous Benzodiazepines (Alprazolam, Clonazepam) due to rapid tolerance, physiological dependence, and cognitive dulling",
+    "Avoid excessive caffeine, energy drinks, and recreational stimulants which trigger autonomic panic symptoms"
+  ],
+  "prevention": [
+    "Daily aerobic exercise and regular diaphragmatic breathing techniques (4-7-8 breathing)",
+    "Mindfulness-Based Stress Reduction (MBSR) and consistent sleep hygiene"
+  ],
+  "complications": [
+    "Development of secondary Major Depressive Disorder and demoralization",
+    "Self-medication with alcohol or sedatives (substance use disorder)",
+    "Impaired occupational performance and marital/social distress"
+  ],
+  "emergency_signs": [
+    "Acute thoughts of self-harm or suicide. Immediately contact 24x7 crisis helplines: Tele-MANAS (14416 / 1800-891-4416), Kiran (1800-599-0019), or 988 Lifeline."
+  ],
+  "doctor_specialty": "Psychiatrist / Clinical Psychologist",
+  "faqs": [
+    {
+      "question": "Can anxiety cause real physical symptoms in the body?",
+      "answer": "Yes, absolutely! The brain's anxiety centers release adrenaline and cortisol, triggering real physiological physical changes: racing heart, shortness of breath, trembling, muscle cramps, digestive distress, and headaches."
+    },
+    {
+      "question": "Are anxiety medicines addictive?",
+      "answer": "First-line modern medicines like SSRIs (Escitalopram, Sertraline) and Buspirone are NOT addictive and do not cause dependence. Only older sedatives called benzodiazepines (like Alprazolam) carry a risk of habit formation if misused."
+    }
+  ],
+  "references": [
+    {
+      "title": "ICD-11 MMS: 6B00 Generalized anxiety disorder",
+      "source": "World Health Organization",
+      "url": "https://icd.who.int/browse/2024-01/mms/en#1073860098"
+    },
+    {
+      "title": "Generalized Anxiety Disorder: When Worry Gets Out of Control",
+      "source": "National Institute of Mental Health (NIMH)",
+      "url": "https://www.nimh.nih.gov/health/publications/generalized-anxiety-disorder-gad"
+    }
+  ],
+  "source_url": "https://www.nimh.nih.gov/health/publications/generalized-anxiety-disorder-gad",
+  "multilingual": {
+    "hi": {
+      "name": "सामान्यीकृत चिंता विकार (Generalized Anxiety Disorder / घबराहट का रोग)",
+      "summary": "हर समय अत्यधिक चिंता, घबराहट, दिल की धड़कन तेज होना, मांसपेशियों में तनाव और बेचैनी रहना जो खुद से नियंत्रित न हो सके।",
+      "advice": "यह एक चिकित्सीय स्थिति है जिसका इलाज संभव है। मनोचिकित्सक (Psychiatrist) से परामर्श लें और सीबीटी थेरेपी व सुरक्षित दवाएं शुरू करें।"
+    },
+    "hinglish": {
+      "name": "Generalized Anxiety Disorder (Excessive Chinta aur Ghabrahat)",
+      "summary": "Choti-choti baato par be-wajah ghabrahat hona, dil tez dhadakna, haath kampna aur dimaag shant na hona.",
+      "advice": "Deep breathing exercise karein, caffeine kam karein aur psychiatrist ya psychologist se CBT therapy lein."
+    },
+    "ur": {
+      "name": "جنرلائزڈ اینزائٹی ڈس آرڈر (شدید بے چینی اور گھبراہٹ)",
+      "summary": "مستقل اور بے قابو پریشانی، دل کا تیز دھڑکنا، پٹھوں کا کھچاؤ اور بے خوابی۔",
+      "advice": "یہ قابل علاج حالت ہے۔ ماہر نفسیات سے مشورہ کریں اور باقاعدہ علاج حاصل کریں۔"
+    }
+  },
+  "target_3d_nodes": [
+    "amygdala",
+    "prefrontal-cortex",
+    "hippocampus",
+    "anterior-cingulate-cortex"
+  ],
+  "search_keywords": [
+    "anxiety",
+    "ghabrahat",
+    "bechaini",
+    "chinta",
+    "palpitations and worry",
+    "dil tez dhadakna",
+    "panic",
+    "gad"
+  ]
+}

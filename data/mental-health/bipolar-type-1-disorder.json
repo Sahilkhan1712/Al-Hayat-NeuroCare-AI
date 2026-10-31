@@ -1,0 +1,116 @@
+{
+  "disease_id": "bipolar-type-1-disorder",
+  "official_name": "Bipolar type I disorder",
+  "alternative_names": [
+    "Manic-depressive illness",
+    "Bipolar affective disorder",
+    "Mood swings disorder"
+  ],
+  "category": "mental-health",
+  "subcategory": "Bipolar and related disorders",
+  "icd11_code": "6A60",
+  "simple_description": "A serious mental health condition characterized by extreme mood swings, oscillating between periods of intense high energy, euphoria, and impulsivity (mania) and deep sadness and hopelessness (depression).",
+  "medical_description": "A severe episodic mood disorder defined by the occurrence of at least one manic episode (an abnormally and persistently elevated, expansive, or irritable mood, and abnormally and persistently increased activity or energy, lasting at least 1 week or requiring immediate hospitalization). Typically alternates with major depressive episodes.",
+  "affected_system": "Fronto-limbic emotional regulation network, amygdala, ventral striatum reward pathways, circadian rhythm pacemakers.",
+  "symptoms": [
+    "Manic episode: decreased need for sleep (feeling fully rested after 2-3 hours), grandiosity or inflated self-esteem",
+    "Pressured, rapid, unstoppable speech and flight of ideas (racing thoughts)",
+    "High distractibility, hyper-sexuality, reckless excessive spending or risky financial ventures",
+    "Depressive episode: profound sadness, anhedonia, severe fatigue, feelings of worthlessness, and suicidal thoughts",
+    "Psychotic features during severe mania: grandiose delusions (believing one has divine powers or extreme wealth)"
+  ],
+  "early_warning_signs": [
+    "Sudden drop in sleep to 2-3 hours while feeling energized, accompanied by ambitious grand plans and rapid speech"
+  ],
+  "possible_causes": [
+    "High genetic heritability (60-80% heritability index; CACNA1C, ANK3 genes)",
+    "Neurotransmitter receptor dysregulation (dopamine, glutamate, intracellular signaling cascades)",
+    "Circadian rhythm disruption"
+  ],
+  "risk_factors": [
+    "Family history of bipolar disorder or schizophrenia",
+    "Severe emotional trauma or disruption of sleep-wake schedules"
+  ],
+  "disease_types": [
+    "Bipolar I disorder (requires >= 1 full manic episode)",
+    "Bipolar II disorder (hypomania + major depression; never full mania)",
+    "Cyclothymic disorder"
+  ],
+  "clinical_evaluation": "Careful psychiatric clinical interview, Mood Disorder Questionnaire (MDQ), screening for secondary mania (substance use, steroids, Wilson's disease).",
+  "diagnostic_tests": [
+    "Clinical psychiatric diagnosis; blood panel (TSH, electrolytes, toxicology screen, copper/ceruloplasmin if young to exclude Wilson's disease)",
+    "Baseline renal and thyroid function tests prior to initiating Lithium"
+  ],
+  "treatment_overview": "Long-term maintenance mood-stabilizing pharmacotherapy is essential to prevent recurrent episodes. Lithium is the gold-standard mood stabilizer with proven anti-suicide efficacy. Atypical antipsychotics for acute mania. Antidepressant monotherapy is STRICTLY CONTRAINDICATED because it can precipitate a manic switch or rapid cycling.",
+  "medication_classes": [
+    "Gold-standard Mood Stabilizer: Lithium Carbonate (requires therapeutic serum level monitoring: 0.6-1.0 mEq/L)",
+    "Anticonvulsant Mood Stabilizers: Sodium Valproate / Divalproex, Lamotrigine (specifically for bipolar depression), Carbamazepine",
+    "Second-Generation Atypical Antipsychotics: Quetiapine, Olanzapine, Aripiprazole, Lurasidone, Cariprazine"
+  ],
+  "precautions": [
+    "NEVER take standard antidepressants alone without a mood stabilizer; it can trigger severe manic psychosis",
+    "Maintain consistent hydration and salt intake when on Lithium to avoid toxic lithium accumulation"
+  ],
+  "prevention": [
+    "Consistent sleep-wake schedule (sleep loss is the primary trigger for manic relapse)",
+    "Lifelong adherence to mood stabilizers"
+  ],
+  "complications": [
+    "Severe financial bankruptcy, legal problems, high lifetime suicide rate (15-20 times general population)"
+  ],
+  "emergency_signs": [
+    "🚨 CRISIS: Acute manic psychosis, extreme exhaustion from days without sleep, or active suicidal plans. Call Tele-MANAS (14416 / 1800-891-4416) or 112 / 911."
+  ],
+  "doctor_specialty": "Psychiatrist",
+  "faqs": [
+    {
+      "question": "Can bipolar disorder be treated without medication?",
+      "answer": "No. Bipolar I disorder is a biological brain condition requiring medical mood stabilizers (like Lithium or Valproate) to protect the brain from manic and depressive episodes. Psychotherapy is an essential partner to medication, not a replacement."
+    }
+  ],
+  "references": [
+    {
+      "title": "ICD-11 MMS: 6A60 Bipolar type I disorder",
+      "source": "World Health Organization",
+      "url": "https://icd.who.int/browse/2024-01/mms/en#1073860098"
+    },
+    {
+      "title": "Bipolar Disorder Information",
+      "source": "NIMH / NIH",
+      "url": "https://www.nimh.nih.gov/health/topics/bipolar-disorder"
+    }
+  ],
+  "source_url": "https://www.nimh.nih.gov/health/topics/bipolar-disorder",
+  "multilingual": {
+    "hi": {
+      "name": "बाइपोलर टाइप-1 विकार (Bipolar I Disorder)",
+      "summary": "मूड में भारी उतार-चढ़ाव: कभी अत्यधिक ऊर्जा, बिना नींद के काम करना और बड़बोलापन (मेनिया), तो कभी गहरी उदासी और निराशा (डिप्रेशन)।",
+      "advice": "बिना मूड-स्टेबलाइजर दवा के अकेले एंटीडिप्रेसेंट न लें। मनोचिकित्सक से लिथियम या अन्य दवाओं से नियमित उपचार कराएं।"
+    },
+    "hinglish": {
+      "name": "Bipolar Disorder (Extreme Mood Swings / Mania aur Depression)",
+      "summary": "Kabhi bina soye din-raat excited rehna aur paise udana (Mania), fir achanak gehre depression me chale jana.",
+      "advice": "Psychiatrist se regular Lithium/Mood stabilizer lein aur sleep routine fix rakhein."
+    },
+    "ur": {
+      "name": "بائی پولر ڈس آرڈر (موڈ کا شدید اتار چڑھاؤ)",
+      "summary": "کبھی ضرورت سے زیادہ خوشی اور توانائی (مینیا) اور کبھی شدید مایوسی اور اداسی (ڈپریشن) کے دورے۔",
+      "advice": "ماہر نفسیات سے باقاعدہ موڈ سٹیبلائزرز کا علاج جاری رکھیں۔"
+    }
+  },
+  "target_3d_nodes": [
+    "ventral-striatum",
+    "amygdala",
+    "prefrontal-cortex",
+    "anterior-cingulate-cortex"
+  ],
+  "search_keywords": [
+    "bipolar",
+    "bipolar disorder",
+    "mania",
+    "mood swings",
+    "manic depression",
+    "neend na aana aur energy",
+    "bipolar 1"
+  ]
+}

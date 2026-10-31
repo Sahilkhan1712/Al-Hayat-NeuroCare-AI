@@ -1,0 +1,105 @@
+{
+  "disease_id": "nummular-headache",
+  "official_name": "Nummular headache",
+  "alternative_names": [
+    "Coin-shaped headache",
+    "Nummular cephalea"
+  ],
+  "category": "headache",
+  "subcategory": "Other primary headache disorders",
+  "icd11_code": "8A84.1",
+  "simple_description": "A rare, persistent or intermittent head pain strictly confined to a coin-sized rounded or elliptical area of the scalp, usually without spreading.",
+  "medical_description": "A primary headache disorder characterized by head pain exclusively felt in a sharply contoured, rounded or elliptical area, typically 2 to 6 cm in diameter, that remains unchanged in size and shape over time. Accompanied by local sensory dysfunction (hypesthesia, hyperalgesia, allodynia).",
+  "affected_system": "Epicranial terminal nerve branches in a circumscribed scalp zone.",
+  "symptoms": [
+    "Pain confined strictly to a coin-shaped area (2 to 6 cm across) on the scalp",
+    "Pain may be mild to moderate, continuous or intermittent",
+    "Localized sensitivity, tingling, or numbness within the coin area",
+    "Absence of nausea, vomiting, or autonomic symptoms",
+    "The location never changes shape or migrates"
+  ],
+  "early_warning_signs": [
+    "Localized mild tenderness in a circular patch on the scalp"
+  ],
+  "possible_causes": [
+    "Focal dysfunction or entrapment of terminal sensory epicranial nerve twigs"
+  ],
+  "risk_factors": [
+    "Female predominance",
+    "History of autoimmune conditions"
+  ],
+  "disease_types": [
+    "Episodic nummular headache",
+    "Continuous nummular headache"
+  ],
+  "clinical_evaluation": "Inspection and palpation of the scalp zone, demonstrating distinct hyperesthesia/allodynia within the circular border.",
+  "diagnostic_tests": [
+    "3T Brain and skull MRI - Necessary to rule out localized skull bone lesions, osteoma, myeloma, or focal pachymeningitis"
+  ],
+  "treatment_overview": "Local subcutaneous anesthetic block (e.g. bupivacaine) or topical lidocaine/capsaicin patches. Systemic treatment with Gabapentin or Botulinum toxin type A injections into the coin site.",
+  "medication_classes": [
+    "Local nerve blocks (Lidocaine / Bupivacaine)",
+    "Neuropathic agents (Gabapentin, Pregabalin)",
+    "OnabotulinumtoxinA local injection"
+  ],
+  "precautions": [
+    "Avoid aggressive rubbing or pressing on the tender spot"
+  ],
+  "prevention": [
+    "Protect the scalp spot from cold drafts or mechanical trauma"
+  ],
+  "complications": [
+    "Chronic local scalp allodynia"
+  ],
+  "emergency_signs": [
+    "Rapid enlargement of the painful area or development of a visible lump or ulceration"
+  ],
+  "doctor_specialty": "Neurologist",
+  "faqs": [
+    {
+      "question": "Does nummular headache spread to the whole head?",
+      "answer": "No. By medical definition, nummular headache remains strictly within its circumscribed coin-shaped boundary."
+    }
+  ],
+  "references": [
+    {
+      "title": "ICD-11 MMS: 8A84.1 Nummular headache",
+      "source": "World Health Organization",
+      "url": "https://icd.who.int/browse/2024-01/mms/en#1073860098"
+    },
+    {
+      "title": "ICHD-3: 4.8 Nummular headache",
+      "source": "International Headache Society",
+      "url": "https://ichd-3.org/other-primary-headache-disorders/4-8-nummular-headache/"
+    }
+  ],
+  "source_url": "https://ichd-3.org/other-primary-headache-disorders/4-8-nummular-headache/",
+  "multilingual": {
+    "hi": {
+      "name": "न्यूमुलर सिरदर्द (Nummular / Coin-shaped headache)",
+      "summary": "सिर में सिक्के के आकार के एक छोटे गोल हिस्से में सीमित दर्द जो अपनी जगह से फैलता नहीं है।",
+      "advice": "इस बिंदु को बार-बार न दबाएं और न्यूरोलॉजिस्ट से लोकल नर्व ब्लॉक या दवा की सलाह लें।"
+    },
+    "hinglish": {
+      "name": "Nummular Headache (Coin shape ka focal head pain)",
+      "summary": "Sir ke ek chote gol sikke jaise point par lagatar ya ruk-ruk kar dard hona.",
+      "advice": "MRI karwayein aur doctor se nerve block ka mashwara karein."
+    },
+    "ur": {
+      "name": "نیومولر سر درد (سکے کی شکل کا درد)",
+      "summary": "سر کے ایک محدود گول دائرے میں درد جو پھیلتا نہیں ہے۔",
+      "advice": "نیورولوجسٹ سے معائنہ کروائیں۔"
+    }
+  },
+  "target_3d_nodes": [
+    "parietal-lobe",
+    "somatosensory-cortex"
+  ],
+  "search_keywords": [
+    "nummular headache",
+    "coin shaped pain",
+    "round spot head pain",
+    "sikke jaisa dard",
+    "fixed spot headache"
+  ]
+}

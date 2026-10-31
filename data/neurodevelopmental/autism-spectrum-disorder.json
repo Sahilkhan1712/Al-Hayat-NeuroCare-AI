@@ -1,0 +1,113 @@
+{
+  "disease_id": "autism-spectrum-disorder",
+  "official_name": "Autism spectrum disorder",
+  "alternative_names": [
+    "ASD",
+    "Autism",
+    "Neurodivergence"
+  ],
+  "category": "neurodevelopmental",
+  "subcategory": "Neurodevelopmental disorders",
+  "icd11_code": "6A02",
+  "simple_description": "A lifelong neurodevelopmental condition that affects how a person communicates, interacts with others, experiences their sensory environment, and learns.",
+  "medical_description": "A neurodevelopmental disorder characterized by persistent deficits in the ability to initiate and sustain reciprocal social interaction and social communication, accompanied by restricted, repetitive, and inflexible patterns of behavior, interests, or activities. Symptoms emerge during the developmental period and cause significant impairment in personal, family, social, educational, or occupational functioning.",
+  "affected_system": "Cortical microcircuitry, synaptic pruning mechanisms, amygdala-prefrontal connectivity, and social brain network.",
+  "symptoms": [
+    "Persistent differences in social communication: difficulty with reciprocal back-and-forth conversation, understanding non-verbal body language, or maintaining eye contact",
+    "Differences in developing and understanding peer relationships",
+    "Restricted, repetitive motor movements: hand flapping, rocking, spinning, or echolalia (repeating words)",
+    "Insistence on sameness: extreme distress with small changes in routine or transitions",
+    "Highly restricted, fixated special interests of abnormal intensity or focus",
+    "Sensory hyper- or hypo-reactivity: extreme distress to loud noises, fluorescent lights, clothing tags, or seeking intense sensory input"
+  ],
+  "early_warning_signs": [
+    "By 12-18 months: lack of pointing, not responding to name when called, absence of warm shared facial expressions, delayed speech development"
+  ],
+  "possible_causes": [
+    "Complex polygenic heritability (heritability ~80%, involving synaptic adhesion genes like NLGN, NRXN, SHANK3)",
+    "Advanced parental age, preterm birth"
+  ],
+  "risk_factors": [
+    "Sibling with autism (20% recurrence risk)",
+    "Extreme prematurity (< 26 weeks gestation)",
+    "Associated genetic syndromes (Fragile X, Tuberous Sclerosis)"
+  ],
+  "disease_types": [
+    "Autism spectrum disorder without disorder of intellectual development and with mild or no impairment of functional language (formerly Asperger syndrome)",
+    "Autism spectrum disorder with disorder of intellectual development and impaired language"
+  ],
+  "clinical_evaluation": "Gold-standard multidisciplinary assessment: Autism Diagnostic Observation Schedule (ADOS-2) and Autism Diagnostic Interview-Revised (ADI-R).",
+  "diagnostic_tests": [
+    "Clinical diagnostic evaluation; chromosomal microarray (CMA) and fragile X genetic testing"
+  ],
+  "treatment_overview": "Individualized developmental and behavioral support started as early as possible. Applied Behavior Analysis (ABA) / Naturalistic Developmental Behavioral Interventions (NDBI), Speech-Language Therapy, Occupational Therapy (sensory integration). Medications (Aripiprazole, Risperidone) are used only for severe irritability or aggression, not for core social traits.",
+  "medication_classes": [
+    "Atypical Antipsychotics (Risperidone, Aripiprazole - FDA approved for severe irritability in ASD)",
+    "Melatonin for frequent sleep onset insomnia"
+  ],
+  "precautions": [
+    "AVOID non-evidence-based dangerous pseudo-treatments (e.g. chelation therapy, hyperbaric oxygen, miracle mineral solution - MMS)"
+  ],
+  "prevention": [
+    "Vaccines do NOT cause autism (rigorously debunked by dozens of global epidemiological studies encompassing millions of children)"
+  ],
+  "complications": [
+    "High rates of comorbid anxiety, depression, and ADHD in adolescents and adults",
+    "Sensory overload meltdowns"
+  ],
+  "emergency_signs": [
+    "Severe acute self-injurious behavior (head banging) or wandering/elopement into traffic or water bodies"
+  ],
+  "doctor_specialty": "Developmental Pediatrician / Child Neurologist / Child Psychiatrist",
+  "faqs": [
+    {
+      "question": "Do vaccines cause autism?",
+      "answer": "NO. Dozens of massive, independent global scientific studies involving millions of children over 25 years have conclusively proven that vaccines (including MMR) do NOT cause autism."
+    }
+  ],
+  "references": [
+    {
+      "title": "ICD-11 MMS: 6A02 Autism spectrum disorder",
+      "source": "World Health Organization",
+      "url": "https://icd.who.int/browse/2024-01/mms/en#1073860098"
+    },
+    {
+      "title": "Autism Spectrum Disorder",
+      "source": "NIMH / NIH",
+      "url": "https://www.nimh.nih.gov/health/topics/autism-spectrum-disorders-asd"
+    }
+  ],
+  "source_url": "https://www.nimh.nih.gov/health/topics/autism-spectrum-disorders-asd",
+  "multilingual": {
+    "hi": {
+      "name": "ऑटिज्म स्पेक्ट्रम डिसऑर्डर (Autism / एएसडी)",
+      "summary": "एक न्यूरोडेवलपमेंटल स्थिति जिसमें बच्चे को बातचीत करने, नजरें मिलाने, दूसरों से घुलने-मिलने में कठिनाई और एक ही काम को बार-बार दोहराने की आदत होती है।",
+      "advice": "शुरुआती उम्र में ही स्पीच थेरेपी, ऑक्यूपेशनल थेरेपी और बिहेवियरल सपोर्ट शुरू कराएं। टीके ऑटिज्म का कारण नहीं होते।"
+    },
+    "hinglish": {
+      "name": "Autism Spectrum Disorder (ASD)",
+      "summary": "Social interaction aur communication me difference, eye contact na karna aur routine change hone par pareshan hona.",
+      "advice": "Early intervention se bohot improvement aata hai. Speech therapy aur occupational therapy lagwayein."
+    },
+    "ur": {
+      "name": "آٹزم سپیکٹرم ڈس آرڈر (آٹزم)",
+      "summary": "بچوں میں بات چیت، سماجی میل جول اور رویوں میں مختلف انداز کا ہونا۔",
+      "advice": "ابتدائی عمر میں ہی سپیچ تھراپی اور ماہر اطفال سے تربیت شروع کروائیں۔"
+    }
+  },
+  "target_3d_nodes": [
+    "prefrontal-cortex",
+    "amygdala",
+    "temporal-lobe",
+    "cerebellum"
+  ],
+  "search_keywords": [
+    "autism",
+    "asd",
+    "autism spectrum",
+    "eye contact nahi karna",
+    "child not speaking",
+    "repetitive behavior",
+    "sensory overload"
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "disease_id": "status-epilepticus",
+  "official_name": "Status epilepticus",
+  "alternative_names": [
+    "Continuous seizure",
+    "Prolonged epileptic fit"
+  ],
+  "category": "epilepsy",
+  "subcategory": "Epileptic disorders",
+  "icd11_code": "8A68",
+  "simple_description": "A life-threatening medical emergency where a seizure lasts longer than 5 minutes, or multiple seizures occur without the person regaining consciousness in between.",
+  "medical_description": "A condition resulting either from the failure of the mechanisms responsible for seizure termination or from the initiation of mechanisms that lead to abnormally prolonged seizures (after time point t1: 5 minutes for convulsive status epilepticus). Can cause long-term consequences including neuronal death and alteration of neuronal networks after time point t2: 30 minutes.",
+  "affected_system": "Widespread cortical and subcortical neuronal networks, systemic autonomic cardiovascular, respiratory, and metabolic homeostasis.",
+  "symptoms": [
+    "Continuous tonic-clonic convulsions lasting >= 5 minutes",
+    "Or consecutive seizures without recovery of baseline consciousness between episodes",
+    "Cyanosis, irregular respiratory pattern, severe hyperthermia",
+    "Hyperglycemia initially followed by hypoglycemia, severe lactic acidosis",
+    "Rhabdomyolysis and cardiac arrhythmias"
+  ],
+  "early_warning_signs": [
+    "A standard seizure that does not spontaneously stop within the typical 1 to 2 minutes"
+  ],
+  "possible_causes": [
+    "Abrupt cessation or non-adherence to antiepileptic medications in patients with epilepsy",
+    "Acute ischemic or hemorrhagic stroke",
+    "Central nervous system infection (meningitis, encephalitis)",
+    "Severe metabolic derangement (hyponatremia, hypocalcemia, hepatic encephalopathy)",
+    "Drug toxicity or alcohol withdrawal"
+  ],
+  "risk_factors": [
+    "Known epilepsy with medication changes",
+    "Recent neurotrauma or neurosurgery",
+    "Systemic sepsis and high fever in susceptible patients"
+  ],
+  "disease_types": [
+    "Convulsive status epilepticus (CSE - highest immediate mortality)",
+    "Non-convulsive status epilepticus (NCSE - subtle twitching, persistent coma/confusion)",
+    "Refractory status epilepticus (RSE - continuing despite first- and second-line AEDs)",
+    "Super-refractory status epilepticus (SRSE - persisting >= 24h of general anesthesia)"
+  ],
+  "clinical_evaluation": "Simultaneous rapid assessment of ABCs (Airway, Breathing, Circulation), fingerstick blood glucose, venous blood gas, immediate antiepileptic pharmacological escalation protocol.",
+  "diagnostic_tests": [
+    "Continuous Video-EEG Monitoring - Mandatory to confirm termination of electrographic seizure activity (especially when motor signs cease but brain continues seizing)",
+    "Emergency Non-contrast Head CT - Identify acute intracranial hemorrhage, mass lesion, or midline shift",
+    "Lumbar puncture (once stabilized) if infection suspected"
+  ],
+  "treatment_overview": "CRITICAL PROTOCOLIZED EMERGENCY ESCALATION: 0-5 min: Oxygen, IV access, check glucose. 5-10 min (First-line): IV Lorazepam (4 mg) or IM Midazolam (10 mg). 10-25 min (Second-line): IV Levetiracetam (60 mg/kg), Fosphenytoin (20 mg PE/kg), or Sodium Valproate (40 mg/kg). > 20-40 min (Third-line Refractory): Endotracheal intubation, continuous anesthetic infusion (Propofol or Midazolam) in Neuro-ICU to achieve burst suppression.",
+  "medication_classes": [
+    "First-line Benzodiazepines: IV Lorazepam, IM Midazolam, IV Diazepam",
+    "Second-line IV Antiepileptics: IV Levetiracetam, IV Fosphenytoin, IV Sodium Valproate",
+    "Third-line General Anesthetics: IV Propofol, IV Midazolam, IV Ketamine"
+  ],
+  "precautions": [
+    "NEVER adopt a 'wait and see' approach if a seizure exceeds 5 minutes",
+    "Prepare for immediate endotracheal intubation if aggressive benzodiazepine doses cause respiratory depression"
+  ],
+  "prevention": [
+    "Strict compliance with daily antiepileptic medications",
+    "Home availability of rescue intranasal midazolam or buccal diazepam for high-risk patients"
+  ],
+  "complications": [
+    "Permanent excitotoxic brain damage (hippocampal neuronal necrosis)",
+    "Multi-organ failure, rhabdomyolysis, acute kidney injury",
+    "Neurogenic pulmonary edema and death (mortality 15-20%)"
+  ],
+  "emergency_signs": [
+    "🚨 CRITICAL EMERGENCY: Call 112 / 911 immediately if any seizure exceeds 5 minutes duration."
+  ],
+  "doctor_specialty": "Neurocritical Care Specialist / Emergency Physician / Epileptologist",
+  "faqs": [
+    {
+      "question": "At what minute does a seizure become life-threatening?",
+      "answer": "At 5 minutes. Most normal seizures stop on their own within 90 seconds. If it reaches 5 minutes, the brain's internal stopping mechanisms have failed and permanent brain injury begins after 30 minutes without emergency intervention."
+    }
+  ],
+  "references": [
+    {
+      "title": "ICD-11 MMS: 8A68 Status epilepticus",
+      "source": "World Health Organization",
+      "url": "https://icd.who.int/browse/2024-01/mms/en#1073860098"
+    },
+    {
+      "title": "Treatment of Convulsive Status Epilepticus in Children and Adults",
+      "source": "American Epilepsy Society (AES)",
+      "url": "https://www.aesnet.org/clinical-care/clinical-guidance/status-epilepticus-guideline"
+    }
+  ],
+  "source_url": "https://www.aesnet.org/clinical-care/clinical-guidance/status-epilepticus-guideline",
+  "multilingual": {
+    "hi": {
+      "name": "स्टेटस एपिलेप्टिकस / लगातार दौरा (Status Epilepticus)",
+      "summary": "जीवन के लिए बेहद खतरनाक आपातकाल जहां मिर्गी का दौरा 5 मिनट से अधिक समय तक लगातार चलता रहता है या बिना होश आए बार-बार आता है।",
+      "advice": "🚨 तुरंत 112 पर कॉल करें! यह जानलेवा स्थिति है जिसमें तुरंत आईसीयू में नसों द्वारा दवाएं और ऑक्सीजन दी जाती है।"
+    },
+    "hinglish": {
+      "name": "Status Epilepticus (5 minute se lamba daura)",
+      "summary": "5 minute se lamba daura chalna ya baar-baar behosh hokar jhatke aana. Dimaag ke cells marne lagte hain.",
+      "advice": "🚨 FORAN EMERGENCY CALL KAREIN! Har second keemti hai, turant hospital le jayein."
+    },
+    "ur": {
+      "name": "سٹیٹس ایپی لیپٹیکس (مسلسل دورہ)",
+      "summary": "پانچ منٹ سے زیادہ دیر تک جاری رہنے والا دورہ جو جان لیوا ہو سکتا ہے۔",
+      "advice": "فوری طور پر ایمبولینس بلائیں اور انتہائی نگہداشت کے شعبے سے رجوع کریں۔"
+    }
+  },
+  "target_3d_nodes": [
+    "thalamus",
+    "hippocampus",
+    "frontal-lobe",
+    "brainstem"
+  ],
+  "search_keywords": [
+    "status epilepticus",
+    "continuous seizure",
+    "5 minute se lamba daura",
+    "prolonged fit",
+    "non stop seizure"
+  ]
+}

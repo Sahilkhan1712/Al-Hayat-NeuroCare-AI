@@ -1,0 +1,128 @@
+{
+  "disease_id": "myasthenia-gravis",
+  "official_name": "Myasthenia gravis",
+  "alternative_names": [
+    "MG",
+    "Autoimmune neuromuscular junction disorder",
+    "Palko ka girna aur thakan"
+  ],
+  "category": "neuromuscular",
+  "subcategory": "Neuromuscular junction disorders",
+  "icd11_code": "8C60",
+  "simple_description": "An autoimmune disorder where antibodies block communication between nerves and muscles, causing muscle weakness and fatigue that worsens with activity and improves with rest.",
+  "medical_description": "An acquired autoimmune disorder of the neuromuscular junction characterized by pathogenic autoantibodies directed against postsynaptic components of the motor endplate, most commonly the nicotinic acetylcholine receptor (AChR, 80-85%), muscle-specific kinase (MuSK, 5-7%), or LRP4. Clinically hallmarks fluctuating, fatigable skeletal muscle weakness with diurnal variation (worse in the evening or after exertion).",
+  "affected_system": "Postsynaptic motor endplate membrane of voluntary skeletal muscles, extraocular muscles, bulbar muscles, and thymus gland.",
+  "symptoms": [
+    "Fluctuating, fatigable muscle weakness that worsens as the day progresses or with repetitive use, and temporarily recovers with rest",
+    "Ocular symptoms (> 50% presentation, > 85% involved): asymmetric drooping of the eyelids (ptosis) and double vision (diplopia)",
+    "Bulbar muscle fatigue: difficulty chewing tough foods ('jaw fatigue'), nasal slurred speech with prolonged talking, swallowing difficulty (dysphagia)",
+    "Facial muscle weakness: 'snarling smile' (transverse smile) and difficulty whistling or puffing cheeks",
+    "Neck extensor weakness: 'dropped head syndrome'",
+    "Proximal limb weakness: difficulty climbing stairs, combing hair, or lifting arms overhead"
+  ],
+  "early_warning_signs": [
+    "Drooping of one or both eyelids or double vision that appears in the evening after working, disappearing by morning"
+  ],
+  "possible_causes": [
+    "Circulating IgG antibodies (IgG1 and IgG3) binding to acetylcholine receptors (AChR), activating the complement cascade, causing membrane attack complex (MAC) destruction of postsynaptic junctional folds",
+    "Thymic pathology: follicular hyperplasia of the thymus (65%) or thymoma (10-15%) driving autoreactive T/B cell clones"
+  ],
+  "risk_factors": [
+    "Young women (peak incidence in 20s and 30s) and older men (peak incidence in 60s and 70s)",
+    "Other autoimmune disorders (thyroid disease, rheumatoid arthritis, lupus)",
+    "Certain medications that impair neuromuscular transmission (aminoglycosides, fluoroquinolones, beta-blockers, statins, magnesium)"
+  ],
+  "disease_types": [
+    "Ocular Myasthenia Gravis (restricted strictly to extraocular and levator muscles for > 2 years)",
+    "Generalized Myasthenia Gravis (mild, moderate, or severe involvement of bulbar, limb, or respiratory muscles)",
+    "Anti-MuSK Myasthenia (predominantly bulbar, facial, and neck weakness; no thymic pathology)",
+    "Myasthenic Crisis (respiratory muscle weakness requiring invasive or non-invasive mechanical ventilation)"
+  ],
+  "clinical_evaluation": "Quantitative Myasthenia Gravis (QMG) score. Bedside clinical tests: Simpson test (sustained upward gaze for 60 seconds provokes ptosis), Ice Pack test (ice pack placed on ptotic eyelid for 2 minutes causes temporary improvement in lid opening >= 2 mm due to decreased acetylcholinesterase activity).",
+  "diagnostic_tests": [
+    "Serological Autoantibody Testing - Anti-AChR binding, blocking, and modulating antibodies (positive in 85% generalized MG); if negative, test for Anti-MuSK and Anti-LRP4",
+    "Repetitive Nerve Stimulation (RNS) - Shows decremental compound muscle action potential (CMAP) response (> 10% decrement at 3 Hz stimulation)",
+    "Single-Fiber Electromyography (SFEMG) - Most sensitive diagnostic test (> 95% sensitivity), demonstrating increased jitter and impulse blocking",
+    "Chest CT with contrast - MANDATORY in all patients to detect thymoma or thymic hyperplasia"
+  ],
+  "treatment_overview": "Four-pronged therapeutic strategy: 1. Symptomatic enhancement of acetylcholine: Acetylcholinesterase inhibitors (Pyridostigmine). 2. Immunosuppressive therapy: Corticosteroids (Prednisolone) and steroid-sparing agents (Azathioprine, Mycophenolate mofetil, Tacrolimus). 3. Thymectomy (surgical removal of the thymus gland): Indicated for all patients with thymoma, and strongly recommended in non-thymomatous generalized AChR-positive MG aged 18-50 (significantly reduces medication requirements). 4. Rapid rescue therapy for crisis: Plasmapheresis (PLEX) or Intravenous Immunoglobulin (IVIG). Targeted biologics (FcRn inhibitors - Efgartigimod; Complement inhibitors - Eculizumab, Ravulizumab).",
+  "medication_classes": [
+    "Cholinesterase Inhibitor: Pyridostigmine bromide (Mestinon - 60 mg tablets 3-5 times daily)",
+    "Immunosuppressants: Prednisolone (tapered slowly), Azathioprine (2-3 mg/kg/day), Mycophenolate mofetil",
+    "Targeted Biologics: Efgartigimod (anti-FcRn), Ravulizumab / Eculizumab (C5 complement inhibitor)",
+    "Rescue crisis therapies: IVIG (2 g/kg over 2-5 days) or Plasma Exchange (5-7 exchanges)"
+  ],
+  "precautions": [
+    "AVOID medications that exacerbate MG: Fluoroquinolones (Ciprofloxacin), Macrolides (Azithromycin), Aminoglycosides, Beta-blockers, Magnesium infusions, and muscle relaxants",
+    "Watch out for Cholinergic Crisis (overdose of Pyridostigmine causing excessive secretions, abdominal cramps, diarrhea, and muscle fasciculations/weakness, mimicking myasthenic worsening)"
+  ],
+  "prevention": [
+    "Prompt treatment of systemic infections (infections are the #1 trigger for myasthenic crisis)",
+    "Thymectomy in appropriate patients induces long-term remission"
+  ],
+  "complications": [
+    "Myasthenic Crisis: severe diaphragmatic and intercostal weakness leading to respiratory failure (requires urgent ICU intubation)",
+    "Aspiration pneumonia from severe dysphagia"
+  ],
+  "emergency_signs": [
+    "🚨 CRITICAL EMERGENCY (Myasthenic Crisis): Sudden severe shortness of breath, inability to count past 10 in a single breath, or severe inability to swallow saliva"
+  ],
+  "doctor_specialty": "Neuromuscular Neurologist",
+  "faqs": [
+    {
+      "question": "What is the Ice Pack test?",
+      "answer": "It is a simple bedside test where an ice pack wrapped in cloth is placed over a drooping eyelid for 2 minutes. The cold temperature slows down the enzyme that breaks down acetylcholine, so if the eyelid visibly lifts and opens much better, it strongly points to Myasthenia Gravis."
+    }
+  ],
+  "references": [
+    {
+      "title": "ICD-11 MMS: 8C60 Myasthenia gravis",
+      "source": "World Health Organization",
+      "url": "https://icd.who.int/browse/2024-01/mms/en#1073860098"
+    },
+    {
+      "title": "Myasthenia Gravis Fact Sheet",
+      "source": "NINDS / NIH",
+      "url": "https://www.ninds.nih.gov/health-information/disorders/myasthenia-gravis"
+    },
+    {
+      "title": "International Consensus Guidance for Management of Myasthenia Gravis",
+      "source": "Neurology Journal",
+      "url": "https://www.neurology.org/doi/10.1212/WNL.0000000000011124"
+    }
+  ],
+  "source_url": "https://www.ninds.nih.gov/health-information/disorders/myasthenia-gravis",
+  "multilingual": {
+    "hi": {
+      "name": "मायस्थेनिया ग्रेविस (Myasthenia Gravis)",
+      "summary": "मांसपेशियों और नसों के जोड़ (Neuromuscular Junction) की ऑटोइम्यून बीमारी, जिससे पलकें झुकना (Ptosis), दो-दो दिखना (Double vision) और शाम के समय मांसपेशियों में अत्यधिक थकान होती है।",
+      "advice": "शाम को थकान बढ़ने पर आराम करें। सांस लेने या निगलने में तकलीफ होने पर तुरंत इमरजेंसी अस्पताल जाएं। कुछ एंटीबायोटिक्स (जैसे सिप्रोफ्लोक्सासिन) से बचें।"
+    },
+    "hinglish": {
+      "name": "Myasthenia Gravis (Palko ka dhalakna aur body fatigue)",
+      "summary": "Nerve-muscle signal block hone se aakh ki palke girna, do dikhna aur kaam karne se kamzori badhna jo aaram karne se theek hoti hai.",
+      "advice": "Pyridostigmine (Mestinon) dawai time par lein, Chest CT scan karwayein aur breathing problem par turant ICU jayein."
+    },
+    "ur": {
+      "name": "مائستھینیا گریوس (پٹھوں کی تھکن کی بیماری)",
+      "summary": "پٹھوں اور اعصاب کے رابطے میں خرابی کی وجہ سے پلکوں کا جھک جانا، بینائی کا دھندلا پن اور معمولی کام کے بعد شدید کمزوری۔",
+      "advice": "فوری طور پر نیورولوجسٹ سے ادویات لیں اور سانس کی دشواری کی صورت میں فوری ایمرجنسی رجوع کریں۔"
+    }
+  },
+  "target_3d_nodes": [
+    "neuromuscular-junction",
+    "thymus-gland",
+    "cranial-nerves",
+    "motor-endplate"
+  ],
+  "search_keywords": [
+    "myasthenia gravis",
+    "palke girna",
+    "ptosis",
+    "double vision",
+    "diplopia",
+    "muscle fatigue resting recovery",
+    "mestinon",
+    "myasthenic crisis"
+  ]
+}

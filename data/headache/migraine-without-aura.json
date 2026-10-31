@@ -1,0 +1,141 @@
+{
+  "disease_id": "migraine-without-aura",
+  "official_name": "Migraine without aura",
+  "alternative_names": [
+    "Common migraine",
+    "Hemicrania",
+    "Adhasisi",
+    "Adhkapali"
+  ],
+  "category": "headache",
+  "subcategory": "Primary headache disorders",
+  "icd11_code": "8A80.0",
+  "simple_description": "A recurrent throbbing headache that usually affects one side of the head, worsens with movement, and is often accompanied by nausea, vomiting, and sensitivity to light and sound.",
+  "medical_description": "A neurovascular headache disorder characterized by recurrent attacks lasting 4 to 72 hours, typically unilateral, pulsating, of moderate to severe intensity, aggravated by routine physical activity, and associated with nausea, vomiting, photophobia, and phonophobia, without preceding aura symptoms.",
+  "affected_system": "Trigeminovascular system, cranial blood vessels, and brainstem pain-modulating pathways.",
+  "symptoms": [
+    "Moderate to severe throbbing or pulsating head pain",
+    "Pain typically on one side of the head (unilateral), though can be bilateral",
+    "Nausea and sometimes vomiting",
+    "Extreme sensitivity to light (photophobia)",
+    "Extreme sensitivity to sound (phonophobia)",
+    "Worsening of pain with physical exertion (walking, climbing stairs)",
+    "Fatigue, neck stiffness, and irritability during attack"
+  ],
+  "early_warning_signs": [
+    "Prodrome 24-48 hours before pain: frequent yawning, food cravings, mood swings, neck stiffness, fluid retention"
+  ],
+  "possible_causes": [
+    "Activation of the trigeminovascular system causing neurogenic inflammation and arterial vasodilation",
+    "Release of calcitonin gene-related peptide (CGRP) and substance P",
+    "Genetic predisposition affecting cortical excitability"
+  ],
+  "risk_factors": [
+    "Female sex (3 times higher in females after puberty)",
+    "Family history of migraine",
+    "Hormonal fluctuations (menstrual cycle, estrogen drop)",
+    "High psychological stress, sleep deprivation, or skipping meals",
+    "Certain sensory triggers (flickering lights, strong perfumes, weather changes)"
+  ],
+  "disease_types": [
+    "Episodic migraine without aura (< 15 headache days per month)",
+    "Menstrually related migraine without aura"
+  ],
+  "clinical_evaluation": "Diagnosed clinically based on ICHD-3 criteria (at least 5 attacks lasting 4-72 hours with characteristic features). Neurological physical examination is normal.",
+  "diagnostic_tests": [
+    "Magnetic Resonance Imaging (3T Brain MRI) - Recommended only if 'red flags' (SNOOP criteria) or abnormal focal neurological examination are present to exclude secondary pathology",
+    "Non-contrast Head CT - If acute sudden onset to rule out intracranial hemorrhage"
+  ],
+  "treatment_overview": "Stratified acute therapy based on attack severity. Mild to moderate attacks treated with NSAIDs; moderate to severe attacks with 5-HT1B/1D receptor agonists (triptans) or oral CGRP receptor antagonists (gepants). Preventive therapy if >= 4 headache days/month.",
+  "medication_classes": [
+    "Triptans (Sumatriptan, Rizatriptan, Zolmitriptan) - Selective 5-HT1B/1D agonists",
+    "NSAIDs (Ibuprofen, Naproxen sodium) & Paracetamol",
+    "CGRP Receptor Antagonists / Gepants (Rimegepant, Ubrogepant)",
+    "Anti-emetics (Metoclopramide, Domperidone) for nausea",
+    "Preventive classes: Beta-blockers (Propranolol), Antiepileptics (Topiramate), CGRP monoclonal antibodies"
+  ],
+  "precautions": [
+    "Avoid overusing acute pain medications (> 10 days/month for triptans) to prevent medication-overuse headache",
+    "Maintain consistent sleep schedule and regular hydration",
+    "Do not consume known food triggers (aged cheeses, MSG, nitrates, excess caffeine)"
+  ],
+  "prevention": [
+    "Maintain a migraine diary tracking triggers and timing",
+    "Practice stress-reduction techniques (mindfulness, progressive muscle relaxation)",
+    "Stay well-hydrated and avoid skipping meals"
+  ],
+  "complications": [
+    "Status migrainosus (debilitating migraine attack lasting > 72 hours)",
+    "Medication-overuse headache (rebound headache)",
+    "Transformation into chronic migraine"
+  ],
+  "emergency_signs": [
+    "Sudden explosive thunderclap headache reaching maximum intensity in < 1 minute",
+    "Accompanying high fever, stiff neck, confusion, or rash",
+    "New neurological deficit: unilateral weakness, numbness, facial droop, or speech loss"
+  ],
+  "doctor_specialty": "Neurologist / Headache Specialist",
+  "faqs": [
+    {
+      "question": "Is migraine just a severe headache?",
+      "answer": "No. Migraine is a complex neurological disorder involving nerve signaling, blood vessel reactivity, and brain chemical releases like CGRP, accompanied by systemic symptoms like nausea and sensory hypersensitivity."
+    },
+    {
+      "question": "When should medication be taken?",
+      "answer": "Acute abortive medications (such as triptans or NSAIDs) are most effective when taken right at the onset of the mild headache phase, rather than waiting for the pain to become severe."
+    }
+  ],
+  "references": [
+    {
+      "title": "ICD-11 MMS: 8A80.0 Migraine without aura",
+      "source": "World Health Organization",
+      "url": "https://icd.who.int/browse/2024-01/mms/en#1073860098"
+    },
+    {
+      "title": "Migraine Information Page",
+      "source": "National Institute of Neurological Disorders and Stroke (NINDS)",
+      "url": "https://www.ninds.nih.gov/health-information/disorders/migraine"
+    },
+    {
+      "title": "The International Classification of Headache Disorders 3rd edition (ICHD-3)",
+      "source": "International Headache Society (IHS)",
+      "url": "https://ichd-3.org/1-migraine/1-1-migraine-without-aura/"
+    }
+  ],
+  "source_url": "https://www.ninds.nih.gov/health-information/disorders/migraine",
+  "multilingual": {
+    "hi": {
+      "name": "माइग्रेन बिना ऑरा (Migraine without aura)",
+      "summary": "सिर के एक हिस्से में धड़कने वाला तेज़ दर्द जो 4 से 72 घंटे तक रहता है, साथ ही उल्टी, रोशनी और आवाज़ से परेशानी होती है।",
+      "advice": "अंधेरे शांत कमरे में आराम करें, माथे पर ठंडी पट्टी रखें और डॉक्टर द्वारा बताई गई माइग्रेन रोधी दवा लें।"
+    },
+    "hinglish": {
+      "name": "Migraine (Adhasisi / Pulsating One-sided Headache)",
+      "summary": "Aadhe sar me tez dhak-dhak karta hua dard jo ghanto bana rehta hai aur ulti ya roshni se pareshani deta hai.",
+      "advice": "Andhere kamre me rest karein, cold pack lagayein aur dehydration se bachein."
+    },
+    "ur": {
+      "name": "مائیگرین / آدھے سر کا درد",
+      "summary": "سر کے ایک طرف تیز دھڑکتا ہوا درد جو متلی، قے اور روشنی و آواز کی حساسیت کے ساتھ آتا ہے۔",
+      "advice": "اندھیرے اور پرسکون کمرے میں آرام کریں اور مناسب پانی پیئیں۔"
+    }
+  },
+  "target_3d_nodes": [
+    "left-middle-temporal-gyrus",
+    "right-middle-temporal-gyrus",
+    "left-occipital-lobe",
+    "right-occipital-lobe",
+    "hypothalamus"
+  ],
+  "search_keywords": [
+    "migraine",
+    "adhasisi",
+    "adhkapali",
+    "aadha sar dard",
+    "throbbing head pain",
+    "pulsating headache",
+    "dhadakta dard",
+    "ulti aur sar dard",
+    "one sided head pain"
+  ]
+}

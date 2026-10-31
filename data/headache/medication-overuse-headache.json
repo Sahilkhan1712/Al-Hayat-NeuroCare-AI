@@ -1,0 +1,114 @@
+{
+  "disease_id": "medication-overuse-headache",
+  "official_name": "Medication-overuse headache",
+  "alternative_names": [
+    "Rebound headache",
+    "Analgesic rebound",
+    "MOH"
+  ],
+  "category": "headache",
+  "subcategory": "Secondary headache disorders",
+  "icd11_code": "8A85.0",
+  "simple_description": "A persistent daily headache caused by frequent, regular use of acute pain relievers or migraine medications for headaches, creating a vicious cycle of rebound pain.",
+  "medical_description": "Headache occurring on 15 or more days per month in a patient with a pre-existing primary headache disorder, developing as a consequence of regular overuse of acute or symptomatic headache medication (>= 10 days/month for triptans, opioids, or combination analgesics; or >= 15 days/month for simple analgesics) for more than 3 months.",
+  "affected_system": "Central pain modulation, descending serotonergic pathways, and trigeminal sensitization.",
+  "symptoms": [
+    "Daily or near-daily dull, throbbing, or mixed-character headache present upon waking",
+    "Headache temporarily improves with painkillers, only to return worse as the dose wears off",
+    "Gradual increase in medication consumption over months",
+    "Associated restlessness, anxiety, asthenia, and poor sleep quality"
+  ],
+  "early_warning_signs": [
+    "Needing painkiller tablets more than 2 to 3 days every single week"
+  ],
+  "possible_causes": [
+    "Receptor down-regulation and central sensitization caused by repetitive intermittent drug exposure",
+    "Alterations in endocannabinoid and endogenous opioid systems"
+  ],
+  "risk_factors": [
+    "Pre-existing migraine or tension-type headache",
+    "Use of combination analgesics containing caffeine, codeine, or butalbital",
+    "High psychological stress and sleep disturbance"
+  ],
+  "disease_types": [
+    "Triptan-overuse headache (>= 10 days/month)",
+    "Simple analgesic-overuse headache (Paracetamol/NSAIDs >= 15 days/month)",
+    "Combination analgesic-overuse headache (>= 10 days/month)",
+    "Opioid-overuse headache (>= 10 days/month)"
+  ],
+  "clinical_evaluation": "Detailed chronological drug diary showing frequency, dose, and days per month of all prescription and over-the-counter pain medications.",
+  "diagnostic_tests": [
+    "Rule out secondary structural etiologies with Brain MRI if atypical features exist"
+  ],
+  "treatment_overview": "Structured withdrawal of the overused acute medication under neurological guidance, initiation of effective preventive therapy (e.g. Topiramate, Amitriptyline, or CGRP monoclonal antibodies), and patient education.",
+  "medication_classes": [
+    "Preventive bridging: Corticosteroid taper (Prednisone 60 mg tapered over 10 days) or Greater Occipital Nerve block during withdrawal",
+    "Maintenance prevention: Topiramate, OnabotulinumtoxinA, CGRP mAbs (Erenumab, Fremanezumab)",
+    "Non-overused rescue alternatives (limited strictly to <= 2 days/week)"
+  ],
+  "precautions": [
+    "Do NOT increase analgesic doses when headaches become more frequent; it perpetuates the cycle",
+    "Strict limit on acute headache medications to no more than 2 days per week"
+  ],
+  "prevention": [
+    "Start non-analgesic preventive medication early if headaches occur > 4 days/month",
+    "Avoid multi-ingredient analgesics containing caffeine and codeine"
+  ],
+  "complications": [
+    "Refractory chronic daily headache",
+    "Gastric ulceration or renal impairment from chronic NSAID overuse",
+    "Opioid dependence syndrome"
+  ],
+  "emergency_signs": [
+    "Severe withdrawal symptoms including seizures or acute delirium (especially with butalbital or opioid withdrawal)"
+  ],
+  "doctor_specialty": "Neurologist / Headache Clinic Specialist",
+  "faqs": [
+    {
+      "question": "Can regular painkillers actually cause more headaches?",
+      "answer": "Yes. When taken more than 10 to 15 days a month, pain relievers reset the brain's pain threshold, causing a rebound headache every time the drug wears off."
+    }
+  ],
+  "references": [
+    {
+      "title": "ICD-11 MMS: 8A85.0 Medication-overuse headache",
+      "source": "World Health Organization",
+      "url": "https://icd.who.int/browse/2024-01/mms/en#1073860098"
+    },
+    {
+      "title": "Medication Overuse Headaches",
+      "source": "MedlinePlus / NINDS",
+      "url": "https://medlineplus.gov/ency/article/000783.htm"
+    }
+  ],
+  "source_url": "https://medlineplus.gov/ency/article/000783.htm",
+  "multilingual": {
+    "hi": {
+      "name": "दवा के अधिक उपयोग से सिरदर्द (Medication-overuse headache)",
+      "summary": "पेनकिलर या माइग्रेन की दवाएं बहुत ज्यादा लेने से होने वाला रोजाना का रिबाउंड सिरदर्द।",
+      "advice": "दवा का सेवन खुद से न बढ़ाएं। न्यूरोलॉजिस्ट की देखरेख में पेनकिलर कम करके प्रिवेंटिव दवा शुरू करें।"
+    },
+    "hinglish": {
+      "name": "Medication Overuse Headache (Rebound sar dard)",
+      "summary": "Roz-roz painkiller khane se dimaag aadi ho jata hai aur dava ka asar khatam hote hi dobara dard shuru ho jata hai.",
+      "advice": "Painkillers band karein aur doctor se preventive treatment lein."
+    },
+    "ur": {
+      "name": "ادویات کے زیادہ استعمال سے سر درد",
+      "summary": "درد کش ادویات کے روزانہ استعمال کی وجہ سے ہونے والا مستقل سر درد۔",
+      "advice": "نیورولوجسٹ کے مشورے سے درد کش ادویات کو بتدریج کم کریں۔"
+    }
+  },
+  "target_3d_nodes": [
+    "thalamus",
+    "frontal-lobe",
+    "brainstem"
+  ],
+  "search_keywords": [
+    "medication overuse headache",
+    "rebound headache",
+    "roz painkiller khane se dard",
+    "analgesic rebound",
+    "daily headache"
+  ]
+}

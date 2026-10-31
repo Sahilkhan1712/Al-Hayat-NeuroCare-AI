@@ -1,0 +1,123 @@
+{
+  "disease_id": "migraine-with-aura",
+  "official_name": "Migraine with aura",
+  "alternative_names": [
+    "Classic migraine",
+    "Ophthalmic migraine",
+    "Complicated migraine"
+  ],
+  "category": "headache",
+  "subcategory": "Primary headache disorders",
+  "icd11_code": "8A80.1",
+  "simple_description": "A type of migraine preceded or accompanied by temporary sensory disturbances, most commonly visual changes like flashing lights, zigzag patterns, or blind spots, followed by throbbing head pain.",
+  "medical_description": "Recurrent attacks of fully reversible neurological symptoms (aura) that usually develop gradually over 5-20 minutes and last fewer than 60 minutes, caused by cortical spreading depression, followed within 60 minutes by a migraine headache.",
+  "affected_system": "Cerebral cortex (occipital and parietal lobes) and trigeminovascular pathways.",
+  "symptoms": [
+    "Visual aura (90% of cases): scintillating scotoma, shimmering zigzag lines (fortification spectra), blind spots",
+    "Sensory aura: unilateral numbness or tingling pins-and-needles creeping up hand and face",
+    "Speech/language aura: transient word-finding difficulty or mild dysphasia",
+    "Followed by unilateral or bilateral pulsating headache, nausea, and photophobia"
+  ],
+  "early_warning_signs": [
+    "Gradual onset of shimmering visual disturbances expanding across the visual field over 15 to 30 minutes"
+  ],
+  "possible_causes": [
+    "Cortical spreading depression (CSD): a self-propagating wave of cellular depolarization across cerebral cortical neurons and glia",
+    "Subsequent neurogenic inflammation and trigeminal sensitization"
+  ],
+  "risk_factors": [
+    "Family history of classic migraine",
+    "Female sex and fluctuating estrogen levels",
+    "Use of combined oral contraceptive pills (contraindicated in migraine with aura due to ischemic stroke risk)"
+  ],
+  "disease_types": [
+    "Migraine with typical aura (visual, sensory, or speech)",
+    "Migraine with brainstem aura",
+    "Hemiplegic migraine (motor weakness present)",
+    "Retinal migraine (monocular visual disturbance)"
+  ],
+  "clinical_evaluation": "Careful neurological history confirming gradual spread (> 5 min) and resolution (< 60 min) of symptoms to distinguish from acute ischemic stroke / TIA (which have abrupt sudden onset).",
+  "diagnostic_tests": [
+    "Brain MRI with DWI (Diffusion-Weighted Imaging) - Essential on first presentation to definitively rule out acute ischemic stroke or intracranial lesion",
+    "MRA or CTA of head and neck if vascular malformation suspected"
+  ],
+  "treatment_overview": "Abortive triptans should be taken at the onset of the *headache* phase (not during the aura phase). Preventive therapy with beta-blockers, lamotrigine (effective specifically for aura), or CGRP inhibitors.",
+  "medication_classes": [
+    "Acute headache phase: Triptans, NSAIDs, Gepants",
+    "Aura-specific prevention: Lamotrigine, Topiramate, Flunarizine, Magnesium"
+  ],
+  "precautions": [
+    "Absolute contraindication for estrogen-containing contraceptives or HRT due to heightened thrombotic stroke risk",
+    "Stop smoking immediately"
+  ],
+  "prevention": [
+    "Consistent daily sleep patterns, hydration, and avoidance of flickering strobe lights or screen glare",
+    "Daily preventive magnesium glycinate (400-600 mg)"
+  ],
+  "complications": [
+    "Migrainous infarction (ischemic stroke developing in territory of aura)",
+    "Status migrainosus",
+    "Migraine-triggered seizure (migralepsy)"
+  ],
+  "emergency_signs": [
+    "Aura symptoms that start suddenly within seconds (rather than gradual minutes)",
+    "Weakness or paralysis of one side of the body (motor symptoms)",
+    "Aura lasting longer than 60 minutes without returning to baseline"
+  ],
+  "doctor_specialty": "Neurologist / Neuro-ophthalmologist",
+  "faqs": [
+    {
+      "question": "Can I have aura without a headache?",
+      "answer": "Yes. This is termed 'Typical aura without headache' (formerly acephalgic migraine), where visual flashing or sensory tingling occurs for 20-30 minutes without subsequent head pain."
+    },
+    {
+      "question": "Why is estrogen contraindicated?",
+      "answer": "Because migraine with aura slightly increases baseline risk of ischemic stroke, and estrogen-containing oral contraceptives multiply this thrombotic risk significantly."
+    }
+  ],
+  "references": [
+    {
+      "title": "ICD-11 MMS: 8A80.1 Migraine with aura",
+      "source": "World Health Organization",
+      "url": "https://icd.who.int/browse/2024-01/mms/en#1073860098"
+    },
+    {
+      "title": "Migraine with Aura Overview",
+      "source": "Mayo Clinic / NINDS",
+      "url": "https://www.ninds.nih.gov/health-information/disorders/migraine"
+    }
+  ],
+  "source_url": "https://www.ninds.nih.gov/health-information/disorders/migraine",
+  "multilingual": {
+    "hi": {
+      "name": "माइग्रेन विथ ऑरा (Migraine with aura)",
+      "summary": "सिरदर्द से ठीक पहले आंखों के सामने चमक, ज़िगज़ैग रेखाएं या हाथ में झनझनाहट महसूस होना, जिसके बाद तेज धड़कने वाला सिरदर्द होता है।",
+      "advice": "जब ऑरा दिखे तो तुरंत वाहन चलाना या स्क्रीन देखना बंद करें और शांत अंधेरे कमरे में लेट जाएं।"
+    },
+    "hinglish": {
+      "name": "Migraine with Aura (Visual flashes ke sath sar dard)",
+      "summary": "Sar dard shuru hone se 20-30 min pehle aakho ke aage chamkile dhabbe ya zigzag line dikhna fir tez dard hona.",
+      "advice": "Screen se door rahein aur doctor se prescription lein."
+    },
+    "ur": {
+      "name": "مائیگرین مع اورا (بصری علامات کے ساتھ)",
+      "summary": "سر درد سے پہلے آنکھوں کے سامنے چمکدار لکیریں یا اندھا پن ظاہر ہونا اور پھر شدید درد کا آغاز۔",
+      "advice": "علامات شروع ہوتے ہی پرسکون ماحول میں آرام کریں۔"
+    }
+  },
+  "target_3d_nodes": [
+    "left-occipital-lobe",
+    "right-occipital-lobe",
+    "left-middle-temporal-gyrus",
+    "right-middle-temporal-gyrus",
+    "visual-cortex"
+  ],
+  "search_keywords": [
+    "migraine with aura",
+    "visual aura",
+    "aankh ke samne chamak",
+    "zigzag line in eye",
+    "scintillating scotoma",
+    "aura headache"
+  ]
+}

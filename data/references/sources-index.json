@@ -1,0 +1,44 @@
+[
+  {
+    "id": "ref_who_icd11",
+    "name": "World Health Organization (WHO) ICD-11",
+    "description": "International Classification of Diseases 11th Revision (MMS 2024-01)",
+    "domain": "Neurology, Mental Health, Global Health",
+    "url": "https://icd.who.int/browse/2024-01/mms/en"
+  },
+  {
+    "id": "ref_ninds",
+    "name": "National Institute of Neurological Disorders and Stroke (NINDS / NIH)",
+    "description": "Premier neurological research agency of the U.S. National Institutes of Health",
+    "domain": "Brain, Nerve, Stroke, Spinal, and Movement Disorders",
+    "url": "https://www.ninds.nih.gov/health-information/disorders"
+  },
+  {
+    "id": "ref_nimh",
+    "name": "National Institute of Mental Health (NIMH / NIH)",
+    "description": "Lead federal agency for research on mental disorders",
+    "domain": "Depression, Anxiety, Bipolar, Schizophrenia, OCD, PTSD",
+    "url": "https://www.nimh.nih.gov/health/topics"
+  },
+  {
+    "id": "ref_medlineplus",
+    "name": "MedlinePlus (U.S. National Library of Medicine)",
+    "description": "Trusted health information produced by the National Library of Medicine",
+    "domain": "Patient Education, Diseases, Tests, Drugs",
+    "url": "https://medlineplus.gov"
+  },
+  {
+    "id": "ref_nhs",
+    "name": "National Health Service (NHS UK)",
+    "description": "Comprehensive, evidence-based clinical guide to conditions and treatments",
+    "domain": "Clinical Guidelines, Patient Care, Symptoms",
+    "url": "https://www.nhs.uk/conditions"
+  },
+  {
+    "id": "ref_ichd3",
+    "name": "International Classification of Headache Disorders 3rd Edition (ICHD-3)",
+    "description": "Official gold-standard diagnostic criteria of the International Headache Society",
+    "domain": "Migraine, Cluster, Stabbing, Nummular, Tension Headaches",
+    "url": "https://ichd-3.org"
+  }
+]

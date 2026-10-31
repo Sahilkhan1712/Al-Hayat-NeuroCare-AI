@@ -1,0 +1,125 @@
+{
+  "disease_id": "bell-palsy",
+  "official_name": "Bell palsy",
+  "alternative_names": [
+    "Idiopathic facial palsy",
+    "Facial nerve paralysis",
+    "Chehre ka achanak tedha hona"
+  ],
+  "category": "nerve-disorders",
+  "subcategory": "Cranial neuropathies",
+  "icd11_code": "8B88.0",
+  "simple_description": "A sudden, temporary weakness or paralysis of the muscles on one side of the face, causing one half of the face to droop, the eye to stay open, and the mouth to pull.",
+  "medical_description": "An acute, isolated, unilateral peripheral lower motor neuron paralysis of the seventh cranial (facial) nerve, of unknown etiology, developing within 72 hours. Characteristically involves BOTH the upper and lower face (forehead wrinkling is lost, distinguishing it from an upper motor neuron stroke lesion where the forehead is spared due to bilateral cortical innervation).",
+  "affected_system": "Facial nerve (CN VII) within the fallopian (facial) canal in the temporal bone.",
+  "symptoms": [
+    "Sudden unilateral facial weakness/paralysis developing over 24-72 hours",
+    "Inability to close the eye on the affected side (lagophthalmos), leading to eye drying",
+    "Loss of forehead wrinkling on the affected side (hallmark of lower motor neuron CN VII palsy)",
+    "Drooping of the corner of the mouth, drooling, and difficulty chewing",
+    "Loss of taste sensation on the anterior two-thirds of the tongue (chorda tympani involvement)",
+    "Increased sensitivity to sound in the ear on that side (hyperacusis due to stapedius muscle paresis)",
+    "Mild ache behind or around the ear (mastoid area) preceding or accompanying onset"
+  ],
+  "early_warning_signs": [
+    "Mild discomfort or numbness behind the ear or altered taste sensation 12-24 hours prior to muscle weakness"
+  ],
+  "possible_causes": [
+    "Reactivation of Herpes Simplex Virus type 1 (HSV-1) or Varicella Zoster Virus (VZV) in the geniculate ganglion",
+    "Secondary edema and inflammation causing mechanical entrapment/compression of the facial nerve within the narrow bony fallopian canal"
+  ],
+  "risk_factors": [
+    "Diabetes mellitus (4-fold higher risk)",
+    "Pregnancy (especially the third trimester and first postpartum week)",
+    "Recent upper respiratory viral infection",
+    "Severe hypertension"
+  ],
+  "disease_types": [
+    "Idiopathic Bell's palsy (most common)",
+    "Ramsay Hunt syndrome (VZV reactivation with painful vesicles in external ear canal and severe vertigo - worse prognosis, requires high-dose antivirals)"
+  ],
+  "clinical_evaluation": "House-Brackmann facial nerve grading scale (Grade I normal to Grade VI total paralysis). Critical clinical check: ask patient to raise eyebrows and frown. If forehead moves symmetrically while lower face is weak, suspect STROKE; if forehead does NOT move at all on weak side, indicates BELL'S PALSY.",
+  "diagnostic_tests": [
+    "Clinical diagnosis: Neuroimaging is NOT required on typical presentation",
+    "Brain MRI with contrast (internal auditory canal protocol) - Indicated if: no recovery after 3-4 months, recurrent paralysis, or involvement of other cranial nerves (to exclude schwannoma or parotid neoplasm)",
+    "Electroneurography (ENoG) and Electromyography (EMG) - Assesses axonal degeneration in complete paralysis after day 10-14"
+  ],
+  "treatment_overview": "CRITICAL TIME WINDOW: Oral corticosteroids (Prednisolone) MUST be initiated within 72 hours of symptom onset to significantly enhance complete recovery rate. Eye protection is paramount: daytime lubricating artificial tears every 1-2 hours and nightly eye ointment with taping the eyelid shut to prevent exposure keratopathy and permanent corneal ulceration.",
+  "medication_classes": [
+    "Oral Corticosteroids: Prednisolone (50-60 mg daily for 5-7 days, followed by a 5-day taper; initiated within 72h)",
+    "Antivirals (Valacyclovir 1000 mg tid or Acyclovir) - Frequently added to steroids for severe paralysis (House-Brackmann Grade IV-VI)",
+    "Ophthalmic lubrication: Preservative-free artificial tear eye drops and lubricating carbomer gel at night"
+  ],
+  "precautions": [
+    "CRITICAL: Protect the cornea! If the eye cannot close completely, the cornea will dry, scratch, ulcerate, and cause permanent blindness if not lubricated and taped shut at night",
+    "Do not delay starting steroids beyond 72 hours; efficacy drops drastically"
+  ],
+  "prevention": [
+    "No specific primary prevention; prompt treatment within 72 hours prevents long-term nerve damage",
+    "Gentle facial muscle physical therapy and biofeedback exercises once nerve recovery begins"
+  ],
+  "complications": [
+    "Permanent partial facial asymmetry / weakness (~15-20% of cases)",
+    "Corneal abrasion and ulceration",
+    "Aberrant nerve regeneration / synkinesis (e.g. eye closes when smiling, or 'crocodile tears' - tearing while eating)"
+  ],
+  "emergency_signs": [
+    "Weakness accompanied by arm/leg weakness, slurred speech, or double vision (indicates brain stroke, not Bell's palsy)"
+  ],
+  "doctor_specialty": "Neurologist / Otolaryngologist (ENT)",
+  "faqs": [
+    {
+      "question": "How do doctors tell Bell's palsy apart from a Stroke?",
+      "answer": "In Bell's palsy, the *entire* side of the face including the forehead is paralyzed (the patient cannot wrinkle their forehead or close their eye). In a brain stroke, the forehead muscles are usually spared (the patient can still wrinkle both sides of their forehead) and arm/leg weakness is often present."
+    },
+    {
+      "question": "Will my face return to normal?",
+      "answer": "Yes, approximately 80-85% of people recover completely within 3 weeks to 3 months, especially when treated with oral steroids within the first 72 hours."
+    }
+  ],
+  "references": [
+    {
+      "title": "ICD-11 MMS: 8B88.0 Bell palsy",
+      "source": "World Health Organization",
+      "url": "https://icd.who.int/browse/2024-01/mms/en#1073860098"
+    },
+    {
+      "title": "Bell's Palsy Fact Sheet",
+      "source": "NINDS / NIH",
+      "url": "https://www.ninds.nih.gov/health-information/disorders/bells-palsy"
+    }
+  ],
+  "source_url": "https://www.ninds.nih.gov/health-information/disorders/bells-palsy",
+  "multilingual": {
+    "hi": {
+      "name": "बेल्स पाल्सी (Bell's Palsy / चेहरे का पक्षाघात)",
+      "summary": "चेहरे की नस (Facial Nerve) में सूजन आने से चेहरे के आधे हिस्से का अचानक लटक जाना, आंख का पूरा बंद न होना और मुंह का टेढ़ा होना।",
+      "advice": "72 घंटे के भीतर डॉक्टर से स्टेरॉयड दवा शुरू करवाएं। आंख सूखने से बचाने के लिए आई-ड्रॉप डालें और रात को आंख पर टेप लगाकर सोएं।"
+    },
+    "hinglish": {
+      "name": "Bell's Palsy (Chehra achanak tedha hona / Facial Palsy)",
+      "summary": "7th cranial nerve me sujan se ek taraf ka chehra dhalakna aur aakh band na hona. Stroke me forehead hilta hai, isme pura aada chehra band ho jata hai.",
+      "advice": "72 hours ke andar Prednisolone shuru karein aur aakh me drop daalein. 85% mareez poori tarah theek ho jaate hain."
+    },
+    "ur": {
+      "name": "بیلز پالسی (چہرے کا لقوہ)",
+      "summary": "چہرے کی رگ میں سوزش کی وجہ سے چہرے کا ایک رخ کمزور ہو جانا اور آنکھ بند نہ ہونا۔",
+      "advice": "شروع کے 72 گھنٹوں میں سٹیرائڈز کا استعمال اور آنکھ کی حفاظت انتہائی ضروری ہے۔"
+    }
+  },
+  "target_3d_nodes": [
+    "facial-nerve",
+    "pons",
+    "stylomastoid-foramen",
+    "motor-cortex"
+  ],
+  "search_keywords": [
+    "bells palsy",
+    "chehra tedha hona",
+    "facial nerve paralysis",
+    "face drooping eye open",
+    "chehre ka lakwa",
+    "lagophthalmos",
+    "forehead weakness"
+  ]
+}

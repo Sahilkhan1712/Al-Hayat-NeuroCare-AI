@@ -1,0 +1,126 @@
+{
+  "disease_id": "bacterial-meningitis",
+  "official_name": "Bacterial meningitis",
+  "alternative_names": [
+    "Acute purulent meningitis",
+    "Spinal meningitis",
+    "Dimaagi bukhar"
+  ],
+  "category": "brain-disorders",
+  "subcategory": "Central nervous system infections",
+  "icd11_code": "1D01",
+  "simple_description": "A life-threatening, acute bacterial infection of the protective membranes covering the brain and spinal cord, presenting with high fever, severe stiff neck, and confusion.",
+  "medical_description": "An acute, fulminant purulent infection of the subarachnoid space and leptomeninges (arachnoid and pia mater) caused by pyogenic bacteria (Streptococcus pneumoniae, Neisseria meningitidis, Listeria monocytogenes). Characterized by the rapid onset of the classic triad: fever, nuchal rigidity, and altered mental status.",
+  "affected_system": "Leptomeninges (pia-arachnoid), cerebrospinal fluid (CSF), intracranial vascular endothelial barriers.",
+  "symptoms": [
+    "Severe, relentless, generalized bursting headache",
+    "High fever (> 38.5 C / 101.3 F) with chills and rigors",
+    "Neck stiffness (nuchal rigidity): inability to flex the chin to the chest passively",
+    "Altered mental status: confusion, drowsiness, delirium progressing to coma",
+    "Extreme photophobia and nausea/projectile vomiting",
+    "Non-blanching petechial or purpuric skin rash (hallmark of Neisseria meningitidis meningococcemia)",
+    "Positive meningeal signs: Kernig's sign and Brudzinski's sign"
+  ],
+  "early_warning_signs": [
+    "Rapid deterioration from a seemingly routine flu-like illness to intense neck pain and confusion within 12 to 24 hours"
+  ],
+  "possible_causes": [
+    "Streptococcus pneumoniae (pneumococcus - most common in adults)",
+    "Neisseria meningitidis (meningococcus - epidemic in adolescents and crowded settings)",
+    "Listeria monocytogenes (in elderly, neonates, and immunocompromised)",
+    "Haemophilus influenzae type b (Hib - reduced by vaccination)"
+  ],
+  "risk_factors": [
+    "Lack of vaccination (Pneumococcal, Meningococcal, Hib)",
+    "Asplenia or complement deficiencies",
+    "Sinusitis, otitis media, or mastoiditis with direct cranial spread",
+    "Recent neurosurgery or skull base cerebrospinal fluid leak"
+  ],
+  "disease_types": [
+    "Community-acquired bacterial meningitis",
+    "Nosocomial / post-neurosurgical bacterial meningitis",
+    "Meningococcal meningitis with septicemia (Waterhouse-Friderichsen syndrome)"
+  ],
+  "clinical_evaluation": "Rapid emergency clinical assessment for signs of elevated intracranial pressure, papilledema, focal deficits, and immediate blood cultures prior to emergent antibiotic administration.",
+  "diagnostic_tests": [
+    "Emergent Lumbar Puncture (LP) - Definitive test: CSF shows marked pleocytosis (typically 1,000-10,000 WBC/microL with > 80% neutrophils), elevated opening pressure (> 200 mmH2O), high protein (> 100 mg/dL), and markedly low glucose (CSF/serum glucose ratio < 0.4)",
+    "CSF Gram stain and Multiplex PCR panel (Meningitis/Encephalitis array) - Rapid pathogen identification within 1-2 hours",
+    "Blood cultures x 2 sets immediately",
+    "Emergency Non-contrast Head CT prior to LP ONLY if: new focal neurological deficit, new seizures, immunocompromise, or papilledema (to prevent brain herniation)"
+  ],
+  "treatment_overview": "CRITICAL MEDICAL EMERGENCY: Empiric broad-spectrum intravenous bactericidal antibiotics MUST be initiated within 30-60 minutes of presentation. DO NOT delay antibiotics for lumbar puncture or CT scan if delay will occur! Adjunctive IV Dexamethasone (10 mg) administered immediately before or with the first dose of antibiotics reduces mortality and sensorineural hearing loss in pneumococcal meningitis.",
+  "medication_classes": [
+    "Empiric IV Antibiotics (Adults < 50): IV Ceftriaxone (2 g q12h) + IV Vancomycin (15-20 mg/kg q8-12h)",
+    "Empiric IV Antibiotics (Adults >= 50 or Immunocompromised): Add IV Ampicillin (2 g q4h) to cover Listeria",
+    "Adjunctive anti-inflammatory: IV Dexamethasone (10 mg q6h for 4 days, continued if pneumococcus confirmed)",
+    "Supportive Neuro-ICU care with targeted osmotic therapy (Mannitol / Hypertonic saline) for raised ICP"
+  ],
+  "precautions": [
+    "NEVER delay the administration of antibiotics to wait for a CT scan or lumbar puncture; early antibiotics are the single greatest predictor of survival",
+    "Enforce droplet isolation for suspected meningococcal disease for first 24h of therapy"
+  ],
+  "prevention": [
+    "Routine vaccination with Meningococcal conjugate (MenACWY / MenB), Pneumococcal (PCV20 / PPSV23), and Hib vaccines",
+    "Post-exposure chemoprophylaxis (single-dose oral Ciprofloxacin or Rifampin) for close contacts of meningococcal cases"
+  ],
+  "complications": [
+    "Permanent sensorineural hearing loss (most common long-term morbidity)",
+    "Cerebral edema, brain herniation, and death (overall mortality 15-25%)",
+    "Cerebral venous sinus thrombosis, hydrocephalus, and persistent cognitive deficits"
+  ],
+  "emergency_signs": [
+    "🚨 CRITICAL EMERGENCY: Call 112 / 911 immediately if someone has high fever, severe stiff neck, and confusion or purple skin spots."
+  ],
+  "doctor_specialty": "Infectious Disease Specialist / Neurocritical Care / Emergency Medicine",
+  "faqs": [
+    {
+      "question": "What is the classic triad of meningitis?",
+      "answer": "Fever, Stiff neck (inability to touch chin to chest), and Altered mental status (confusion or lethargy). If all three or even two are present with a severe headache, it is an absolute emergency."
+    }
+  ],
+  "references": [
+    {
+      "title": "ICD-11 MMS: 1D01 Bacterial meningitis",
+      "source": "World Health Organization",
+      "url": "https://icd.who.int/browse/2024-01/mms/en#1073860098"
+    },
+    {
+      "title": "Meningitis Overview",
+      "source": "WHO Fact Sheet / CDC",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/meningitis"
+    }
+  ],
+  "source_url": "https://www.who.int/news-room/fact-sheets/detail/meningitis",
+  "multilingual": {
+    "hi": {
+      "name": "बैक्टीरियल मेनिनजाइटिस / दिमागी बुखार (Bacterial Meningitis)",
+      "summary": "मस्तिष्क की झिल्लियों में गंभीर जीवाणु संक्रमण। तेज बुखार, गर्दन में भयानक अकड़न, तेज सिरदर्द और बेहोशी इसके मुख्य लक्षण हैं।",
+      "advice": "🚨 तत्काल मेडिकल इमरजेंसी! तुरंत 112 / 108 पर कॉल करें और इमरजेंसी अस्पताल जाएं। बिना देरी किए एंटीबायोटिक्स जरूरी होती हैं।"
+    },
+    "hinglish": {
+      "name": "Bacterial Meningitis (Dimaagi Bukhar / Gardan me akad)",
+      "summary": "Dimaag ki jhilliyo me bacterial infection jisse tez bukhar, gardan akadna aur behoshi aati hai.",
+      "advice": "🚨 LIFE-THREATENING EMERGENCY: Turant ambulance bulayein aur emergency ICU le jayein."
+    },
+    "ur": {
+      "name": "بیکٹیریل گردن توڑ بخار (Meningitis)",
+      "summary": "دماغ اور حرام مغز کی جھلیوں میں شدید انفیکشن، تیز بخار، گردن کی سختی اور بے ہوشی۔",
+      "advice": "فوری ہسپتال لے جائیں، یہ جان لیوا حالت ہو سکتی ہے اور فوری اینٹی بائیوٹکس درکار ہوتی ہیں۔"
+    }
+  },
+  "target_3d_nodes": [
+    "meninges",
+    "subarachnoid-space",
+    "cortex",
+    "ventricles"
+  ],
+  "search_keywords": [
+    "meningitis",
+    "dimaagi bukhar",
+    "stiff neck and fever",
+    "gardan me akad",
+    "neck rigidity",
+    "bacterial meningitis",
+    "severe headache with fever"
+  ]
+}

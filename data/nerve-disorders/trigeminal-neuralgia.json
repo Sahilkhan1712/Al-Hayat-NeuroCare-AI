@@ -1,0 +1,115 @@
+{
+  "disease_id": "trigeminal-neuralgia",
+  "official_name": "Trigeminal neuralgia",
+  "alternative_names": [
+    "Tic douloureux",
+    "Trigeminal pain syndrome",
+    "Chehre ki bijli jaisi chubhan"
+  ],
+  "category": "nerve-disorders",
+  "subcategory": "Cranial neuropathies",
+  "icd11_code": "8B82.0",
+  "simple_description": "A chronic, intensely painful condition affecting the trigeminal nerve, causing sudden, excruciating electric-shock-like pains in the jaw, teeth, cheek, or lips, triggered by light touch.",
+  "medical_description": "A severe paroxysmal facial pain disorder characterized by recurrent, sudden, unilateral, brief, electric-shock-like, stabbing pains strictly limited to the distribution of one or more divisions of the fifth cranial (trigeminal) nerve (most commonly maxillary V2 or mandibular V3). Pain is triggered by innocuous tactile stimuli to the face.",
+  "affected_system": "Trigeminal nerve (CN V), sensory root entry zone at the pons, trigeminal spinal nucleus.",
+  "symptoms": [
+    "Excruciating, paroxysmal, lancinating pain described as an electric shock, stabbing, or lightning bolt in the face",
+    "Pain lasts from a fraction of a second to 2 minutes, followed by a refractory period",
+    "Strictly unilateral (right side slightly more common)",
+    "Triggered by trivial activities: light touch, washing face, brushing teeth, chewing, shaving, talking, or a cold breeze",
+    "Pain distribution: cheek, jaw, gums, teeth, lips, or rarely forehead"
+  ],
+  "early_warning_signs": [
+    "Initial pre-trigeminal neuralgia: dull aching or burning twinges in the jaw or tooth that get mistaken for dental issues"
+  ],
+  "possible_causes": [
+    "Classical trigeminal neuralgia (80-90%): neurovascular compression of the trigeminal nerve root entry zone by an aberrant arterial loop (most commonly Superior Cerebellar Artery - SCA), leading to focal focal demyelination and ephaptic cross-talk between fibers",
+    "Secondary trigeminal neuralgia: demyelinating plaque of Multiple Sclerosis at root entry zone, or cerebellopontine angle tumor (acoustic neuroma, meningioma)",
+    "Idiopathic (no vascular contact or lesion identified)"
+  ],
+  "risk_factors": [
+    "Age > 50 years",
+    "Female sex (1.5 times more common in women)",
+    "Underlying Multiple Sclerosis (trigeminal neuralgia in young patients < 40 or bilateral suggests MS)"
+  ],
+  "disease_types": [
+    "Classical trigeminal neuralgia (neurovascular compression demonstrated on MRI)",
+    "Secondary trigeminal neuralgia (due to MS plaque or CPA tumor)",
+    "Idiopathic trigeminal neuralgia"
+  ],
+  "clinical_evaluation": "Clinical diagnosis based on ICHD-3 criteria. Standard neurological cranial nerve exam is typically completely normal in classical TN; any objective sensory deficit (numbness) suggests secondary etiology.",
+  "diagnostic_tests": [
+    "High-resolution 3T Brain MRI with CISS / FIESTA (Constructive Interference in Steady State) and 3D TOF MRA - Essential to visualize neurovascular conflict at the root entry zone and rule out MS plaques or CPA mass lesions"
+  ],
+  "treatment_overview": "First-line pharmacological treatment is oral voltage-gated sodium channel blockers (Carbamazepine or Oxcarbazepine). For patients with inadequate relief or intolerable drug side effects, Microvascular Decompression (MVD / Jannetta procedure) is the surgical treatment of choice offering high rates of long-term cure. Stereotactic radiosurgery (Gamma Knife) and percutaneous balloon compression are minimally invasive alternatives.",
+  "medication_classes": [
+    "First-line Sodium Channel Blockers: Carbamazepine (Tegretol - 200-1200 mg/day, monitoring CBC and LFTs), Oxcarbazepine (Trileptal - 600-1800 mg/day, monitoring serum sodium)",
+    "Second-line Add-on agents: Baclofen (GABA-B agonist), Lamotrigine, Gabapentin, Pregabalin"
+  ],
+  "precautions": [
+    "DO NOT undergo unnecessary tooth extractions! Patients frequently consult dentists first and extract healthy teeth because pain mimics severe toothache",
+    "Monitor serum sodium on Oxcarbazepine/Carbamazepine due to risk of hyponatremia"
+  ],
+  "prevention": [
+    "Protect face from direct cold winds with a scarf during winter",
+    "Use soft-bristled toothbrush and lukewarm water to avoid triggering attacks"
+  ],
+  "complications": [
+    "Extreme weight loss and dehydration due to terror of chewing or drinking",
+    "Severe depressive disorder and high suicide risk ('suicide disease') due to excruciating pain intensity"
+  ],
+  "emergency_signs": [
+    "Status trigeminus: continuous, unremitting paroxysms of pain preventing any oral intake, requiring urgent hospital admission for IV Fosphenytoin or Lidocaine infusion"
+  ],
+  "doctor_specialty": "Neurologist / Functional Neurosurgeon",
+  "faqs": [
+    {
+      "question": "Can regular painkillers like paracetamol help trigeminal neuralgia?",
+      "answer": "No. Standard painkillers, NSAIDs, and even opioids are largely ineffective because this is electrical nerve pain caused by demyelinated nerve root compression. Anti-seizure medications that stabilize nerve membranes (like Carbamazepine) are required."
+    }
+  ],
+  "references": [
+    {
+      "title": "ICD-11 MMS: 8B82.0 Trigeminal neuralgia",
+      "source": "World Health Organization",
+      "url": "https://icd.who.int/browse/2024-01/mms/en#1073860098"
+    },
+    {
+      "title": "Trigeminal Neuralgia Fact Sheet",
+      "source": "NINDS / NIH",
+      "url": "https://www.ninds.nih.gov/health-information/disorders/trigeminal-neuralgia"
+    }
+  ],
+  "source_url": "https://www.ninds.nih.gov/health-information/disorders/trigeminal-neuralgia",
+  "multilingual": {
+    "hi": {
+      "name": "ट्राइजेमिनल न्यूराल्जिया (Trigeminal Neuralgia / चेहरे में बिजली जैसा झटका)",
+      "summary": "चेहरे, जबड़े या दांतों में अचानक बिजली के करंट जैसा असहनीय झटका लगना जो छूने, बोलने, ब्रश करने या हवा लगने से शुरू हो जाता है।",
+      "advice": "दांत उखड़वाने की गलती न करें। न्यूरोलॉजिस्ट से कार्बामाज़ेपिन दवा या माइक्रोवैस्कुलर डीकंप्रेशन (MVD) सर्जरी का परामर्श लें।"
+    },
+    "hinglish": {
+      "name": "Trigeminal Neuralgia (Face me current jaisa jhatka)",
+      "summary": "Chehre ya daant me achanak current jaisa tez dard hona jo brush karne ya gaal chhoone par trigger hota hai.",
+      "advice": "General painkiller kaam nahi karti. Neurologist se Carbamazepine dawai aur MRI scan karwayein."
+    },
+    "ur": {
+      "name": "ٹرائی جیمینل نیورالجیا (چہرے پر کرنٹ جیسا درد)",
+      "summary": "چہرے کی رگ پر دباؤ کی وجہ سے اچانک بجلی کے جھٹکے جیسا شدید درد جو چھونے یا چبانے سے بڑھ جاتا ہے۔",
+      "advice": "عام درد کش ادویات فائدہ نہیں دیتیں۔ نیورولوجسٹ سے باقاعدہ علاج کروائیں۔"
+    }
+  },
+  "target_3d_nodes": [
+    "trigeminal-nerve",
+    "pons",
+    "sensory-root",
+    "superior-cerebellar-artery"
+  ],
+  "search_keywords": [
+    "trigeminal neuralgia",
+    "chehre me current",
+    "electric shock face pain",
+    "daant me current",
+    "tic douloureux",
+    "jaw shock pain"
+  ]
+}

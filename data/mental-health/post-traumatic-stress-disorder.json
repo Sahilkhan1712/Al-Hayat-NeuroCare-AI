@@ -1,0 +1,113 @@
+{
+  "disease_id": "post-traumatic-stress-disorder",
+  "official_name": "Post-traumatic stress disorder",
+  "alternative_names": [
+    "PTSD",
+    "Trauma stress syndrome",
+    "Sadme ka asar"
+  ],
+  "category": "mental-health",
+  "subcategory": "Disorders specifically associated with stress",
+  "icd11_code": "6B40",
+  "simple_description": "A mental health condition triggered by experiencing or witnessing a terrifying or traumatic event, causing recurrent flashbacks, severe nightmares, emotional numbness, and hypervigilance.",
+  "medical_description": "A disorder that may develop following exposure to an extremely threatening or horrific event or series of events. Characterized by three core element clusters: 1. Re-experiencing the traumatic event in the present (intrusive memories, flashbacks, or nightmares), 2. Deliberate avoidance of thoughts, memories, people, or situations reminiscent of the event, and 3. Persistent perceptions of heightened current threat (hypervigilance, exaggerated startle response). Symptoms must persist for at least several weeks and cause significant functional impairment.",
+  "affected_system": "Amygdala hyper-responsiveness, ventromedial prefrontal cortex hypoactivity, reduced hippocampal volume, and dysregulated locus coeruleus noradrenergic signaling.",
+  "symptoms": [
+    "Vivid intrusive flashbacks where the patient feels or acts as if the traumatic event is recurring right now",
+    "Recurrent distressing dreams and nightmares directly related to the trauma",
+    "Marked avoidance of external reminders (conversations, locations, sights, smells) associated with the event",
+    "Hypervigilance: constantly scanning the environment for danger, easily startled by sudden sounds",
+    "Irritability, anger outbursts, sleep disturbance, and emotional detachment from loved ones"
+  ],
+  "early_warning_signs": [
+    "Persistent intense horror, sleep terrors, and avoidance lasting > 1 month after a traumatic incident"
+  ],
+  "possible_causes": [
+    "Failure of fear extinction learning and memory reconsolidation following extreme neurotrauma",
+    "Genetic susceptibility to stress sensitization"
+  ],
+  "risk_factors": [
+    "Severity and interpersonal nature of trauma (e.g. violent assault, war combat, severe accidents)",
+    "Pre-existing mental health vulnerabilities",
+    "Lack of post-trauma social support"
+  ],
+  "disease_types": [
+    "Standard PTSD",
+    "Complex PTSD (CPTSD - severe prolonged repeated trauma with disturbances in self-organization)",
+    "PTSD with dissociative symptoms"
+  ],
+  "clinical_evaluation": "Clinician-Administered PTSD Scale for DSM-5 / ICD-11 (CAPS-5), PCL-5 self-report questionnaire, thorough suicide risk assessment.",
+  "diagnostic_tests": [
+    "Clinical diagnostic psychiatric interview"
+  ],
+  "treatment_overview": "First-line treatments are trauma-focused psychotherapies: Trauma-Focused Cognitive Behavioral Therapy (TF-CBT) and Eye Movement Desensitization and Reprocessing (EMDR). First-line pharmacotherapy: SSRIs (Sertraline, Paroxetine). Prazosin (alpha-1 adrenergic antagonist) is uniquely effective for trauma-related nightmares.",
+  "medication_classes": [
+    "First-line SSRIs: Sertraline (50-200 mg daily), Paroxetine (20-50 mg daily), Venlafaxine",
+    "Nightmare / Autonomic Blocker: Prazosin (1-10 mg nocte - blocks central alpha-1 receptors)",
+    "AVOID Benzodiazepines (contraindicated in PTSD as they hinder fear extinction and worsen recovery)"
+  ],
+  "precautions": [
+    "Benzodiazepines are CONTRAINDICATED in PTSD; they prevent psychological processing and increase dependence risk",
+    "Screen for self-harm"
+  ],
+  "prevention": [
+    "Early psychological first aid following acute disaster or trauma (debriefing is not recommended, supportive containment is)"
+  ],
+  "complications": [
+    "Substance use disorders (self-medicating with alcohol), severe major depression, high suicide risk"
+  ],
+  "emergency_signs": [
+    "Active suicidal ideation or severe dissociative state. Call Tele-MANAS (14416 / 1800-891-4416) or 112 / 911."
+  ],
+  "doctor_specialty": "Psychiatrist / Trauma-Informed Clinical Psychologist",
+  "faqs": [
+    {
+      "question": "Can therapy help PTSD years after the event?",
+      "answer": "Yes. Evidence-based therapies like EMDR and Trauma-Focused CBT are proven to significantly reduce symptoms even decades after the original trauma occurred."
+    }
+  ],
+  "references": [
+    {
+      "title": "ICD-11 MMS: 6B40 Post traumatic stress disorder",
+      "source": "World Health Organization",
+      "url": "https://icd.who.int/browse/2024-01/mms/en#1073860098"
+    },
+    {
+      "title": "Post-Traumatic Stress Disorder",
+      "source": "NIMH / NIH",
+      "url": "https://www.nimh.nih.gov/health/topics/post-traumatic-stress-disorder-ptsd"
+    }
+  ],
+  "source_url": "https://www.nimh.nih.gov/health/topics/post-traumatic-stress-disorder-ptsd",
+  "multilingual": {
+    "hi": {
+      "name": "पोस्ट-ट्रॉमेटिक स्ट्रेस डिसऑर्डर (PTSD / सदमे का तनाव)",
+      "summary": "किसी भयानक हादसे या सदमे के बाद बार-बार डरावनी यादें आना (फ़्लैशबैक), बुरे सपने, अत्यधिक घबराहट और हादसे से जुड़ी जगहों से बचना।",
+      "advice": "यह कमजोरी नहीं बल्कि सदमे का जैविक असर है। ट्रॉमा थेरेपी (EMDR / CBT) और मनोचिकित्सक से परामर्श लें।"
+    },
+    "hinglish": {
+      "name": "PTSD (Post-Traumatic Stress Disorder / Trauma ka asar)",
+      "summary": "Kisi purane hadse ya trauma ke baad baar-baar flashbacks aana, darr lagna aur achanak aawaz par chownk jana.",
+      "advice": "Trauma specialist se EMDR therapy aur SSRI dawai lein. Helpline Tele-MANAS (14416) par 24x7 help le sakte hain."
+    },
+    "ur": {
+      "name": "پی ٹی ایس ڈی (صدمے کے بعد کا ذہنی دباؤ)",
+      "summary": "کسی خوفناک واقعے کے بعد بار بار اسی واقعے کے مناظر کا ذہن میں آنا اور مستقل خوف و بے چینی۔",
+      "advice": "ماہر نفسیات سے باقاعدہ تھراپی (EMDR) اور ادویات حاصل کریں۔"
+    }
+  },
+  "target_3d_nodes": [
+    "amygdala",
+    "hippocampus",
+    "medial-prefrontal-cortex"
+  ],
+  "search_keywords": [
+    "ptsd",
+    "trauma",
+    "sadma",
+    "flashbacks",
+    "post traumatic stress",
+    "nightmares trauma",
+    "hypervigilance"
+  ]
+}

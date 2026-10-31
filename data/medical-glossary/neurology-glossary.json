@@ -1,0 +1,112 @@
+[
+  {
+    "term": "Aura",
+    "category": "Headache & Epilepsy",
+    "definition": "A temporary neurological disturbance that typically occurs before a migraine headache or focal seizure, most commonly causing visual changes (flashing lights, zigzag lines) or sensory tingling.",
+    "simple_explanation": "A short warning sign before a migraine or seizure, like seeing flashing lights or feeling tingling in your fingers.",
+    "translations": {
+      "hi": "ऑरा (Aura) - सिरदर्द या दौरे से ठीक पहले आंखों के सामने चमक, ज़िगज़ैग रेखाएं या झनझनाहट का आभास होना।",
+      "hinglish": "Aura - Migraine shuru hone se thoda pehle aakho ke aage chamkile dhabbe ya tingling mehsoos hona.",
+      "ur": "اورا - سر درد یا دورے سے پہلے بصری علامات جیسے چمکدار لکیریں دکھائی دینا۔"
+    }
+  },
+  {
+    "term": "Ataxia",
+    "category": "Cerebellar & Movement",
+    "definition": "A lack of voluntary coordination of muscle movements that can include gait abnormality, speech changes, and abnormal eye movements, typically resulting from damage to the cerebellum or its connections.",
+    "simple_explanation": "Loss of balance and muscle coordination, making walking unsteady like being drunk.",
+    "translations": {
+      "hi": "एटेक्सिया (Ataxia) - मांसपेशियों और चाल के संतुलन में कमी, जिससे चलते समय लड़खड़ाहट होती है।",
+      "hinglish": "Ataxia - Balance bigadna aur chalne me sharabi ki tarah ladkhadana.",
+      "ur": "اٹیکسیا - پٹھوں کے توازن کی خرابی جس سے چلنے میں لڑکھڑاہٹ پیدا ہوتی ہے۔"
+    }
+  },
+  {
+    "term": "Aphasia / Dysphasia",
+    "category": "Language & Stroke",
+    "definition": "An impairment of language comprehension or production caused by damage to specific cortical language areas (Broca's or Wernicke's areas), commonly following an ischemic stroke.",
+    "simple_explanation": "Difficulty speaking, understanding words, or finding the right words due to brain damage.",
+    "translations": {
+      "hi": "अफेजिया (Aphasia) - मस्तिष्क में चोट या स्ट्रोक के कारण बोलने, समझने या सही शब्द ढूंढने में कठिनाई होना।",
+      "hinglish": "Aphasia - Stroke ke baad bolne ya dusre ki baat samajhne me takleef hona.",
+      "ur": "افیزیا - بولنے یا زبان سمجھنے میں دشواری جو عام طور پر فالج کے بعد ہوتی ہے۔"
+    }
+  },
+  {
+    "term": "Paresthesia",
+    "category": "Sensory & Neuropathy",
+    "definition": "An abnormal sensation of tingling, pricking, chilling, burning, or numbness on the skin with no apparent physical cause, typically described as 'pins and needles'.",
+    "simple_explanation": "A tingling, prickling 'pins and needles' or numbness sensation in the hands or feet.",
+    "translations": {
+      "hi": "पेरेस्थेसिया (Paresthesia) - हाथ या पैरों में सुई चुभने जैसी झनझनाहट या सुन्नपन (Pins and needles)।",
+      "hinglish": "Paresthesia - Haath-pair me sui chubhne jaisi jhanjhanahat ya sunn-pan hona.",
+      "ur": "پیرستھیزیا - ہاتھوں اور پیروں میں سوئیاں چبھنے یا سن ہونے کا احساس۔"
+    }
+  },
+  {
+    "term": "Ptosis",
+    "category": "Cranial & Neuromuscular",
+    "definition": "Abnormal drooping of the upper eyelid, which may be unilateral or bilateral, caused by dysfunction of the levator palpebrae superioris muscle or its nerve supply (third cranial nerve or sympathetic chain).",
+    "simple_explanation": "Drooping of the upper eyelid covering part of the eye, seen in conditions like Myasthenia Gravis.",
+    "translations": {
+      "hi": "टोसिस (Ptosis) - ऊपरी पलक का नीचे लटक जाना या आंख का पूरा न खुल पाना।",
+      "hinglish": "Ptosis - Aakh ki upri palk ka dhalak jana (Myasthenia Gravis me aam hai).",
+      "ur": "ٹوسس - اوپری پلک کا جھک جانا۔"
+    }
+  },
+  {
+    "term": "Bradykinesia",
+    "category": "Movement Disorders",
+    "definition": "A generalized slowness in the execution of movement, combined with a progressive reduction in speed and amplitude during repetitive movements, a hallmark of Parkinson's disease.",
+    "simple_explanation": "Extreme slowness of movement, such as walking with tiny steps or struggling to fasten buttons.",
+    "translations": {
+      "hi": "ब्रेडीकाइनेसिया (Bradykinesia) - शारीरिक गतिविधियों और चलने-फिरने में अत्यधिक धीमापन।",
+      "hinglish": "Bradykinesia - Har kaam aur chalne me dheemapan aana (Parkinson's ka primary sign).",
+      "ur": "بریڈی کائینیزیا - حرکات میں غیر معمولی سستی۔"
+    }
+  },
+  {
+    "term": "Fasciculation",
+    "category": "Neuromuscular & Motor Neuron",
+    "definition": "A brief, spontaneous, involuntary contraction of a single motor unit or small twitch of muscle fibers under the skin, visible through the skin.",
+    "simple_explanation": "A tiny, painless muscle twitch visible under the skin, like in the calf or thumb.",
+    "translations": {
+      "hi": "फेसिकुलेशन (Fasciculation) - त्वचा के नीचे मांसपेशियों का अपने-आप फड़कना या सूक्ष्म झटके महसूस होना।",
+      "hinglish": "Fasciculation - Skin ke neeche muscle ka phadakna (twitching).",
+      "ur": "فیسیکولیشن - جلد کے نیچے پٹھوں کا خود بخود پھڑکنا۔"
+    }
+  },
+  {
+    "term": "Papilledema",
+    "category": "Neuro-ophthalmology",
+    "definition": "Swelling of the optic nerve head (optic disc) secondary to elevated intracranial pressure (ICP), typically bilateral.",
+    "simple_explanation": "Swelling of the eye's optic nerve caused by high fluid pressure inside the skull.",
+    "translations": {
+      "hi": "पैपिलेडिमा (Papilledema) - मस्तिष्क में बढ़ा हुआ दबाव होने पर आंखों के पीछे ऑप्टिक नर्व में सूजन आना।",
+      "hinglish": "Papilledema - Dimaag me pressure badhne se aakh ke parde (optic disc) me sujan aana.",
+      "ur": "پیپلیڈیما - دماغ کے اندر دباؤ بڑھنے کی وجہ سے آنکھ کے عصب میں سوزش۔"
+    }
+  },
+  {
+    "term": "CGRP (Calcitonin Gene-Related Peptide)",
+    "category": "Headache Therapeutics",
+    "definition": "A potent 37-amino acid vasodilatory neuropeptide released from trigeminal sensory nerve fibers that plays a central role in migraine pathophysiology and neurogenic inflammation.",
+    "simple_explanation": "A chemical messenger in the brain that swells blood vessels and amplifies pain during a migraine attack.",
+    "translations": {
+      "hi": "सीजीआरपी (CGRP) - मस्तिष्क का एक रसायन जो माइग्रेन के दर्द और नसों की सूजन को बढ़ाता है।",
+      "hinglish": "CGRP - Migraine attack ke dauran release hone wala chemical jo naso me dard badhata hai.",
+      "ur": "سی جی آر پی - دماغ میں خارج ہونے والا کیمیکل جو مائیگرین کا باعث بنتا ہے۔"
+    }
+  },
+  {
+    "term": "Cataplexy",
+    "category": "Sleep Disorders",
+    "definition": "A sudden, brief, bilateral episode of loss of voluntary muscle tone, usually provoked by intense positive emotions such as laughter, while consciousness is fully preserved.",
+    "simple_explanation": "Suddenly losing muscle strength and buckling at the knees when laughing or feeling surprised.",
+    "translations": {
+      "hi": "कैटैप्लेक्सी (Cataplexy) - हंसने या अचानक भावना उमड़ने पर शरीर की मांसपेशियों का अचानक ढीला पड़ जाना।",
+      "hinglish": "Cataplexy - Hansne ya khushi ke waqt achanak ghutne mudna ya gir padna (Narcolepsy me hota hai).",
+      "ur": "کیٹاپلیکسی - ہنسنے یا خوشی پر اچانک پٹھوں کی کمزوری۔"
+    }
+  }
+]

@@ -12,8 +12,6 @@ import {
   CheckCircle2,
   KeyRound,
   AlertCircle,
-  Stethoscope,
-  Zap,
   Sparkles
 } from 'lucide-react';
 import { sound } from '../../utils/audio';
@@ -47,14 +45,7 @@ export default function AuthScreen({ onLoginSuccess }) {
   const [forgotEmail, setForgotEmail] = useState('');
   const [newPassword, setNewPassword] = useState('');
 
-  // 1. Instant Doctor Access (1-Click Demo)
-  const handleQuickDoctorAccess = () => {
-    sound.playSelect();
-    const doctor = authService.quickDoctorAccess();
-    onLoginSuccess(doctor);
-  };
-
-  // 2. Google Sign In
+  // 1. Google Sign In
   const handleGoogleSignIn = async () => {
     sound.playClick();
     setLoading(true);
@@ -253,29 +244,6 @@ export default function AuthScreen({ onLoginSuccess }) {
         {/* AUTH BOX */}
         <div className="w-full glass-panel-glow bg-[#080e21]/95 border border-cyan-500/30 rounded-3xl p-5 sm:p-7 shadow-2xl backdrop-blur-2xl space-y-4">
           
-          {/* QUICK DEMO ACCESS BUTTON (GLOWING TOP HERO) */}
-          <button
-            type="button"
-            onClick={handleQuickDoctorAccess}
-            className="w-full py-2.5 px-3.5 rounded-2xl bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-purple-500/20 hover:from-cyan-500/30 hover:to-purple-500/30 border border-cyan-400/50 hover:border-cyan-300 transition-all flex items-center justify-between group shadow-[0_0_15px_rgba(6,182,212,0.2)] cursor-pointer"
-          >
-            <div className="flex items-center gap-2.5 text-left">
-              <div className="w-8 h-8 rounded-xl bg-cyan-500/20 flex items-center justify-center text-cyan-400">
-                <Stethoscope className="w-4 h-4" />
-              </div>
-              <div>
-                <div className="text-xs font-bold text-white flex items-center gap-1.5 font-mono">
-                  <span>⚡ Quick Doctor Access</span>
-                  <span className="text-[10px] px-1.5 py-0.2 rounded bg-cyan-500/30 text-cyan-300">1-Click</span>
-                </div>
-                <div className="text-[10px] text-cyan-300/80 font-mono">
-                  Enter directly as Dr. Sahil Khan, MD (Neurology)
-                </div>
-              </div>
-            </div>
-            <ArrowRight className="w-4 h-4 text-cyan-400 group-hover:translate-x-1 transition-transform" />
-          </button>
-
           {/* TAB SWITCHER: SIGN IN / REGISTER */}
           {authMode !== 'forgot_password' && (
             <div className="grid grid-cols-2 p-1 rounded-2xl bg-slate-950/80 border border-slate-800 text-xs font-mono">

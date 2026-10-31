@@ -1,4 +1,4 @@
-// Al_Hayat Neuro AI Client Authentication & OTP Service
+// Al_Hayat NeuroCare AI Client Authentication & OTP Service
 
 export const authService = {
   // Send OTP

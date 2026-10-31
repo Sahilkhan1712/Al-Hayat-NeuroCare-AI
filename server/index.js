@@ -27,13 +27,13 @@ if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
         pass: process.env.EMAIL_PASS
       }
     });
-    console.log(`[Al_Hayat Neuro AI] SMTP Mailer configured for: ${process.env.EMAIL_USER}`);
+    console.log(`[Al_Hayat NeuroCare AI] SMTP Mailer configured for: ${process.env.EMAIL_USER}`);
   } catch (err) {
-    console.warn('[Al_Hayat Neuro AI] SMTP config error:', err.message);
+    console.warn('[Al_Hayat NeuroCare AI] SMTP config error:', err.message);
   }
 }
 
-// In-Memory Real Clinical Database for Al_Hayat Neuro AI
+// In-Memory Real Clinical Database for Al_Hayat NeuroCare AI
 const usersDatabase = [
   {
     id: 'usr_sahil_1',
@@ -83,7 +83,7 @@ app.post('/api/auth/send-otp', async (req, res) => {
   const expiresAt = Date.now() + 5 * 60 * 1000; // 5 minutes validity
 
   otpStore.set(key, { code, expiresAt, purpose });
-  console.log(`[Al_Hayat Neuro AI OTP] Generated OTP for ${key} [${purpose}]: ${code}`);
+  console.log(`[Al_Hayat NeuroCare AI OTP] Generated OTP for ${key} [${purpose}]: ${code}`);
 
   let emailDelivered = false;
 
@@ -91,13 +91,13 @@ app.post('/api/auth/send-otp', async (req, res) => {
   if (mailTransporter && email) {
     try {
       await mailTransporter.sendMail({
-        from: `"Al_Hayat Neuro AI" <${process.env.EMAIL_USER}>`,
+        from: `"Al_Hayat NeuroCare AI" <${process.env.EMAIL_USER}>`,
         to: email,
-        subject: `Al_Hayat Neuro AI — Verification Code: ${code}`,
+        subject: `Al_Hayat NeuroCare AI — Verification Code: ${code}`,
         html: `
           <div style="font-family: Arial, sans-serif; background: #030712; color: #f8fafc; padding: 25px; border-radius: 12px; max-width: 500px; margin: auto; border: 1px solid #06b6d4;">
             <div style="text-align: center; margin-bottom: 20px;">
-              <h2 style="color: #06b6d4; margin: 0; font-size: 24px;">Al_Hayat Neuro AI</h2>
+              <h2 style="color: #06b6d4; margin: 0; font-size: 24px;">Al_Hayat NeuroCare AI</h2>
               <p style="color: #94a3b8; font-size: 13px; margin: 4px 0 0 0;">Clinical 3D Neuroanatomy & Brain Health Platform</p>
             </div>
             <hr style="border: 0; border-top: 1px solid #1e293b; margin: 15px 0;" />
@@ -107,14 +107,14 @@ app.post('/api/auth/send-otp', async (req, res) => {
               ${code}
             </div>
             <p style="font-size: 12px; color: #64748b;">This code is valid for <strong>5 minutes</strong>. Do not share this code with anyone.</p>
-            <p style="font-size: 11px; color: #475569; margin-top: 25px; text-align: center;">© 2026 Al_Hayat Neuro AI • Department of Clinical Neurosciences</p>
+            <p style="font-size: 11px; color: #475569; margin-top: 25px; text-align: center;">© 2026 Al_Hayat NeuroCare AI • Department of Clinical Neurosciences</p>
           </div>
         `
       });
       emailDelivered = true;
-      console.log(`[Al_Hayat Neuro AI] Real email successfully sent to ${email}`);
+      console.log(`[Al_Hayat NeuroCare AI] Real email successfully sent to ${email}`);
     } catch (err) {
-      console.warn(`[Al_Hayat Neuro AI] Real email dispatch failed: ${err.message}`);
+      console.warn(`[Al_Hayat NeuroCare AI] Real email dispatch failed: ${err.message}`);
     }
   }
 
@@ -189,11 +189,11 @@ app.post('/api/auth/register', (req, res) => {
   };
 
   usersDatabase.push(newUser);
-  console.log(`[Al_Hayat Neuro AI] New user registered: ${newUser.name} (${newUser.email})`);
+  console.log(`[Al_Hayat NeuroCare AI] New user registered: ${newUser.name} (${newUser.email})`);
 
   return res.json({
     success: true,
-    message: 'Registration successful! Welcome to Al_Hayat Neuro AI.',
+    message: 'Registration successful! Welcome to Al_Hayat NeuroCare AI.',
     user: {
       id: newUser.id,
       name: newUser.name,
@@ -235,7 +235,7 @@ app.post('/api/auth/login', (req, res) => {
     usersDatabase.push(user);
   }
 
-  console.log(`[Al_Hayat Neuro AI] User signed in: ${user.name} (${user.email})`);
+  console.log(`[Al_Hayat NeuroCare AI] User signed in: ${user.name} (${user.email})`);
 
   return res.json({
     success: true,
@@ -276,7 +276,7 @@ app.post('/api/auth/forgot-password', (req, res) => {
   user.password = newPassword.trim();
   otpStore.delete(normalizedEmail);
 
-  console.log(`[Al_Hayat Neuro AI] Password reset for user: ${user.email}`);
+  console.log(`[Al_Hayat NeuroCare AI] Password reset for user: ${user.email}`);
 
   return res.json({
     success: true,
@@ -309,9 +309,9 @@ app.post('/api/auth/google', (req, res) => {
       registeredAt: new Date().toISOString()
     };
     usersDatabase.push(user);
-    console.log(`[Al_Hayat Neuro AI] New Google user registered: ${user.name} (${user.email})`);
+    console.log(`[Al_Hayat NeuroCare AI] New Google user registered: ${user.name} (${user.email})`);
   } else {
-    console.log(`[Al_Hayat Neuro AI] Google user signed in: ${user.name} (${user.email})`);
+    console.log(`[Al_Hayat NeuroCare AI] Google user signed in: ${user.name} (${user.email})`);
   }
 
   return res.json({
@@ -334,7 +334,7 @@ app.post('/api/auth/google', (req, res) => {
 app.get('/api/health', (req, res) => {
   res.json({
     status: 'ONLINE',
-    service: 'Al_Hayat Neuro AI Secure Clinical Server',
+    service: 'Al_Hayat NeuroCare AI Secure Clinical Server',
     smtpConfigured: Boolean(mailTransporter),
     registeredUsersCount: usersDatabase.length,
     timestamp: new Date().toISOString()
@@ -451,7 +451,7 @@ app.post('/api/chat', async (req, res) => {
     if (!apiKey) {
       return res.json({
         isDemoMode: true,
-        source: 'Al_Hayat Neuro AI Clinical Knowledge Engine (Local Verified Mode)',
+        source: 'Al_Hayat NeuroCare AI Clinical Knowledge Engine (Local Verified Mode)',
         notice: 'Operating in verified offline clinical neurology mode.',
         reply: null
       });
@@ -464,7 +464,7 @@ app.post('/api/chat', async (req, res) => {
         contents: [
           {
             role: 'user',
-            parts: [{ text: `You are Al_Hayat Neuro AI Medical Assistant. Reply in ${language}. Never prescribe medicines. ${userText}` }]
+            parts: [{ text: `You are Al_Hayat NeuroCare AI Medical Assistant. Reply in ${language}. Never prescribe medicines. ${userText}` }]
           }
         ]
       })
@@ -488,5 +488,5 @@ app.post('/api/chat', async (req, res) => {
 });
 
 app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Al_Hayat Neuro AI Secure Medical Backend running on http://localhost:${PORT}`);
+  console.log(`Al_Hayat NeuroCare AI Secure Medical Backend running on http://localhost:${PORT}`);
 });

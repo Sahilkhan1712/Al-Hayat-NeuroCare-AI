@@ -214,7 +214,7 @@ export default function AuthScreen({ onLoginSuccess }) {
 
           <div>
             <h1 className="text-2xl sm:text-3xl font-black font-mono tracking-wider text-white">
-              Al_Hayat <span className="text-cyan-400">Neuro AI</span>
+              Al_Hayat <span className="text-cyan-400">NeuroCare AI</span>
             </h1>
             <p className="text-xs sm:text-sm font-mono text-cyan-300 font-medium mt-1">
               Clinical 3D Neuroanatomy & Deep Learning Diagnostic Suite
@@ -587,7 +587,7 @@ export default function AuthScreen({ onLoginSuccess }) {
             <Shield className="w-3.5 h-3.5 text-emerald-400" />
             <span>256-Bit SSL Encrypted • HIPAA & ISO-27001 Clinical Protocol</span>
           </div>
-          <p>© 2026 Al_Hayat Neuro AI • Final Year B.Tech CSE AI & ML Project</p>
+          <p>© 2026 Al_Hayat NeuroCare AI • Final Year B.Tech CSE AI & ML Project</p>
         </div>
       </div>
     </div>

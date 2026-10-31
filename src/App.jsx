@@ -297,7 +297,7 @@ export default function App() {
                 </div>
                 <div>
                   <h3 className="font-black text-white text-base tracking-tight font-sans">
-                    Al_Hayat <span className="text-cyan-400">Neuro AI</span>
+                    Al_Hayat <span className="text-cyan-400">NeuroCare AI</span>
                   </h3>
                   <p className="text-[10px] font-mono text-cyan-300/80">Clinical 3D Diagnostic Hospital</p>
                 </div>
@@ -439,7 +439,7 @@ export default function App() {
           {/* Divider */}
           <div className="border-t border-slate-800/80 pt-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] font-mono text-slate-500">
             <div>
-              © 2026 Al_Hayat Neuro AI Hospital & Research Institute. All rights reserved.
+              © 2026 Al_Hayat NeuroCare AI Hospital & Research Institute. All rights reserved.
             </div>
 
             <div className="flex items-center gap-4 flex-wrap">
@@ -465,7 +465,7 @@ export default function App() {
           {/* Medical Notice */}
           <div className="p-2.5 rounded-xl bg-slate-950/80 border border-slate-800 text-[10.5px] text-slate-400 leading-relaxed font-sans">
             <strong className="text-cyan-400 font-mono uppercase mr-1">Medical Disclaimer:</strong>
-            Al_Hayat Neuro AI provides digital neurological decision support and educational anatomical visualization based on published guidelines (ICHD-3 / ICD-11). It does not replace physical examination or emergency resuscitation. In acute cases of facial drooping, sudden speech loss, limb paralysis, or thunderclap headache, immediately call national emergency 112 / 108.
+            Al_Hayat NeuroCare AI provides digital neurological decision support and educational anatomical visualization based on published guidelines (ICHD-3 / ICD-11). It does not replace physical examination or emergency resuscitation. In acute cases of facial drooping, sudden speech loss, limb paralysis, or thunderclap headache, immediately call national emergency 112 / 108.
           </div>
 
         </div>

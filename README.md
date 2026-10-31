@@ -1,11 +1,11 @@
-# NeuroCare AI 🧠
+# 🧠 Al_Hayat NeuroCare AI
 ### Premium AI-Powered Brain Health & 3D Visualization Platform
 **Final-Year B.Tech CSE (AI & ML) Capstone Project**
 
 ---
 
 ## 🌟 Overview
-**NeuroCare AI** is a medical technology web application designed to bring realistic 3D neuroanatomy visualization together with clinical deep learning diagnostic models.
+**Al_Hayat NeuroCare AI** is a medical technology web application designed to bring realistic 3D neuroanatomy visualization together with clinical deep learning diagnostic models.
 
 ---
 

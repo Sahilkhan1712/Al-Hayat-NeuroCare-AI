@@ -136,7 +136,7 @@ export default function Navbar({
                 Al_Hayat
               </span>
               <span className="text-base sm:text-lg font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-400 font-sans">
-                Neuro AI
+                NeuroCare AI
               </span>
             </div>
             <span className="text-[10px] font-mono text-cyan-300/90 flex items-center gap-1 font-semibold leading-tight mt-0.5">

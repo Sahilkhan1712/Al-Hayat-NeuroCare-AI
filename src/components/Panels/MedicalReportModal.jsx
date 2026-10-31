@@ -182,7 +182,7 @@ export default function MedicalReportModal({ report, isOpen, onClose, onShowIn3D
       // Right Column
       ctx.font = 'bold 22px sans-serif';
       ctx.fillStyle = '#0369a1';
-      ctx.fillText(`CONSULTANT: ${report.doctorName || 'Dr. Al_Hayat Neuro AI, MD, DM'}`, 705, 382);
+      ctx.fillText(`CONSULTANT: ${report.doctorName || 'Dr. Al_Hayat NeuroCare AI, MD, DM'}`, 705, 382);
 
       ctx.font = 'bold 19px monospace';
       ctx.fillStyle = '#0f172a';
@@ -418,7 +418,7 @@ export default function MedicalReportModal({ report, isOpen, onClose, onShowIn3D
 
       ctx.font = 'bold 16px sans-serif';
       ctx.fillStyle = '#0f172a';
-      ctx.fillText(report.doctorName || 'Dr. Al_Hayat Neuro AI, MD, DM (Neurology)', 960, footerY + 68);
+      ctx.fillText(report.doctorName || 'Dr. Al_Hayat NeuroCare AI, MD, DM (Neurology)', 960, footerY + 68);
 
       ctx.font = '13px monospace';
       ctx.fillStyle = '#475569';
@@ -442,7 +442,7 @@ export default function MedicalReportModal({ report, isOpen, onClose, onShowIn3D
 
       ctx.font = '13px sans-serif';
       ctx.fillStyle = '#475569';
-      ctx.fillText('CONSULTANT: Dr. Al_Hayat Neuro AI, MD, DM (Neurology)  |  EMAIL: opd@alhayatneuro.ai  |  OPD Block-A, Knowledge Park, New Delhi', 90, contactBoxY + 46);
+      ctx.fillText('CONSULTANT: Dr. Al_Hayat NeuroCare AI, MD, DM (Neurology)  |  EMAIL: opd@alhayatneuro.ai  |  OPD Block-A, Knowledge Park, New Delhi', 90, contactBoxY + 46);
 
       callback(canvas);
     };
@@ -505,7 +505,7 @@ export default function MedicalReportModal({ report, isOpen, onClose, onShowIn3D
             Official Medical Consultation Report Parcha
           </span>
           <span className="hidden md:inline text-[11px] font-mono text-slate-400 bg-slate-800/80 px-2 py-0.5 rounded border border-slate-700">
-            Al_Hayat Neuro AI
+            Al_Hayat NeuroCare AI
           </span>
         </div>
 
@@ -770,7 +770,7 @@ export default function MedicalReportModal({ report, isOpen, onClose, onShowIn3D
                       </text>
                     </svg>
                   </div>
-                  <div className="font-bold text-slate-950 text-xs">{report.doctorName || 'Dr. Al_Hayat Neuro AI, MD, DM (Neurology)'}</div>
+                  <div className="font-bold text-slate-950 text-xs">{report.doctorName || 'Dr. Al_Hayat NeuroCare AI, MD, DM (Neurology)'}</div>
                   <div className="text-[9.5px] text-slate-600">Chief Consultant Neurologist & Clinical Neurophysiologist</div>
                   <div className="text-[9.5px] text-blue-900 font-bold">MCI / NMC Reg. No: ALH-NEURO-984210</div>
                 </div>

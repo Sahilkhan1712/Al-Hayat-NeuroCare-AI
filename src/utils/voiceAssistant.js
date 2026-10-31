@@ -1,4 +1,4 @@
-// Al_Hayat Neuro AI Voice & Speech Assistant
+// Al_Hayat NeuroCare AI Voice & Speech Assistant
 // Bulletproof Web Speech Synthesis + Web Audio Chime + Single Welcome Voice Guarantee
 
 class VoiceAssistant {
@@ -126,7 +126,7 @@ class VoiceAssistant {
   }
 
   // Speak Welcome Greeting EXACTLY ONCE on login/register:
-  // "Namaste, aapka Al_Hayat Neuro AI mein swagat hai."
+  // "Namaste, aapka Al_Hayat NeuroCare AI mein swagat hai."
   speakWelcome(force = false) {
     if (!this.synth) return;
     if (this.hasWelcomed && !force) return;
@@ -150,7 +150,7 @@ class VoiceAssistant {
       // Clean single greeting as requested
       const spokenText = textType === 'hindi'
         ? 'नमस्ते, आपका अल-हयात न्यूरो एआई में स्वागत है।'
-        : 'Namaste, aapka Al Hayat Neuro AI mein swagat hai.';
+        : 'Namaste, aapka Al Hayat NeuroCare AI mein swagat hai.';
 
       const utterance = new SpeechSynthesisUtterance(spokenText);
       utterance.rate = 0.95;
@@ -176,7 +176,7 @@ class VoiceAssistant {
         this.isSpeaking = false;
         // Fallback once if needed
         if (textType === 'hindi') {
-          const fb = new SpeechSynthesisUtterance('Namaste, aapka Al Hayat Neuro AI mein swagat hai.');
+          const fb = new SpeechSynthesisUtterance('Namaste, aapka Al Hayat NeuroCare AI mein swagat hai.');
           fb.rate = 0.95;
           this.synth.speak(fb);
         }

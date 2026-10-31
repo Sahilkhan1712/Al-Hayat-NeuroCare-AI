@@ -810,9 +810,9 @@ export function diagnosePatientInput(userText, conversationHistory = []) {
     rxPrescription: matchedDisease.rxPrescription || [],
     diagnosticTests: matchedDisease.diagnosticTests || [],
     redFlags: matchedDisease.redFlags,
-    doctorName: 'Dr. Al_Hayat Neuro AI, MD, DM (Neurology)',
+    doctorName: 'Dr. Al_Hayat NeuroCare AI, MD, DM (Neurology)',
     doctorTitle: 'Chief Neurologist & Clinical Neurophysiologist',
-    hospitalSeal: 'AL_HAYAT NEURO AI • ACCREDITED MEDICAL ASSISTANT'
+    hospitalSeal: 'AL_HAYAT NEUROCARE AI • ACCREDITED MEDICAL ASSISTANT'
   };
 
   return {

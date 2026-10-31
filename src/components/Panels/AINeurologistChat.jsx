@@ -448,7 +448,7 @@ export default function AINeurologistChat({
     {
       id: 1,
       sender: 'ai',
-      text: `Namaste! Main Al_Hayat Neuro AI Neurologist hoon. Consultation shuru karne ke liye, kripya apna **Naam (Name)** aur **Umar (Age)** confirm karein taaki aapki official medical file taiyar ho sake:`,
+      text: `Namaste! Main Al_Hayat NeuroCare AI Neurologist hoon. Consultation shuru karne ke liye, kripya apna **Naam (Name)** aur **Umar (Age)** confirm karein taaki aapki official medical file taiyar ho sake:`,
       time: 'Just now',
       isDemographicsStep: true
     }
@@ -785,7 +785,7 @@ export default function AINeurologistChat({
           <div>
             <div className="flex items-center gap-2">
               <h3 className="font-extrabold text-white text-base tracking-wide">
-                Al_Hayat Neuro AI Doctor
+                Al_Hayat NeuroCare AI Doctor
               </h3>
               <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-cyan-950 border border-cyan-500/30 text-cyan-300 font-semibold">
                 Live Consultant

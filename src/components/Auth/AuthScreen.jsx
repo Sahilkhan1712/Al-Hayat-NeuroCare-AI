@@ -27,59 +27,51 @@ export default function AuthScreen({ onLoginSuccess }) {
   const [statusMessage, setStatusMessage] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null);
 
-  // Sign In State (Requires Name or Email + Password)
+  // Sign In State (Requires Registered Email + Password)
   const [loginIdentifier, setLoginIdentifier] = useState('');
   const [loginPassword, setLoginPassword] = useState('');
-  const [loginRole, setLoginRole] = useState('doctor');
 
-  // Registration State
+  // Registration State (Only for Patient / Healthcare User)
   const [regName, setRegName] = useState('');
   const [regEmail, setRegEmail] = useState('');
   const [regPhone, setRegPhone] = useState('');
   const [regPassword, setRegPassword] = useState('');
   const [regAge, setRegAge] = useState('28');
   const [regGender, setRegGender] = useState('Male');
-  const [regRole, setRegRole] = useState('doctor');
   const [regOtp, setRegOtp] = useState('');
   const [otpSent, setOtpSent] = useState(false);
   const [otpVerified, setOtpVerified] = useState(false);
 
-  // Google / Quick Continue Modal State (Prompt for real name & password)
+  // Google / Quick Continue Modal State (Requires previously registered Google email)
   const [googleModalOpen, setGoogleModalOpen] = useState(false);
-  const [googleName, setGoogleName] = useState('');
   const [googleEmail, setGoogleEmail] = useState('');
   const [googlePassword, setGooglePassword] = useState('');
-  const [googleRole, setGoogleRole] = useState('doctor');
 
   // Forgot Password State
   const [forgotEmail, setForgotEmail] = useState('');
   const [newPassword, setNewPassword] = useState('');
 
-  // 1. Google Sign In Click -> Opens name & password modal (NEVER hardcodes Mohd Sahil)
+  // 1. Google Sign In Click -> Opens modal for registered Google account
   const handleOpenGoogleModal = () => {
     sound.playClick();
     setGoogleModalOpen(true);
     setErrorMessage(null);
     setStatusMessage(null);
-    // Prefill if anything typed on main screen
-    if (loginIdentifier) {
-      if (loginIdentifier.includes('@')) {
-        setGoogleEmail(loginIdentifier);
-      } else {
-        setGoogleName(loginIdentifier);
-      }
+    // Prefill email if anything typed on main screen
+    if (loginIdentifier && loginIdentifier.includes('@')) {
+      setGoogleEmail(loginIdentifier);
     }
   };
 
-  // 2. Submit Google Sign In with real Name & Password
+  // 2. Submit Google Sign In with registered Google Email & Password
   const handleGoogleModalSubmit = async (e) => {
     e.preventDefault();
-    if (!googleName.trim()) {
-      setErrorMessage('Please enter your full name for Google Sign-In.');
+    if (!googleEmail.trim()) {
+      setErrorMessage('Please enter your registered Google email address.');
       return;
     }
     if (!googlePassword.trim() || googlePassword.length < 4) {
-      setErrorMessage('Please enter a password (min 4 characters).');
+      setErrorMessage('Please enter your password (min 4 characters).');
       return;
     }
 
@@ -88,10 +80,8 @@ export default function AuthScreen({ onLoginSuccess }) {
     setErrorMessage(null);
     try {
       const res = await authService.googleSignIn({
-        name: googleName.trim(),
         email: googleEmail.trim(),
-        password: googlePassword,
-        role: googleRole
+        password: googlePassword
       });
       if (res.success && res.user) {
         sound.playSelect();
@@ -171,8 +161,7 @@ export default function AuthScreen({ onLoginSuccess }) {
         phone: regPhone.trim(),
         password: regPassword,
         age: regAge,
-        gender: regGender,
-        role: regRole
+        gender: regGender
       });
       if (res.success && res.user) {
         sound.playSelect();
@@ -187,11 +176,11 @@ export default function AuthScreen({ onLoginSuccess }) {
     }
   };
 
-  // 6. Sign In Submit (Takes Name or Email + Password, then OK)
+  // 6. Sign In Submit (Strictly requires registered email + password)
   const handleSignInSubmit = async (e) => {
     e.preventDefault();
     if (!loginIdentifier.trim()) {
-      setErrorMessage('Please enter your Full Name or Email.');
+      setErrorMessage('Please enter your Registered Email Address.');
       return;
     }
     if (!loginPassword.trim() || loginPassword.length < 4) {
@@ -203,15 +192,15 @@ export default function AuthScreen({ onLoginSuccess }) {
     setLoading(true);
     setErrorMessage(null);
     try {
-      const res = await authService.login(loginIdentifier.trim(), loginPassword, loginRole);
+      const res = await authService.login(loginIdentifier.trim(), loginPassword);
       if (res.success && res.user) {
         sound.playSelect();
         onLoginSuccess(res.user);
       } else {
-        setErrorMessage(res.message || 'Invalid name or password.');
+        setErrorMessage(res.message || 'Invalid email or password.');
       }
     } catch (err) {
-      setErrorMessage(err.message || 'Login failed. Please verify credentials.');
+      setErrorMessage(err.message || 'Login failed. Please verify credentials or register.');
     } finally {
       setLoading(false);
     }
@@ -353,17 +342,17 @@ export default function AuthScreen({ onLoginSuccess }) {
             <form onSubmit={handleSignInSubmit} className="space-y-3.5">
               <div className="space-y-1">
                 <label className="text-[11px] font-mono text-slate-300 block font-semibold flex items-center justify-between">
-                  <span>Email Address or Full Name <span className="text-cyan-400">*</span></span>
-                  <span className="text-[10px] text-slate-400 font-normal">अपनी ईमेल आईडी या नाम लिखें</span>
+                  <span>Registered Email Address <span className="text-cyan-400">*</span></span>
+                  <span className="text-[10px] text-slate-400 font-normal">रजिस्टर्ड ईमेल आईडी</span>
                 </label>
                 <div className="relative">
                   <Mail className="w-4 h-4 text-cyan-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
                   <input
-                    type="text"
+                    type="email"
                     required
                     value={loginIdentifier}
                     onChange={(e) => setLoginIdentifier(e.target.value)}
-                    placeholder="e.g. yourname@email.com or Dr. Ayesha"
+                    placeholder="Enter your registered email (e.g. name@email.com)"
                     className="w-full glass-input pl-10 pr-4 py-2.5 rounded-xl text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400"
                   />
                 </div>
@@ -409,44 +398,13 @@ export default function AuthScreen({ onLoginSuccess }) {
                 </div>
               </div>
 
-              {/* Login Role Selector */}
-              <div className="space-y-1.5 pt-0.5">
-                <label className="text-[10px] font-mono text-slate-400 block font-semibold">
-                  I am logging in as:
-                </label>
-                <div className="grid grid-cols-2 gap-2">
-                  <button
-                    type="button"
-                    onClick={() => {
-                      sound.playClick();
-                      setLoginRole('doctor');
-                    }}
-                    className={`py-2 px-3 rounded-xl border text-xs font-mono font-bold flex items-center justify-center gap-2 transition-all cursor-pointer ${
-                      loginRole === 'doctor'
-                        ? 'bg-cyan-500/20 border-cyan-400 text-cyan-300 shadow-[0_0_15px_rgba(6,182,212,0.25)]'
-                        : 'bg-slate-950/60 border-slate-800 text-slate-400 hover:border-slate-700'
-                    }`}
-                  >
-                    <Stethoscope className="w-3.5 h-3.5" />
-                    <span>Neurologist / Doctor</span>
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={() => {
-                      sound.playClick();
-                      setLoginRole('patient');
-                    }}
-                    className={`py-2 px-3 rounded-xl border text-xs font-mono font-bold flex items-center justify-center gap-2 transition-all cursor-pointer ${
-                      loginRole === 'patient'
-                        ? 'bg-cyan-500/20 border-cyan-400 text-cyan-300 shadow-[0_0_15px_rgba(6,182,212,0.25)]'
-                        : 'bg-slate-950/60 border-slate-800 text-slate-400 hover:border-slate-700'
-                    }`}
-                  >
-                    <User className="w-3.5 h-3.5" />
-                    <span>Patient / Healthcare User</span>
-                  </button>
+              {/* Patient / Healthcare User Dedicated Access Notice */}
+              <div className="p-2.5 rounded-xl bg-cyan-950/40 border border-cyan-500/30 text-[11px] font-mono text-cyan-300 flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <User className="w-4 h-4 text-cyan-400 flex-shrink-0" />
+                  <span>Access Mode: <strong>Patient & Healthcare User (मरीज़ पोर्टल)</strong></span>
                 </div>
+                <span className="text-[10px] text-cyan-400 font-bold bg-cyan-900/60 px-2 py-0.5 rounded-md">Verified</span>
               </div>
 
               {/* OK ACTION: SIGN IN */}
@@ -455,7 +413,7 @@ export default function AuthScreen({ onLoginSuccess }) {
                 disabled={loading}
                 className="w-full mt-2 py-3 rounded-xl bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 hover:from-cyan-400 hover:to-blue-500 disabled:opacity-50 text-white font-extrabold text-xs sm:text-sm font-mono transition-all flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(6,182,212,0.4)] group cursor-pointer"
               >
-                <span>{loading ? 'Verifying & Signing In...' : 'OK — Sign In to Platform (लॉग इन करें)'}</span>
+                <span>{loading ? 'Verifying Registered Account...' : 'Sign In as Patient (लॉग इन करें)'}</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
 
@@ -554,44 +512,13 @@ export default function AuthScreen({ onLoginSuccess }) {
                 </div>
               </div>
 
-              {/* Role Selection */}
-              <div className="space-y-1">
-                <label className="text-[10px] font-mono text-slate-300 block font-semibold">
-                  Select Role <span className="text-emerald-400">*</span>
-                </label>
-                <div className="grid grid-cols-2 gap-2">
-                  <button
-                    type="button"
-                    onClick={() => {
-                      sound.playClick();
-                      setRegRole('doctor');
-                    }}
-                    className={`py-2 px-3 rounded-xl border text-xs font-mono font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer ${
-                      regRole === 'doctor'
-                        ? 'bg-emerald-500/20 border-emerald-400 text-emerald-300 shadow-[0_0_15px_rgba(16,185,129,0.25)]'
-                        : 'bg-slate-950/60 border-slate-800 text-slate-400 hover:border-slate-700'
-                    }`}
-                  >
-                    <Stethoscope className="w-3.5 h-3.5" />
-                    <span>Doctor / Neurologist</span>
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={() => {
-                      sound.playClick();
-                      setRegRole('patient');
-                    }}
-                    className={`py-2 px-3 rounded-xl border text-xs font-mono font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer ${
-                      regRole === 'patient'
-                        ? 'bg-emerald-500/20 border-emerald-400 text-emerald-300 shadow-[0_0_15px_rgba(16,185,129,0.25)]'
-                        : 'bg-slate-950/60 border-slate-800 text-slate-400 hover:border-slate-700'
-                    }`}
-                  >
-                    <User className="w-3.5 h-3.5" />
-                    <span>Patient / Healthcare User</span>
-                  </button>
+              {/* Patient Account Type Notice */}
+              <div className="p-2.5 rounded-xl bg-emerald-950/40 border border-emerald-500/30 text-[11px] font-mono text-emerald-300 flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <User className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                  <span>Account Type: <strong>Patient & Healthcare User (मरीज़ खाता)</strong></span>
                 </div>
+                <span className="text-[10px] text-emerald-400 font-bold bg-emerald-900/60 px-2 py-0.5 rounded-md">Verified</span>
               </div>
 
               {/* Age & Gender */}
@@ -802,35 +729,24 @@ export default function AuthScreen({ onLoginSuccess }) {
                 </svg>
               </div>
               <div>
-                <h3 className="text-sm font-bold text-white font-mono">Continue with Google</h3>
-                <p className="text-[11px] text-slate-400">Enter your Google profile name & credentials</p>
+                <h3 className="text-sm font-bold text-white font-mono">Continue with Google Account</h3>
+                <p className="text-[11px] text-slate-400">Strictly for registered Patient & Healthcare User accounts</p>
               </div>
             </div>
 
-            <form onSubmit={handleGoogleModalSubmit} className="space-y-3 pt-2">
-              <div className="space-y-1">
-                <label className="text-[11px] font-mono text-slate-300 block font-semibold">
-                  Your Full Name <span className="text-cyan-400">*</span>
-                </label>
-                <div className="relative">
-                  <User className="w-4 h-4 text-cyan-400 absolute left-3 top-1/2 -translate-y-1/2" />
-                  <input
-                    type="text"
-                    required
-                    value={googleName}
-                    onChange={(e) => setGoogleName(e.target.value)}
-                    placeholder="Enter your name (e.g. Dr. Sarah, Amit Patel)"
-                    className="w-full glass-input pl-9 pr-3 py-2 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400"
-                  />
-                </div>
-              </div>
+            <div className="p-2.5 rounded-xl bg-amber-950/40 border border-amber-500/30 text-amber-300 text-[11px] font-mono flex items-start gap-2 mb-3">
+              <AlertCircle className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
+              <span>Aapne jis Google email se pehle register kiya tha, wahi email enter karein. Bina registration ke login nahi hoga.</span>
+            </div>
 
+            <form onSubmit={handleGoogleModalSubmit} className="space-y-3 pt-1">
               <div className="space-y-1">
-                <label className="text-[11px] font-mono text-slate-300 block font-semibold">
-                  Google / Gmail Address <span className="text-cyan-400">*</span>
+                <label className="text-[11px] font-mono text-slate-300 block font-semibold flex items-center justify-between">
+                  <span>Registered Google Email <span className="text-cyan-400">*</span></span>
+                  <span className="text-[10px] text-slate-400 font-normal">रजिस्टर्ड जीमेल आईडी</span>
                 </label>
                 <div className="relative">
-                  <Mail className="w-4 h-4 text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
+                  <Mail className="w-4 h-4 text-cyan-400 absolute left-3 top-1/2 -translate-y-1/2" />
                   <input
                     type="email"
                     required
@@ -843,8 +759,9 @@ export default function AuthScreen({ onLoginSuccess }) {
               </div>
 
               <div className="space-y-1">
-                <label className="text-[11px] font-mono text-slate-300 block font-semibold">
-                  Password / PIN <span className="text-cyan-400">*</span>
+                <label className="text-[11px] font-mono text-slate-300 block font-semibold flex items-center justify-between">
+                  <span>Account Password / PIN <span className="text-cyan-400">*</span></span>
+                  <span className="text-[10px] text-slate-400 font-normal">पासवर्ड</span>
                 </label>
                 <div className="relative">
                   <Lock className="w-4 h-4 text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
@@ -853,48 +770,18 @@ export default function AuthScreen({ onLoginSuccess }) {
                     required
                     value={googlePassword}
                     onChange={(e) => setGooglePassword(e.target.value)}
-                    placeholder="Enter password (min 4 chars)"
+                    placeholder="Enter account password"
                     className="w-full glass-input pl-9 pr-3 py-2 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400"
                   />
-                </div>
-              </div>
-
-              <div className="space-y-1">
-                <label className="text-[10px] font-mono text-slate-400 block">Select Role</label>
-                <div className="grid grid-cols-2 gap-2">
-                  <button
-                    type="button"
-                    onClick={() => setGoogleRole('doctor')}
-                    className={`py-1.5 px-2 rounded-lg text-xs font-mono font-bold flex items-center justify-center gap-1.5 border ${
-                      googleRole === 'doctor'
-                        ? 'bg-cyan-500/20 border-cyan-400 text-cyan-300'
-                        : 'bg-slate-900 border-slate-800 text-slate-400'
-                    }`}
-                  >
-                    <Stethoscope className="w-3.5 h-3.5" />
-                    <span>Neurologist</span>
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setGoogleRole('patient')}
-                    className={`py-1.5 px-2 rounded-lg text-xs font-mono font-bold flex items-center justify-center gap-1.5 border ${
-                      googleRole === 'patient'
-                        ? 'bg-cyan-500/20 border-cyan-400 text-cyan-300'
-                        : 'bg-slate-900 border-slate-800 text-slate-400'
-                    }`}
-                  >
-                    <User className="w-3.5 h-3.5" />
-                    <span>Patient</span>
-                  </button>
                 </div>
               </div>
 
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full mt-3 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 text-white font-mono font-bold text-xs flex items-center justify-center gap-2 shadow-lg"
+                className="w-full mt-3 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 text-white font-mono font-bold text-xs flex items-center justify-center gap-2 shadow-lg cursor-pointer"
               >
-                <span>{loading ? 'Authenticating...' : 'OK — Continue to NeuroCare AI'}</span>
+                <span>{loading ? 'Verifying Registered Account...' : 'Verify & Continue as Patient'}</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
             </form>

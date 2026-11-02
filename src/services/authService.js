@@ -1,5 +1,5 @@
-// Al_Hayat NeuroCare AI — Robust Authentication Service (Patient, Nurse, Doctor, Admin)
-// Connects to Express + MongoDB backend when online, and provides resilient local storage fallback.
+// Al_Hayat NeuroCare AI — Patient & Healthcare User Authentication Service
+// Strict registration model: Only registered Patient/Healthcare users can Sign In or Continue with Google.
 
 const LOCAL_USERS_KEY = 'alhayat_registered_users';
 const LEGACY_USERS_KEY = 'mediverse_registered_users';
@@ -29,16 +29,6 @@ function saveLocalUsers(users) {
     localStorage.setItem(LOCAL_USERS_KEY, JSON.stringify(users));
     localStorage.setItem(LEGACY_USERS_KEY, JSON.stringify(users));
   } catch (e) {}
-}
-
-function formatNameFromEmail(email) {
-  if (!email || !email.includes('@')) return email || 'Healthcare User';
-  const prefix = email.split('@')[0];
-  const parts = prefix.replace(/[._\-0-9]+/g, ' ').trim().split(/\s+/).filter(Boolean);
-  if (parts.length === 0) return prefix;
-  return parts
-    .map(p => p.charAt(0).toUpperCase() + p.slice(1).toLowerCase())
-    .join(' ');
 }
 
 function findRegisteredUser(identifier) {
@@ -110,8 +100,8 @@ export const authService = {
     throw new Error('Incorrect verification code. Please enter 123456.');
   },
 
-  // 3. Register user (Doctor, Patient, Nurse)
-  async register({ name, email, phone, password, age, gender, role }) {
+  // 3. Register user (Dedicated for Patient / Healthcare User)
+  async register({ name, email, phone, password, age, gender }) {
     const cleanName = String(name || '').trim();
     if (!cleanName) {
       throw new Error('Please enter your full name (अपना पूरा नाम लिखें).');
@@ -122,19 +112,22 @@ export const authService = {
       throw new Error('Password must be at least 4 characters (पासवर्ड कम से कम 4 अक्षरों का होना चाहिए).');
     }
 
-    const rawEmail = String(email || '').trim();
-    if (!rawEmail) {
-      throw new Error('Please enter your email address (अपनी ईमेल आईडी लिखें).');
+    const rawEmail = String(email || '').trim().toLowerCase();
+    if (!rawEmail || !rawEmail.includes('@')) {
+      throw new Error('Please enter a valid email address (वैध ईमेल आईडी लिखें).');
     }
-    const cleanEmail = rawEmail.includes('@')
-      ? rawEmail.toLowerCase()
-      : `${cleanName.toLowerCase().replace(/[^a-z0-9]/g, '') || 'user'}@alhayat.ai`;
+    const cleanEmail = rawEmail;
 
-    let assignedRole = 'Patient';
-    if (role === 'nurse' || role === 'Nurse') assignedRole = 'Nurse';
-    else if (role === 'doctor' || role === 'Doctor') assignedRole = 'Doctor';
+    // Check if account already exists with this email
+    const users = getLocalUsers();
+    const alreadyRegistered = users.find(u => String(u.email || '').trim().toLowerCase() === cleanEmail);
+    if (alreadyRegistered) {
+      throw new Error('An account is already registered with this email address. Please click "Sign In" instead! (इस ईमेल से पहले से खाता मौजूद है। कृपया "Sign In" करें!)');
+    }
 
-    // Attempt MongoDB server if available
+    const assignedRole = 'Patient';
+
+    // Attempt MongoDB server if online
     const serverResult = await tryServerRequest('register', {
       name: cleanName,
       email: cleanEmail,
@@ -150,15 +143,23 @@ export const authService = {
         localStorage.setItem('alhayat_token', serverResult.data.token);
         localStorage.setItem('mediverse_token', serverResult.data.token);
       }
+      users.push({
+        id: serverResult.data.user.id || 'usr_' + Date.now(),
+        name: cleanName,
+        email: cleanEmail,
+        phone: phone || '',
+        password: cleanPassword,
+        age: age || '26',
+        gender: gender || 'Male',
+        role: assignedRole
+      });
+      saveLocalUsers(users);
       return serverResult.data;
     }
 
-    // Local resilient storage fallback
-    const users = getLocalUsers();
-    const existingIndex = users.findIndex(u => String(u.email || '').trim().toLowerCase() === cleanEmail);
-
+    // Local resilient storage
     const newUser = {
-      id: existingIndex >= 0 ? users[existingIndex].id : 'usr_' + Date.now(),
+      id: 'usr_' + Date.now(),
       name: cleanName,
       email: cleanEmail,
       phone: phone || '',
@@ -166,14 +167,10 @@ export const authService = {
       age: age ? String(age) : '26',
       gender: gender || 'Male',
       role: assignedRole,
-      avatar: assignedRole === 'Nurse' ? '/nurse_sister.jpg' : ''
+      registeredAt: new Date().toISOString()
     };
 
-    if (existingIndex >= 0) {
-      users[existingIndex] = newUser;
-    } else {
-      users.push(newUser);
-    }
+    users.push(newUser);
     saveLocalUsers(users);
 
     const token = 'token_' + Date.now();
@@ -188,20 +185,20 @@ export const authService = {
     };
   },
 
-  // 4. Login user with Email or Name (Instant lookup or provisioning)
-  async login(identifier, password, roleHint = 'doctor') {
+  // 4. Login user (STRICT: Only allows registered Patient / Healthcare User)
+  async login(identifier, password) {
     const cleanId = String(identifier || '').trim();
     const cleanPassword = String(password || '');
 
     if (!cleanId) {
-      throw new Error('Please enter your Email Address or Full Name.');
+      throw new Error('Please enter your Registered Email Address (अपनी रजिस्टर्ड ईमेल आईडी लिखें).');
     }
     if (!cleanPassword || cleanPassword.length < 4) {
       throw new Error('Please enter your password (minimum 4 characters).');
     }
 
     // 1. Try real server
-    const serverResult = await tryServerRequest('login', { email: cleanId, password: cleanPassword, role: roleHint });
+    const serverResult = await tryServerRequest('login', { email: cleanId, password: cleanPassword, role: 'Patient' });
     if (serverResult.ok && serverResult.data?.user) {
       if (serverResult.data.token) {
         localStorage.setItem('alhayat_token', serverResult.data.token);
@@ -210,84 +207,25 @@ export const authService = {
       return serverResult.data;
     }
 
-    // 2. Search locally registered accounts first
+    // 2. Strict Check: Must be registered
     const existingUser = findRegisteredUser(cleanId);
-    if (existingUser) {
-      if (existingUser.password && cleanPassword && existingUser.password !== cleanPassword) {
-        throw new Error('Incorrect password. Please verify and try again.');
-      }
-      const token = 'token_' + Date.now();
-      localStorage.setItem('alhayat_token', token);
-      localStorage.setItem('mediverse_token', token);
-      return {
-        success: true,
-        message: `Welcome back, ${existingUser.name}!`,
-        user: { ...existingUser, password: '' },
-        token
-      };
+    if (!existingUser) {
+      throw new Error('Account not found with this email. Registration is required before login! (इस ईमेल से कोई खाता नहीं मिला। लॉगिन करने से पहले "Create Account" टैब पर जाकर रजिस्ट्रेशन करें।)');
     }
 
-    // 3. Nurse sister demo check
-    const lower = cleanId.toLowerCase();
-    if (lower === 'nurse.sister@alhayat.ai' || lower === 'nurse.sister@mediverse3d.com') {
-      const nurseUser = {
-        id: 'nurse_sister_id',
-        name: 'Nurse Tanjeem (Sister)',
-        email: 'nurse.sister@alhayat.ai',
-        role: 'Nurse',
-        avatar: '/nurse_sister.jpg',
-        qualifications: 'B.Sc. Nursing, PG-CC',
-        regNumber: 'RN-ALH-2026-8841',
-        isVerified: true,
-        isAvailable: true
-      };
-      const token = 'token_nurse_' + Date.now();
-      localStorage.setItem('alhayat_token', token);
-      return { success: true, user: nurseUser, token };
+    // 3. Verify password
+    if (existingUser.password && cleanPassword && existingUser.password !== cleanPassword) {
+      throw new Error('Incorrect password. Please verify and try again. (गलत पासवर्ड। कृपया दोबारा जांचें।)');
     }
 
-    // 4. Dynamic Provisioning for any new Email or Name
-    let assignedRole = roleHint === 'patient' || roleHint === 'Patient' ? 'Patient' : 'Doctor';
-    if (roleHint === 'nurse' || roleHint === 'Nurse') assignedRole = 'Nurse';
-
-    let displayName = '';
-    let displayEmail = '';
-
-    if (cleanId.includes('@')) {
-      displayEmail = cleanId.toLowerCase();
-      displayName = formatNameFromEmail(displayEmail);
-      if (assignedRole === 'Doctor' && !displayName.toLowerCase().startsWith('dr')) {
-        displayName = `Dr. ${displayName}`;
-      }
-    } else {
-      displayName = cleanId;
-      displayEmail = `${cleanId.toLowerCase().replace(/[^a-z0-9]/g, '') || 'user'}@alhayat.ai`;
-    }
-
-    const newUser = {
-      id: 'usr_' + Date.now(),
-      name: displayName,
-      email: displayEmail,
-      phone: '',
-      password: cleanPassword,
-      role: assignedRole,
-      age: '28',
-      gender: 'Male',
-      avatar: assignedRole === 'Nurse' ? '/nurse_sister.jpg' : ''
-    };
-
-    const users = getLocalUsers();
-    users.push(newUser);
-    saveLocalUsers(users);
-
-    const token = 'token_usr_' + Date.now();
+    const token = 'token_' + Date.now();
     localStorage.setItem('alhayat_token', token);
     localStorage.setItem('mediverse_token', token);
 
     return {
       success: true,
-      message: `Welcome to Al_Hayat NeuroCare AI, ${displayName}!`,
-      user: { ...newUser, password: '' },
+      message: `Welcome back, ${existingUser.name}!`,
+      user: { ...existingUser, role: 'Patient', password: '' },
       token
     };
   },
@@ -303,44 +241,31 @@ export const authService = {
 
     const users = getLocalUsers();
     const idx = users.findIndex(u => String(u.email || '').trim().toLowerCase() === cleanEmail);
-    if (idx >= 0) {
-      users[idx].password = newPassword;
-      saveLocalUsers(users);
+    if (idx === -1) {
+      throw new Error('No registered account found with this email address. (इस ईमेल से कोई खाता पंजीकृत नहीं है।)');
     }
-    return { success: true, message: 'Password reset successfully!' };
+    users[idx].password = newPassword;
+    saveLocalUsers(users);
+    return { success: true, message: 'Password reset successfully! You can now sign in.' };
   },
 
-  // 6. Google Sign-In helper (Accepts real Name, Email & Role)
-  async googleSignIn({ name, email, password, role }) {
-    const rawName = String(name || '').trim();
+  // 6. Google Sign-In helper (STRICT: Only allows already registered Google email)
+  async googleSignIn({ email, password }) {
     const rawEmail = String(email || '').trim().toLowerCase();
-    const assignedRole = role === 'patient' || role === 'Patient' ? 'Patient' : 'Doctor';
-
-    const displayName = rawName || (rawEmail ? formatNameFromEmail(rawEmail) : 'Healthcare User');
-    const displayEmail = rawEmail || `${displayName.toLowerCase().replace(/[^a-z0-9]/g, '') || 'user'}@gmail.com`;
-
-    const users = getLocalUsers();
-    const existingIndex = users.findIndex(u => String(u.email || '').trim().toLowerCase() === displayEmail);
-
-    const userObj = {
-      id: existingIndex >= 0 ? users[existingIndex].id : 'google_' + Date.now(),
-      name: displayName,
-      email: displayEmail,
-      phone: existingIndex >= 0 ? (users[existingIndex].phone || '') : '',
-      password: password || 'GoogleAuth@123',
-      role: assignedRole,
-      age: existingIndex >= 0 ? (users[existingIndex].age || '28') : '28',
-      gender: existingIndex >= 0 ? (users[existingIndex].gender || 'Male') : 'Male',
-      provider: 'google',
-      avatar: assignedRole === 'Nurse' ? '/nurse_sister.jpg' : ''
-    };
-
-    if (existingIndex >= 0) {
-      users[existingIndex] = { ...users[existingIndex], ...userObj };
-    } else {
-      users.push(userObj);
+    if (!rawEmail || !rawEmail.includes('@')) {
+      throw new Error('Please enter a valid Google / Gmail address (वैध जीमेल पता दर्ज करें).');
     }
-    saveLocalUsers(users);
+
+    // Strict Check: User MUST have registered with this Google email first!
+    const existingUser = findRegisteredUser(rawEmail);
+    if (!existingUser) {
+      throw new Error('This Google email is not registered yet! You must register first before continuing with Google. (यह Google ईमेल अभी रजिस्टर्ड नहीं है! Continue with Google करने से पहले "Create Account" पर जाकर रजिस्ट्रेशन करें।)');
+    }
+
+    // Password verification
+    if (password && existingUser.password && existingUser.password !== password) {
+      throw new Error('Incorrect password for this registered Google account. (गलत पासवर्ड दर्ज किया गया है।)');
+    }
 
     const token = 'token_google_' + Date.now();
     localStorage.setItem('alhayat_token', token);
@@ -348,8 +273,8 @@ export const authService = {
 
     return {
       success: true,
-      message: `Welcome to Al_Hayat NeuroCare AI, ${displayName}!`,
-      user: { ...userObj, password: '' },
+      message: `Welcome back, ${existingUser.name}!`,
+      user: { ...existingUser, role: 'Patient', password: '' },
       token
     };
   }

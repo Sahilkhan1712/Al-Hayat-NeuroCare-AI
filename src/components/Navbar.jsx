@@ -287,7 +287,7 @@ export default function Navbar({
                         <span className="truncate">{currentUser.name || (currentUser.email ? currentUser.email.split('@')[0] : 'Healthcare User')}</span>
                       </div>
                       <div className="text-[10px] font-mono text-cyan-400 mt-0.5 flex items-center justify-between">
-                        <span>Role: {currentUser.role || 'Member'}</span>
+                        <span>Role: Patient / Healthcare User</span>
                         <span className="text-[9px] text-slate-400">UHID: {currentUser.id ? currentUser.id.slice(-6).toUpperCase() : 'ALH-9842'}</span>
                       </div>
                       <div className="text-[9.5px] font-mono text-slate-400 mt-0.5 truncate">

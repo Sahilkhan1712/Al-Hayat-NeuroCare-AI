@@ -1,33 +1,24 @@
-// Al_Hayat NeuroCare AI — Robust Hybrid Authentication Service
-// Seamlessly connects to MongoDB backend when online, and provides graceful fallback for Vercel static deployment.
+// Al_Hayat NeuroCare AI — Robust Authentication Service (Patient, Nurse, Doctor, Admin)
+// Connects to Express + MongoDB backend when online, and provides resilient local storage fallback.
 
 const LOCAL_USERS_KEY = 'alhayat_registered_users';
+const LEGACY_USERS_KEY = 'mediverse_registered_users';
 
 function getLocalUsers() {
   try {
-    const raw = localStorage.getItem(LOCAL_USERS_KEY);
-    return raw ? JSON.parse(raw) : [
-      {
-        id: 'user_default_doctor',
-        name: 'Dr. Sahil Khan',
-        email: 'sahil@alhayat.ai',
-        phone: '+91 98765 43210',
-        password: 'password123',
-        role: 'Chief Neurologist',
-        age: '28',
-        gender: 'Male'
-      },
-      {
-        id: 'user_default_patient',
-        name: 'Mohd Sahil',
-        email: 'success1712a@gmail.com',
-        phone: '+91 98765 43210',
-        password: 'password123',
-        role: 'Patient',
-        age: '22',
-        gender: 'Male'
-      }
-    ];
+    const rawAlhayat = localStorage.getItem(LOCAL_USERS_KEY);
+    const rawLegacy = localStorage.getItem(LEGACY_USERS_KEY);
+    const list1 = rawAlhayat ? JSON.parse(rawAlhayat) : [];
+    const list2 = rawLegacy ? JSON.parse(rawLegacy) : [];
+    const combined = Array.isArray(list1) ? [...list1] : [];
+    if (Array.isArray(list2)) {
+      list2.forEach(u => {
+        if (!combined.some(c => (c.email && c.email.toLowerCase() === (u.email || '').toLowerCase()) || c.id === u.id)) {
+          combined.push(u);
+        }
+      });
+    }
+    return combined;
   } catch (e) {
     return [];
   }
@@ -36,13 +27,35 @@ function getLocalUsers() {
 function saveLocalUsers(users) {
   try {
     localStorage.setItem(LOCAL_USERS_KEY, JSON.stringify(users));
+    localStorage.setItem(LEGACY_USERS_KEY, JSON.stringify(users));
   } catch (e) {}
+}
+
+function formatNameFromEmail(email) {
+  if (!email || !email.includes('@')) return email || 'Healthcare User';
+  const prefix = email.split('@')[0];
+  const parts = prefix.replace(/[._\-0-9]+/g, ' ').trim().split(/\s+/).filter(Boolean);
+  if (parts.length === 0) return prefix;
+  return parts
+    .map(p => p.charAt(0).toUpperCase() + p.slice(1).toLowerCase())
+    .join(' ');
+}
+
+function findRegisteredUser(identifier) {
+  if (!identifier) return null;
+  const clean = String(identifier).trim().toLowerCase();
+  const users = getLocalUsers();
+  return users.find(u => {
+    const uEmail = String(u.email || '').trim().toLowerCase();
+    const uName = String(u.name || '').trim().toLowerCase();
+    return uEmail === clean || uName === clean;
+  }) || null;
 }
 
 async function tryServerRequest(endpoint, payload) {
   try {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 4000); // 4s timeout
+    const timeoutId = setTimeout(() => controller.abort(), 4000);
 
     const res = await fetch(`/api/auth/${endpoint}`, {
       method: 'POST',
@@ -63,214 +76,281 @@ async function tryServerRequest(endpoint, payload) {
 }
 
 export const authService = {
-  // 1. Send OTP (Tries backend SMTP, falls back to demo OTP code)
+  // 1. Send OTP
   async sendOtp(email, purpose = 'register') {
-    const serverResult = await tryServerRequest('send-otp', { email, purpose });
+    const cleanEmail = String(email || '').trim().toLowerCase();
+    const serverResult = await tryServerRequest('send-otp', { email: cleanEmail, purpose });
     if (serverResult.ok) {
       return serverResult.data;
     }
 
-    // Client fallback if backend is offline or on Vercel
     const demoCode = '123456';
-    sessionStorage.setItem(`otp_${email}_${purpose}`, demoCode);
+    sessionStorage.setItem(`otp_${cleanEmail}_${purpose}`, demoCode);
     return {
       success: true,
-      message: `Verification code sent to ${email} (Demo code: 123456).`,
+      message: `Verification code sent to ${cleanEmail} (Dev code: 123456).`,
       expiresInSeconds: 300
     };
   },
 
   // 2. Verify OTP
   async verifyOtp(email, otp, purpose = 'register') {
-    const serverResult = await tryServerRequest('verify-otp', { email, otp, purpose });
+    const cleanEmail = String(email || '').trim().toLowerCase();
+    const cleanOtp = String(otp || '').trim();
+
+    const serverResult = await tryServerRequest('verify-otp', { email: cleanEmail, otp: cleanOtp, purpose });
     if (serverResult.ok) {
       return serverResult.data;
     }
 
-    // Client fallback check
-    const saved = sessionStorage.getItem(`otp_${email}_${purpose}`);
-    if (otp === '123456' || otp === saved || otp === '999999') {
+    const saved = sessionStorage.getItem(`otp_${cleanEmail}_${purpose}`);
+    if (cleanOtp === '123456' || cleanOtp === saved || cleanOtp === '999999') {
       return { success: true, message: 'Email verified successfully.' };
     }
     throw new Error('Incorrect verification code. Please enter 123456.');
   },
 
-  // 3. Register user (Saves to MongoDB and local database)
+  // 3. Register user (Doctor, Patient, Nurse)
   async register({ name, email, phone, password, age, gender, role }) {
-    const cleanEmail = String(email || '').trim().toLowerCase();
-    
-    // First attempt MongoDB backend
+    const cleanName = String(name || '').trim();
+    if (!cleanName) {
+      throw new Error('Please enter your full name (अपना पूरा नाम लिखें).');
+    }
+
+    const cleanPassword = String(password || '');
+    if (!cleanPassword || cleanPassword.length < 4) {
+      throw new Error('Password must be at least 4 characters (पासवर्ड कम से कम 4 अक्षरों का होना चाहिए).');
+    }
+
+    const rawEmail = String(email || '').trim();
+    if (!rawEmail) {
+      throw new Error('Please enter your email address (अपनी ईमेल आईडी लिखें).');
+    }
+    const cleanEmail = rawEmail.includes('@')
+      ? rawEmail.toLowerCase()
+      : `${cleanName.toLowerCase().replace(/[^a-z0-9]/g, '') || 'user'}@alhayat.ai`;
+
+    let assignedRole = 'Patient';
+    if (role === 'nurse' || role === 'Nurse') assignedRole = 'Nurse';
+    else if (role === 'doctor' || role === 'Doctor') assignedRole = 'Doctor';
+
+    // Attempt MongoDB server if available
     const serverResult = await tryServerRequest('register', {
-      name, email: cleanEmail, phone, password, age, gender, role: role || 'Patient'
+      name: cleanName,
+      email: cleanEmail,
+      phone: phone || '',
+      password: cleanPassword,
+      age: age || '26',
+      gender: gender || 'Male',
+      role: assignedRole
     });
-    if (serverResult.ok && serverResult.data.user) {
+
+    if (serverResult.ok && serverResult.data?.user) {
+      if (serverResult.data.token) {
+        localStorage.setItem('alhayat_token', serverResult.data.token);
+        localStorage.setItem('mediverse_token', serverResult.data.token);
+      }
       return serverResult.data;
     }
 
-    // Graceful fallback for local/Vercel
+    // Local resilient storage fallback
     const users = getLocalUsers();
-    const existing = users.find(u => u.email.toLowerCase() === cleanEmail);
-    if (existing) {
-      // If already registered, update password and return
-      existing.name = name || existing.name;
-      existing.password = password;
-      saveLocalUsers(users);
+    const existingIndex = users.findIndex(u => String(u.email || '').trim().toLowerCase() === cleanEmail);
+
+    const newUser = {
+      id: existingIndex >= 0 ? users[existingIndex].id : 'usr_' + Date.now(),
+      name: cleanName,
+      email: cleanEmail,
+      phone: phone || '',
+      password: cleanPassword,
+      age: age ? String(age) : '26',
+      gender: gender || 'Male',
+      role: assignedRole,
+      avatar: assignedRole === 'Nurse' ? '/nurse_sister.jpg' : ''
+    };
+
+    if (existingIndex >= 0) {
+      users[existingIndex] = newUser;
+    } else {
+      users.push(newUser);
+    }
+    saveLocalUsers(users);
+
+    const token = 'token_' + Date.now();
+    localStorage.setItem('alhayat_token', token);
+    localStorage.setItem('mediverse_token', token);
+
+    return {
+      success: true,
+      message: `Registration successful! Welcome to Al_Hayat NeuroCare AI, ${cleanName}.`,
+      user: { ...newUser, password: '' },
+      token
+    };
+  },
+
+  // 4. Login user with Email or Name (Instant lookup or provisioning)
+  async login(identifier, password, roleHint = 'doctor') {
+    const cleanId = String(identifier || '').trim();
+    const cleanPassword = String(password || '');
+
+    if (!cleanId) {
+      throw new Error('Please enter your Email Address or Full Name.');
+    }
+    if (!cleanPassword || cleanPassword.length < 4) {
+      throw new Error('Please enter your password (minimum 4 characters).');
+    }
+
+    // 1. Try real server
+    const serverResult = await tryServerRequest('login', { email: cleanId, password: cleanPassword, role: roleHint });
+    if (serverResult.ok && serverResult.data?.user) {
+      if (serverResult.data.token) {
+        localStorage.setItem('alhayat_token', serverResult.data.token);
+        localStorage.setItem('mediverse_token', serverResult.data.token);
+      }
+      return serverResult.data;
+    }
+
+    // 2. Search locally registered accounts first
+    const existingUser = findRegisteredUser(cleanId);
+    if (existingUser) {
+      if (existingUser.password && cleanPassword && existingUser.password !== cleanPassword) {
+        throw new Error('Incorrect password. Please verify and try again.');
+      }
+      const token = 'token_' + Date.now();
+      localStorage.setItem('alhayat_token', token);
+      localStorage.setItem('mediverse_token', token);
       return {
         success: true,
-        message: 'Account updated and signed in.',
-        user: { ...existing, password: '' },
-        token: 'local_token_' + Date.now()
+        message: `Welcome back, ${existingUser.name}!`,
+        user: { ...existingUser, password: '' },
+        token
       };
+    }
+
+    // 3. Nurse sister demo check
+    const lower = cleanId.toLowerCase();
+    if (lower === 'nurse.sister@alhayat.ai' || lower === 'nurse.sister@mediverse3d.com') {
+      const nurseUser = {
+        id: 'nurse_sister_id',
+        name: 'Nurse Tanjeem (Sister)',
+        email: 'nurse.sister@alhayat.ai',
+        role: 'Nurse',
+        avatar: '/nurse_sister.jpg',
+        qualifications: 'B.Sc. Nursing, PG-CC',
+        regNumber: 'RN-ALH-2026-8841',
+        isVerified: true,
+        isAvailable: true
+      };
+      const token = 'token_nurse_' + Date.now();
+      localStorage.setItem('alhayat_token', token);
+      return { success: true, user: nurseUser, token };
+    }
+
+    // 4. Dynamic Provisioning for any new Email or Name
+    let assignedRole = roleHint === 'patient' || roleHint === 'Patient' ? 'Patient' : 'Doctor';
+    if (roleHint === 'nurse' || roleHint === 'Nurse') assignedRole = 'Nurse';
+
+    let displayName = '';
+    let displayEmail = '';
+
+    if (cleanId.includes('@')) {
+      displayEmail = cleanId.toLowerCase();
+      displayName = formatNameFromEmail(displayEmail);
+      if (assignedRole === 'Doctor' && !displayName.toLowerCase().startsWith('dr')) {
+        displayName = `Dr. ${displayName}`;
+      }
+    } else {
+      displayName = cleanId;
+      displayEmail = `${cleanId.toLowerCase().replace(/[^a-z0-9]/g, '') || 'user'}@alhayat.ai`;
     }
 
     const newUser = {
       id: 'usr_' + Date.now(),
-      name: name.trim(),
-      email: cleanEmail,
-      phone: phone || '',
-      password,
-      age: age || '25',
-      gender: gender || 'Male',
-      role: role === 'doctor' ? 'Clinical Neurologist' : 'Patient'
+      name: displayName,
+      email: displayEmail,
+      phone: '',
+      password: cleanPassword,
+      role: assignedRole,
+      age: '28',
+      gender: 'Male',
+      avatar: assignedRole === 'Nurse' ? '/nurse_sister.jpg' : ''
     };
 
+    const users = getLocalUsers();
     users.push(newUser);
     saveLocalUsers(users);
 
+    const token = 'token_usr_' + Date.now();
+    localStorage.setItem('alhayat_token', token);
+    localStorage.setItem('mediverse_token', token);
+
     return {
       success: true,
-      message: 'Registration successful! Welcome to Al_Hayat NeuroCare AI.',
+      message: `Welcome to Al_Hayat NeuroCare AI, ${displayName}!`,
       user: { ...newUser, password: '' },
-      token: 'local_token_' + Date.now()
+      token
     };
-  },
-
-  // 4. Login user (Backend first, then local accounts, then auto-create)
-  async login(email, password) {
-    const cleanEmail = String(email || '').trim().toLowerCase();
-
-    // 1. Try real server
-    const serverResult = await tryServerRequest('login', { email: cleanEmail, password });
-    if (serverResult.ok && serverResult.data.user) {
-      return serverResult.data;
-    }
-
-    // 2. Check local registered users
-    const users = getLocalUsers();
-    const found = users.find(u => u.email.toLowerCase() === cleanEmail);
-
-    if (found) {
-      if (found.password && found.password !== password) {
-        throw new Error('Incorrect password. Please verify your password or use Reset Password.');
-      }
-      return {
-        success: true,
-        message: 'Login successful.',
-        user: { ...found, password: '' },
-        token: 'local_token_' + Date.now()
-      };
-    }
-
-    // 3. If credentials valid format and server not available, register & login dynamically
-    if (cleanEmail.includes('@') && password.length >= 4) {
-      const isDoctor = cleanEmail.includes('doctor') || cleanEmail.includes('neuro') || cleanEmail.includes('admin');
-      const newUser = {
-        id: 'usr_' + Date.now(),
-        name: cleanEmail.split('@')[0].replace(/[._]/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
-        email: cleanEmail,
-        password,
-        role: isDoctor ? 'Clinical Neurologist' : 'Patient',
-        age: '28',
-        gender: 'Male'
-      };
-      users.push(newUser);
-      saveLocalUsers(users);
-
-      return {
-        success: true,
-        message: 'Welcome to Al_Hayat NeuroCare AI!',
-        user: { ...newUser, password: '' },
-        token: 'local_token_' + Date.now()
-      };
-    }
-
-    throw new Error('Invalid email or password.');
   },
 
   // 5. Reset Password
   async resetPassword(email, otp, newPassword) {
     const cleanEmail = String(email || '').trim().toLowerCase();
     const serverResult = await tryServerRequest('forgot-password', {
-      email: cleanEmail, otp, newPassword
-    });
-    if (serverResult.ok) {
-      return serverResult.data;
-    }
-
-    // Local fallback
-    const users = getLocalUsers();
-    const found = users.find(u => u.email.toLowerCase() === cleanEmail);
-    if (found) {
-      found.password = newPassword;
-      saveLocalUsers(users);
-      return { success: true, message: 'Password updated successfully.' };
-    }
-
-    // If not found, create account with new password
-    users.push({
-      id: 'usr_' + Date.now(),
-      name: cleanEmail.split('@')[0],
       email: cleanEmail,
-      password: newPassword,
-      role: 'Patient'
+      newPassword
     });
-    saveLocalUsers(users);
-    return { success: true, message: 'Password reset and account ready.' };
+    if (serverResult.ok) return serverResult.data;
+
+    const users = getLocalUsers();
+    const idx = users.findIndex(u => String(u.email || '').trim().toLowerCase() === cleanEmail);
+    if (idx >= 0) {
+      users[idx].password = newPassword;
+      saveLocalUsers(users);
+    }
+    return { success: true, message: 'Password reset successfully!' };
   },
 
-  // 6. Google Sign In (Instant verified login)
-  async googleSignIn(googleUser = null) {
-    const email = googleUser?.email || 'success1712a@gmail.com';
-    const name = googleUser?.name || 'Mohd Sahil';
+  // 6. Google Sign-In helper (Accepts real Name, Email & Role)
+  async googleSignIn({ name, email, password, role }) {
+    const rawName = String(name || '').trim();
+    const rawEmail = String(email || '').trim().toLowerCase();
+    const assignedRole = role === 'patient' || role === 'Patient' ? 'Patient' : 'Doctor';
 
-    // Try server if credential provided
-    if (googleUser?.credential) {
-      const serverResult = await tryServerRequest('google', { credential: googleUser.credential });
-      if (serverResult.ok && serverResult.data.user) {
-        return serverResult.data;
-      }
-    }
+    const displayName = rawName || (rawEmail ? formatNameFromEmail(rawEmail) : 'Healthcare User');
+    const displayEmail = rawEmail || `${displayName.toLowerCase().replace(/[^a-z0-9]/g, '') || 'user'}@gmail.com`;
 
-    // Instant Google OAuth fallback
-    const user = {
-      id: 'google_' + Date.now(),
-      name,
-      email,
-      role: 'Chief Neurologist',
+    const users = getLocalUsers();
+    const existingIndex = users.findIndex(u => String(u.email || '').trim().toLowerCase() === displayEmail);
+
+    const userObj = {
+      id: existingIndex >= 0 ? users[existingIndex].id : 'google_' + Date.now(),
+      name: displayName,
+      email: displayEmail,
+      phone: existingIndex >= 0 ? (users[existingIndex].phone || '') : '',
+      password: password || 'GoogleAuth@123',
+      role: assignedRole,
+      age: existingIndex >= 0 ? (users[existingIndex].age || '28') : '28',
+      gender: existingIndex >= 0 ? (users[existingIndex].gender || 'Male') : 'Male',
       provider: 'google',
-      avatar: 'https://lh3.googleusercontent.com/a/default-user',
-      verified: true
+      avatar: assignedRole === 'Nurse' ? '/nurse_sister.jpg' : ''
     };
+
+    if (existingIndex >= 0) {
+      users[existingIndex] = { ...users[existingIndex], ...userObj };
+    } else {
+      users.push(userObj);
+    }
+    saveLocalUsers(users);
+
+    const token = 'token_google_' + Date.now();
+    localStorage.setItem('alhayat_token', token);
+    localStorage.setItem('mediverse_token', token);
 
     return {
       success: true,
-      message: 'Signed in with Google successfully!',
-      user,
-      token: 'google_token_' + Date.now()
-    };
-  },
-
-  // 7. Instant Demo Access for Reviewers & Doctors
-  quickDoctorAccess() {
-    return {
-      id: 'dr_sahil_lead',
-      name: 'Dr. Sahil Khan, MD',
-      email: 'dr.sahil@alhayat.ai',
-      role: 'Consultant Neurologist & Lead AI Researcher',
-      specialty: 'Clinical Neuro-Oncology & Neurovascular Disorders',
-      age: '30',
-      gender: 'Male',
-      verified: true
+      message: `Welcome to Al_Hayat NeuroCare AI, ${displayName}!`,
+      user: { ...userObj, password: '' },
+      token
     };
   }
 };

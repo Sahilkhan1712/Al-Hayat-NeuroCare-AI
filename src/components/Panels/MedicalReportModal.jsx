@@ -172,7 +172,7 @@ export default function MedicalReportModal({ report, isOpen, onClose, onShowIn3D
       // Left Column
       ctx.fillStyle = '#0f172a';
       ctx.font = 'bold 24px sans-serif';
-      ctx.fillText(`PATIENT NAME: ${(report.patientName || 'Mohd Sahil').toUpperCase()}`, 95, 382);
+      ctx.fillText(`PATIENT NAME: ${(report.patientName || 'PATIENT').toUpperCase()}`, 95, 382);
 
       ctx.font = 'bold 19px monospace';
       ctx.fillStyle = '#1e293b';
@@ -569,7 +569,7 @@ export default function MedicalReportModal({ report, isOpen, onClose, onShowIn3D
             <div className="bg-slate-50/95 rounded-xl border border-slate-400 p-2.5 grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs font-mono shadow-xs">
               <div className="border-r border-slate-300 pr-2">
                 <span className="text-slate-500 block text-[9.5px] uppercase font-bold tracking-wider">मरीज़ का नाम (Patient):</span>
-                <strong className="text-slate-950 text-xs sm:text-sm block font-sans tracking-tight truncate">{report.patientName || 'Mohd Sahil'}</strong>
+                <strong className="text-slate-950 text-xs sm:text-sm block font-sans tracking-tight truncate">{report.patientName || 'Patient'}</strong>
               </div>
 
               <div className="border-r border-slate-300 pr-2">

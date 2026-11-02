@@ -12,6 +12,8 @@ import {
   CheckCircle2,
   KeyRound,
   AlertCircle,
+  Stethoscope,
+  X,
   Sparkles
 } from 'lucide-react';
 import { sound } from '../../utils/audio';
@@ -25,35 +27,75 @@ export default function AuthScreen({ onLoginSuccess }) {
   const [statusMessage, setStatusMessage] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null);
 
-  // Sign In State
-  const [loginEmail, setLoginEmail] = useState('');
+  // Sign In State (Requires Name or Email + Password)
+  const [loginIdentifier, setLoginIdentifier] = useState('');
   const [loginPassword, setLoginPassword] = useState('');
+  const [loginRole, setLoginRole] = useState('doctor');
 
   // Registration State
   const [regName, setRegName] = useState('');
   const [regEmail, setRegEmail] = useState('');
   const [regPhone, setRegPhone] = useState('');
   const [regPassword, setRegPassword] = useState('');
-  const [regAge, setRegAge] = useState('25');
+  const [regAge, setRegAge] = useState('28');
   const [regGender, setRegGender] = useState('Male');
   const [regRole, setRegRole] = useState('doctor');
   const [regOtp, setRegOtp] = useState('');
   const [otpSent, setOtpSent] = useState(false);
   const [otpVerified, setOtpVerified] = useState(false);
 
+  // Google / Quick Continue Modal State (Prompt for real name & password)
+  const [googleModalOpen, setGoogleModalOpen] = useState(false);
+  const [googleName, setGoogleName] = useState('');
+  const [googleEmail, setGoogleEmail] = useState('');
+  const [googlePassword, setGooglePassword] = useState('');
+  const [googleRole, setGoogleRole] = useState('doctor');
+
   // Forgot Password State
   const [forgotEmail, setForgotEmail] = useState('');
   const [newPassword, setNewPassword] = useState('');
 
-  // 1. Google Sign In
-  const handleGoogleSignIn = async () => {
+  // 1. Google Sign In Click -> Opens name & password modal (NEVER hardcodes Mohd Sahil)
+  const handleOpenGoogleModal = () => {
+    sound.playClick();
+    setGoogleModalOpen(true);
+    setErrorMessage(null);
+    setStatusMessage(null);
+    // Prefill if anything typed on main screen
+    if (loginIdentifier) {
+      if (loginIdentifier.includes('@')) {
+        setGoogleEmail(loginIdentifier);
+      } else {
+        setGoogleName(loginIdentifier);
+      }
+    }
+  };
+
+  // 2. Submit Google Sign In with real Name & Password
+  const handleGoogleModalSubmit = async (e) => {
+    e.preventDefault();
+    if (!googleName.trim()) {
+      setErrorMessage('Please enter your full name for Google Sign-In.');
+      return;
+    }
+    if (!googlePassword.trim() || googlePassword.length < 4) {
+      setErrorMessage('Please enter a password (min 4 characters).');
+      return;
+    }
+
     sound.playClick();
     setLoading(true);
     setErrorMessage(null);
     try {
-      const res = await authService.googleSignIn();
+      const res = await authService.googleSignIn({
+        name: googleName.trim(),
+        email: googleEmail.trim(),
+        password: googlePassword,
+        role: googleRole
+      });
       if (res.success && res.user) {
         sound.playSelect();
+        setGoogleModalOpen(false);
         onLoginSuccess(res.user);
       } else {
         setErrorMessage(res.message || 'Google sign-in failed.');
@@ -107,7 +149,7 @@ export default function AuthScreen({ onLoginSuccess }) {
     }
   };
 
-  // 5. Create Account & Enter Platform
+  // 5. Create Account & Enter Platform (OK Action)
   const handleRegisterSubmit = async (e) => {
     e.preventDefault();
     if (!regName.trim() || !regEmail.trim() || !regPassword.trim()) {
@@ -119,6 +161,7 @@ export default function AuthScreen({ onLoginSuccess }) {
       return;
     }
 
+    sound.playClick();
     setLoading(true);
     setErrorMessage(null);
     try {
@@ -144,23 +187,28 @@ export default function AuthScreen({ onLoginSuccess }) {
     }
   };
 
-  // 6. Sign In Submit
+  // 6. Sign In Submit (Takes Name or Email + Password, then OK)
   const handleSignInSubmit = async (e) => {
     e.preventDefault();
-    if (!loginEmail.trim() || !loginPassword.trim()) {
-      setErrorMessage('Please enter both Email and Password.');
+    if (!loginIdentifier.trim()) {
+      setErrorMessage('Please enter your Full Name or Email.');
+      return;
+    }
+    if (!loginPassword.trim() || loginPassword.length < 4) {
+      setErrorMessage('Please enter your password (minimum 4 characters).');
       return;
     }
 
+    sound.playClick();
     setLoading(true);
     setErrorMessage(null);
     try {
-      const res = await authService.login(loginEmail.trim(), loginPassword);
+      const res = await authService.login(loginIdentifier.trim(), loginPassword, loginRole);
       if (res.success && res.user) {
         sound.playSelect();
         onLoginSuccess(res.user);
       } else {
-        setErrorMessage(res.message || 'Invalid email or password.');
+        setErrorMessage(res.message || 'Invalid name or password.');
       }
     } catch (err) {
       setErrorMessage(err.message || 'Login failed. Please verify credentials.');
@@ -187,7 +235,7 @@ export default function AuthScreen({ onLoginSuccess }) {
         sound.playSelect();
         setStatusMessage('Password reset successfully! You can now sign in.');
         setAuthMode('signin');
-        setLoginEmail(forgotEmail.trim());
+        setLoginIdentifier(forgotEmail.trim());
         setLoginPassword(newPassword);
       } else {
         setErrorMessage(res.message || 'Password reset failed.');
@@ -209,9 +257,9 @@ export default function AuthScreen({ onLoginSuccess }) {
       </div>
 
       {/* Main Container */}
-      <div className="relative z-10 w-full max-w-lg mx-auto flex flex-col items-center space-y-5">
+      <div className="relative z-10 w-full max-w-lg mx-auto flex flex-col items-center space-y-4 sm:space-y-5">
         {/* BRAND LOGO & TITLE */}
-        <div className="text-center space-y-2.5">
+        <div className="text-center space-y-2">
           <div className="inline-flex relative">
             <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-tr from-cyan-500 via-blue-600 to-indigo-600 p-[2px] shadow-[0_0_35px_rgba(6,182,212,0.5)]">
               <div className="w-full h-full bg-[#040816] rounded-2xl flex items-center justify-center">
@@ -262,7 +310,7 @@ export default function AuthScreen({ onLoginSuccess }) {
                 }`}
               >
                 <Lock className="w-3.5 h-3.5" />
-                <span>Sign In</span>
+                <span>Sign In (लॉग इन)</span>
               </button>
 
               <button
@@ -280,7 +328,7 @@ export default function AuthScreen({ onLoginSuccess }) {
                 }`}
               >
                 <User className="w-3.5 h-3.5" />
-                <span>Create Account</span>
+                <span>Create Account (नया खाता)</span>
               </button>
             </div>
           )}
@@ -300,61 +348,22 @@ export default function AuthScreen({ onLoginSuccess }) {
             </div>
           )}
 
-          {/* GOOGLE SIGN IN BUTTON */}
-          {authMode !== 'forgot_password' && (
-            <>
-              <button
-                type="button"
-                disabled={loading}
-                onClick={handleGoogleSignIn}
-                className="w-full py-2.5 px-4 rounded-xl bg-white hover:bg-slate-100 disabled:opacity-60 text-slate-900 font-bold text-xs sm:text-sm font-sans flex items-center justify-center gap-3 transition-all shadow-md group cursor-pointer"
-              >
-                <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24">
-                  <path
-                    fill="#4285F4"
-                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
-                  />
-                  <path
-                    fill="#34A853"
-                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
-                  />
-                  <path
-                    fill="#FBBC05"
-                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"
-                  />
-                  <path
-                    fill="#EA4335"
-                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"
-                  />
-                </svg>
-                <span>Continue with Google</span>
-              </button>
-
-              <div className="relative flex items-center justify-center">
-                <div className="border-t border-slate-800 w-full" />
-                <span className="bg-[#080e21] px-3 text-[10px] font-mono text-slate-500 uppercase whitespace-nowrap">
-                  or email and password
-                </span>
-                <div className="border-t border-slate-800 w-full" />
-              </div>
-            </>
-          )}
-
           {/* 1. SIGN IN FORM */}
           {authMode === 'signin' && (
             <form onSubmit={handleSignInSubmit} className="space-y-3.5">
               <div className="space-y-1">
-                <label className="text-[11px] font-mono text-slate-400 block font-semibold">
-                  Email Address
+                <label className="text-[11px] font-mono text-slate-300 block font-semibold flex items-center justify-between">
+                  <span>Email Address or Full Name <span className="text-cyan-400">*</span></span>
+                  <span className="text-[10px] text-slate-400 font-normal">अपनी ईमेल आईडी या नाम लिखें</span>
                 </label>
                 <div className="relative">
-                  <Mail className="w-4 h-4 text-slate-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                  <Mail className="w-4 h-4 text-cyan-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
                   <input
-                    type="email"
+                    type="text"
                     required
-                    value={loginEmail}
-                    onChange={(e) => setLoginEmail(e.target.value)}
-                    placeholder="e.g. sahil@alhayat.ai or your email"
+                    value={loginIdentifier}
+                    onChange={(e) => setLoginIdentifier(e.target.value)}
+                    placeholder="e.g. yourname@email.com or Dr. Ayesha"
                     className="w-full glass-input pl-10 pr-4 py-2.5 rounded-xl text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400"
                   />
                 </div>
@@ -362,15 +371,16 @@ export default function AuthScreen({ onLoginSuccess }) {
 
               <div className="space-y-1">
                 <div className="flex items-center justify-between">
-                  <label className="text-[11px] font-mono text-slate-400 block font-semibold">
-                    Password
+                  <label className="text-[11px] font-mono text-slate-300 block font-semibold flex items-center gap-1">
+                    <span>Password <span className="text-cyan-400">*</span></span>
+                    <span className="text-[10px] text-slate-400 font-normal">(पासवर्ड)</span>
                   </label>
                   <button
                     type="button"
                     onClick={() => {
                       sound.playClick();
                       setAuthMode('forgot_password');
-                      setForgotEmail(loginEmail);
+                      setForgotEmail(loginIdentifier.includes('@') ? loginIdentifier : '');
                       setErrorMessage(null);
                       setStatusMessage(null);
                     }}
@@ -386,7 +396,7 @@ export default function AuthScreen({ onLoginSuccess }) {
                     required
                     value={loginPassword}
                     onChange={(e) => setLoginPassword(e.target.value)}
-                    placeholder="Enter password"
+                    placeholder="Enter password (min 4 characters)"
                     className="w-full glass-input pl-10 pr-10 py-2.5 rounded-xl text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400"
                   />
                   <button
@@ -399,14 +409,92 @@ export default function AuthScreen({ onLoginSuccess }) {
                 </div>
               </div>
 
+              {/* Login Role Selector */}
+              <div className="space-y-1.5 pt-0.5">
+                <label className="text-[10px] font-mono text-slate-400 block font-semibold">
+                  I am logging in as:
+                </label>
+                <div className="grid grid-cols-2 gap-2">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      sound.playClick();
+                      setLoginRole('doctor');
+                    }}
+                    className={`py-2 px-3 rounded-xl border text-xs font-mono font-bold flex items-center justify-center gap-2 transition-all cursor-pointer ${
+                      loginRole === 'doctor'
+                        ? 'bg-cyan-500/20 border-cyan-400 text-cyan-300 shadow-[0_0_15px_rgba(6,182,212,0.25)]'
+                        : 'bg-slate-950/60 border-slate-800 text-slate-400 hover:border-slate-700'
+                    }`}
+                  >
+                    <Stethoscope className="w-3.5 h-3.5" />
+                    <span>Neurologist / Doctor</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => {
+                      sound.playClick();
+                      setLoginRole('patient');
+                    }}
+                    className={`py-2 px-3 rounded-xl border text-xs font-mono font-bold flex items-center justify-center gap-2 transition-all cursor-pointer ${
+                      loginRole === 'patient'
+                        ? 'bg-cyan-500/20 border-cyan-400 text-cyan-300 shadow-[0_0_15px_rgba(6,182,212,0.25)]'
+                        : 'bg-slate-950/60 border-slate-800 text-slate-400 hover:border-slate-700'
+                    }`}
+                  >
+                    <User className="w-3.5 h-3.5" />
+                    <span>Patient / Healthcare User</span>
+                  </button>
+                </div>
+              </div>
+
+              {/* OK ACTION: SIGN IN */}
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 disabled:opacity-50 text-white font-extrabold text-xs sm:text-sm font-mono transition-all flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(6,182,212,0.4)] group cursor-pointer"
+                className="w-full mt-2 py-3 rounded-xl bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 hover:from-cyan-400 hover:to-blue-500 disabled:opacity-50 text-white font-extrabold text-xs sm:text-sm font-mono transition-all flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(6,182,212,0.4)] group cursor-pointer"
               >
-                <span>{loading ? 'Authenticating...' : 'Sign In to Dashboard'}</span>
+                <span>{loading ? 'Verifying & Signing In...' : 'OK — Sign In to Platform (लॉग इन करें)'}</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
+
+              {/* Quick Google Continue option */}
+              <div className="pt-2">
+                <div className="relative flex items-center justify-center my-2">
+                  <div className="border-t border-slate-800 w-full" />
+                  <span className="bg-[#080e21] px-3 text-[10px] font-mono text-slate-500 uppercase whitespace-nowrap">
+                    or continue with
+                  </span>
+                  <div className="border-t border-slate-800 w-full" />
+                </div>
+
+                <button
+                  type="button"
+                  onClick={handleOpenGoogleModal}
+                  className="w-full py-2.5 px-4 rounded-xl bg-white hover:bg-slate-100 disabled:opacity-60 text-slate-900 font-bold text-xs sm:text-sm font-sans flex items-center justify-center gap-3 transition-all shadow-md group cursor-pointer"
+                >
+                  <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24">
+                    <path
+                      fill="#4285F4"
+                      d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                    />
+                    <path
+                      fill="#34A853"
+                      d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                    />
+                    <path
+                      fill="#FBBC05"
+                      d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"
+                    />
+                    <path
+                      fill="#EA4335"
+                      d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"
+                    />
+                  </svg>
+                  <span>Continue with Google Account</span>
+                </button>
+              </div>
             </form>
           )}
 
@@ -414,60 +502,107 @@ export default function AuthScreen({ onLoginSuccess }) {
           {authMode === 'register' && (
             <form onSubmit={handleRegisterSubmit} className="space-y-3">
               <div className="space-y-1">
-                <label className="text-[11px] font-mono text-slate-400 block font-semibold">
-                  Full Name
+                <label className="text-[11px] font-mono text-slate-300 block font-semibold flex items-center justify-between">
+                  <span>Full Name <span className="text-emerald-400">*</span></span>
+                  <span className="text-[10px] text-slate-400 font-normal">पूरा नाम लिखें</span>
                 </label>
                 <div className="relative">
-                  <User className="w-4 h-4 text-slate-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                  <User className="w-4 h-4 text-emerald-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
                   <input
                     type="text"
                     required
                     value={regName}
                     onChange={(e) => setRegName(e.target.value)}
-                    placeholder="e.g. Mohd Sahil"
-                    className="w-full glass-input pl-10 pr-4 py-2 rounded-xl text-xs text-white placeholder-slate-600 focus:outline-none focus:border-cyan-400"
+                    placeholder="e.g. Dr. Rajesh Kumar or Sneha Sharma"
+                    className="w-full glass-input pl-10 pr-4 py-2.5 rounded-xl text-xs sm:text-sm text-white placeholder-slate-600 focus:outline-none focus:border-emerald-400"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                 <div className="space-y-1">
-                  <label className="text-[11px] font-mono text-slate-400 block font-semibold">
-                    Email Address
+                  <label className="text-[11px] font-mono text-slate-300 block font-semibold">
+                    Email Address <span className="text-emerald-400">*</span>
                   </label>
-                  <input
-                    type="email"
-                    required
-                    value={regEmail}
-                    onChange={(e) => setRegEmail(e.target.value)}
-                    placeholder="name@email.com"
-                    className="w-full glass-input px-3.5 py-2 rounded-xl text-xs text-white placeholder-slate-600 focus:outline-none focus:border-cyan-400"
-                  />
+                  <div className="relative">
+                    <Mail className="w-4 h-4 text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
+                    <input
+                      type="email"
+                      required
+                      value={regEmail}
+                      onChange={(e) => setRegEmail(e.target.value)}
+                      placeholder="name@email.com"
+                      className="w-full glass-input pl-9 pr-3 py-2 rounded-xl text-xs text-white placeholder-slate-600 focus:outline-none focus:border-emerald-400"
+                    />
+                  </div>
                 </div>
 
                 <div className="space-y-1">
                   <label className="text-[11px] font-mono text-slate-400 block font-semibold">
                     Phone (Optional)
                   </label>
-                  <input
-                    type="tel"
-                    value={regPhone}
-                    onChange={(e) => setRegPhone(e.target.value)}
-                    placeholder="+91 98765 43210"
-                    className="w-full glass-input px-3.5 py-2 rounded-xl text-xs text-white placeholder-slate-600 focus:outline-none focus:border-cyan-400"
-                  />
+                  <div className="relative">
+                    <Phone className="w-3.5 h-3.5 text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
+                    <input
+                      type="tel"
+                      value={regPhone}
+                      onChange={(e) => setRegPhone(e.target.value)}
+                      placeholder="+91 98765 43210"
+                      className="w-full glass-input pl-8 pr-3 py-2 rounded-xl text-xs text-white placeholder-slate-600 focus:outline-none focus:border-emerald-400"
+                    />
+                  </div>
                 </div>
               </div>
 
-              {/* Age, Gender & Role */}
-              <div className="grid grid-cols-3 gap-2">
+              {/* Role Selection */}
+              <div className="space-y-1">
+                <label className="text-[10px] font-mono text-slate-300 block font-semibold">
+                  Select Role <span className="text-emerald-400">*</span>
+                </label>
+                <div className="grid grid-cols-2 gap-2">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      sound.playClick();
+                      setRegRole('doctor');
+                    }}
+                    className={`py-2 px-3 rounded-xl border text-xs font-mono font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer ${
+                      regRole === 'doctor'
+                        ? 'bg-emerald-500/20 border-emerald-400 text-emerald-300 shadow-[0_0_15px_rgba(16,185,129,0.25)]'
+                        : 'bg-slate-950/60 border-slate-800 text-slate-400 hover:border-slate-700'
+                    }`}
+                  >
+                    <Stethoscope className="w-3.5 h-3.5" />
+                    <span>Doctor / Neurologist</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => {
+                      sound.playClick();
+                      setRegRole('patient');
+                    }}
+                    className={`py-2 px-3 rounded-xl border text-xs font-mono font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer ${
+                      regRole === 'patient'
+                        ? 'bg-emerald-500/20 border-emerald-400 text-emerald-300 shadow-[0_0_15px_rgba(16,185,129,0.25)]'
+                        : 'bg-slate-950/60 border-slate-800 text-slate-400 hover:border-slate-700'
+                    }`}
+                  >
+                    <User className="w-3.5 h-3.5" />
+                    <span>Patient / Healthcare User</span>
+                  </button>
+                </div>
+              </div>
+
+              {/* Age & Gender */}
+              <div className="grid grid-cols-2 gap-2">
                 <div className="space-y-1">
-                  <label className="text-[10px] font-mono text-slate-400 block">Age</label>
+                  <label className="text-[10px] font-mono text-slate-400 block">Age (Years)</label>
                   <input
                     type="number"
                     value={regAge}
                     onChange={(e) => setRegAge(e.target.value)}
-                    className="w-full glass-input px-2.5 py-1.5 rounded-xl text-xs text-white text-center focus:outline-none focus:border-cyan-400"
+                    className="w-full glass-input px-2.5 py-1.5 rounded-xl text-xs text-white text-center focus:outline-none focus:border-emerald-400"
                   />
                 </div>
 
@@ -476,30 +611,20 @@ export default function AuthScreen({ onLoginSuccess }) {
                   <select
                     value={regGender}
                     onChange={(e) => setRegGender(e.target.value)}
-                    className="w-full glass-input px-2 py-1.5 rounded-xl text-xs text-white bg-slate-900 focus:outline-none focus:border-cyan-400"
+                    className="w-full glass-input px-2 py-1.5 rounded-xl text-xs text-white bg-slate-900 focus:outline-none focus:border-emerald-400"
                   >
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                     <option value="Other">Other</option>
                   </select>
                 </div>
-
-                <div className="space-y-1">
-                  <label className="text-[10px] font-mono text-slate-400 block">Role</label>
-                  <select
-                    value={regRole}
-                    onChange={(e) => setRegRole(e.target.value)}
-                    className="w-full glass-input px-1.5 py-1.5 rounded-xl text-xs text-white bg-slate-900 focus:outline-none focus:border-cyan-400"
-                  >
-                    <option value="doctor">Doctor</option>
-                    <option value="patient">Patient</option>
-                  </select>
-                </div>
               </div>
 
+              {/* Password */}
               <div className="space-y-1">
-                <label className="text-[11px] font-mono text-slate-400 block font-semibold">
-                  Password
+                <label className="text-[11px] font-mono text-slate-300 block font-semibold flex items-center justify-between">
+                  <span>Create Password <span className="text-emerald-400">*</span></span>
+                  <span className="text-[10px] text-slate-400 font-normal">कम से कम 4 अक्षर</span>
                 </label>
                 <div className="relative">
                   <Lock className="w-4 h-4 text-slate-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
@@ -509,7 +634,7 @@ export default function AuthScreen({ onLoginSuccess }) {
                     value={regPassword}
                     onChange={(e) => setRegPassword(e.target.value)}
                     placeholder="Create a password (min 4 characters)"
-                    className="w-full glass-input pl-10 pr-10 py-2 rounded-xl text-xs text-white placeholder-slate-600 focus:outline-none focus:border-cyan-400"
+                    className="w-full glass-input pl-10 pr-10 py-2 rounded-xl text-xs text-white placeholder-slate-600 focus:outline-none focus:border-emerald-400"
                   />
                   <button
                     type="button"
@@ -526,7 +651,7 @@ export default function AuthScreen({ onLoginSuccess }) {
                 <div className="flex items-center justify-between text-slate-400">
                   <span className="flex items-center gap-1">
                     <Shield className="w-3 h-3 text-cyan-400" />
-                    <span>Email Verification (Optional):</span>
+                    <span>Email OTP Verification:</span>
                   </span>
                   {!otpSent ? (
                     <button
@@ -535,7 +660,7 @@ export default function AuthScreen({ onLoginSuccess }) {
                       disabled={loading || !regEmail.trim()}
                       className="text-cyan-400 hover:text-cyan-300 underline disabled:opacity-50 cursor-pointer"
                     >
-                      Send OTP
+                      Send OTP (Demo: 123456)
                     </button>
                   ) : otpVerified ? (
                     <span className="text-emerald-400 font-bold">Verified ✓</span>
@@ -551,7 +676,7 @@ export default function AuthScreen({ onLoginSuccess }) {
                       maxLength={6}
                       value={regOtp}
                       onChange={(e) => setRegOtp(e.target.value.replace(/\D/g, '').slice(0, 6))}
-                      placeholder="Enter 6-digit OTP"
+                      placeholder="Enter 6-digit OTP (123456)"
                       className="flex-1 glass-input px-2.5 py-1 text-xs text-white"
                     />
                     <button
@@ -565,13 +690,13 @@ export default function AuthScreen({ onLoginSuccess }) {
                 )}
               </div>
 
-              {/* REGISTER SUBMIT (ALWAYS ACTIVE WHEN FORM VALID) */}
+              {/* REGISTER SUBMIT (OK ACTION) */}
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 text-black font-extrabold text-xs sm:text-sm font-mono transition-all flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(16,185,129,0.35)] cursor-pointer"
+                className="w-full mt-2 py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 text-black font-extrabold text-xs sm:text-sm font-mono transition-all flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(16,185,129,0.35)] cursor-pointer"
               >
-                <span>{loading ? 'Creating Account...' : 'Create Account & Enter Platform'}</span>
+                <span>{loading ? 'Registering Account...' : 'OK — Create Account & Enter Platform'}</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
             </form>
@@ -617,7 +742,7 @@ export default function AuthScreen({ onLoginSuccess }) {
                   required
                   value={newPassword}
                   onChange={(e) => setNewPassword(e.target.value)}
-                  placeholder="Enter new password"
+                  placeholder="Enter new password (min 4 chars)"
                   className="w-full glass-input px-3.5 py-2.5 rounded-xl text-xs text-white placeholder-slate-600 focus:outline-none focus:border-cyan-400"
                 />
               </div>
@@ -627,7 +752,7 @@ export default function AuthScreen({ onLoginSuccess }) {
                 disabled={loading}
                 className="w-full py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 text-white font-extrabold text-xs sm:text-sm font-mono transition-all flex items-center justify-center gap-2 shadow-lg cursor-pointer"
               >
-                <span>Save New Password & Sign In</span>
+                <span>OK — Save New Password & Sign In</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
             </form>
@@ -643,6 +768,139 @@ export default function AuthScreen({ onLoginSuccess }) {
           <p>© 2026 Al_Hayat NeuroCare AI • Final Year B.Tech CSE AI & ML Project</p>
         </div>
       </div>
+
+      {/* GOOGLE SIGN IN MODAL (REQUIRES REAL NAME & PASSWORD FIRST) */}
+      {googleModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in">
+          <div className="relative w-full max-w-md bg-[#0a1226] border border-cyan-500/40 rounded-3xl p-6 shadow-2xl space-y-4">
+            <button
+              onClick={() => setGoogleModalOpen(false)}
+              className="absolute top-4 right-4 text-slate-400 hover:text-white p-1 rounded-lg bg-slate-900 border border-slate-800"
+            >
+              <X className="w-4 h-4" />
+            </button>
+
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center shadow">
+                <svg className="w-5 h-5" viewBox="0 0 24 24">
+                  <path
+                    fill="#4285F4"
+                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                  />
+                  <path
+                    fill="#34A853"
+                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                  />
+                  <path
+                    fill="#FBBC05"
+                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"
+                  />
+                  <path
+                    fill="#EA4335"
+                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"
+                  />
+                </svg>
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-white font-mono">Continue with Google</h3>
+                <p className="text-[11px] text-slate-400">Enter your Google profile name & credentials</p>
+              </div>
+            </div>
+
+            <form onSubmit={handleGoogleModalSubmit} className="space-y-3 pt-2">
+              <div className="space-y-1">
+                <label className="text-[11px] font-mono text-slate-300 block font-semibold">
+                  Your Full Name <span className="text-cyan-400">*</span>
+                </label>
+                <div className="relative">
+                  <User className="w-4 h-4 text-cyan-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                  <input
+                    type="text"
+                    required
+                    value={googleName}
+                    onChange={(e) => setGoogleName(e.target.value)}
+                    placeholder="Enter your name (e.g. Dr. Sarah, Amit Patel)"
+                    className="w-full glass-input pl-9 pr-3 py-2 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400"
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-1">
+                <label className="text-[11px] font-mono text-slate-300 block font-semibold">
+                  Google / Gmail Address <span className="text-cyan-400">*</span>
+                </label>
+                <div className="relative">
+                  <Mail className="w-4 h-4 text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
+                  <input
+                    type="email"
+                    required
+                    value={googleEmail}
+                    onChange={(e) => setGoogleEmail(e.target.value)}
+                    placeholder="yourname@gmail.com"
+                    className="w-full glass-input pl-9 pr-3 py-2 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400"
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-1">
+                <label className="text-[11px] font-mono text-slate-300 block font-semibold">
+                  Password / PIN <span className="text-cyan-400">*</span>
+                </label>
+                <div className="relative">
+                  <Lock className="w-4 h-4 text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
+                  <input
+                    type="password"
+                    required
+                    value={googlePassword}
+                    onChange={(e) => setGooglePassword(e.target.value)}
+                    placeholder="Enter password (min 4 chars)"
+                    className="w-full glass-input pl-9 pr-3 py-2 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400"
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-1">
+                <label className="text-[10px] font-mono text-slate-400 block">Select Role</label>
+                <div className="grid grid-cols-2 gap-2">
+                  <button
+                    type="button"
+                    onClick={() => setGoogleRole('doctor')}
+                    className={`py-1.5 px-2 rounded-lg text-xs font-mono font-bold flex items-center justify-center gap-1.5 border ${
+                      googleRole === 'doctor'
+                        ? 'bg-cyan-500/20 border-cyan-400 text-cyan-300'
+                        : 'bg-slate-900 border-slate-800 text-slate-400'
+                    }`}
+                  >
+                    <Stethoscope className="w-3.5 h-3.5" />
+                    <span>Neurologist</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setGoogleRole('patient')}
+                    className={`py-1.5 px-2 rounded-lg text-xs font-mono font-bold flex items-center justify-center gap-1.5 border ${
+                      googleRole === 'patient'
+                        ? 'bg-cyan-500/20 border-cyan-400 text-cyan-300'
+                        : 'bg-slate-900 border-slate-800 text-slate-400'
+                    }`}
+                  >
+                    <User className="w-3.5 h-3.5" />
+                    <span>Patient</span>
+                  </button>
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                disabled={loading}
+                className="w-full mt-3 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 text-white font-mono font-bold text-xs flex items-center justify-center gap-2 shadow-lg"
+              >
+                <span>{loading ? 'Authenticating...' : 'OK — Continue to NeuroCare AI'}</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

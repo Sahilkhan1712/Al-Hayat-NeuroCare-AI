@@ -35,7 +35,19 @@ export default function App() {
   const [currentUser, setCurrentUser] = useState(() => {
     try {
       const saved = localStorage.getItem('alhayat_user');
-      return saved ? JSON.parse(saved) : null;
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        // Clear any old legacy mock user so user is prompted for real Name & Password
+        if (
+          parsed?.id === 'user_default_patient' ||
+          parsed?.id === 'dr_sahil_lead'
+        ) {
+          localStorage.removeItem('alhayat_user');
+          return null;
+        }
+        return parsed;
+      }
+      return null;
     } catch (e) {
       return null;
     }
@@ -66,9 +78,9 @@ export default function App() {
       localStorage.setItem('alhayat_user', JSON.stringify(user));
     } catch (e) {}
 
-    // Pause slightly (1.4s) so UI and 3D brain load smoothly, then speak welcome!
+    // Pause slightly (1.4s) so UI and 3D brain load smoothly, then speak welcome with user's name!
     setTimeout(() => {
-      voiceAssistant.speakWelcome(true);
+      voiceAssistant.speakWelcome(true, user?.name);
     }, 1400);
   };
 

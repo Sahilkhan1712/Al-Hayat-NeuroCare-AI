@@ -429,10 +429,23 @@ export default function AINeurologistChat({
   onLogout
 }) {
   // Patient details state
-  const [patientName, setPatientName] = useState(currentUser?.name || 'Mohd Sahil');
+  const [patientName, setPatientName] = useState(currentUser?.name || 'Patient');
   const [patientAge, setPatientAge] = useState(currentUser?.age || '24');
   const [patientGender, setPatientGender] = useState(currentUser?.gender || 'Male');
   const [isPatientConfirmed, setIsPatientConfirmed] = useState(false);
+
+  // Synchronize patient details whenever logged-in user changes
+  useEffect(() => {
+    if (currentUser?.name) {
+      setPatientName(currentUser.name);
+    }
+    if (currentUser?.age) {
+      setPatientAge(currentUser.age);
+    }
+    if (currentUser?.gender) {
+      setPatientGender(currentUser.gender);
+    }
+  }, [currentUser]);
 
   // Clinical interview step tracking
   // 0: Initial Name/Age confirmation
@@ -530,6 +543,7 @@ export default function AINeurologistChat({
       const enrichedReport = {
         ...result.medicalReport,
         patientName: patientName,
+        doctorName: currentUser?.role === 'Doctor' ? currentUser.name : (result.medicalReport?.doctorName || 'Dr. Al_Hayat NeuroCare AI, MD, DM (Neurology)'),
         ageGender: `${patientAge} Yrs / ${patientGender}`,
         date: new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }),
         time: new Date().toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' })
@@ -893,7 +907,7 @@ export default function AINeurologistChat({
                         type="text"
                         value={patientName}
                         onChange={(e) => setPatientName(e.target.value)}
-                        placeholder="e.g. Mohd Sahil"
+                        placeholder="e.g. Enter patient name"
                         className="w-full glass-input px-3 py-2 rounded-lg text-xs text-white focus:border-cyan-400"
                       />
                     </div>

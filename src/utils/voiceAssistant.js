@@ -126,8 +126,8 @@ class VoiceAssistant {
   }
 
   // Speak Welcome Greeting EXACTLY ONCE on login/register:
-  // "Namaste, aapka Al_Hayat NeuroCare AI mein swagat hai."
-  speakWelcome(force = false) {
+  // Personalizes with user's name if available
+  speakWelcome(force = false, userName = '') {
     if (!this.synth) return;
     if (this.hasWelcomed && !force) return;
 
@@ -147,10 +147,15 @@ class VoiceAssistant {
 
       const { voice, lang, textType } = this.getBestVoice();
 
-      // Clean single greeting as requested
-      const spokenText = textType === 'hindi'
-        ? 'नमस्ते, आपका अल-हयात न्यूरो एआई में स्वागत है।'
-        : 'Namaste, aapka Al Hayat NeuroCare AI mein swagat hai.';
+      // Clean personalized greeting
+      const cleanName = userName ? String(userName).trim() : '';
+      const spokenText = cleanName
+        ? (textType === 'hindi'
+            ? `नमस्ते ${cleanName} जी, आपका अल-हयात न्यूरो एआई में स्वागत है।`
+            : `Namaste ${cleanName}, aapka Al Hayat NeuroCare AI mein swagat hai.`)
+        : (textType === 'hindi'
+            ? 'नमस्ते, आपका अल-हयात न्यूरो एआई में स्वागत है।'
+            : 'Namaste, aapka Al Hayat NeuroCare AI mein swagat hai.');
 
       const utterance = new SpeechSynthesisUtterance(spokenText);
       utterance.rate = 0.95;
